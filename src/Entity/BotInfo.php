@@ -29,9 +29,8 @@ final class BotInfo extends UserWithPhoto
         }
 
         return array_map(
-            static fn(array $command): BotCommand => new BotCommand($command),
-            array_values(array_filter($commands, static fn($command): bool => is_array($command))),
+            static fn (array $command): BotCommand => new BotCommand($command),
+            array_values(array_filter($commands, static fn ($command): bool => is_array($command))),
         );
     }
 }
-

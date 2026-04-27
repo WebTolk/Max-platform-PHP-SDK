@@ -29,8 +29,8 @@ final class ChatMemberList extends AbstractEntity
         }
 
         return array_map(
-            static fn(array $member): ChatMember => new ChatMember($member),
-            array_values(array_filter($members, static fn($member): bool => is_array($member))),
+            static fn (array $member): ChatMember => new ChatMember($member),
+            array_values(array_filter($members, static fn ($member): bool => is_array($member))),
         );
     }
 
@@ -49,4 +49,3 @@ final class ChatMemberList extends AbstractEntity
             : null;
     }
 }
-

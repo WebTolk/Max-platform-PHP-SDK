@@ -92,7 +92,6 @@ final class NewMessageLink
         return array_filter([
             'type' => $this->type,
             'mid' => $this->messageId,
-        ], static fn(mixed $value): bool => $value !== null);
+        ], static fn (mixed $value): bool => $value !== null);
     }
 }
-

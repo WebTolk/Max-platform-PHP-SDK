@@ -260,4 +260,3 @@ final class EditMessageBody
         return $payload;
     }
 }
-

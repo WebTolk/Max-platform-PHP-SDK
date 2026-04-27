@@ -55,4 +55,3 @@ final class FileAttachment implements AttachmentPayloadInterface
         ];
     }
 }
-

@@ -6,8 +6,8 @@ namespace Webtolk\Max\Tests\Unit\Payload;
 
 use PHPUnit\Framework\TestCase;
 use Webtolk\Max\Exception\ValidationException;
-use Webtolk\Max\Payload\Attachment\InlineKeyboardAttachment;
 use Webtolk\Max\Payload\Attachment\Button\CallbackButton as ButtonCallback;
+use Webtolk\Max\Payload\Attachment\InlineKeyboardAttachment;
 use Webtolk\Max\Payload\NewMessageBody;
 use Webtolk\Max\Payload\NewMessageLink;
 use Webtolk\Max\Payload\TextFormat;

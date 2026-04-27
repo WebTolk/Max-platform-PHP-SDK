@@ -7,12 +7,12 @@ namespace Webtolk\Max\Request;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
 use ValueError;
-use Webtolk\Max\Interface\ApiTransportInterface;
 use Webtolk\Max\Entity\UploadResult;
 use Webtolk\Max\Entity\UploadUrl;
 use Webtolk\Max\Entity\Video;
 use Webtolk\Max\Exception\ValidationException;
 use Webtolk\Max\Hydration\JsonDecoder;
+use Webtolk\Max\Interface\ApiTransportInterface;
 use Webtolk\Max\Payload\UploadType;
 
 /**
@@ -301,4 +301,3 @@ final class UploadRequest
         };
     }
 }
-

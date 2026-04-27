@@ -71,4 +71,3 @@ final class InlineKeyboardAttachment implements AttachmentPayloadInterface
         ];
     }
 }
-

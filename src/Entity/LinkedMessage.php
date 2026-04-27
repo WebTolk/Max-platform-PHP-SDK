@@ -64,4 +64,3 @@ final class LinkedMessage extends AbstractEntity
             : null;
     }
 }
-

@@ -15,11 +15,11 @@ use Psr\Http\Message\StreamInterface;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 use Webtolk\Max\Config\MaxConfig;
-use Webtolk\Max\Interface\ApiTransportInterface;
-use Webtolk\Max\Exception\AttachmentNotReadyException;
 use Webtolk\Max\Exception\ApiException;
+use Webtolk\Max\Exception\AttachmentNotReadyException;
 use Webtolk\Max\Exception\RateLimitException;
 use Webtolk\Max\Exception\TransportException;
+use Webtolk\Max\Interface\ApiTransportInterface;
 
 /**
  * PSR-18/PSR-17 transport-реализация SDK для вызовов MAX API.
@@ -285,7 +285,7 @@ final class PsrHttpClient implements ApiTransportInterface
                     continue;
                 }
 
-                $normalized[$name] = implode(',', array_map(static fn($item): string => (string)$item, $value));
+                $normalized[$name] = implode(',', array_map(static fn ($item): string => (string)$item, $value));
                 continue;
             }
 
@@ -403,4 +403,3 @@ final class PsrHttpClient implements ApiTransportInterface
         return $normalized;
     }
 }
-

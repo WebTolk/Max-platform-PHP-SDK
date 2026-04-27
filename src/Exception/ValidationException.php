@@ -37,4 +37,3 @@ class ValidationException extends MaxException
         return $this->errors;
     }
 }
-

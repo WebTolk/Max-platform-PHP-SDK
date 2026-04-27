@@ -1,0 +1,40 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "MAX API method schema: chats.pin",
+    "method": "chats.pin",
+    "outcome": "ok",
+    "sdk_result_type": "Webtolk\\Max\\Entity\\OperationResult",
+    "http": {
+        "method": "PUT",
+        "uri_template": "https://platform-api.max.ru/chats/XXXX/pin",
+        "status": 200
+    },
+    "input_example": {
+        "chat_id": "XXXX",
+        "message_id": "XXXX"
+    },
+    "request_body_example": {
+        "message_id": "XXXX",
+        "notify": false
+    },
+    "response_schema": {
+        "type": "object",
+        "properties": {
+            "success": {
+                "type": "boolean"
+            }
+        },
+        "required": [
+            "success"
+        ],
+        "additionalProperties": true
+    },
+    "response_example": {
+        "success": true
+    },
+    "error_example": null,
+    "notes": [
+        "This is an anonymized development schema, not a raw API dump.",
+        "Use response_schema for structural assertions and response_example for field-shape orientation only."
+    ]
+}

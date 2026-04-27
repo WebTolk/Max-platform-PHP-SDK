@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Webtolk\Max\Request;
 
-use Webtolk\Max\Interface\ApiTransportInterface;
 use Webtolk\Max\Entity\BotInfo;
 use Webtolk\Max\Hydration\JsonDecoder;
+use Webtolk\Max\Interface\ApiTransportInterface;
 
 /**
  * Низкоуровневый request-адаптер для bot endpoint-ов MAX API.
@@ -46,4 +46,3 @@ final class BotRequest
         return new BotInfo($payload);
     }
 }
-

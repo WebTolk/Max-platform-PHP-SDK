@@ -27,4 +27,3 @@ class TransportException extends MaxException
         parent::__construct($message, 0, $previous);
     }
 }
-

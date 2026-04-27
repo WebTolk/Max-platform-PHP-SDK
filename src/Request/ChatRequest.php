@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace Webtolk\Max\Request;
 
-use Webtolk\Max\Interface\ApiTransportInterface;
 use Webtolk\Max\Entity\Chat;
 use Webtolk\Max\Entity\ChatList;
 use Webtolk\Max\Entity\ChatMember;
 use Webtolk\Max\Entity\ChatMemberList;
 use Webtolk\Max\Entity\Message;
 use Webtolk\Max\Entity\OperationResult;
+use Webtolk\Max\Hydration\JsonDecoder;
+use Webtolk\Max\Interface\ApiTransportInterface;
 use Webtolk\Max\Payload\AddChatAdminsPayload;
 use Webtolk\Max\Payload\AddChatMembersPayload;
-use Webtolk\Max\Hydration\JsonDecoder;
 use Webtolk\Max\Payload\PinChatMessagePayload;
 use Webtolk\Max\Payload\SenderAction;
 use Webtolk\Max\Payload\UpdateChatPayload;
@@ -268,4 +268,3 @@ final class ChatRequest
         return new OperationResult($payload);
     }
 }
-

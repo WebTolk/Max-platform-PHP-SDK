@@ -140,4 +140,3 @@ final class Message extends AbstractEntity
         return $this->getBody()?->getAttachments() ?? [];
     }
 }
-

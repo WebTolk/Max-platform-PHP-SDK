@@ -54,7 +54,6 @@ final class Subscription extends AbstractEntity
             return [];
         }
 
-        return array_values(array_filter($types, static fn(mixed $type): bool => is_string($type)));
+        return array_values(array_filter($types, static fn (mixed $type): bool => is_string($type)));
     }
 }
-

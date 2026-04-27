@@ -129,4 +129,3 @@ final class ChatMembersQuery
         return $params;
     }
 }
-

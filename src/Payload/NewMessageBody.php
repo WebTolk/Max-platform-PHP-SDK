@@ -236,4 +236,3 @@ final class NewMessageBody
         return $payload;
     }
 }
-

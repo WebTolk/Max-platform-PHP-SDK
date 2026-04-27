@@ -82,4 +82,3 @@ final class MessageBody extends AbstractEntity
         return array_values($markup);
     }
 }
-

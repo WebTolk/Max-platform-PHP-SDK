@@ -29,4 +29,3 @@ final class RateLimitException extends ApiException
         parent::__construct($message, $statusCode, $apiCode, $previous);
     }
 }
-

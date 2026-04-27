@@ -36,4 +36,3 @@ final class BotCommand extends AbstractEntity
         return $this->rawData['description'] ?? null;
     }
 }
-

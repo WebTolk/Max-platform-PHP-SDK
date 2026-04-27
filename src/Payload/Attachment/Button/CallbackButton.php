@@ -60,4 +60,3 @@ final class CallbackButton implements KeyboardButtonInterface
         ];
     }
 }
-

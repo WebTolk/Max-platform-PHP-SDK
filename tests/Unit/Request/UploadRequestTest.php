@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Webtolk\Max\Tests\Unit\Request;
 
 use PHPUnit\Framework\TestCase;
-use Webtolk\Max\Interface\ApiTransportInterface;
 use Webtolk\Max\Entity\UploadUrl;
 use Webtolk\Max\Exception\ValidationException;
+use Webtolk\Max\Interface\ApiTransportInterface;
 use Webtolk\Max\Payload\UploadType;
 use Webtolk\Max\Request\UploadRequest;
 use Webtolk\Max\Tests\Unit\Support\ResponseFactoryTrait;
@@ -93,7 +93,7 @@ final class UploadRequestTest extends TestCase
 
                     return true;
                 }),
-                $this->callback(static fn(string $contentType): bool => str_starts_with($contentType, 'multipart/form-data; boundary=')),
+                $this->callback(static fn (string $contentType): bool => str_starts_with($contentType, 'multipart/form-data; boundary=')),
             )
             ->willReturn($pushResponse);
 
@@ -127,7 +127,7 @@ final class UploadRequestTest extends TestCase
 
                     return true;
                 }),
-                $this->callback(static fn(string $contentType): bool => str_starts_with($contentType, 'multipart/form-data; boundary=')),
+                $this->callback(static fn (string $contentType): bool => str_starts_with($contentType, 'multipart/form-data; boundary=')),
             )
             ->willReturn($pushResponse);
 
@@ -196,7 +196,7 @@ final class UploadRequestTest extends TestCase
 
                     return true;
                 }),
-                $this->callback(static fn(string $contentType): bool => str_starts_with($contentType, 'multipart/form-data; boundary=')),
+                $this->callback(static fn (string $contentType): bool => str_starts_with($contentType, 'multipart/form-data; boundary=')),
             )
             ->willReturn($pushResponse);
 

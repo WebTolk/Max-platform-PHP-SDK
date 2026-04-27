@@ -51,4 +51,3 @@ interface ApiTransportInterface
         ?string $contentType = null,
     ): ResponseInterface;
 }
-

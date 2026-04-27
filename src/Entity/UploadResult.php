@@ -6,11 +6,11 @@ namespace Webtolk\Max\Entity;
 
 use RuntimeException;
 use ValueError;
+use Webtolk\Max\Payload\Attachment\AttachmentPayloadInterface;
 use Webtolk\Max\Payload\Attachment\AudioAttachment;
 use Webtolk\Max\Payload\Attachment\FileAttachment;
 use Webtolk\Max\Payload\Attachment\ImageAttachment;
 use Webtolk\Max\Payload\Attachment\VideoAttachment;
-use Webtolk\Max\Payload\Attachment\AttachmentPayloadInterface;
 use Webtolk\Max\Payload\UploadType;
 
 /**
@@ -203,4 +203,3 @@ final class UploadResult extends AbstractEntity
         return null;
     }
 }
-

@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Webtolk\Max;
 
+use InvalidArgumentException;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\StreamFactoryInterface;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
-use InvalidArgumentException;
 use Webtolk\Max\Config\MaxConfig;
 use Webtolk\Max\Http\PsrHttpClient;
 use Webtolk\Max\Module\BotModule;
@@ -73,8 +73,7 @@ final class Max
         ClientInterface $client,
         RequestFactoryInterface $requestFactory,
         StreamFactoryInterface $streamFactory,
-    ): self
-    {
+    ): self {
         $this->transport = new PsrHttpClient(
             $client,
             $requestFactory,
@@ -208,4 +207,3 @@ final class Max
         return $this->updateModule ??= new UpdateModule(new UpdateRequest($this->getHttpClient()));
     }
 }
-

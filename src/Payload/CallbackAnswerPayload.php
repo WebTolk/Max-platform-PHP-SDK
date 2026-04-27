@@ -93,4 +93,3 @@ final class CallbackAnswerPayload
         return $payload;
     }
 }
-

@@ -31,4 +31,3 @@ final class CallbackAnswerPayloadTest extends TestCase
         (new CallbackAnswerPayload())->toRequestArray();
     }
 }
-

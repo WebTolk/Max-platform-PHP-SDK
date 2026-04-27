@@ -55,4 +55,3 @@ final class VideoAttachment implements AttachmentPayloadInterface
         ];
     }
 }
-

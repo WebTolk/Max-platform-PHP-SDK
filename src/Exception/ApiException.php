@@ -33,4 +33,3 @@ class ApiException extends MaxException
         parent::__construct($message, $statusCode, $previous);
     }
 }
-

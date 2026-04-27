@@ -44,4 +44,3 @@ final class UpdateModule
         return $this->request->list($query);
     }
 }
-

@@ -29,8 +29,8 @@ final class ChatList extends AbstractEntity
         }
 
         return array_map(
-            static fn(array $chat): Chat => new Chat($chat),
-            array_values(array_filter($chats, static fn($chat): bool => is_array($chat))),
+            static fn (array $chat): Chat => new Chat($chat),
+            array_values(array_filter($chats, static fn ($chat): bool => is_array($chat))),
         );
     }
 
@@ -47,4 +47,3 @@ final class ChatList extends AbstractEntity
         return isset($this->rawData['marker']) ? (int)$this->rawData['marker'] : null;
     }
 }
-

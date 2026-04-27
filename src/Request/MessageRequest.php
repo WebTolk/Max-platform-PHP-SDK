@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Webtolk\Max\Request;
 
-use Webtolk\Max\Interface\ApiTransportInterface;
 use Webtolk\Max\Entity\Message;
 use Webtolk\Max\Entity\MessageList;
 use Webtolk\Max\Entity\OperationResult;
 use Webtolk\Max\Hydration\JsonDecoder;
+use Webtolk\Max\Interface\ApiTransportInterface;
 use Webtolk\Max\Payload\CallbackAnswerPayload;
 use Webtolk\Max\Payload\EditMessageBody;
 use Webtolk\Max\Payload\NewMessageBody;
@@ -197,4 +197,3 @@ final class MessageRequest
         return new Message(is_array($message) ? $message : []);
     }
 }
-

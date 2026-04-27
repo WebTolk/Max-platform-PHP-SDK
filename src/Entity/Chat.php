@@ -214,4 +214,3 @@ final class Chat extends AbstractEntity
             : null;
     }
 }
-

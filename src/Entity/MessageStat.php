@@ -24,4 +24,3 @@ final class MessageStat extends AbstractEntity
         return isset($this->rawData['views']) ? (int)$this->rawData['views'] : null;
     }
 }
-

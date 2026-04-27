@@ -80,7 +80,7 @@ final class ChatMember extends UserWithPhoto
             return [];
         }
 
-        return array_values(array_filter($permissions, static fn(mixed $permission): bool => is_string($permission)));
+        return array_values(array_filter($permissions, static fn (mixed $permission): bool => is_string($permission)));
     }
 
     /**
@@ -96,4 +96,3 @@ final class ChatMember extends UserWithPhoto
         return $this->rawData['alias'] ?? null;
     }
 }
-

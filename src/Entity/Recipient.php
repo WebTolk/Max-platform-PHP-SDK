@@ -48,4 +48,3 @@ final class Recipient extends AbstractEntity
         return isset($this->rawData['user_id']) ? (int)$this->rawData['user_id'] : null;
     }
 }
-

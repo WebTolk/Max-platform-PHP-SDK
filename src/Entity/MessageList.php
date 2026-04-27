@@ -29,9 +29,8 @@ final class MessageList extends AbstractEntity
         }
 
         return array_map(
-            static fn(array $message): Message => new Message($message),
-            array_values(array_filter($messages, static fn($message): bool => is_array($message))),
+            static fn (array $message): Message => new Message($message),
+            array_values(array_filter($messages, static fn ($message): bool => is_array($message))),
         );
     }
 }
-

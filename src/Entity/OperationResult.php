@@ -36,4 +36,3 @@ final class OperationResult extends AbstractEntity
         return $this->rawData['message'] ?? null;
     }
 }
-

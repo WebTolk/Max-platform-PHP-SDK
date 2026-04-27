@@ -72,4 +72,3 @@ final class SubscriptionModule
         return $this->request->delete($url);
     }
 }
-

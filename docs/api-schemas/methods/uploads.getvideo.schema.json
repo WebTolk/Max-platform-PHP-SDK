@@ -1,0 +1,83 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "MAX API method schema: uploads.getVideo",
+    "method": "uploads.getVideo",
+    "outcome": "ok",
+    "sdk_result_type": "Webtolk\\Max\\Entity\\Video",
+    "http": {
+        "method": "GET",
+        "uri_template": "https://platform-api.max.ru/videos/XXXX",
+        "status": 200
+    },
+    "input_example": {
+        "video_token": "XXXX"
+    },
+    "request_body_example": null,
+    "response_schema": {
+        "type": "object",
+        "properties": {
+            "token": {
+                "type": "string"
+            },
+            "width": {
+                "type": "integer"
+            },
+            "height": {
+                "type": "integer"
+            },
+            "duration": {
+                "type": "integer"
+            },
+            "urls": {
+                "type": "object",
+                "properties": {
+                    "mp4_480": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "mp4_480"
+                ],
+                "additionalProperties": true
+            },
+            "thumbnail": {
+                "type": "object",
+                "properties": {
+                    "url": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "url"
+                ],
+                "additionalProperties": true
+            }
+        },
+        "required": [
+            "token",
+            "width",
+            "height",
+            "duration",
+            "urls",
+            "thumbnail"
+        ],
+        "additionalProperties": true
+    },
+    "response_example": {
+        "token": "XXXX",
+        "width": 0,
+        "height": 0,
+        "duration": 79619,
+        "urls": {
+            "mp4_480": "http://vd562.okcdn.ru/?expires=XXXX&srcIp=10.218.4.228&pr=95&srcAg=UNKNOWN&ms=45.136.21.39&type=4&sig=XhEBTxyt_mA&ct=27&urls=95.163.35.32&clientType=11&appId=XXXX&id=XXXX&scl=1"
+        },
+        "thumbnail": {
+            "url": "XXXX"
+        }
+    },
+    "error_example": null,
+    "notes": [
+        "This is an anonymized development schema, not a raw API dump.",
+        "Use response_schema for structural assertions and response_example for field-shape orientation only."
+    ]
+}

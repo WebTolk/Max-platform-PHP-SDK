@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Webtolk\Max\Request;
 
-use Webtolk\Max\Interface\ApiTransportInterface;
 use Webtolk\Max\Entity\UpdateList;
 use Webtolk\Max\Hydration\JsonDecoder;
+use Webtolk\Max\Interface\ApiTransportInterface;
 use Webtolk\Max\Query\GetUpdatesQuery;
 
 /**
@@ -50,4 +50,3 @@ final class UpdateRequest
         return new UpdateList($payload);
     }
 }
-

@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Webtolk\Max\Request;
 
-use Webtolk\Max\Interface\ApiTransportInterface;
 use Webtolk\Max\Entity\OperationResult;
 use Webtolk\Max\Entity\SubscriptionList;
 use Webtolk\Max\Hydration\JsonDecoder;
+use Webtolk\Max\Interface\ApiTransportInterface;
 use Webtolk\Max\Payload\CreateSubscriptionPayload;
 
 /**
@@ -92,4 +92,3 @@ final class SubscriptionRequest
         return new OperationResult($payload);
     }
 }
-

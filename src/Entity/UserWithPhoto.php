@@ -52,4 +52,3 @@ class UserWithPhoto extends User
         return $this->rawData['full_avatar_url'] ?? null;
     }
 }
-

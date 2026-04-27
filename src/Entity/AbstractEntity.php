@@ -53,4 +53,3 @@ abstract class AbstractEntity implements JsonSerializable
         return $this->toArray();
     }
 }
-

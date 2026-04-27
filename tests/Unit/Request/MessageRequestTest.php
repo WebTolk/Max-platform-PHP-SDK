@@ -6,12 +6,12 @@ namespace Webtolk\Max\Tests\Unit\Request;
 
 use PHPUnit\Framework\TestCase;
 use Webtolk\Max\Interface\ApiTransportInterface;
+use Webtolk\Max\Payload\CallbackAnswerPayload;
+use Webtolk\Max\Payload\EditMessageBody;
+use Webtolk\Max\Payload\NewMessageBody;
 use Webtolk\Max\Query\MessageQuery;
 use Webtolk\Max\Request\MessageRequest;
 use Webtolk\Max\Tests\Unit\Support\ResponseFactoryTrait;
-use Webtolk\Max\Payload\NewMessageBody;
-use Webtolk\Max\Payload\EditMessageBody;
-use Webtolk\Max\Payload\CallbackAnswerPayload;
 
 final class MessageRequestTest extends TestCase
 {

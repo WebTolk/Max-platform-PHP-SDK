@@ -139,4 +139,3 @@ final class MessageModule
         return $this->request->answerCallback($callbackId, $payload);
     }
 }
-

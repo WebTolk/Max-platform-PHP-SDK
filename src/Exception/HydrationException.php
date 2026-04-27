@@ -13,4 +13,3 @@ namespace Webtolk\Max\Exception;
 class HydrationException extends MaxException
 {
 }
-

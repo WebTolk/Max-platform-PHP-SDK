@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace Webtolk\Max\Entity;
 
 use RuntimeException;
+use Webtolk\Max\Payload\Attachment\AttachmentPayloadInterface;
 use Webtolk\Max\Payload\Attachment\AudioAttachment;
 use Webtolk\Max\Payload\Attachment\FileAttachment;
 use Webtolk\Max\Payload\Attachment\ImageAttachment;
 use Webtolk\Max\Payload\Attachment\VideoAttachment;
-use Webtolk\Max\Payload\Attachment\AttachmentPayloadInterface;
 use Webtolk\Max\Payload\UploadType;
 
 /**
@@ -113,4 +113,3 @@ final class UploadUrl extends AbstractEntity
         };
     }
 }
-

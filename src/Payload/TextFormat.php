@@ -16,4 +16,3 @@ enum TextFormat: string
     case MARKDOWN = 'markdown';
     case HTML = 'html';
 }
-

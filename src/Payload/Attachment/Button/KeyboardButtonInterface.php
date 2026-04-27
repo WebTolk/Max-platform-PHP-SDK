@@ -21,4 +21,3 @@ interface KeyboardButtonInterface
      */
     public function toRequestArray(): array;
 }
-

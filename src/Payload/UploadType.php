@@ -18,4 +18,3 @@ enum UploadType: string
     case AUDIO = 'audio';
     case FILE = 'file';
 }
-

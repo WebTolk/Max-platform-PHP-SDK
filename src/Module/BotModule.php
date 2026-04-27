@@ -42,4 +42,3 @@ final class BotModule
         return $this->request->me();
     }
 }
-

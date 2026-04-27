@@ -42,4 +42,3 @@ final class UpdateTypeNormalizer
         return array_values(array_unique($normalized));
     }
 }
-

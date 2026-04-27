@@ -27,4 +27,3 @@ final class AttachmentNotReadyException extends ApiException
         parent::__construct($message, 409, 'attachment.not.ready', $previous);
     }
 }
-

@@ -43,4 +43,3 @@ final class JsonDecoder
         return $data;
     }
 }
-

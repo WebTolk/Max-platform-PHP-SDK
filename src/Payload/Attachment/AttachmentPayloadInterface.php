@@ -21,4 +21,3 @@ interface AttachmentPayloadInterface
      */
     public function toRequestArray(): array;
 }
-

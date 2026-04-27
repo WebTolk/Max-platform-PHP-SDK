@@ -52,4 +52,3 @@ final class MaxConfig
         return $this->defaultHeaders;
     }
 }
-

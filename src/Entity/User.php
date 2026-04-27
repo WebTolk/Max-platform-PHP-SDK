@@ -104,4 +104,3 @@ class User extends AbstractEntity
         return $this->rawData['name'] ?? null;
     }
 }
-

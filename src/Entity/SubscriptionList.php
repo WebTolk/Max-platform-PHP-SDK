@@ -29,9 +29,8 @@ final class SubscriptionList extends AbstractEntity
         }
 
         return array_map(
-            static fn(array $subscription): Subscription => new Subscription($subscription),
-            array_values(array_filter($subscriptions, static fn($subscription): bool => is_array($subscription))),
+            static fn (array $subscription): Subscription => new Subscription($subscription),
+            array_values(array_filter($subscriptions, static fn ($subscription): bool => is_array($subscription))),
         );
     }
 }
-

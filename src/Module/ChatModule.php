@@ -167,4 +167,3 @@ final class ChatModule
         return $this->request->sendAction($chatId, $action);
     }
 }
-

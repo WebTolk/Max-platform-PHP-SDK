@@ -139,4 +139,3 @@ final class GetUpdatesQuery
         return $params;
     }
 }
-

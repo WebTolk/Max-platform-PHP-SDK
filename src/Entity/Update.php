@@ -67,4 +67,3 @@ final class Update extends AbstractEntity
         return $this->rawData['user_locale'] ?? null;
     }
 }
-

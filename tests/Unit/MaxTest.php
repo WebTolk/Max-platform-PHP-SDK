@@ -11,13 +11,13 @@ use PHPUnit\Framework\TestCase;
 use Psr\Http\Client\ClientInterface;
 use Psr\Log\LoggerInterface;
 use Webtolk\Max\Config\MaxConfig;
+use Webtolk\Max\Max;
 use Webtolk\Max\Module\BotModule;
 use Webtolk\Max\Module\ChatModule;
-use Webtolk\Max\Max;
 use Webtolk\Max\Module\MessageModule;
 use Webtolk\Max\Module\SubscriptionModule;
-use Webtolk\Max\Module\UploadModule;
 use Webtolk\Max\Module\UpdateModule;
+use Webtolk\Max\Module\UploadModule;
 
 final class MaxTest extends TestCase
 {

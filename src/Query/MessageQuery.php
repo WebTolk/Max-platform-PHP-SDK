@@ -54,7 +54,7 @@ final class MessageQuery
     public static function forIds(string ...$messageIds): self
     {
         $self = new self();
-        $self->messageIds = array_values(array_filter($messageIds, static fn(string $messageId): bool => $messageId !== ''));
+        $self->messageIds = array_values(array_filter($messageIds, static fn (string $messageId): bool => $messageId !== ''));
         if ($self->messageIds === []) {
             throw new ValidationException('message_ids cannot be empty.');
         }
@@ -179,4 +179,3 @@ final class MessageQuery
         return $params;
     }
 }
-

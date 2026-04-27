@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Webtolk\Max\Tests\Unit\Support;
 
-use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\MockObject\Exception;
+use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
 

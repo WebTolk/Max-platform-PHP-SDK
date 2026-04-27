@@ -99,4 +99,3 @@ final class UploadModule
         return $this->request->upload($type, $contents, $contentType);
     }
 }
-

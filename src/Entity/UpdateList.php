@@ -29,8 +29,8 @@ final class UpdateList extends AbstractEntity
         }
 
         return array_map(
-            static fn(array $update): Update => new Update($update),
-            array_values(array_filter($updates, static fn($update): bool => is_array($update))),
+            static fn (array $update): Update => new Update($update),
+            array_values(array_filter($updates, static fn ($update): bool => is_array($update))),
         );
     }
 
@@ -49,4 +49,3 @@ final class UpdateList extends AbstractEntity
             : null;
     }
 }
-

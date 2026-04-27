@@ -10,6 +10,7 @@ use ValueError;
 use Webtolk\Max\Interface\ApiTransportInterface;
 use Webtolk\Max\Entity\UploadResult;
 use Webtolk\Max\Entity\UploadUrl;
+use Webtolk\Max\Entity\Video;
 use Webtolk\Max\Exception\ValidationException;
 use Webtolk\Max\Hydration\JsonDecoder;
 use Webtolk\Max\Payload\UploadType;
@@ -53,6 +54,23 @@ final class UploadRequest
         $payload = JsonDecoder::decode($response);
 
         return new UploadUrl($payload, $type);
+    }
+
+    /**
+     * Выполняет HTTP-запрос `GET /videos/{videoToken}` и гидрирует метаданные видео-вложения.
+     * Нужен, чтобы после upload flow или получения токена из сообщения можно было запросить размеры, duration и playback/download URL.
+     *
+     * @param string $videoToken Токен видео-вложения, к которому относится операция.
+     * @return Video Результат метода в виде объекта `Video`, подготовленного для дальнейшего использования в SDK или прикладном коде.
+     * @since v.0.1.0
+     * @link https://dev.max.ru/docs-api/methods/GET/videos/-videoToken-
+     */
+    public function getVideo(string $videoToken): Video
+    {
+        $response = $this->httpClient->requestJson('GET', '/videos/' . $videoToken);
+        $payload = JsonDecoder::decode($response);
+
+        return new Video($payload);
     }
 
     /**

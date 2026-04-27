@@ -314,6 +314,40 @@ $message = $max->messages()->sendToChat($chatId, $body);
 
 Источник: `docs/api-schemas/index.json`
 
+## Ответить на callback-кнопку
+
+```php
+use Webtolk\Max\Payload\CallbackAnswerPayload;
+
+$result = $max->messages()->answerCallback(
+    $callbackId,
+    (new CallbackAnswerPayload())
+        ->withNotification('Кнопка обработана')
+);
+```
+
+Подтверждённый фрагмент ответа:
+
+```json
+{
+  "success": true
+}
+```
+
+Подтверждённый callback update, из которого берётся `callback_id`:
+
+```json
+{
+  "update_type": "message_callback",
+  "callback": {
+    "callback_id": "XXXX",
+    "payload": "sdk-callback-160753"
+  }
+}
+```
+
+Источник: `docs/api-schemas/index.json`
+
 ## Настроить long polling
 
 ```php

@@ -50,7 +50,7 @@
 
 ## `TransportException`
 
-Подтверждённый пример на `messages.answerCallback()`:
+Подтверждённый transport-level пример:
 
 ```json
 {
@@ -61,7 +61,7 @@
 
 Источник: `docs/api-schemas/index.json`
 
-Это не подтверждает контракт ответа API. Это подтверждает, что на момент smoke-run у callback answer flow был transport timeout.
+Это не подтверждает контракт ответа API. Это только подтверждает, что отдельные live прогоны могут упираться в сетевой или long-polling timeout даже при корректном request shape.
 
 ## `ValidationException`
 

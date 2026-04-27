@@ -14,7 +14,24 @@
         "text": "XXXX"
     },
     "request_body_example": {
-        "text": "XXXX"
+        "text": "XXXX",
+        "attachments": {
+            "XXXX": {
+                "payload": {
+                    "buttons": {
+                        "XXXX": {
+                            "XXXX": {
+                                "payload": "XXXX",
+                                "text": "XXXX",
+                                "intent": "default",
+                                "type": "callback"
+                            }
+                        }
+                    }
+                },
+                "type": "inline_keyboard"
+            }
+        }
     },
     "response_schema": {
         "type": "object",
@@ -52,12 +69,68 @@
                             },
                             "text": {
                                 "type": "string"
+                            },
+                            "attachments": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "payload": {
+                                            "type": "object",
+                                            "properties": {
+                                                "buttons": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "payload": {
+                                                                    "type": "string"
+                                                                },
+                                                                "text": {
+                                                                    "type": "string"
+                                                                },
+                                                                "intent": {
+                                                                    "type": "string"
+                                                                },
+                                                                "type": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "required": [
+                                                                "payload",
+                                                                "text",
+                                                                "intent",
+                                                                "type"
+                                                            ],
+                                                            "additionalProperties": true
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "required": [
+                                                "buttons"
+                                            ],
+                                            "additionalProperties": true
+                                        },
+                                        "type": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "payload",
+                                        "type"
+                                    ],
+                                    "additionalProperties": true
+                                }
                             }
                         },
                         "required": [
                             "mid",
                             "seq",
-                            "text"
+                            "text",
+                            "attachments"
                         ],
                         "additionalProperties": true
                     },
@@ -118,7 +191,24 @@
             "body": {
                 "mid": "XXXX",
                 "seq": "XXXX",
-                "text": "XXXX"
+                "text": "XXXX",
+                "attachments": {
+                    "XXXX": {
+                        "payload": {
+                            "buttons": {
+                                "XXXX": {
+                                    "XXXX": {
+                                        "payload": "XXXX",
+                                        "text": "XXXX",
+                                        "intent": "default",
+                                        "type": "callback"
+                                    }
+                                }
+                            }
+                        },
+                        "type": "inline_keyboard"
+                    }
+                }
             },
             "sender": {
                 "user_id": "XXXX",

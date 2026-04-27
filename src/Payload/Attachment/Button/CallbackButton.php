@@ -56,7 +56,7 @@ final class CallbackButton implements KeyboardButtonInterface
         return [
             'type' => 'callback',
             'text' => $this->text,
-            'data' => $this->data,
+            'payload' => $this->data,
         ];
     }
 }

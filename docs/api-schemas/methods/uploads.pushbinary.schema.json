@@ -6,32 +6,33 @@
     "sdk_result_type": "Webtolk\\Max\\Entity\\UploadResult",
     "http": {
         "method": "POST",
-        "uri_template": "https://fu.oneme.ru/api/upload.do?sig=XXXX&expires=XXXX&clientType=XXXX&id=XXXX&userId=XXXX",
+        "uri_template": "https://vu.okcdn.ru/upload.do?sig=XXXX&expires=XXXX&clientType=XXXX&saveOriginal=XXXX&id=XXXX&userId=XXXX&cid=XXXX",
         "status": 200
     },
     "input_example": {
-        "content_type": "text/plain"
+        "type": "audio",
+        "content_type": "audio/mpeg"
     },
-    "request_body_example": "XXXX\r\nXXXX: form-data; name=\"data\"; filename=\"upload.txt\"\r\nContent-Type: text/plain\r\n\r\nmax-sdk live audit binary\r\nXXXX\r\n",
+    "request_body_example": null,
     "response_schema": {
         "type": "object",
         "properties": {
-            "fileId": {
-                "type": "integer"
+            "retval": {
+                "type": "string"
             },
-            "token": {
+            "raw_body": {
                 "type": "string"
             }
         },
         "required": [
-            "fileId",
-            "token"
+            "retval",
+            "raw_body"
         ],
         "additionalProperties": true
     },
     "response_example": {
-        "fileId": "XXXX",
-        "token": "XXXX"
+        "retval": "1",
+        "raw_body": "XXXX"
     },
     "error_example": null,
     "notes": [

@@ -37,6 +37,38 @@ final class UploadRequestTest extends TestCase
         $this->assertSame('slot-token', $result->getToken());
     }
 
+    public function testGetVideoUsesVideoLookupEndpoint(): void
+    {
+        $response = $this->createJsonResponse($this, json_encode([
+            'token' => 'video-token',
+            'urls' => [
+                'mp4' => 'https://cdn.example.test/video.mp4',
+            ],
+            'thumbnail' => [
+                'url' => 'https://cdn.example.test/thumb.jpg',
+            ],
+            'width' => 1920,
+            'height' => 1080,
+            'duration' => 42,
+        ]));
+
+        $httpClient = $this->createMock(ApiTransportInterface::class);
+        $httpClient->expects($this->once())
+            ->method('requestJson')
+            ->with('GET', '/videos/video-token')
+            ->willReturn($response);
+
+        $request = new UploadRequest($httpClient);
+        $video = $request->getVideo('video-token');
+
+        $this->assertSame('video-token', $video->getToken());
+        $this->assertSame(['mp4' => 'https://cdn.example.test/video.mp4'], $video->getUrls());
+        $this->assertSame(['url' => 'https://cdn.example.test/thumb.jpg'], $video->getThumbnail());
+        $this->assertSame(1920, $video->getWidth());
+        $this->assertSame(1080, $video->getHeight());
+        $this->assertSame(42, $video->getDuration());
+    }
+
     public function testUploadDelegatesToCreateAndPushBinary(): void
     {
         $createResponse = $this->createJsonResponse($this, json_encode([

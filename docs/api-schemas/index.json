@@ -1,5 +1,5 @@
 {
-    "generated_at": "2026-04-27T07:42:43+00:00",
+    "generated_at": "2026-04-27T12:43:29+00:00",
     "source": "Generated from local live API evidence. The published schema pack excludes raw-dump file references.",
     "anonymization": "Sensitive ids, usernames, bot/user names, URLs, tokens and message-like values are replaced with XXXX.",
     "methods": {
@@ -21,6 +21,12 @@
             "http_method": "GET",
             "uri_template": "https://platform-api.max.ru/chats/XXXX"
         },
+        "chats.getPinnedMessage": {
+            "file": "methods/chats.getpinnedmessage.schema.json",
+            "outcome": "ok",
+            "http_method": "GET",
+            "uri_template": "https://platform-api.max.ru/chats/XXXX/pin"
+        },
         "chats.list": {
             "file": "methods/chats.list.schema.json",
             "outcome": "ok",
@@ -39,9 +45,33 @@
             "http_method": "GET",
             "uri_template": "https://platform-api.max.ru/chats/XXXX/members"
         },
+        "chats.pin": {
+            "file": "methods/chats.pin.schema.json",
+            "outcome": "ok",
+            "http_method": "PUT",
+            "uri_template": "https://platform-api.max.ru/chats/XXXX/pin"
+        },
+        "chats.sendAction": {
+            "file": "methods/chats.sendaction.schema.json",
+            "outcome": "ok",
+            "http_method": "POST",
+            "uri_template": "https://platform-api.max.ru/chats/XXXX/actions"
+        },
+        "chats.unpin": {
+            "file": "methods/chats.unpin.schema.json",
+            "outcome": "ok",
+            "http_method": "DELETE",
+            "uri_template": "https://platform-api.max.ru/chats/XXXX/pin"
+        },
+        "chats.update": {
+            "file": "methods/chats.update.schema.json",
+            "outcome": "ok",
+            "http_method": "PATCH",
+            "uri_template": "https://platform-api.max.ru/chats/XXXX"
+        },
         "messages.answerCallback": {
             "file": "methods/messages.answercallback.schema.json",
-            "outcome": "error",
+            "outcome": "ok",
             "http_method": "POST",
             "uri_template": "https://platform-api.max.ru/answers?callback_id=XXXX"
         },
@@ -111,11 +141,17 @@
             "http_method": "POST",
             "uri_template": "https://platform-api.max.ru/uploads?type=XXXX"
         },
+        "uploads.getVideo": {
+            "file": "methods/uploads.getvideo.schema.json",
+            "outcome": "ok",
+            "http_method": "GET",
+            "uri_template": "https://platform-api.max.ru/videos/XXXX"
+        },
         "uploads.pushBinary": {
             "file": "methods/uploads.pushbinary.schema.json",
             "outcome": "ok",
             "http_method": "POST",
-            "uri_template": "https://fu.oneme.ru/api/upload.do?sig=XXXX&expires=XXXX&clientType=XXXX&id=XXXX&userId=XXXX"
+            "uri_template": "https://vu.okcdn.ru/upload.do?sig=XXXX&expires=XXXX&clientType=XXXX&saveOriginal=XXXX&id=XXXX&userId=XXXX&cid=XXXX"
         },
         "uploads.upload": {
             "file": "methods/uploads.upload.schema.json",

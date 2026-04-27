@@ -119,6 +119,100 @@ $link = NewMessageLink::replyTo('mid.ffffbcbf8f1f1a1c019dc384145f5a67');
 
 Источник: `docs/api-schemas/index.json`
 
+## `UpdateChatPayload`
+
+Назначение: изменение title, icon, pinned message и notify-флага для чата.
+
+Публичные методы:
+
+- `create(): self`
+- `withIcon(array $icon): self`
+- `withTitle(string $title): self`
+- `withPinnedMessageId(string $messageId): self`
+- `withNotify(bool $notify): self`
+- `toRequestArray(): array`
+
+Валидация:
+
+- payload не может быть пустым
+- `title` должен быть длиной `1..200`
+- `icon` не может быть пустым массивом
+- `pin` не может быть пустой строкой
+
+Пример:
+
+```php
+use Webtolk\Max\Payload\UpdateChatPayload;
+
+$payload = UpdateChatPayload::create()
+    ->withTitle('Новый заголовок чата')
+    ->withNotify(true);
+```
+
+## `PinChatMessagePayload`
+
+Назначение: payload для закрепления сообщения в чате.
+
+Публичные методы:
+
+- `create(string $messageId): self`
+- `withNotify(bool $notify): self`
+- `toRequestArray(): array`
+
+Пример:
+
+```php
+use Webtolk\Max\Payload\PinChatMessagePayload;
+
+$payload = PinChatMessagePayload::create('mid.123')->withNotify(false);
+```
+
+## `AddChatMembersPayload`
+
+Назначение: payload для добавления нескольких пользователей в чат.
+
+Публичные методы:
+
+- `create(int ...$userIds): self`
+- `toRequestArray(): array`
+
+Валидация:
+
+- список `user_ids` не может быть пустым
+- `user_ids` должны быть положительными целыми числами
+
+## `ChatAdminAssignment`
+
+Назначение: описание одного администратора при назначении admin rights.
+
+Публичные методы:
+
+- `forUser(int $userId): self`
+- `withPermissions(string ...$permissions): self`
+- `withAlias(string $alias): self`
+- `toRequestArray(): array`
+
+## `AddChatAdminsPayload`
+
+Назначение: payload для назначения одного или нескольких администраторов чата.
+
+Публичные методы:
+
+- `create(ChatAdminAssignment ...$admins): self`
+- `withMarker(int $marker): self`
+- `toRequestArray(): array`
+
+## `SenderAction`
+
+Enum:
+
+- `SenderAction::TYPING_ON`
+- `SenderAction::SENDING_PHOTO`
+- `SenderAction::SENDING_VIDEO`
+- `SenderAction::SENDING_AUDIO`
+- `SenderAction::SENDING_FILE`
+- `SenderAction::MARK_SEEN`
+
 ## `CallbackAnswerPayload`
 
 Назначение: ответ на callback button.
@@ -140,6 +234,16 @@ $link = NewMessageLink::replyTo('mid.ffffbcbf8f1f1a1c019dc384145f5a67');
 ```json
 {
   "notification": "smoke callback answer"
+}
+```
+
+Источник: `docs/api-schemas/index.json`
+
+Подтверждённый результат вызова `messages.answerCallback()` в актуальном schema pack:
+
+```json
+{
+  "success": true
 }
 ```
 

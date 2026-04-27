@@ -98,4 +98,4 @@ var_dump($bot->toArray());
 - До вызова `setTransport()` модули использовать нельзя.
 - `messages.getById()` использует `GET /messages` с параметром `message_ids`.
 - Для `video` и `audio` после успешного upload возможен временный `attachment.not.ready`.
-- `messages.answerCallback()` зависит от callback-события со стороны MAX. В текущих артефактах нет подтверждённого успешного live response.
+- `messages.answerCallback()` зависит от callback-события со стороны MAX. В текущем schema pack уже есть подтверждённый успешный live response, но `reply_update` как отдельный live sample пока не сохранён.

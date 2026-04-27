@@ -21,7 +21,7 @@
 composer require webtolk/max
 ```
 
-Практический вариант для Joomla-oriented bootstrap:
+Установка вместе со всеми необходимыми библиотеками. HTTP-клиент может быть любой: Guzzle, Joomla, Simphony и т.д.
 
 ```bash
 composer require webtolk/max joomla/http laminas/laminas-diactoros
@@ -34,11 +34,11 @@ Runtime requirements:
 - `ext-mbstring`
 - `ext-pcre`
 
-Важно: SDK не создаёт transport сам. До первого вызова любого модуля нужно передать HTTP client и PSR-17 factories через `Max::setTransport()`.
+Важно: SDK не создаёт transport сам. До первого вызова любого модуля нужно передать HTTP client и PSR-17 фабрики через `Max::setTransport()`.
 
 ## Quick Start
 
-Пример ниже показывает типичный bootstrap с Joomla HTTP Client.
+Пример ниже показывает типичный старт с Joomla HTTP Client.
 
 ```php
 <?php
@@ -75,7 +75,7 @@ echo 'Username: ' . $bot->getUsername() . PHP_EOL;
 
 $message = $max->messages()->sendToChat(
     123456,
-    NewMessageBody::text('Привет из Joomla-ориентированного MAX SDK')
+    NewMessageBody::text('Привет из MAX SDK')
 );
 
 echo 'Message text: ' . ($message->getBody()?->getText() ?? '') . PHP_EOL;
@@ -102,6 +102,17 @@ echo 'Message text: ' . ($message->getBody()?->getText() ?? '') . PHP_EOL;
 - `chats()->members()` — участники
 - `chats()->memberMe()` — текущий участник
 - `chats()->admins()` — администраторы
+- `chats()->update()` — изменение названия, иконки и pinned message
+- `chats()->delete()` — удаление чата
+- `chats()->getPinnedMessage()` — чтение закреплённого сообщения
+- `chats()->pin()` — закрепление сообщения
+- `chats()->unpin()` — снятие закрепления
+- `chats()->addMembers()` — добавление участников
+- `chats()->removeMember()` — удаление участника
+- `chats()->leave()` — выход бота из чата
+- `chats()->addAdmins()` — назначение администраторов
+- `chats()->removeAdmin()` — снятие прав администратора
+- `chats()->sendAction()` — отправка typing/photo/video/audio/file/seen action
 
 ### Messages
 
@@ -116,6 +127,7 @@ echo 'Message text: ' . ($message->getBody()?->getText() ?? '') . PHP_EOL;
 ### Uploads
 
 - `uploads()->create()` — получить upload URL
+- `uploads()->getVideo()` — получить метаданные видео по токену
 - `uploads()->pushBinary()` — отправить бинарные данные на upload host
 - `uploads()->upload()` — пройти весь upload flow одним вызовом
 
@@ -138,7 +150,7 @@ echo 'Message text: ' . ($message->getBody()?->getText() ?? '') . PHP_EOL;
 - До вызова `setTransport()` модули использовать нельзя.
 - `messages.getById()` использует `GET /messages` с параметром `message_ids`.
 - Для `audio` и `video` после успешной загрузки возможен временный `attachment.not.ready`.
-- Для `messages.answerCallback()` в публичном schema pack нет подтверждённого success example.
+- Для `messages.answerCallback()` в публичном schema pack уже есть подтверждённый success example.
 
 ## Тестирование
 

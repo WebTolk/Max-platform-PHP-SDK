@@ -233,3 +233,16 @@ SDK гидратирует ответы MAX API в простые entity-объ�
 ```
 
 Источник: `docs/api-schemas/index.json`
+
+## `Video`
+
+Главные методы:
+
+- `getToken()`
+- `getUrls()`
+- `getThumbnail()`
+- `getWidth()`
+- `getHeight()`
+- `getDuration()`
+
+Сущность отражает контракт `GET /videos/{videoToken}` и нужна для чтения метаданных уже загруженного видео-вложения.

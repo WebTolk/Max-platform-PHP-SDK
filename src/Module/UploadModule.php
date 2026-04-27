@@ -7,6 +7,7 @@ namespace Webtolk\Max\Module;
 use Psr\Http\Message\StreamInterface;
 use Webtolk\Max\Entity\UploadResult;
 use Webtolk\Max\Entity\UploadUrl;
+use Webtolk\Max\Entity\Video;
 use Webtolk\Max\Payload\UploadType;
 use Webtolk\Max\Request\UploadRequest;
 
@@ -44,6 +45,20 @@ final class UploadModule
     public function create(UploadType $type): UploadUrl
     {
         return $this->request->create($type);
+    }
+
+    /**
+     * Возвращает метаданные ранее загруженного видео-вложения по его токену.
+     * Нужен, чтобы интеграция могла получить URL-ы воспроизведения, размеры и duration без ручного вызова сырого endpoint-а.
+     *
+     * @param string $videoToken Токен видео-вложения, к которому относится операция.
+     * @return Video Результат метода в виде объекта `Video`, подготовленного для дальнейшего использования в SDK или прикладном коде.
+     * @since v.0.1.0
+     * @link https://dev.max.ru/docs-api/methods/GET/videos/-videoToken-
+     */
+    public function getVideo(string $videoToken): Video
+    {
+        return $this->request->getVideo($videoToken);
     }
 
     /**

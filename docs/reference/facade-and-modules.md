@@ -212,6 +212,147 @@ HTTP: `GET /chats/{chatId}/members/admins`
 
 Источник: `docs/api-schemas/index.json`
 
+### `update(int $chatId, UpdateChatPayload $payload): Chat`
+
+HTTP: `PATCH /chats/{chatId}`
+
+Обновляет информацию о чате: title, icon, pinned message и notify-флаг.
+
+Подтверждённый фрагмент ответа:
+
+```json
+{
+  "chat_id": "XXXX",
+  "type": "chat",
+  "status": "active",
+  "title": "XXXX",
+  "participants_count": 2
+}
+```
+
+Источник: `docs/api-schemas/index.json`
+
+### `delete(int $chatId): OperationResult`
+
+HTTP: `DELETE /chats/{chatId}`
+
+Удаляет чат для всех участников.
+
+Текущая публичная документация для этого метода опирается на официальный контракт MAX API. Публичного schema example для него пока нет.
+
+### `getPinnedMessage(int $chatId): ?Message`
+
+HTTP: `GET /chats/{chatId}/pin`
+
+Возвращает закреплённое сообщение или `null`, если закрепления нет.
+
+Подтверждённый фрагмент ответа:
+
+```json
+{
+  "message": {
+    "recipient": {
+      "chat_id": "XXXX",
+      "chat_type": "chat"
+    },
+    "body": {
+      "mid": "XXXX",
+      "text": "XXXX"
+    }
+  }
+}
+```
+
+Источник: `docs/api-schemas/index.json`
+
+### `pin(int $chatId, PinChatMessagePayload $payload): OperationResult`
+
+HTTP: `PUT /chats/{chatId}/pin`
+
+Закрепляет сообщение в чате.
+
+Подтверждённый фрагмент ответа:
+
+```json
+{
+  "success": true
+}
+```
+
+Источник: `docs/api-schemas/index.json`
+
+### `unpin(int $chatId): OperationResult`
+
+HTTP: `DELETE /chats/{chatId}/pin`
+
+Удаляет закреплённое сообщение в чате.
+
+Подтверждённый фрагмент ответа:
+
+```json
+{
+  "success": true
+}
+```
+
+Источник: `docs/api-schemas/index.json`
+
+### `addMembers(int $chatId, AddChatMembersPayload $payload): OperationResult`
+
+HTTP: `POST /chats/{chatId}/members`
+
+Добавляет одного или нескольких пользователей в чат.
+
+Текущая публичная документация для этого метода опирается на официальный контракт MAX API. Публичного schema example для него пока нет.
+
+### `removeMember(int $chatId, int $userId, ?bool $block = null): OperationResult`
+
+HTTP: `DELETE /chats/{chatId}/members`
+
+Удаляет участника из чата. Дополнительно можно передать `block=true`.
+
+Текущая публичная документация для этого метода опирается на официальный контракт MAX API. Публичного schema example для него пока нет.
+
+### `leave(int $chatId): OperationResult`
+
+HTTP: `DELETE /chats/{chatId}/members/me`
+
+Удаляет текущего бота из участников чата.
+
+Текущая публичная документация для этого метода опирается на официальный контракт MAX API. Публичного schema example для него пока нет.
+
+### `addAdmins(int $chatId, AddChatAdminsPayload $payload): OperationResult`
+
+HTTP: `POST /chats/{chatId}/members/admins`
+
+Назначает одного или нескольких администраторов чата.
+
+Текущая публичная документация для этого метода опирается на официальный контракт MAX API. Публичного schema example для него пока нет.
+
+### `removeAdmin(int $chatId, int $userId): OperationResult`
+
+HTTP: `DELETE /chats/{chatId}/members/admins/{userId}`
+
+Снимает административные права у пользователя.
+
+Текущая публичная документация для этого метода опирается на официальный контракт MAX API. Публичного schema example для него пока нет.
+
+### `sendAction(int $chatId, SenderAction $action): OperationResult`
+
+HTTP: `POST /chats/{chatId}/actions`
+
+Отправляет действие бота в чат, например `typing_on` или `mark_seen`.
+
+Подтверждённый фрагмент ответа:
+
+```json
+{
+  "success": true
+}
+```
+
+Источник: `docs/api-schemas/index.json`
+
 ## `MessageModule`
 
 ### `sendToChat(int $chatId, NewMessageBody $body, ?bool $disableLinkPreview = null): Message`
@@ -370,8 +511,6 @@ HTTP: `POST /answers?callback_id=...`
 
 Используется для ответа на callback-кнопку.
 
-Подтверждённого успешного response example в сохранённых артефактах нет.
-
 Что подтверждено:
 
 - request shape:
@@ -384,8 +523,15 @@ HTTP: `POST /answers?callback_id=...`
 
 Источник request evidence: `docs/api-schemas/index.json`
 
-- в `docs/api-schemas/index.json` метод был `skipped`, потому что `updates.list` не вернул `callback_id`
-- в raw smoke artifacts request уходил, но завершался transport timeout, а не подтверждённым API response
+- успешный response example:
+
+```json
+{
+  "success": true
+}
+```
+
+Источник: `docs/api-schemas/index.json`
 
 ## `UploadModule`
 
@@ -411,6 +557,31 @@ HTTP: `POST /uploads?type=...`
 {
   "url": "https://vu.okcdn.ru/upload.do?...",
   "token": "XXXX"
+}
+```
+
+Источник: `docs/api-schemas/index.json`
+
+### `getVideo(string $videoToken): Video`
+
+HTTP: `GET /videos/{videoToken}`
+
+Возвращает метаданные видео-вложения: token, playback/download URL-ы, thumbnail, размеры и duration.
+
+Подтверждённый фрагмент ответа:
+
+```json
+{
+  "token": "XXXX",
+  "width": 0,
+  "height": 0,
+  "duration": 79619,
+  "urls": {
+    "mp4_480": "XXXX"
+  },
+  "thumbnail": {
+    "url": "XXXX"
+  }
 }
 ```
 

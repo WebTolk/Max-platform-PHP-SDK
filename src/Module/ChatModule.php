@@ -8,6 +8,13 @@ use Webtolk\Max\Entity\Chat;
 use Webtolk\Max\Entity\ChatList;
 use Webtolk\Max\Entity\ChatMember;
 use Webtolk\Max\Entity\ChatMemberList;
+use Webtolk\Max\Entity\Message;
+use Webtolk\Max\Entity\OperationResult;
+use Webtolk\Max\Payload\AddChatAdminsPayload;
+use Webtolk\Max\Payload\AddChatMembersPayload;
+use Webtolk\Max\Payload\PinChatMessagePayload;
+use Webtolk\Max\Payload\SenderAction;
+use Webtolk\Max\Payload\UpdateChatPayload;
 use Webtolk\Max\Query\ChatMembersQuery;
 use Webtolk\Max\Request\ChatRequest;
 
@@ -103,6 +110,61 @@ final class ChatModule
     public function admins(int $chatId): ChatMemberList
     {
         return $this->request->admins($chatId);
+    }
+
+    public function update(int $chatId, UpdateChatPayload $payload): Chat
+    {
+        return $this->request->update($chatId, $payload);
+    }
+
+    public function delete(int $chatId): OperationResult
+    {
+        return $this->request->delete($chatId);
+    }
+
+    public function getPinnedMessage(int $chatId): ?Message
+    {
+        return $this->request->getPinnedMessage($chatId);
+    }
+
+    public function pin(int $chatId, PinChatMessagePayload $payload): OperationResult
+    {
+        return $this->request->pin($chatId, $payload);
+    }
+
+    public function unpin(int $chatId): OperationResult
+    {
+        return $this->request->unpin($chatId);
+    }
+
+    public function addMembers(int $chatId, AddChatMembersPayload $payload): OperationResult
+    {
+        return $this->request->addMembers($chatId, $payload);
+    }
+
+    public function removeMember(int $chatId, int $userId, ?bool $block = null): OperationResult
+    {
+        return $this->request->removeMember($chatId, $userId, $block);
+    }
+
+    public function leave(int $chatId): OperationResult
+    {
+        return $this->request->leave($chatId);
+    }
+
+    public function addAdmins(int $chatId, AddChatAdminsPayload $payload): OperationResult
+    {
+        return $this->request->addAdmins($chatId, $payload);
+    }
+
+    public function removeAdmin(int $chatId, int $userId): OperationResult
+    {
+        return $this->request->removeAdmin($chatId, $userId);
+    }
+
+    public function sendAction(int $chatId, SenderAction $action): OperationResult
+    {
+        return $this->request->sendAction($chatId, $action);
     }
 }
 

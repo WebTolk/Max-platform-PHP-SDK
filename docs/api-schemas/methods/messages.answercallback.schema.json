@@ -2,25 +2,35 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "title": "MAX API method schema: messages.answerCallback",
     "method": "messages.answerCallback",
-    "outcome": "error",
-    "sdk_result_type": null,
+    "outcome": "ok",
+    "sdk_result_type": "Webtolk\\Max\\Entity\\OperationResult",
     "http": {
         "method": "POST",
         "uri_template": "https://platform-api.max.ru/answers?callback_id=XXXX",
-        "status": null
+        "status": 200
     },
     "input_example": {
         "callback_id": "XXXX"
     },
     "request_body_example": {
-        "notification": "smoke callback answer"
+        "notification": "Callback received: XXXX"
     },
-    "response_schema": null,
-    "response_example": null,
-    "error_example": {
-        "type": "XXXX",
-        "message": "XXXX"
+    "response_schema": {
+        "type": "object",
+        "properties": {
+            "success": {
+                "type": "boolean"
+            }
+        },
+        "required": [
+            "success"
+        ],
+        "additionalProperties": true
     },
+    "response_example": {
+        "success": true
+    },
+    "error_example": null,
     "notes": [
         "This is an anonymized development schema, not a raw API dump.",
         "Use response_schema for structural assertions and response_example for field-shape orientation only."

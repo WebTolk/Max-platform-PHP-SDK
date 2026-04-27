@@ -10,24 +10,29 @@
         "status": 200
     },
     "input_example": {
-        "type": "file",
-        "content_type": "text/plain"
+        "type": "video",
+        "content_type": "video/mp4"
     },
     "request_body_example": null,
     "response_schema": {
         "type": "object",
         "properties": {
-            "url": {
+            "retval": {
+                "type": "string"
+            },
+            "raw_body": {
                 "type": "string"
             }
         },
         "required": [
-            "url"
+            "retval",
+            "raw_body"
         ],
         "additionalProperties": true
     },
     "response_example": {
-        "url": "XXXX"
+        "retval": "1",
+        "raw_body": "XXXX"
     },
     "error_example": null,
     "notes": [

@@ -10,7 +10,7 @@
         "status": 200
     },
     "input_example": {
-        "type": "file"
+        "type": "video"
     },
     "request_body_example": null,
     "response_schema": {
@@ -18,15 +18,20 @@
         "properties": {
             "url": {
                 "type": "string"
+            },
+            "token": {
+                "type": "string"
             }
         },
         "required": [
-            "url"
+            "url",
+            "token"
         ],
         "additionalProperties": true
     },
     "response_example": {
-        "url": "XXXX"
+        "url": "XXXX",
+        "token": "XXXX"
     },
     "error_example": null,
     "notes": [

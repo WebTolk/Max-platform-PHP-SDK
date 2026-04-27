@@ -31,10 +31,16 @@
 - `bots.me`
 - `chats.list`
 - `chats.getById`
+- `chats.getPinnedMessage`
 - `chats.members`
 - `chats.memberMe`
 - `chats.admins`
+- `chats.pin`
+- `chats.sendAction`
+- `chats.unpin`
+- `chats.update`
 - `uploads.create`
+- `uploads.getVideo`
 - `uploads.pushBinary`
 - `uploads.upload`
 - `messages.list`
@@ -47,15 +53,11 @@
 - `subscriptions.list`
 - `subscriptions.create`
 - `subscriptions.delete`
+- `messages.answerCallback`
 
 Метод без подтверждённого успешного example:
 
-- `messages.answerCallback`
-
-Для него есть только ограниченное evidence:
-
-- error-oriented schema/example
-- отсутствие подтверждённого success example в публичном schema pack
+- `interaction.reply_update` как отдельный live sample для long-polling reply flow
 
 ## Рекомендация по обновлению документации
 

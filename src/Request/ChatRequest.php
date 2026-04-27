@@ -9,7 +9,14 @@ use Webtolk\Max\Entity\Chat;
 use Webtolk\Max\Entity\ChatList;
 use Webtolk\Max\Entity\ChatMember;
 use Webtolk\Max\Entity\ChatMemberList;
+use Webtolk\Max\Entity\Message;
+use Webtolk\Max\Entity\OperationResult;
+use Webtolk\Max\Payload\AddChatAdminsPayload;
+use Webtolk\Max\Payload\AddChatMembersPayload;
 use Webtolk\Max\Hydration\JsonDecoder;
+use Webtolk\Max\Payload\PinChatMessagePayload;
+use Webtolk\Max\Payload\SenderAction;
+use Webtolk\Max\Payload\UpdateChatPayload;
 use Webtolk\Max\Query\ChatMembersQuery;
 
 /**
@@ -128,6 +135,137 @@ final class ChatRequest
         $payload = JsonDecoder::decode($response);
 
         return new ChatMemberList($payload);
+    }
+
+    public function update(int $chatId, UpdateChatPayload $payload): Chat
+    {
+        $response = $this->httpClient->requestJson(
+            'PATCH',
+            '/chats/' . $chatId,
+            [],
+            [],
+            $payload->toRequestArray(),
+        );
+        $data = JsonDecoder::decode($response);
+
+        return new Chat($data);
+    }
+
+    public function delete(int $chatId): OperationResult
+    {
+        $response = $this->httpClient->requestJson('DELETE', '/chats/' . $chatId);
+        $payload = JsonDecoder::decode($response);
+
+        return new OperationResult($payload);
+    }
+
+    public function getPinnedMessage(int $chatId): ?Message
+    {
+        $response = $this->httpClient->requestJson('GET', '/chats/' . $chatId . '/pin');
+        $payload = JsonDecoder::decode($response);
+        $message = $payload['message'] ?? null;
+
+        return is_array($message) ? new Message($message) : null;
+    }
+
+    public function pin(int $chatId, PinChatMessagePayload $payload): OperationResult
+    {
+        $response = $this->httpClient->requestJson(
+            'PUT',
+            '/chats/' . $chatId . '/pin',
+            [],
+            [],
+            $payload->toRequestArray(),
+        );
+        $data = JsonDecoder::decode($response);
+
+        return new OperationResult($data);
+    }
+
+    public function unpin(int $chatId): OperationResult
+    {
+        $response = $this->httpClient->requestJson('DELETE', '/chats/' . $chatId . '/pin');
+        $payload = JsonDecoder::decode($response);
+
+        return new OperationResult($payload);
+    }
+
+    public function addMembers(int $chatId, AddChatMembersPayload $payload): OperationResult
+    {
+        $response = $this->httpClient->requestJson(
+            'POST',
+            '/chats/' . $chatId . '/members',
+            [],
+            [],
+            $payload->toRequestArray(),
+        );
+        $data = JsonDecoder::decode($response);
+
+        return new OperationResult($data);
+    }
+
+    public function removeMember(int $chatId, int $userId, ?bool $block = null): OperationResult
+    {
+        $query = ['user_id' => $userId];
+        if ($block !== null) {
+            $query['block'] = $block;
+        }
+
+        $response = $this->httpClient->requestJson(
+            'DELETE',
+            '/chats/' . $chatId . '/members',
+            $query,
+        );
+        $payload = JsonDecoder::decode($response);
+
+        return new OperationResult($payload);
+    }
+
+    public function leave(int $chatId): OperationResult
+    {
+        $response = $this->httpClient->requestJson('DELETE', '/chats/' . $chatId . '/members/me');
+        $payload = JsonDecoder::decode($response);
+
+        return new OperationResult($payload);
+    }
+
+    public function addAdmins(int $chatId, AddChatAdminsPayload $payload): OperationResult
+    {
+        $response = $this->httpClient->requestJson(
+            'POST',
+            '/chats/' . $chatId . '/members/admins',
+            [],
+            [],
+            $payload->toRequestArray(),
+        );
+        $data = JsonDecoder::decode($response);
+
+        return new OperationResult($data);
+    }
+
+    public function removeAdmin(int $chatId, int $userId): OperationResult
+    {
+        $response = $this->httpClient->requestJson(
+            'DELETE',
+            '/chats/' . $chatId . '/members/admins/' . $userId,
+        );
+        $payload = JsonDecoder::decode($response);
+
+        return new OperationResult($payload);
+    }
+
+    public function sendAction(int $chatId, SenderAction $action): OperationResult
+    {
+        $response = $this->httpClient->requestJson(
+            'POST',
+            '/chats/' . $chatId . '/actions',
+            [],
+            [],
+            ['action' => $action->value],
+        );
+        $payload = JsonDecoder::decode($response);
+
+        return new OperationResult($payload);
     }
 }
 

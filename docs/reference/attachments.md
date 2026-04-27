@@ -95,11 +95,11 @@ $keyboard = InlineKeyboardAttachment::rows([
 {
   "type": "callback",
   "text": "Подробнее",
-  "data": "details:42"
+  "payload": "details:42"
 }
 ```
 
-Подтверждённого успешного live response с callback-кнопкой в текущих saved artifacts нет.
+Подтверждённый live callback flow теперь есть: успешная callback-кнопка приводит к `message_callback` update и позволяет вызвать `messages.answerCallback()` с `success: true`.
 
 ## Upload flow и attachments
 
@@ -144,4 +144,4 @@ $keyboard = InlineKeyboardAttachment::rows([
 ## Evidence gaps
 
 - Для photo reply flow в публичном репозитории есть только schema-level evidence, без полного raw response artifact.
-- Успешного callback attachment flow с реальным `callback_id` в текущем наборе артефактов нет.
+- Отдельного успешного `reply_update` sample в текущем наборе артефактов всё ещё нет.

@@ -36,7 +36,7 @@ final class NewMessageBodyTest extends TestCase
                     'payload' => [
                         'buttons' => [
                             [
-                                ['type' => 'callback', 'text' => 'ok', 'data' => 'yes'],
+                                ['type' => 'callback', 'text' => 'ok', 'payload' => 'yes'],
                             ],
                         ],
                     ],

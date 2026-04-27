@@ -12,6 +12,7 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamFactoryInterface;
 use Psr\Http\Message\StreamInterface;
+use Psr\Http\Message\UriInterface;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 use Webtolk\Max\Config\MaxConfig;
@@ -117,7 +118,7 @@ final class PsrHttpClient implements ApiTransportInterface
 
         $this->logger->debug('MAX API request', [
             'method' => $method,
-            'uri' => (string)$request->getUri(),
+            'uri' => self::sanitizeUri($request->getUri()),
             'headers' => self::sanitizeHeaders($request->getHeaders()),
             'body' => $requestBody !== null ? $this->truncateBody($requestBody) : null,
             'body_length' => $requestBody !== null ? strlen($requestBody) : 0,
@@ -166,7 +167,7 @@ final class PsrHttpClient implements ApiTransportInterface
 
         $this->logger->debug('MAX API request', [
             'method' => 'POST',
-            'uri' => (string)$request->getUri(),
+            'uri' => self::sanitizeUri($request->getUri()),
             'headers' => self::sanitizeHeaders($request->getHeaders()),
             'body' => $requestBody !== null ? $this->truncateBody($requestBody) : null,
             'body_length' => $requestBody !== null ? strlen($requestBody) : null,
@@ -195,7 +196,7 @@ final class PsrHttpClient implements ApiTransportInterface
         } catch (ClientExceptionInterface $e) {
             $this->logger->warning('MAX API transport error', [
                 'method' => $request->getMethod(),
-                'uri' => (string)$request->getUri(),
+                'uri' => self::sanitizeUri($request->getUri()),
                 'error' => $e->getMessage(),
             ]);
             throw new TransportException($e->getMessage(), $e);
@@ -342,6 +343,52 @@ final class PsrHttpClient implements ApiTransportInterface
         }
 
         return $sanitized;
+    }
+
+    /**
+     * Готовит URI для логирования без утечки query values.
+     *
+     * @param UriInterface $uri Полный URI исходящего запроса.
+     * @return array<string, mixed>
+     */
+    private static function sanitizeUri(UriInterface $uri): array
+    {
+        return [
+            'scheme' => $uri->getScheme(),
+            'host' => $uri->getHost(),
+            'path' => $uri->getPath(),
+            'query_keys' => self::extractQueryKeys($uri->getQuery()),
+        ];
+    }
+
+    /**
+     * Возвращает только имена query-параметров для безопасного логирования.
+     *
+     * @param string $query Исходная query string без символа `?`.
+     * @return list<string>
+     */
+    private static function extractQueryKeys(string $query): array
+    {
+        if ($query === '') {
+            return [];
+        }
+
+        $keys = [];
+        foreach (explode('&', $query) as $part) {
+            if ($part === '') {
+                continue;
+            }
+
+            $key = explode('=', $part, 2)[0];
+            $key = rawurldecode($key);
+            if ($key === '' || in_array($key, $keys, true)) {
+                continue;
+            }
+
+            $keys[] = $key;
+        }
+
+        return $keys;
     }
 
     /**

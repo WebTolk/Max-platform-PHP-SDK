@@ -1,0 +1,28 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "MAX API method schema: messages.answerCallback",
+    "method": "messages.answerCallback",
+    "outcome": "error",
+    "sdk_result_type": null,
+    "http": {
+        "method": "POST",
+        "uri_template": "https://platform-api.max.ru/answers?callback_id=XXXX",
+        "status": null
+    },
+    "input_example": {
+        "callback_id": "XXXX"
+    },
+    "request_body_example": {
+        "notification": "smoke callback answer"
+    },
+    "response_schema": null,
+    "response_example": null,
+    "error_example": {
+        "type": "XXXX",
+        "message": "XXXX"
+    },
+    "notes": [
+        "This is an anonymized development schema, not a raw API dump.",
+        "Use response_schema for structural assertions and response_example for field-shape orientation only."
+    ]
+}

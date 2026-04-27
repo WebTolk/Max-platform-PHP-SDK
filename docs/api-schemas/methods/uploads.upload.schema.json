@@ -1,0 +1,37 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "MAX API method schema: uploads.upload",
+    "method": "uploads.upload",
+    "outcome": "ok",
+    "sdk_result_type": "Webtolk\\Max\\Entity\\UploadResult",
+    "http": {
+        "method": "POST",
+        "uri_template": "https://platform-api.max.ru/uploads?type=XXXX",
+        "status": 200
+    },
+    "input_example": {
+        "type": "file",
+        "content_type": "text/plain"
+    },
+    "request_body_example": null,
+    "response_schema": {
+        "type": "object",
+        "properties": {
+            "url": {
+                "type": "string"
+            }
+        },
+        "required": [
+            "url"
+        ],
+        "additionalProperties": true
+    },
+    "response_example": {
+        "url": "XXXX"
+    },
+    "error_example": null,
+    "notes": [
+        "This is an anonymized development schema, not a raw API dump.",
+        "Use response_schema for structural assertions and response_example for field-shape orientation only."
+    ]
+}

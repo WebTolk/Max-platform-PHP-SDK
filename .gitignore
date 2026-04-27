@@ -1,0 +1,10 @@
+/vendor/
+/.idea/
+/.tmp/
+/.phpunit.result.cache
+/.env
+/docs-local/
+/.agents/
+/.serena/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,143 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "MAX API method schema: messages.sendToUser",
+    "method": "messages.sendToUser",
+    "outcome": "ok",
+    "sdk_result_type": "Webtolk\\Max\\Entity\\Message",
+    "http": {
+        "method": "POST",
+        "uri_template": "https://platform-api.max.ru/messages?user_id=XXXX",
+        "status": 200
+    },
+    "input_example": {
+        "user_id": "XXXX",
+        "text": "XXXX"
+    },
+    "request_body_example": {
+        "text": "XXXX"
+    },
+    "response_schema": {
+        "type": "object",
+        "properties": {
+            "message": {
+                "type": "object",
+                "properties": {
+                    "recipient": {
+                        "type": "object",
+                        "properties": {
+                            "chat_id": {
+                                "type": "integer"
+                            },
+                            "chat_type": {
+                                "type": "string"
+                            },
+                            "user_id": {
+                                "type": "integer"
+                            }
+                        },
+                        "required": [
+                            "chat_id",
+                            "chat_type",
+                            "user_id"
+                        ],
+                        "additionalProperties": true
+                    },
+                    "timestamp": {
+                        "type": "integer"
+                    },
+                    "body": {
+                        "type": "object",
+                        "properties": {
+                            "mid": {
+                                "type": "string"
+                            },
+                            "seq": {
+                                "type": "integer"
+                            },
+                            "text": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "mid",
+                            "seq",
+                            "text"
+                        ],
+                        "additionalProperties": true
+                    },
+                    "sender": {
+                        "type": "object",
+                        "properties": {
+                            "user_id": {
+                                "type": "integer"
+                            },
+                            "first_name": {
+                                "type": "string"
+                            },
+                            "username": {
+                                "type": "string"
+                            },
+                            "is_bot": {
+                                "type": "boolean"
+                            },
+                            "last_activity_time": {
+                                "type": "integer"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "user_id",
+                            "first_name",
+                            "username",
+                            "is_bot",
+                            "last_activity_time",
+                            "name"
+                        ],
+                        "additionalProperties": true
+                    }
+                },
+                "required": [
+                    "recipient",
+                    "timestamp",
+                    "body",
+                    "sender"
+                ],
+                "additionalProperties": true
+            }
+        },
+        "required": [
+            "message"
+        ],
+        "additionalProperties": true
+    },
+    "response_example": {
+        "message": {
+            "recipient": {
+                "chat_id": "XXXX",
+                "chat_type": "dialog",
+                "user_id": "XXXX"
+            },
+            "timestamp": "XXXX",
+            "body": {
+                "mid": "XXXX",
+                "seq": "XXXX",
+                "text": "XXXX"
+            },
+            "sender": {
+                "user_id": "XXXX",
+                "first_name": "XXXX",
+                "username": "XXXX",
+                "is_bot": true,
+                "last_activity_time": "XXXX",
+                "name": "XXXX"
+            }
+        }
+    },
+    "error_example": null,
+    "notes": [
+        "This is an anonymized development schema, not a raw API dump.",
+        "Use response_schema for structural assertions and response_example for field-shape orientation only."
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "MAX API method schema: messages.edit",
+    "method": "messages.edit",
+    "outcome": "ok",
+    "sdk_result_type": "Webtolk\\Max\\Entity\\OperationResult",
+    "http": {
+        "method": "PUT",
+        "uri_template": "https://platform-api.max.ru/messages?message_id=XXXX",
+        "status": 200
+    },
+    "input_example": [],
+    "request_body_example": {
+        "text": "XXXX"
+    },
+    "response_schema": {
+        "type": "object",
+        "properties": {
+            "success": {
+                "type": "boolean"
+            }
+        },
+        "required": [
+            "success"
+        ],
+        "additionalProperties": true
+    },
+    "response_example": {
+        "success": true
+    },
+    "error_example": null,
+    "notes": [
+        "This is an anonymized development schema, not a raw API dump.",
+        "Use response_schema for structural assertions and response_example for field-shape orientation only."
+    ]
+}

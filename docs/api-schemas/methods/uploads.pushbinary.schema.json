@@ -1,0 +1,41 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "MAX API method schema: uploads.pushBinary",
+    "method": "uploads.pushBinary",
+    "outcome": "ok",
+    "sdk_result_type": "Webtolk\\Max\\Entity\\UploadResult",
+    "http": {
+        "method": "POST",
+        "uri_template": "https://fu.oneme.ru/api/upload.do?sig=XXXX&expires=XXXX&clientType=XXXX&id=XXXX&userId=XXXX",
+        "status": 200
+    },
+    "input_example": {
+        "content_type": "text/plain"
+    },
+    "request_body_example": "XXXX\r\nXXXX: form-data; name=\"data\"; filename=\"upload.txt\"\r\nContent-Type: text/plain\r\n\r\nmax-sdk live audit binary\r\nXXXX\r\n",
+    "response_schema": {
+        "type": "object",
+        "properties": {
+            "fileId": {
+                "type": "integer"
+            },
+            "token": {
+                "type": "string"
+            }
+        },
+        "required": [
+            "fileId",
+            "token"
+        ],
+        "additionalProperties": true
+    },
+    "response_example": {
+        "fileId": "XXXX",
+        "token": "XXXX"
+    },
+    "error_example": null,
+    "notes": [
+        "This is an anonymized development schema, not a raw API dump.",
+        "Use response_schema for structural assertions and response_example for field-shape orientation only."
+    ]
+}

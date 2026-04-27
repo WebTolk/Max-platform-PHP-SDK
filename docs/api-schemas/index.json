@@ -1,0 +1,127 @@
+{
+    "generated_at": "2026-04-27T07:42:43+00:00",
+    "source": "Generated from local live API evidence. The published schema pack excludes raw-dump file references.",
+    "anonymization": "Sensitive ids, usernames, bot/user names, URLs, tokens and message-like values are replaced with XXXX.",
+    "methods": {
+        "bots.me": {
+            "file": "methods/bots.me.schema.json",
+            "outcome": "ok",
+            "http_method": "GET",
+            "uri_template": "https://platform-api.max.ru/me"
+        },
+        "chats.admins": {
+            "file": "methods/chats.admins.schema.json",
+            "outcome": "ok",
+            "http_method": "GET",
+            "uri_template": "https://platform-api.max.ru/chats/XXXX/members/admins"
+        },
+        "chats.getById": {
+            "file": "methods/chats.getbyid.schema.json",
+            "outcome": "ok",
+            "http_method": "GET",
+            "uri_template": "https://platform-api.max.ru/chats/XXXX"
+        },
+        "chats.list": {
+            "file": "methods/chats.list.schema.json",
+            "outcome": "ok",
+            "http_method": "GET",
+            "uri_template": "https://platform-api.max.ru/chats?count=XXXX"
+        },
+        "chats.memberMe": {
+            "file": "methods/chats.memberme.schema.json",
+            "outcome": "ok",
+            "http_method": "GET",
+            "uri_template": "https://platform-api.max.ru/chats/XXXX/members/me"
+        },
+        "chats.members": {
+            "file": "methods/chats.members.schema.json",
+            "outcome": "ok",
+            "http_method": "GET",
+            "uri_template": "https://platform-api.max.ru/chats/XXXX/members"
+        },
+        "messages.answerCallback": {
+            "file": "methods/messages.answercallback.schema.json",
+            "outcome": "error",
+            "http_method": "POST",
+            "uri_template": "https://platform-api.max.ru/answers?callback_id=XXXX"
+        },
+        "messages.delete": {
+            "file": "methods/messages.delete.schema.json",
+            "outcome": "ok",
+            "http_method": "DELETE",
+            "uri_template": "https://platform-api.max.ru/messages?message_id=XXXX"
+        },
+        "messages.edit": {
+            "file": "methods/messages.edit.schema.json",
+            "outcome": "ok",
+            "http_method": "PUT",
+            "uri_template": "https://platform-api.max.ru/messages?message_id=XXXX"
+        },
+        "messages.getById": {
+            "file": "methods/messages.getbyid.schema.json",
+            "outcome": "ok",
+            "http_method": "GET",
+            "uri_template": "https://platform-api.max.ru/messages?message_ids=XXXX"
+        },
+        "messages.list": {
+            "file": "methods/messages.list.schema.json",
+            "outcome": "ok",
+            "http_method": "GET",
+            "uri_template": "https://platform-api.max.ru/messages?chat_id=XXXX&count=XXXX"
+        },
+        "messages.sendToChat": {
+            "file": "methods/messages.sendtochat.schema.json",
+            "outcome": "ok",
+            "http_method": "POST",
+            "uri_template": "https://platform-api.max.ru/messages?chat_id=XXXX"
+        },
+        "messages.sendToUser": {
+            "file": "methods/messages.sendtouser.schema.json",
+            "outcome": "ok",
+            "http_method": "POST",
+            "uri_template": "https://platform-api.max.ru/messages?user_id=XXXX"
+        },
+        "subscriptions.create": {
+            "file": "methods/subscriptions.create.schema.json",
+            "outcome": "ok",
+            "http_method": "POST",
+            "uri_template": "https://platform-api.max.ru/subscriptions"
+        },
+        "subscriptions.delete": {
+            "file": "methods/subscriptions.delete.schema.json",
+            "outcome": "ok",
+            "http_method": "DELETE",
+            "uri_template": "https://platform-api.max.ru/subscriptions?url=XXXX"
+        },
+        "subscriptions.list": {
+            "file": "methods/subscriptions.list.schema.json",
+            "outcome": "ok",
+            "http_method": "GET",
+            "uri_template": "https://platform-api.max.ru/subscriptions"
+        },
+        "updates.list": {
+            "file": "methods/updates.list.schema.json",
+            "outcome": "ok",
+            "http_method": "GET",
+            "uri_template": "https://platform-api.max.ru/updates?limit=XXXX&timeout=XXXX"
+        },
+        "uploads.create": {
+            "file": "methods/uploads.create.schema.json",
+            "outcome": "ok",
+            "http_method": "POST",
+            "uri_template": "https://platform-api.max.ru/uploads?type=XXXX"
+        },
+        "uploads.pushBinary": {
+            "file": "methods/uploads.pushbinary.schema.json",
+            "outcome": "ok",
+            "http_method": "POST",
+            "uri_template": "https://fu.oneme.ru/api/upload.do?sig=XXXX&expires=XXXX&clientType=XXXX&id=XXXX&userId=XXXX"
+        },
+        "uploads.upload": {
+            "file": "methods/uploads.upload.schema.json",
+            "outcome": "ok",
+            "http_method": "POST",
+            "uri_template": "https://platform-api.max.ru/uploads?type=XXXX"
+        }
+    }
+}

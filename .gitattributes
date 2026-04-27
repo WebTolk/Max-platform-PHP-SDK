@@ -1,0 +1,14 @@
+* text=auto eol=lf
+
+/.agents export-ignore
+/.github export-ignore
+/.idea export-ignore
+/.serena export-ignore
+/.tmp export-ignore
+/docs-local export-ignore
+/tests export-ignore
+/vendor export-ignore
+/.env export-ignore
+/.gitignore export-ignore
+/.phpunit.result.cache export-ignore
+/phpunit.xml export-ignore

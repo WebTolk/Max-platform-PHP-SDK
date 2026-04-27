@@ -1,0 +1,97 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "MAX API method schema: chats.getById",
+    "method": "chats.getById",
+    "outcome": "ok",
+    "sdk_result_type": "Webtolk\\Max\\Entity\\Chat",
+    "http": {
+        "method": "GET",
+        "uri_template": "https://platform-api.max.ru/chats/XXXX",
+        "status": 200
+    },
+    "input_example": {
+        "chat_id": "XXXX"
+    },
+    "request_body_example": null,
+    "response_schema": {
+        "type": "object",
+        "properties": {
+            "chat_id": {
+                "type": "integer"
+            },
+            "type": {
+                "type": "string"
+            },
+            "status": {
+                "type": "string"
+            },
+            "title": {
+                "type": "string"
+            },
+            "last_event_time": {
+                "type": "integer"
+            },
+            "participants_count": {
+                "type": "integer"
+            },
+            "is_public": {
+                "type": "boolean"
+            },
+            "owner_id": {
+                "type": "integer"
+            },
+            "participants": {
+                "type": "object",
+                "properties": {
+                    "XXXX": {
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "XXXX"
+                ],
+                "additionalProperties": true
+            },
+            "link": {
+                "type": "string"
+            },
+            "messages_count": {
+                "type": "integer"
+            }
+        },
+        "required": [
+            "chat_id",
+            "type",
+            "status",
+            "title",
+            "last_event_time",
+            "participants_count",
+            "is_public",
+            "owner_id",
+            "participants",
+            "link",
+            "messages_count"
+        ],
+        "additionalProperties": true
+    },
+    "response_example": {
+        "chat_id": "XXXX",
+        "type": "chat",
+        "status": "active",
+        "title": "XXXX",
+        "last_event_time": "XXXX",
+        "participants_count": 2,
+        "is_public": false,
+        "owner_id": "XXXX",
+        "participants": {
+            "XXXX": 1777031052966
+        },
+        "link": "XXXX",
+        "messages_count": 14
+    },
+    "error_example": null,
+    "notes": [
+        "This is an anonymized development schema, not a raw API dump.",
+        "Use response_schema for structural assertions and response_example for field-shape orientation only."
+    ]
+}

@@ -1,0 +1,43 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "MAX API method schema: updates.list",
+    "method": "updates.list",
+    "outcome": "ok",
+    "sdk_result_type": "Webtolk\\Max\\Entity\\UpdateList",
+    "http": {
+        "method": "GET",
+        "uri_template": "https://platform-api.max.ru/updates?limit=XXXX&timeout=XXXX",
+        "status": 200
+    },
+    "input_example": {
+        "limit": 5,
+        "timeout": 0
+    },
+    "request_body_example": null,
+    "response_schema": {
+        "type": "object",
+        "properties": {
+            "updates": {
+                "type": "array",
+                "items": []
+            },
+            "marker": {
+                "type": "integer"
+            }
+        },
+        "required": [
+            "updates",
+            "marker"
+        ],
+        "additionalProperties": true
+    },
+    "response_example": {
+        "updates": [],
+        "marker": "XXXX"
+    },
+    "error_example": null,
+    "notes": [
+        "This is an anonymized development schema, not a raw API dump.",
+        "Use response_schema for structural assertions and response_example for field-shape orientation only."
+    ]
+}

@@ -1,0 +1,44 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "MAX API method schema: subscriptions.create",
+    "method": "subscriptions.create",
+    "outcome": "ok",
+    "sdk_result_type": "Webtolk\\Max\\Entity\\OperationResult",
+    "http": {
+        "method": "POST",
+        "uri_template": "https://platform-api.max.ru/subscriptions",
+        "status": 200
+    },
+    "input_example": {
+        "url": "XXXX",
+        "update_types": {
+            "XXXX": "XXXX"
+        }
+    },
+    "request_body_example": {
+        "url": "XXXX",
+        "update_types": {
+            "XXXX": "XXXX"
+        }
+    },
+    "response_schema": {
+        "type": "object",
+        "properties": {
+            "success": {
+                "type": "boolean"
+            }
+        },
+        "required": [
+            "success"
+        ],
+        "additionalProperties": true
+    },
+    "response_example": {
+        "success": true
+    },
+    "error_example": null,
+    "notes": [
+        "This is an anonymized development schema, not a raw API dump.",
+        "Use response_schema for structural assertions and response_example for field-shape orientation only."
+    ]
+}

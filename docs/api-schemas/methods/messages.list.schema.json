@@ -1,0 +1,299 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "MAX API method schema: messages.list",
+    "method": "messages.list",
+    "outcome": "ok",
+    "sdk_result_type": "Webtolk\\Max\\Entity\\MessageList",
+    "http": {
+        "method": "GET",
+        "uri_template": "https://platform-api.max.ru/messages?chat_id=XXXX&count=XXXX",
+        "status": 200
+    },
+    "input_example": {
+        "query": {
+            "chat_id": "XXXX",
+            "count": 1
+        }
+    },
+    "request_body_example": null,
+    "response_schema": {
+        "type": "object",
+        "properties": {
+            "messages": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "recipient": {
+                            "type": "object",
+                            "properties": {
+                                "chat_id": {
+                                    "type": "integer"
+                                },
+                                "chat_type": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "chat_id",
+                                "chat_type"
+                            ],
+                            "additionalProperties": true
+                        },
+                        "timestamp": {
+                            "type": "integer"
+                        },
+                        "body": {
+                            "type": "object",
+                            "properties": {
+                                "mid": {
+                                    "type": "string"
+                                },
+                                "seq": {
+                                    "type": "integer"
+                                },
+                                "text": {
+                                    "type": "string"
+                                },
+                                "attachments": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "payload": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "buttons": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "array",
+                                                            "items": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "url": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "text": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "type": {
+                                                                        "type": "string"
+                                                                    }
+                                                                },
+                                                                "required": [
+                                                                    "url",
+                                                                    "text",
+                                                                    "type"
+                                                                ],
+                                                                "additionalProperties": true
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "required": [
+                                                    "buttons"
+                                                ],
+                                                "additionalProperties": true
+                                            },
+                                            "type": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "payload",
+                                            "type"
+                                        ],
+                                        "additionalProperties": true
+                                    }
+                                }
+                            },
+                            "required": [
+                                "mid",
+                                "seq",
+                                "text",
+                                "attachments"
+                            ],
+                            "additionalProperties": true
+                        },
+                        "sender": {
+                            "type": "object",
+                            "properties": {
+                                "user_id": {
+                                    "type": "integer"
+                                },
+                                "first_name": {
+                                    "type": "string"
+                                },
+                                "username": {
+                                    "type": "string"
+                                },
+                                "is_bot": {
+                                    "type": "boolean"
+                                },
+                                "last_activity_time": {
+                                    "type": "integer"
+                                },
+                                "name": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "user_id",
+                                "first_name",
+                                "username",
+                                "is_bot",
+                                "last_activity_time",
+                                "name"
+                            ],
+                            "additionalProperties": true
+                        },
+                        "link": {
+                            "type": "object",
+                            "properties": {
+                                "type": {
+                                    "type": "string"
+                                },
+                                "message": {
+                                    "type": "object",
+                                    "properties": {
+                                        "mid": {
+                                            "type": "string"
+                                        },
+                                        "seq": {
+                                            "type": "integer"
+                                        },
+                                        "text": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "mid",
+                                        "seq",
+                                        "text"
+                                    ],
+                                    "additionalProperties": true
+                                },
+                                "sender": {
+                                    "type": "object",
+                                    "properties": {
+                                        "user_id": {
+                                            "type": "integer"
+                                        },
+                                        "first_name": {
+                                            "type": "string"
+                                        },
+                                        "last_name": {
+                                            "type": "string"
+                                        },
+                                        "is_bot": {
+                                            "type": "boolean"
+                                        },
+                                        "last_activity_time": {
+                                            "type": "integer"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "user_id",
+                                        "first_name",
+                                        "last_name",
+                                        "is_bot",
+                                        "last_activity_time",
+                                        "name"
+                                    ],
+                                    "additionalProperties": true
+                                },
+                                "chat_id": {
+                                    "type": "integer"
+                                }
+                            },
+                            "required": [
+                                "type",
+                                "message",
+                                "sender",
+                                "chat_id"
+                            ],
+                            "additionalProperties": true
+                        }
+                    },
+                    "required": [
+                        "recipient",
+                        "timestamp",
+                        "body",
+                        "sender",
+                        "link"
+                    ],
+                    "additionalProperties": true
+                }
+            }
+        },
+        "required": [
+            "messages"
+        ],
+        "additionalProperties": true
+    },
+    "response_example": {
+        "messages": {
+            "XXXX": {
+                "recipient": {
+                    "chat_id": "XXXX",
+                    "chat_type": "chat"
+                },
+                "timestamp": "XXXX",
+                "body": {
+                    "mid": "XXXX",
+                    "seq": "XXXX",
+                    "text": "XXXX",
+                    "attachments": {
+                        "XXXX": {
+                            "payload": {
+                                "buttons": {
+                                    "XXXX": {
+                                        "XXXX": {
+                                            "url": "XXXX",
+                                            "text": "XXXX",
+                                            "type": "link"
+                                        }
+                                    }
+                                }
+                            },
+                            "type": "inline_keyboard"
+                        }
+                    }
+                },
+                "sender": {
+                    "user_id": "XXXX",
+                    "first_name": "XXXX",
+                    "username": "XXXX",
+                    "is_bot": true,
+                    "last_activity_time": "XXXX",
+                    "name": "XXXX"
+                },
+                "link": {
+                    "type": "reply",
+                    "message": {
+                        "mid": "XXXX",
+                        "seq": "XXXX",
+                        "text": "XXXX"
+                    },
+                    "sender": {
+                        "user_id": "XXXX",
+                        "first_name": "XXXX",
+                        "last_name": "XXXX",
+                        "is_bot": false,
+                        "last_activity_time": "XXXX",
+                        "name": "XXXX"
+                    },
+                    "chat_id": "XXXX"
+                }
+            }
+        }
+    },
+    "error_example": null,
+    "notes": [
+        "This is an anonymized development schema, not a raw API dump.",
+        "Use response_schema for structural assertions and response_example for field-shape orientation only."
+    ]
+}

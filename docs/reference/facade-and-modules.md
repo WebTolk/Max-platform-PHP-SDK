@@ -587,11 +587,13 @@ HTTP: `GET /videos/{videoToken}`
 
 Источник: `docs/api-schemas/index.json`
 
-### `pushBinary(UploadUrl|string $target, string|StreamInterface $contents, ?string $contentType = null): UploadResult`
+### `pushBinary(UploadUrl $target, string|StreamInterface $contents, ?string $contentType = null): UploadResult`
 
 HTTP: binary `POST` на presigned upload URL
 
 Заливает бинарные данные на уже полученный upload endpoint.
+
+Важно: метод принимает только `UploadUrl`, возвращённый `create()`. SDK валидирует upload URL и не работает с произвольной строкой URL.
 
 Подтверждённый фрагмент ответа для `file` flow:
 

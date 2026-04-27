@@ -65,7 +65,7 @@ final class UploadModule
      * Загружает бинарное содержимое по уже полученному upload URL.
      * Нужен, чтобы отделить этап получения URL от этапа физической отправки файла и поддержать оба сценария использования.
      *
-     * @param UploadUrl|string $target Upload URL или объект `UploadUrl`, указывающий, куда нужно отправить бинарные данные.
+     * @param UploadUrl $target Объект `UploadUrl`, указывающий, куда нужно отправить бинарные данные.
      * @param string|StreamInterface $contents Строка с бинарным содержимым файла либо поток PSR-7 с теми же данными.
      * @param ?string $contentType Явный MIME-тип файла; если `null`, SDK подставит тип по умолчанию для выбранного сценария.
      * @return UploadResult Результат метода в виде объекта `UploadResult`, подготовленного для дальнейшего использования в SDK или прикладном коде.
@@ -73,7 +73,7 @@ final class UploadModule
      * @link https://dev.max.ru/docs-api/methods/POST/uploads
      */
     public function pushBinary(
-        UploadUrl|string $target,
+        UploadUrl $target,
         string|StreamInterface $contents,
         ?string $contentType = null,
     ): UploadResult {

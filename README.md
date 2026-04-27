@@ -2,8 +2,6 @@
 
 `webtolk/max` — framework-agnostic PHP SDK для MAX Platform API с архитектурой `facade + modules + request objects + entities`.
 
-Библиотека не привязана к Joomla на уровне runtime-кода, но отлично встраивается в Joomla-проекты через `joomla/http`. Нам это особенно нравится, поэтому в quick start ниже используется именно Joomla HTTP Client.
-
 ## Что умеет SDK
 
 - работать на PHP `8.1+`
@@ -128,7 +126,7 @@ echo 'Message text: ' . ($message->getBody()?->getText() ?? '') . PHP_EOL;
 
 - `uploads()->create()` — получить upload URL
 - `uploads()->getVideo()` — получить метаданные видео по токену
-- `uploads()->pushBinary()` — отправить бинарные данные на upload host
+- `uploads()->pushBinary()` — отправить бинарные данные на upload host по `UploadUrl`, полученному из `uploads()->create()`
 - `uploads()->upload()` — пройти весь upload flow одним вызовом
 
 ### Subscriptions и Updates

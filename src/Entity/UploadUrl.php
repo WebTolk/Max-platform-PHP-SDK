@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Webtolk\Max\Entity;
 
 use RuntimeException;
+use Webtolk\Max\Exception\ValidationException;
 use Webtolk\Max\Payload\Attachment\AttachmentPayloadInterface;
 use Webtolk\Max\Payload\Attachment\AudioAttachment;
 use Webtolk\Max\Payload\Attachment\FileAttachment;
@@ -21,6 +22,11 @@ use Webtolk\Max\Payload\UploadType;
  */
 final class UploadUrl extends AbstractEntity
 {
+    private const TRUSTED_UPLOAD_HOST_SUFFIXES = [
+        'oneme.ru',
+        'okcdn.ru',
+    ];
+
     private UploadType $type;
 
     /**
@@ -36,6 +42,7 @@ final class UploadUrl extends AbstractEntity
     {
         parent::__construct($rawData);
         $this->type = $type ?? UploadType::from((string)($rawData['type'] ?? UploadType::FILE->value));
+        $this->assertTrustedUrl($this->rawData['url'] ?? null);
     }
 
     /**
@@ -49,6 +56,26 @@ final class UploadUrl extends AbstractEntity
     public function getUrl(): ?string
     {
         return $this->rawData['url'] ?? null;
+    }
+
+    /**
+     * Возвращает доверенный upload URL или выбрасывает исключение.
+     * Нужен, чтобы upload flow работал только с валидным presigned URL, который соответствует ожидаемым upload-host правилам MAX.
+     *
+     * @return string Строковое значение, относящееся к текущему объекту или операции.
+     * @since v.0.1.0
+     * @link https://dev.max.ru/docs-api/methods/POST/uploads
+     */
+    public function requireTrustedUrl(): string
+    {
+        $url = $this->getUrl();
+        if ($url === null || $url === '') {
+            throw new ValidationException('Upload target URL is missing.');
+        }
+
+        $this->assertTrustedUrl($url);
+
+        return $url;
     }
 
     /**
@@ -111,5 +138,43 @@ final class UploadUrl extends AbstractEntity
             UploadType::AUDIO => AudioAttachment::fromToken($token),
             UploadType::FILE => FileAttachment::fromToken($token),
         };
+    }
+
+    /**
+     * Проверяет upload URL на соответствие доверенному контракту SDK.
+     * Нужен, чтобы токен бота не отправлялся на произвольный host вне MAX upload infrastructure.
+     *
+     * @param mixed $url URL webhook endpoint-а или upload endpoint-а, используемый в текущей операции.
+     * @return void Метод ничего не возвращает; эффект достигается через изменение состояния объекта или побочный результат вызова.
+     * @since v.0.1.0
+     * @link https://dev.max.ru/docs-api/methods/POST/uploads
+     */
+    private function assertTrustedUrl(mixed $url): void
+    {
+        if ($url === null || $url === '') {
+            return;
+        }
+
+        if (!is_string($url)) {
+            throw new ValidationException('Upload URL must be a string.');
+        }
+
+        $parts = parse_url($url);
+        if (!is_array($parts) || !isset($parts['scheme'], $parts['host'])) {
+            throw new ValidationException('Upload URL is invalid.');
+        }
+
+        if (strtolower((string)$parts['scheme']) !== 'https') {
+            throw new ValidationException('Upload URL must use HTTPS.');
+        }
+
+        $host = strtolower((string)$parts['host']);
+        foreach (self::TRUSTED_UPLOAD_HOST_SUFFIXES as $suffix) {
+            if ($host === $suffix || str_ends_with($host, '.' . $suffix)) {
+                return;
+            }
+        }
+
+        throw new ValidationException('Upload URL host is not trusted.');
     }
 }

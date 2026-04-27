@@ -6,7 +6,6 @@ namespace Webtolk\Max\Request;
 
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
-use ValueError;
 use Webtolk\Max\Entity\UploadResult;
 use Webtolk\Max\Entity\UploadUrl;
 use Webtolk\Max\Entity\Video;
@@ -77,7 +76,7 @@ final class UploadRequest
      * Отправляет бинарные данные или multipart payload на upload host.
      * Нужен, чтобы завершить второй шаг upload flow и вернуть `UploadResult` с итоговым токеном вложения.
      *
-     * @param UploadUrl|string $target Upload URL или объект `UploadUrl`, указывающий, куда нужно отправить бинарные данные.
+     * @param UploadUrl $target Объект `UploadUrl`, указывающий, куда нужно отправить бинарные данные.
      * @param string|StreamInterface $contents Строка с бинарным содержимым файла либо поток PSR-7 с теми же данными.
      * @param ?string $contentType Явный MIME-тип файла; если `null`, SDK подставит тип по умолчанию для выбранного сценария.
      * @return UploadResult Результат метода в виде объекта `UploadResult`, подготовленного для дальнейшего использования в SDK или прикладном коде.
@@ -85,13 +84,13 @@ final class UploadRequest
      * @link https://dev.max.ru/docs-api/methods/POST/uploads
      */
     public function pushBinary(
-        UploadUrl|string $target,
+        UploadUrl $target,
         string|StreamInterface $contents,
         ?string $contentType = null,
     ): UploadResult {
-        $url = $this->resolveTargetUrl($target);
-        $type = $this->resolveUploadType($target, $url);
-        $initialToken = $target instanceof UploadUrl ? $target->getToken() : null;
+        $url = $target->requireTrustedUrl();
+        $type = $target->getType();
+        $initialToken = $target->getToken();
         [$requestBody, $requestContentType] = $this->buildMultipartRequest($contents, $type, $contentType);
 
         $response = $this->httpClient->requestBinary($url, $requestBody, $requestContentType);
@@ -123,56 +122,6 @@ final class UploadRequest
         }
 
         return $this->pushBinary($uploadUrl, $contents, $contentType);
-    }
-
-    /**
-     * Определяет значение `target url` на основе входных данных текущего сценария.
-     * Нужен, чтобы остальной код работал уже с вычисленным и согласованным значением, а не повторял одну и ту же логику.
-     *
-     * @param UploadUrl|string $target Upload URL или объект `UploadUrl`, указывающий, куда нужно отправить бинарные данные.
-     * @return string Строковое значение, относящееся к текущему объекту или операции.
-     * @since v.0.1.0
-     * @link https://dev.max.ru/docs-api/methods/POST/uploads
-     */
-    private function resolveTargetUrl(UploadUrl|string $target): string
-    {
-        $url = is_string($target) ? $target : $target->getUrl();
-        if ($url === null || $url === '') {
-            throw new ValidationException('Upload target URL is missing.');
-        }
-
-        return $url;
-    }
-
-    /**
-     * Определяет значение `upload type` на основе входных данных текущего сценария.
-     * Нужен, чтобы остальной код работал уже с вычисленным и согласованным значением, а не повторял одну и ту же логику.
-     *
-     * @param UploadUrl|string $target Upload URL или объект `UploadUrl`, указывающий, куда нужно отправить бинарные данные.
-     * @param string $url URL webhook endpoint-а или upload endpoint-а, используемый в текущей операции.
-     * @return UploadType Нормализованный тип upload-сценария MAX.
-     * @since v.0.1.0
-     * @link https://dev.max.ru/docs-api/methods/POST/uploads
-     */
-    private function resolveUploadType(UploadUrl|string $target, string $url): UploadType
-    {
-        if ($target instanceof UploadUrl) {
-            return $target->getType();
-        }
-
-        $query = parse_url($url, PHP_URL_QUERY);
-        if (is_string($query)) {
-            parse_str($query, $params);
-            if (isset($params['type']) && is_string($params['type'])) {
-                try {
-                    return UploadType::from($params['type']);
-                } catch (ValueError) {
-                    return UploadType::FILE;
-                }
-            }
-        }
-
-        return UploadType::FILE;
     }
 
     /**

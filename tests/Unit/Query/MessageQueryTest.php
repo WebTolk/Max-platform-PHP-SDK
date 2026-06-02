@@ -23,14 +23,14 @@ final class MessageQueryTest extends TestCase
     public function testForChatBuildsQueryParameters(): void
     {
         $query = MessageQuery::forChat(123)
-            ->fromTimestamp(12)
-            ->toTimestamp(34)
+            ->fromTimestamp(34)
+            ->toTimestamp(12)
             ->withCount(50);
 
         $this->assertSame([
             'chat_id' => 123,
-            'from' => 12,
-            'to' => 34,
+            'from' => 34,
+            'to' => 12,
             'count' => 50,
         ], $query->toQueryParams());
     }
@@ -48,14 +48,27 @@ final class MessageQueryTest extends TestCase
         ], $query->toQueryParams());
     }
 
-    public function testFromTimestampCannotBeGreaterThanToTimestamp(): void
+    public function testFromTimestampMayBeGreaterThanToTimestamp(): void
     {
         $query = MessageQuery::forChat(1)
             ->fromTimestamp(10)
             ->toTimestamp(9);
 
+        $this->assertSame([
+            'chat_id' => 1,
+            'from' => 10,
+            'to' => 9,
+        ], $query->toQueryParams());
+    }
+
+    public function testFromTimestampCannotBeLessThanToTimestamp(): void
+    {
+        $query = MessageQuery::forChat(1)
+            ->fromTimestamp(9)
+            ->toTimestamp(10);
+
         $this->expectException(ValidationException::class);
-        $this->expectExceptionMessage('from must be less than or equal to to.');
+        $this->expectExceptionMessage('from must be greater than or equal to to.');
 
         $query->toQueryParams();
     }

@@ -65,10 +65,10 @@ final class MessageQuery
     }
 
     /**
-     * Устанавливает нижнюю границу интервала выборки сообщений.
-     * Нужен, чтобы ограничить результат сообщениями не раньше указанного времени.
+     * Устанавливает параметр `from` для выборки сообщений.
+     * Нужен, чтобы запросить сообщения с начала чата до указанного времени.
      *
-     * @param int $from Нижняя временная граница выборки в формате Unix time в миллисекундах.
+     * @param int $from Время, до которого будут запрошены сообщения, в формате Unix timestamp.
      * @return self Текущий экземпляр объекта для продолжения fluent-цепочки вызовов.
      * @since v.0.1.0
      * @link https://dev.max.ru/docs-api/methods/GET/messages
@@ -81,10 +81,10 @@ final class MessageQuery
     }
 
     /**
-     * Устанавливает верхнюю границу интервала выборки сообщений.
-     * Нужен, чтобы ограничить результат сообщениями не позже указанного времени.
+     * Устанавливает параметр `to` для выборки сообщений.
+     * Нужен, чтобы запросить сообщения начиная с указанного времени до конца чата.
      *
-     * @param int $to Верхняя временная граница выборки в формате Unix time в миллисекундах.
+     * @param int $to Время, начиная с которого будут запрошены сообщения, в формате Unix timestamp.
      * @return self Текущий экземпляр объекта для продолжения fluent-цепочки вызовов.
      * @since v.0.1.0
      * @link https://dev.max.ru/docs-api/methods/GET/messages
@@ -97,11 +97,11 @@ final class MessageQuery
     }
 
     /**
-     * Задаёт обе временные границы выборки сообщений одним вызовом.
-     * Нужен, чтобы компактно сформировать интервал чтения сообщений в fluent-цепочке.
+     * Задаёт параметры `from` и `to` для выборки сообщений одним вызовом.
+     * Нужен, чтобы компактно сформировать временной фильтр в fluent-цепочке.
      *
-     * @param int $from Нижняя временная граница выборки в формате Unix time в миллисекундах.
-     * @param int $to Верхняя временная граница выборки в формате Unix time в миллисекундах.
+     * @param int $from Время, до которого будут запрошены сообщения, в формате Unix timestamp.
+     * @param int $to Время, начиная с которого будут запрошены сообщения, в формате Unix timestamp.
      * @return self Текущий экземпляр объекта для продолжения fluent-цепочки вызовов.
      * @since v.0.1.0
      * @link https://dev.max.ru/docs-api/methods/GET/messages
@@ -152,8 +152,8 @@ final class MessageQuery
             throw new ValidationException('chat_id and message_ids are mutually exclusive.');
         }
 
-        if ($this->from !== null && $this->to !== null && $this->from > $this->to) {
-            throw new ValidationException('from must be less than or equal to to.');
+        if ($this->from !== null && $this->to !== null && $this->from < $this->to) {
+            throw new ValidationException('from must be greater than or equal to to.');
         }
 
         $params = [];

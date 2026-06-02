@@ -2,6 +2,12 @@
 
 All notable changes to `webtolk/max` will be documented in this file.
 
+## 0.1.1 - 2026-06-02
+
+- Fixed `MessageQuery` validation for `from` and `to` time range parameters.
+- Added unit coverage for the valid `from >= to` range and invalid `from < to` range.
+- Updated query reference documentation for MAX message history time bounds.
+
 ## 0.1.0 - 2026-04-25
 
 - Initial public release candidate of the framework-agnostic MAX Platform API SDK.

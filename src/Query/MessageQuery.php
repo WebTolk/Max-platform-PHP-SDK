@@ -152,6 +152,10 @@ final class MessageQuery
             throw new ValidationException('chat_id and message_ids are mutually exclusive.');
         }
 
+        if ($this->from !== null && $this->to !== null && $this->from < $this->to) {
+            throw new ValidationException('from must be greater than or equal to to.');
+        }
+
         $params = [];
 
         if ($this->forChatSet) {

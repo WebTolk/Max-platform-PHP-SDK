@@ -73,12 +73,26 @@ final class MessageModule
      *
      * @param string $messageId Идентификатор сообщения MAX (`mid`), по которому выполняется операция.
      * @return Message Результат метода в виде объекта `Message`, подготовленного для дальнейшего использования в SDK или прикладном коде.
-     * @since v.0.1.0
-     * @link https://dev.max.ru/docs-api/methods/GET/messages
+     * @since v.0.2.0
+     * @link https://dev.max.ru/docs-api/methods/GET/messages/-messageId-
      */
     public function getById(string $messageId): Message
     {
         return $this->request->getById($messageId);
+    }
+
+    /**
+     * Получает одно сообщение через query-based lookup `GET /messages?message_ids[]`.
+     * Нужен, чтобы сохранить прежний batch-compatible сценарий после добавления прямого endpoint-а `GET /messages/{messageId}`.
+     *
+     * @param string $messageId Идентификатор сообщения MAX (`mid`), по которому выполняется операция.
+     * @return Message Результат метода в виде объекта `Message`, подготовленного для дальнейшего использования в SDK или прикладном коде.
+     * @since v.0.2.0
+     * @link https://dev.max.ru/docs-api/methods/GET/messages
+     */
+    public function getByQueryId(string $messageId): Message
+    {
+        return $this->request->getByQueryId($messageId);
     }
 
     /**

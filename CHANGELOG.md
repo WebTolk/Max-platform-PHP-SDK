@@ -2,6 +2,15 @@
 
 All notable changes to `webtolk/max` will be documented in this file.
 
+## 0.2.0 - 2026-07-05
+
+- Changed the default API host to `https://platform-api2.max.ru`.
+- Added `chats()->getByLink()` for `GET /chats/{chatLink}`.
+- Aligned `messages()->getById()` with direct `GET /messages/{messageId}` and preserved the old query lookup as `messages()->getByQueryId()`.
+- Added typed inline keyboard buttons for `message`, `request_contact`, `request_geo_location`, `open_app` and `clipboard`.
+- Marked `chats()->list()` as deprecated because current MAX documentation says `GET /chats` is no longer supported since June 2026.
+- Refreshed API schemas and live verification notes from the 2026-07-05 MAX documentation snapshot.
+
 ## 0.1.1 - 2026-06-02
 
 - Fixed `MessageQuery` validation for `from` and `to` time range parameters.

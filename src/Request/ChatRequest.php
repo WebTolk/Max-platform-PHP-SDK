@@ -49,6 +49,7 @@ final class ChatRequest
      * @param ?int $count Количество элементов, которое запрашивается у MAX API.
      * @return ChatList Результат метода в виде объекта `ChatList`, подготовленного для дальнейшего использования в SDK или прикладном коде.
      * @since v.0.1.0
+     * @deprecated v.0.2.0 MAX API documentation says GET /chats is no longer supported since June 2026. Collect chat ids from webhook subscription events instead.
      * @link https://dev.max.ru/docs-api/methods/GET/chats
      */
     public function list(?int $marker = null, ?int $count = null): ChatList
@@ -77,6 +78,45 @@ final class ChatRequest
         $payload = JsonDecoder::decode($response);
 
         return new Chat($payload);
+    }
+
+    /**
+     * Выполняет HTTP-запрос `GET /chats/{chatLink}` к MAX API.
+     * Нужен, чтобы получить данные публичного канала по его ссылке и вернуть их как типизированную сущность SDK.
+     *
+     * @param string $chatLink Публичная ссылка канала MAX.
+     * @return Chat Результат метода в виде объекта `Chat`, подготовленного для дальнейшего использования в SDK или прикладном коде.
+     * @since v.0.2.0
+     * @link https://dev.max.ru/docs-api/methods/GET/chats/-chatLink-
+     */
+    public function getByLink(string $chatLink): Chat
+    {
+        $response = $this->httpClient->requestJson('GET', '/chats/' . rawurlencode(self::normalizeChatLink($chatLink)));
+        $payload = JsonDecoder::decode($response);
+
+        return new Chat($payload);
+    }
+
+    private static function normalizeChatLink(string $chatLink): string
+    {
+        $value = trim($chatLink);
+        $parts = parse_url($value);
+        if (!is_array($parts)) {
+            return $value;
+        }
+
+        if (!isset($parts['scheme'])) {
+            return $value;
+        }
+
+        $path = isset($parts['path']) ? trim($parts['path'], '/') : '';
+        if ($path === '') {
+            return $value;
+        }
+
+        $segments = array_values(array_filter(explode('/', $path), static fn (string $segment): bool => $segment !== ''));
+
+        return rawurldecode((string)($segments[array_key_last($segments)] ?? $value));
     }
 
     /**
@@ -206,6 +246,7 @@ final class ChatRequest
 
     public function removeMember(int $chatId, int $userId, ?bool $block = null): OperationResult
     {
+        /** @var array<string, int|bool> $query */
         $query = ['user_id' => $userId];
         if ($block !== null) {
             $query['block'] = $block;

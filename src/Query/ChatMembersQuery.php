@@ -96,7 +96,7 @@ final class ChatMembersQuery
      * Сериализует объект в query-параметры MAX API.
      * Нужен, чтобы request-слой мог построить корректный URL и строку запроса из типизированного объекта.
      *
-     * @return array Массив query-параметров в формате, который ожидает MAX API.
+     * @return array<string, int|list<int>> Массив query-параметров в формате, который ожидает MAX API.
      * @since v.0.1.0
      * @link https://dev.max.ru/docs-api/methods/GET/chats/-chatId-/members
      */

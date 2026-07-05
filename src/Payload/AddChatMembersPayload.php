@@ -11,6 +11,9 @@ final class AddChatMembersPayload
     /** @var list<int> */
     private array $userIds;
 
+    /**
+     * @param list<int> $userIds
+     */
     private function __construct(array $userIds)
     {
         $this->userIds = $userIds;

@@ -1,39 +1,46 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "title": "MAX API method schema: chats.sendAction",
-    "method": "chats.sendAction",
-    "outcome": "ok",
-    "sdk_result_type": "Webtolk\\Max\\Entity\\OperationResult",
-    "http": {
-        "method": "POST",
-        "uri_template": "https://platform-api.max.ru/chats/XXXX/actions",
-        "status": 200
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MAX API method schema: chats.sendAction",
+  "method": "chats.sendAction",
+  "outcome": "ok",
+  "sdk_result_type": "Webtolk\\Max\\Entity\\OperationResult",
+  "http": {
+    "method": "POST",
+    "uri_template": "https://platform-api2.max.ru/chats/XXXX/actions",
+    "status": 200
+  },
+  "input_example": {
+    "chat_id": "XXXX",
+    "action": "typing"
+  },
+  "request_body_example": {
+    "action": "typing"
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      }
     },
-    "input_example": {
-        "chat_id": "XXXX",
-        "action": "typing"
-    },
-    "request_body_example": {
-        "action": "typing"
-    },
-    "response_schema": {
-        "type": "object",
-        "properties": {
-            "success": {
-                "type": "boolean"
-            }
-        },
-        "required": [
-            "success"
-        ],
-        "additionalProperties": true
-    },
-    "response_example": {
-        "success": true
-    },
-    "error_example": null,
-    "notes": [
-        "This is an anonymized development schema, not a raw API dump.",
-        "Use response_schema for structural assertions and response_example for field-shape orientation only."
-    ]
+    "required": [
+      "success"
+    ],
+    "additionalProperties": true
+  },
+  "response_example": {
+    "success": true
+  },
+  "error_example": null,
+  "notes": [
+    "This is an anonymized development schema, not a raw API dump.",
+    "Use response_schema for structural assertions and response_example for field-shape orientation only.",
+    "Live verification was executed against a local integration runner; transport security settings are local-only and are not part of the public API contract."
+  ],
+  "live_verification_2026_07_05": {
+    "date": "2026-07-05",
+    "runner": "local integration runner",
+    "tls_verify": "disabled_for_test_runner_only",
+    "status": "ok"
+  }
 }

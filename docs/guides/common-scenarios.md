@@ -55,6 +55,8 @@ echo $message->getBody()?->getMessageId();
 
 Источник: `docs/api-schemas/index.json`
 
+Для channel posts не добавляйте `->withNotify(false)`: текущий live API отклоняет такие payloads с `errors.send-message.channel-notify`.
+
 ## Отправить сообщение пользователю
 
 ```php
@@ -116,11 +118,11 @@ $message = $max->messages()->getById($messageId);
 use Webtolk\Max\Payload\EditMessageBody;
 
 $max->messages()->edit(
-    'mid.ffffbcbf8f1f1a1c019dc3d048613adf',
+    'XXXX',
     EditMessageBody::text('max-sdk live audit edited')
 );
 
-$max->messages()->delete('mid.ffffbcbf8f1f1a1c019dc3d048613adf');
+$max->messages()->delete('XXXX');
 ```
 
 Подтверждённый фрагмент ответа для обоих методов:

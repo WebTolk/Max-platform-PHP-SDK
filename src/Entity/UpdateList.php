@@ -17,7 +17,7 @@ final class UpdateList extends AbstractEntity
      * Возвращает список обновлений.
      * Нужен, чтобы читать это значение из объекта `UpdateList` без обращения к сырому payload MAX API.
      *
-     * @return array Массив значений, подготовленный или возвращённый этим методом SDK.
+     * @return list<Update> Массив значений, подготовленный или возвращённый этим методом SDK.
      * @since v.0.1.0
      * @link https://dev.max.ru/docs-api/methods/GET/updates
      */

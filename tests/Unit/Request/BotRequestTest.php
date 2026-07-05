@@ -15,7 +15,7 @@ final class BotRequestTest extends TestCase
 
     public function testMeUsesGetEndpointAndHydratesBotInfo(): void
     {
-        $response = $this->createJsonResponse($this, json_encode([
+        $response = $this->createJsonResponse($this, $this->encodeJson([
             'user_id' => 7,
             'first_name' => 'Bot',
             'is_bot' => true,

@@ -21,7 +21,7 @@ final class MessageRequestTest extends TestCase
     {
         $body = NewMessageBody::text('Hello');
 
-        $response = $this->createJsonResponse($this, json_encode([
+        $response = $this->createJsonResponse($this, $this->encodeJson([
             'message' => [
                 'body' => ['text' => 'Hello'],
             ],
@@ -49,7 +49,7 @@ final class MessageRequestTest extends TestCase
     {
         $body = NewMessageBody::text('Hello');
 
-        $response = $this->createJsonResponse($this, json_encode([
+        $response = $this->createJsonResponse($this, $this->encodeJson([
             'message' => [
                 'body' => ['text' => 'Hello'],
             ],
@@ -75,10 +75,47 @@ final class MessageRequestTest extends TestCase
 
     public function testGetByIdUsesMessageEndpoint(): void
     {
-        $response = $this->createJsonResponse($this, json_encode([
+        $response = $this->createJsonResponse($this, $this->encodeJson([
+            'sender' => ['id' => 1],
+            'body' => ['text' => 'x'],
+        ]));
+
+        $httpClient = $this->createMock(ApiTransportInterface::class);
+        $httpClient->expects($this->once())
+            ->method('requestJson')
+            ->with('GET', '/messages/m1')
+            ->willReturn($response);
+
+        $request = new MessageRequest($httpClient);
+        $result = $request->getById('m1');
+
+        $this->assertSame('x', $result->getBody()?->getText());
+    }
+
+    public function testGetByIdEncodesMessageIdPathSegment(): void
+    {
+        $response = $this->createJsonResponse($this, $this->encodeJson([
+            'body' => ['text' => 'encoded'],
+        ]));
+
+        $httpClient = $this->createMock(ApiTransportInterface::class);
+        $httpClient->expects($this->once())
+            ->method('requestJson')
+            ->with('GET', '/messages/mid%2F1')
+            ->willReturn($response);
+
+        $request = new MessageRequest($httpClient);
+        $result = $request->getById('mid/1');
+
+        $this->assertSame('encoded', $result->getBody()?->getText());
+    }
+
+    public function testGetByQueryIdPreservesLegacyMessageIdsLookup(): void
+    {
+        $response = $this->createJsonResponse($this, $this->encodeJson([
             'messages' => [[
                 'sender' => ['id' => 1],
-                'body' => ['text' => 'x'],
+                'body' => ['text' => 'legacy'],
             ]],
         ]));
 
@@ -89,35 +126,16 @@ final class MessageRequestTest extends TestCase
             ->willReturn($response);
 
         $request = new MessageRequest($httpClient);
-        $result = $request->getById('m1');
+        $result = $request->getByQueryId('m1');
 
-        $this->assertSame('x', $result->getBody()?->getText());
-    }
-
-    public function testGetByIdReturnsEmptyMessageWhenPayloadContainsNoMessages(): void
-    {
-        $response = $this->createJsonResponse($this, json_encode([
-            'messages' => [],
-        ]));
-
-        $httpClient = $this->createMock(ApiTransportInterface::class);
-        $httpClient->expects($this->once())
-            ->method('requestJson')
-            ->with('GET', '/messages', ['message_ids' => ['m1']])
-            ->willReturn($response);
-
-        $request = new MessageRequest($httpClient);
-        $result = $request->getById('m1');
-
-        $this->assertNull($result->getBody());
-        $this->assertSame([], $result->toArray());
+        $this->assertSame('legacy', $result->getBody()?->getText());
     }
 
     public function testSendToUserBuildsRequestPayload(): void
     {
         $body = NewMessageBody::text('Private hello');
 
-        $response = $this->createJsonResponse($this, json_encode([
+        $response = $this->createJsonResponse($this, $this->encodeJson([
             'message' => [
                 'body' => ['text' => 'Private hello'],
             ],
@@ -145,7 +163,7 @@ final class MessageRequestTest extends TestCase
     {
         $body = NewMessageBody::text('Private hello');
 
-        $response = $this->createJsonResponse($this, json_encode([
+        $response = $this->createJsonResponse($this, $this->encodeJson([
             'message' => [
                 'body' => ['text' => 'Private hello'],
             ],
@@ -172,7 +190,7 @@ final class MessageRequestTest extends TestCase
     public function testListUsesQueryObject(): void
     {
         $query = MessageQuery::forChat(3)->withCount(2);
-        $response = $this->createJsonResponse($this, json_encode([
+        $response = $this->createJsonResponse($this, $this->encodeJson([
             'messages' => [['body' => ['text' => 'a']]],
         ]));
 
@@ -194,7 +212,7 @@ final class MessageRequestTest extends TestCase
 
     public function testEditReturnsOperationResult(): void
     {
-        $response = $this->createJsonResponse($this, json_encode([
+        $response = $this->createJsonResponse($this, $this->encodeJson([
             'success' => true,
         ]));
 
@@ -212,7 +230,7 @@ final class MessageRequestTest extends TestCase
 
     public function testDeleteReturnsOperationResult(): void
     {
-        $response = $this->createJsonResponse($this, json_encode([
+        $response = $this->createJsonResponse($this, $this->encodeJson([
             'success' => true,
             'message' => 'deleted',
         ]));
@@ -232,7 +250,7 @@ final class MessageRequestTest extends TestCase
 
     public function testAnswerCallbackBuildsPostPayload(): void
     {
-        $response = $this->createJsonResponse($this, json_encode([
+        $response = $this->createJsonResponse($this, $this->encodeJson([
             'success' => true,
         ]));
 

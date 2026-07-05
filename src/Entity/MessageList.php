@@ -17,7 +17,7 @@ final class MessageList extends AbstractEntity
      * Возвращает список сообщений.
      * Нужен, чтобы читать это значение из объекта `MessageList` без обращения к сырому payload MAX API.
      *
-     * @return array Массив значений, подготовленный или возвращённый этим методом SDK.
+     * @return list<Message> Массив значений, подготовленный или возвращённый этим методом SDK.
      * @since v.0.1.0
      * @link https://dev.max.ru/docs-api/methods/GET/messages
      */

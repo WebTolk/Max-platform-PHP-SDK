@@ -23,7 +23,7 @@ final class UpdateTypeNormalizer
      * Нужен, чтобы SDK принимал удобные или исторические alias-значения и отправлял на wire только актуальные имена.
      *
      * @param list<string> $types Список имён типов обновлений, которые нужно нормализовать или отправить в API.
-     * @return array Массив значений, подготовленный или возвращённый этим методом SDK.
+     * @return list<string> Массив значений, подготовленный или возвращённый этим методом SDK.
      * @since v.0.1.0
      * @link https://dev.max.ru/docs-api/methods/GET/updates
      */
@@ -32,7 +32,7 @@ final class UpdateTypeNormalizer
         $normalized = [];
 
         foreach ($types as $type) {
-            if (!is_string($type) || $type === '') {
+            if ($type === '') {
                 continue;
             }
 

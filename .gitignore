@@ -3,9 +3,16 @@
 /.tmp/
 /.phpunit.result.cache
 /.php-cs-fixer.cache
+/.phpstan.resultCache
 /.env
 /docs-local/
 /.agents/
+/.agents.backup-*/
+/.webtolk/
 /.serena/
+/.playwright-mcp/
+/playwright-report/
+/test-results/
+/max-api-buttons-dom-*.json
 .DS_Store
 Thumbs.db

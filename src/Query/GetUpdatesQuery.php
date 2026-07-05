@@ -103,7 +103,7 @@ final class GetUpdatesQuery
      */
     public function withTypes(string ...$types): self
     {
-        $this->types = UpdateTypeNormalizer::normalize($types);
+        $this->types = UpdateTypeNormalizer::normalize(array_values($types));
 
         return $this;
     }
@@ -112,7 +112,7 @@ final class GetUpdatesQuery
      * Сериализует объект в query-параметры MAX API.
      * Нужен, чтобы request-слой мог построить корректный URL и строку запроса из типизированного объекта.
      *
-     * @return array Массив query-параметров в формате, который ожидает MAX API.
+     * @return array<string, int|list<string>> Массив query-параметров в формате, который ожидает MAX API.
      * @since v.0.1.0
      * @link https://dev.max.ru/docs-api/methods/GET/updates
      */

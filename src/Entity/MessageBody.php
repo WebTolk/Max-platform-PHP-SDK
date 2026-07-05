@@ -52,7 +52,7 @@ final class MessageBody extends AbstractEntity
      * Возвращает вложения.
      * Нужен, чтобы читать это значение из объекта `MessageBody` без обращения к сырому payload MAX API.
      *
-     * @return array Массив значений, подготовленный или возвращённый этим методом SDK.
+     * @return list<mixed> Массив значений, подготовленный или возвращённый этим методом SDK.
      * @since v.0.1.0
      */
     public function getAttachments(): array
@@ -69,7 +69,7 @@ final class MessageBody extends AbstractEntity
      * Возвращает разметку.
      * Нужен, чтобы читать это значение из объекта `MessageBody` без обращения к сырому payload MAX API.
      *
-     * @return array Массив значений, подготовленный или возвращённый этим методом SDK.
+     * @return list<mixed> Массив значений, подготовленный или возвращённый этим методом SDK.
      * @since v.0.1.0
      */
     public function getMarkup(): array

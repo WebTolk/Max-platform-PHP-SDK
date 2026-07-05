@@ -69,7 +69,7 @@ final class Chat extends AbstractEntity
      * Возвращает иконку.
      * Нужен, чтобы читать это значение из объекта `Chat` без обращения к сырому payload MAX API.
      *
-     * @return ?array Результат метода в виде объекта `?array`, подготовленного для дальнейшего использования в SDK или прикладном коде.
+     * @return ?array<string, mixed> Результат метода в виде объекта `?array`, подготовленного для дальнейшего использования в SDK или прикладном коде.
      * @since v.0.1.0
      * @link https://dev.max.ru/docs-api/objects/Chat
      */
@@ -122,7 +122,7 @@ final class Chat extends AbstractEntity
      * Возвращает список участников.
      * Нужен, чтобы читать это значение из объекта `Chat` без обращения к сырому payload MAX API.
      *
-     * @return array Массив значений, подготовленный или возвращённый этим методом SDK.
+     * @return array<int|string, mixed> Массив значений, подготовленный или возвращённый этим методом SDK.
      * @since v.0.1.0
      * @link https://dev.max.ru/docs-api/objects/Chat
      */

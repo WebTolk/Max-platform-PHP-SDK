@@ -20,7 +20,7 @@ final class JsonDecoder
      * Нужен, чтобы последующие слои SDK работали с уже разобранным payload, а не с сырой строкой ответа.
      *
      * @param ResponseInterface $response HTTP-ответ PSR-7, полученный от transport-слоя и ещё не преобразованный в сущность SDK.
-     * @return array Массив значений, подготовленный или возвращённый этим методом SDK.
+     * @return array<string, mixed> Массив значений, подготовленный или возвращённый этим методом SDK.
      * @since v.0.1.0
      * @link https://dev.max.ru/docs-api/index
      */
@@ -40,6 +40,15 @@ final class JsonDecoder
             throw new HydrationException('Response JSON is not an associative or sequential array');
         }
 
-        return $data;
+        $result = [];
+        foreach ($data as $key => $value) {
+            if (!is_string($key)) {
+                throw new HydrationException('Response JSON root must be an object');
+            }
+
+            $result[$key] = $value;
+        }
+
+        return $result;
     }
 }

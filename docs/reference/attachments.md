@@ -36,10 +36,14 @@ Attachment classes нужны для поля `attachments` в `NewMessageBody` 
 
 ```php
 use Webtolk\Max\Payload\Attachment\InlineKeyboardAttachment;
+use Webtolk\Max\Payload\Attachment\Button\ClipboardButton;
 use Webtolk\Max\Payload\Attachment\Button\LinkButton;
+use Webtolk\Max\Payload\Attachment\Button\RequestContactButton;
 
 $keyboard = InlineKeyboardAttachment::rows([
     LinkButton::create('Открыть', 'https://web-tolk.ru'),
+    RequestContactButton::create('Поделиться контактом'),
+    ClipboardButton::create('Скопировать', 'PROMO-1'),
 ]);
 ```
 
@@ -100,6 +104,51 @@ $keyboard = InlineKeyboardAttachment::rows([
 ```
 
 Подтверждённый live callback flow теперь есть: успешная callback-кнопка приводит к `message_callback` update и позволяет вызвать `messages.answerCallback()` с `success: true`.
+
+### `MessageButton`
+
+Публичные методы:
+
+- `create(string $text): self`
+- `toRequestArray(): array`
+
+Сериализация:
+
+```json
+{
+  "type": "message",
+  "text": "Написать боту"
+}
+```
+
+### `RequestContactButton`
+
+Сериализуется как `type: request_contact` и запрашивает контакт пользователя.
+
+### `RequestGeoLocationButton`
+
+Сериализуется как `type: request_geo_location` и запрашивает геолокацию пользователя.
+
+### `OpenAppButton`
+
+Сериализуется как `type: open_app`. Текущая рендеренная документация MAX от 2026-07-05 не раскрывает дополнительные поля этой кнопки; если интеграции нужны расширенные параметры мини-приложения, передайте raw button array в `InlineKeyboardAttachment`.
+
+### `ClipboardButton`
+
+Публичные методы:
+
+- `create(string $text, string $payload): self`
+- `toRequestArray(): array`
+
+Сериализация:
+
+```json
+{
+  "type": "clipboard",
+  "text": "Скопировать",
+  "payload": "PROMO-1"
+}
+```
 
 ## Upload flow и attachments
 

@@ -7,6 +7,11 @@ namespace Webtolk\Max\Tests\Unit\Payload;
 use PHPUnit\Framework\TestCase;
 use Webtolk\Max\Exception\ValidationException;
 use Webtolk\Max\Payload\Attachment\Button\CallbackButton as ButtonCallback;
+use Webtolk\Max\Payload\Attachment\Button\ClipboardButton;
+use Webtolk\Max\Payload\Attachment\Button\MessageButton;
+use Webtolk\Max\Payload\Attachment\Button\OpenAppButton;
+use Webtolk\Max\Payload\Attachment\Button\RequestContactButton;
+use Webtolk\Max\Payload\Attachment\Button\RequestGeoLocationButton;
 use Webtolk\Max\Payload\Attachment\InlineKeyboardAttachment;
 use Webtolk\Max\Payload\NewMessageBody;
 use Webtolk\Max\Payload\NewMessageLink;
@@ -55,6 +60,38 @@ final class NewMessageBodyTest extends TestCase
         $this->expectExceptionMessage('Message text cannot exceed 4000 characters.');
 
         (new NewMessageBody())->withText(str_repeat('a', 4001));
+    }
+
+    public function testInlineKeyboardSerializesAllOfficialButtonTypes(): void
+    {
+        $keyboard = InlineKeyboardAttachment::rows(
+            [
+                MessageButton::create('Send message'),
+                RequestContactButton::create('Share contact'),
+                RequestGeoLocationButton::create('Share location'),
+            ],
+            [
+                OpenAppButton::create('Open app'),
+                ClipboardButton::create('Copy', 'PROMO-1'),
+            ],
+        );
+
+        $this->assertSame([
+            'type' => 'inline_keyboard',
+            'payload' => [
+                'buttons' => [
+                    [
+                        ['type' => 'message', 'text' => 'Send message'],
+                        ['type' => 'request_contact', 'text' => 'Share contact'],
+                        ['type' => 'request_geo_location', 'text' => 'Share location'],
+                    ],
+                    [
+                        ['type' => 'open_app', 'text' => 'Open app'],
+                        ['type' => 'clipboard', 'text' => 'Copy', 'payload' => 'PROMO-1'],
+                    ],
+                ],
+            ],
+        ], $keyboard->toRequestArray());
     }
 
     public function testWithTextRejectsEmptyMessage(): void

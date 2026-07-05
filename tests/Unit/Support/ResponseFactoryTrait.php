@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Webtolk\Max\Tests\Unit\Support;
 
+use JsonException;
 use PHPUnit\Framework\MockObject\Exception;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
@@ -31,5 +32,14 @@ trait ResponseFactoryTrait
     protected function createJsonResponse(TestCase $case, string $json): ResponseInterface
     {
         return $this->createResponse($case, $json);
+    }
+
+    /**
+     * @param mixed $payload
+     * @throws JsonException
+     */
+    protected function encodeJson(mixed $payload): string
+    {
+        return json_encode($payload, JSON_THROW_ON_ERROR);
     }
 }

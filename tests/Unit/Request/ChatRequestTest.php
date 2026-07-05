@@ -23,7 +23,7 @@ final class ChatRequestTest extends TestCase
 
     public function testListBuildsChatListResponse(): void
     {
-        $response = $this->createJsonResponse($this, json_encode([
+        $response = $this->createJsonResponse($this, $this->encodeJson([
             'chats' => [['id' => 1]],
             'marker' => 10,
         ]));
@@ -42,7 +42,7 @@ final class ChatRequestTest extends TestCase
 
     public function testGetByIdUsesEndpoint(): void
     {
-        $response = $this->createJsonResponse($this, json_encode([
+        $response = $this->createJsonResponse($this, $this->encodeJson([
             'chat_id' => 42,
         ]));
 
@@ -58,9 +58,49 @@ final class ChatRequestTest extends TestCase
         $this->assertSame(42, $result->getId());
     }
 
+    public function testGetByLinkUsesEncodedEndpoint(): void
+    {
+        $response = $this->createJsonResponse($this, $this->encodeJson([
+            'chat_id' => 43,
+            'link' => 'public/channel',
+        ]));
+
+        $httpClient = $this->createMock(ApiTransportInterface::class);
+        $httpClient->expects($this->once())
+            ->method('requestJson')
+            ->with('GET', '/chats/public%2Fchannel')
+            ->willReturn($response);
+
+        $request = new ChatRequest($httpClient);
+        $result = $request->getByLink('public/channel');
+
+        $this->assertSame(43, $result->getId());
+        $this->assertSame('public/channel', $result->getLink());
+    }
+
+    public function testGetByLinkNormalizesFullPublicUrl(): void
+    {
+        $response = $this->createJsonResponse($this, $this->encodeJson([
+            'chat_id' => 44,
+            'link' => 'https://max.ru/join/public-channel',
+        ]));
+
+        $httpClient = $this->createMock(ApiTransportInterface::class);
+        $httpClient->expects($this->once())
+            ->method('requestJson')
+            ->with('GET', '/chats/public-channel')
+            ->willReturn($response);
+
+        $request = new ChatRequest($httpClient);
+        $result = $request->getByLink('https://max.ru/join/public-channel');
+
+        $this->assertSame(44, $result->getId());
+        $this->assertSame('https://max.ru/join/public-channel', $result->getLink());
+    }
+
     public function testMembersDefaultsToPagingQuery(): void
     {
-        $response = $this->createJsonResponse($this, json_encode([
+        $response = $this->createJsonResponse($this, $this->encodeJson([
             'members' => [['user_id' => 5]],
         ]));
 
@@ -80,7 +120,7 @@ final class ChatRequestTest extends TestCase
     public function testMembersUsesCustomQuery(): void
     {
         $query = ChatMembersQuery::forUsers(100, 200);
-        $response = $this->createJsonResponse($this, json_encode([
+        $response = $this->createJsonResponse($this, $this->encodeJson([
             'members' => [['user_id' => 100], ['user_id' => 200]],
         ]));
 
@@ -98,10 +138,10 @@ final class ChatRequestTest extends TestCase
 
     public function testMemberMeAndAdminsUseRightEndpoints(): void
     {
-        $response = $this->createJsonResponse($this, json_encode([
+        $response = $this->createJsonResponse($this, $this->encodeJson([
             'user_id' => 9,
         ]));
-        $adminResponse = $this->createJsonResponse($this, json_encode([
+        $adminResponse = $this->createJsonResponse($this, $this->encodeJson([
             'members' => [['user_id' => 9], ['user_id' => 10]],
         ]));
 
@@ -134,7 +174,7 @@ final class ChatRequestTest extends TestCase
 
     public function testUpdateBuildsPatchPayload(): void
     {
-        $response = $this->createJsonResponse($this, json_encode([
+        $response = $this->createJsonResponse($this, $this->encodeJson([
             'chat_id' => 42,
             'title' => 'Новый чат',
         ]));
@@ -166,7 +206,7 @@ final class ChatRequestTest extends TestCase
 
     public function testDeleteReturnsOperationResult(): void
     {
-        $response = $this->createJsonResponse($this, json_encode([
+        $response = $this->createJsonResponse($this, $this->encodeJson([
             'success' => true,
         ]));
 
@@ -184,12 +224,12 @@ final class ChatRequestTest extends TestCase
 
     public function testGetPinnedMessageHydratesMessageOrNull(): void
     {
-        $messageResponse = $this->createJsonResponse($this, json_encode([
+        $messageResponse = $this->createJsonResponse($this, $this->encodeJson([
             'message' => [
                 'body' => ['text' => 'pinned'],
             ],
         ]));
-        $nullResponse = $this->createJsonResponse($this, json_encode([
+        $nullResponse = $this->createJsonResponse($this, $this->encodeJson([
             'message' => null,
         ]));
 
@@ -215,7 +255,7 @@ final class ChatRequestTest extends TestCase
 
     public function testPinBuildsPutPayload(): void
     {
-        $response = $this->createJsonResponse($this, json_encode([
+        $response = $this->createJsonResponse($this, $this->encodeJson([
             'success' => true,
         ]));
 
@@ -244,7 +284,7 @@ final class ChatRequestTest extends TestCase
 
     public function testUnpinReturnsOperationResult(): void
     {
-        $response = $this->createJsonResponse($this, json_encode([
+        $response = $this->createJsonResponse($this, $this->encodeJson([
             'success' => true,
             'message' => 'unpinned',
         ]));
@@ -264,7 +304,7 @@ final class ChatRequestTest extends TestCase
 
     public function testAddMembersBuildsPostPayload(): void
     {
-        $response = $this->createJsonResponse($this, json_encode([
+        $response = $this->createJsonResponse($this, $this->encodeJson([
             'success' => true,
         ]));
 
@@ -290,7 +330,7 @@ final class ChatRequestTest extends TestCase
 
     public function testRemoveMemberUsesDeleteQuery(): void
     {
-        $response = $this->createJsonResponse($this, json_encode([
+        $response = $this->createJsonResponse($this, $this->encodeJson([
             'success' => true,
         ]));
 
@@ -308,7 +348,7 @@ final class ChatRequestTest extends TestCase
 
     public function testLeaveUsesBotMemberEndpoint(): void
     {
-        $response = $this->createJsonResponse($this, json_encode([
+        $response = $this->createJsonResponse($this, $this->encodeJson([
             'success' => true,
         ]));
 
@@ -326,7 +366,7 @@ final class ChatRequestTest extends TestCase
 
     public function testAddAdminsBuildsPostPayload(): void
     {
-        $response = $this->createJsonResponse($this, json_encode([
+        $response = $this->createJsonResponse($this, $this->encodeJson([
             'success' => true,
         ]));
 
@@ -362,7 +402,7 @@ final class ChatRequestTest extends TestCase
 
     public function testRemoveAdminUsesDeleteEndpoint(): void
     {
-        $response = $this->createJsonResponse($this, json_encode([
+        $response = $this->createJsonResponse($this, $this->encodeJson([
             'success' => true,
         ]));
 
@@ -380,7 +420,7 @@ final class ChatRequestTest extends TestCase
 
     public function testSendActionBuildsRequestBody(): void
     {
-        $response = $this->createJsonResponse($this, json_encode([
+        $response = $this->createJsonResponse($this, $this->encodeJson([
             'success' => true,
         ]));
 

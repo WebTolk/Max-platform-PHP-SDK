@@ -17,7 +17,7 @@ final class ChatList extends AbstractEntity
      * Возвращает список чатов.
      * Нужен, чтобы читать это значение из объекта `ChatList` без обращения к сырому payload MAX API.
      *
-     * @return array Массив значений, подготовленный или возвращённый этим методом SDK.
+     * @return list<Chat> Массив значений, подготовленный или возвращённый этим методом SDK.
      * @since v.0.1.0
      * @link https://dev.max.ru/docs-api/methods/GET/chats
      */

@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MAX API method schema: chats.getByLink",
+  "method": "chats.getByLink",
+  "outcome": "documentation_aligned_pending_compatible_live_resource",
+  "sdk_result_type": "Webtolk\\Max\\Entity\\Chat",
+  "http": {
+    "method": "GET",
+    "uri_template": "https://platform-api2.max.ru/chats/XXXX",
+    "status": 200
+  },
+  "input_example": {
+    "chat_link": "XXXX"
+  },
+  "request_body_example": null,
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "chat_id": {
+        "type": "integer"
+      },
+      "type": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      },
+      "title": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "last_event_time": {
+        "type": "integer"
+      },
+      "participants_count": {
+        "type": "integer"
+      },
+      "is_public": {
+        "type": "boolean"
+      },
+      "owner_id": {
+        "type": "integer"
+      },
+      "participants": {
+        "type": [
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "link": {
+        "type": "string"
+      },
+      "description": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "messages_count": {
+        "type": "integer"
+      },
+      "pinned_message": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "required": [
+      "chat_id",
+      "type",
+      "status"
+    ],
+    "additionalProperties": true
+  },
+  "response_example": {
+    "chat_id": "XXXX",
+    "type": "channel",
+    "status": "active",
+    "title": "XXXX",
+    "last_event_time": "XXXX",
+    "participants_count": "XXXX",
+    "is_public": true,
+    "owner_id": "XXXX",
+    "participants": null,
+    "link": "XXXX",
+    "description": "XXXX",
+    "messages_count": "XXXX",
+    "pinned_message": null
+  },
+  "error_example": {
+    "exception": "Webtolk\\Max\\Exception\\ApiException",
+    "message": "Chat not found by link: XXXX"
+  },
+  "notes": [
+    "This schema is aligned with the 2026-07-05 official documentation for GET /chats/{chatLink}.",
+    "The response example is anonymized and documentation-derived until a safe live public channel link is available.",
+    "Live verification was executed against a local integration runner; transport security settings are local-only and are not part of the public API contract."
+  ],
+  "live_verification_2026_07_05": {
+    "date": "2026-07-05",
+    "runner": "local integration runner",
+    "tls_verify": "disabled_for_test_runner_only",
+    "status": "error",
+    "reason": "The configured test chat public link was not a channel link accepted by GET /chats/{chatLink}."
+  }
+}

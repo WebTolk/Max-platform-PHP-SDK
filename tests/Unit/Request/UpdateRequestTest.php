@@ -16,7 +16,7 @@ final class UpdateRequestTest extends TestCase
 
     public function testListWithoutQueryUsesDefaultQuery(): void
     {
-        $response = $this->createJsonResponse($this, json_encode([
+        $response = $this->createJsonResponse($this, $this->encodeJson([
             'updates' => [
                 ['update_type' => 'message'],
             ],
@@ -37,7 +37,7 @@ final class UpdateRequestTest extends TestCase
     public function testListUsesProvidedQuery(): void
     {
         $query = GetUpdatesQuery::fromMarker(100)->withLimit(10);
-        $response = $this->createJsonResponse($this, json_encode([
+        $response = $this->createJsonResponse($this, $this->encodeJson([
             'updates' => [],
             'marker' => 101,
         ]));

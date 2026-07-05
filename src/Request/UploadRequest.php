@@ -131,7 +131,7 @@ final class UploadRequest
      * @param string|StreamInterface $contents Строка с бинарным содержимым файла либо поток PSR-7 с теми же данными.
      * @param UploadType $type Тип загрузки или формат данных, который используется в текущем MAX-сценарии.
      * @param ?string $contentType Явный MIME-тип файла; если `null`, SDK подставит тип по умолчанию для выбранного сценария.
-     * @return array Массив значений, подготовленный или возвращённый этим методом SDK.
+     * @return array{0:string, 1:string} Массив значений, подготовленный или возвращённый этим методом SDK.
      * @since v.0.1.0
      * @link https://dev.max.ru/docs-api/methods/POST/uploads
      */
@@ -159,7 +159,7 @@ final class UploadRequest
      * Нужен как часть внутреннего или публичного контракта SDK в соответствующем слое библиотеки.
      *
      * @param ResponseInterface $response HTTP-ответ PSR-7, полученный от transport-слоя и ещё не преобразованный в сущность SDK.
-     * @return array Массив значений, подготовленный или возвращённый этим методом SDK.
+     * @return array<string, mixed> Массив значений, подготовленный или возвращённый этим методом SDK.
      * @since v.0.1.0
      * @link https://dev.max.ru/docs-api/methods/POST/uploads
      */

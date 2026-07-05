@@ -48,6 +48,7 @@ final class ChatModule
      * @param ?int $count Количество элементов, которое запрашивается у MAX API.
      * @return ChatList Результат метода в виде объекта `ChatList`, подготовленного для дальнейшего использования в SDK или прикладном коде.
      * @since v.0.1.0
+     * @deprecated v.0.2.0 MAX API documentation says GET /chats is no longer supported since June 2026. Collect chat ids from webhook subscription events instead.
      * @link https://dev.max.ru/docs-api/methods/GET/chats
      */
     public function list(?int $marker = null, ?int $count = null): ChatList
@@ -67,6 +68,20 @@ final class ChatModule
     public function getById(int $chatId): Chat
     {
         return $this->request->getById($chatId);
+    }
+
+    /**
+     * Запрашивает карточку канала по его публичной ссылке.
+     * Нужен, чтобы синхронно получить `chat_id` для публичного канала без ожидания асинхронного события.
+     *
+     * @param string $chatLink Публичная ссылка канала MAX.
+     * @return Chat Результат метода в виде объекта `Chat`, подготовленного для дальнейшего использования в SDK или прикладном коде.
+     * @since v.0.2.0
+     * @link https://dev.max.ru/docs-api/methods/GET/chats/-chatLink-
+     */
+    public function getByLink(string $chatLink): Chat
+    {
+        return $this->request->getByLink($chatLink);
     }
 
     /**

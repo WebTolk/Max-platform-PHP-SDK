@@ -69,15 +69,32 @@ final class MessageRequest
     }
 
     /**
-     * Выполняет HTTP-запрос `GET /messages` с параметром `message_ids`.
+     * Выполняет HTTP-запрос `GET /messages/{messageId}`.
      * Нужен, чтобы получить актуальное состояние одного сообщения по его `mid` и вернуть его как `Message`.
      *
      * @param string $messageId Идентификатор сообщения MAX (`mid`), по которому выполняется операция.
      * @return Message Результат метода в виде объекта `Message`, подготовленного для дальнейшего использования в SDK или прикладном коде.
-     * @since v.0.1.0
-     * @link https://dev.max.ru/docs-api/methods/GET/messages
+     * @since v.0.2.0
+     * @link https://dev.max.ru/docs-api/methods/GET/messages/-messageId-
      */
     public function getById(string $messageId): Message
+    {
+        $response = $this->httpClient->requestJson('GET', '/messages/' . rawurlencode($messageId));
+        $payload = JsonDecoder::decode($response);
+
+        return new Message($payload);
+    }
+
+    /**
+     * Выполняет HTTP-запрос `GET /messages` с параметром `message_ids`.
+     * Нужен, чтобы сохранить batch lookup сценарий, который существовал до прямого endpoint-а `GET /messages/{messageId}`.
+     *
+     * @param string $messageId Идентификатор сообщения MAX (`mid`), по которому выполняется операция.
+     * @return Message Результат метода в виде объекта `Message`, подготовленного для дальнейшего использования в SDK или прикладном коде.
+     * @since v.0.2.0
+     * @link https://dev.max.ru/docs-api/methods/GET/messages
+     */
+    public function getByQueryId(string $messageId): Message
     {
         $response = $this->httpClient->requestJson('GET', '/messages', ['message_ids' => [$messageId]]);
         $payload = JsonDecoder::decode($response);

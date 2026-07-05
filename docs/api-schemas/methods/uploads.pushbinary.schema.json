@@ -1,42 +1,50 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "title": "MAX API method schema: uploads.pushBinary",
-    "method": "uploads.pushBinary",
-    "outcome": "ok",
-    "sdk_result_type": "Webtolk\\Max\\Entity\\UploadResult",
-    "http": {
-        "method": "POST",
-        "uri_template": "https://vu.okcdn.ru/upload.do?sig=XXXX&expires=XXXX&clientType=XXXX&saveOriginal=XXXX&id=XXXX&userId=XXXX&cid=XXXX",
-        "status": 200
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MAX API method schema: uploads.pushBinary",
+  "method": "uploads.pushBinary",
+  "outcome": "ok",
+  "sdk_result_type": "Webtolk\\Max\\Entity\\UploadResult",
+  "http": {
+    "method": "POST",
+    "uri_template": "https://vu.okcdn.ru/upload.do?sig=XXXX&expires=XXXX&clientType=XXXX&saveOriginal=XXXX&id=XXXX&userId=XXXX&cid=XXXX",
+    "status": 200
+  },
+  "input_example": {
+    "type": "audio",
+    "content_type": "audio/mpeg"
+  },
+  "request_body_example": null,
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "retval": {
+        "type": "string"
+      },
+      "raw_body": {
+        "type": "string"
+      }
     },
-    "input_example": {
-        "type": "audio",
-        "content_type": "audio/mpeg"
-    },
-    "request_body_example": null,
-    "response_schema": {
-        "type": "object",
-        "properties": {
-            "retval": {
-                "type": "string"
-            },
-            "raw_body": {
-                "type": "string"
-            }
-        },
-        "required": [
-            "retval",
-            "raw_body"
-        ],
-        "additionalProperties": true
-    },
-    "response_example": {
-        "retval": "1",
-        "raw_body": "XXXX"
-    },
-    "error_example": null,
-    "notes": [
-        "This is an anonymized development schema, not a raw API dump.",
-        "Use response_schema for structural assertions and response_example for field-shape orientation only."
-    ]
+    "required": [
+      "retval",
+      "raw_body"
+    ],
+    "additionalProperties": true
+  },
+  "response_example": {
+    "retval": "1",
+    "raw_body": "XXXX"
+  },
+  "error_example": null,
+  "notes": [
+    "This is an anonymized development schema, not a raw API dump.",
+    "Use response_schema for structural assertions and response_example for field-shape orientation only.",
+    "Live verification was executed against a local integration runner; transport security settings are local-only and are not part of the public API contract."
+  ],
+  "live_verification_2026_07_05": {
+    "date": "2026-07-05",
+    "runner": "local integration runner",
+    "tls_verify": "disabled_for_test_runner_only",
+    "status": "not_run_safety_guard",
+    "reason": "Covered through UploadModule::upload(), which performs create() and pushBinary() in one SDK call."
+  }
 }

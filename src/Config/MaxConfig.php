@@ -12,7 +12,7 @@ namespace Webtolk\Max\Config;
  */
 final class MaxConfig
 {
-    public const DEFAULT_BASE_URI = 'https://platform-api.max.ru';
+    public const DEFAULT_BASE_URI = 'https://platform-api2.max.ru';
 
     /**
      * Создаёт объект `MaxConfig`.
@@ -44,7 +44,7 @@ final class MaxConfig
      * Возвращает стандартные HTTP-заголовки.
      * Нужен, чтобы читать это значение из объекта `MaxConfig` без обращения к сырому payload MAX API.
      *
-     * @return array Массив значений, подготовленный или возвращённый этим методом SDK.
+     * @return array<string, string> Массив значений, подготовленный или возвращённый этим методом SDK.
      * @since v.0.1.0
      */
     public function getDefaultHeaders(): array

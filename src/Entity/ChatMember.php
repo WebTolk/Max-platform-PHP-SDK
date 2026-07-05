@@ -69,7 +69,7 @@ final class ChatMember extends UserWithPhoto
      * Возвращает список прав.
      * Нужен, чтобы читать это значение из объекта `ChatMember` без обращения к сырому payload MAX API.
      *
-     * @return array Массив значений, подготовленный или возвращённый этим методом SDK.
+     * @return list<string> Массив значений, подготовленный или возвращённый этим методом SDK.
      * @since v.0.1.0
      * @link https://dev.max.ru/docs-api/objects/ChatMember
      */

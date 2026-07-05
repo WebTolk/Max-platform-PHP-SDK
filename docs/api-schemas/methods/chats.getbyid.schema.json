@@ -1,97 +1,114 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "title": "MAX API method schema: chats.getById",
-    "method": "chats.getById",
-    "outcome": "ok",
-    "sdk_result_type": "Webtolk\\Max\\Entity\\Chat",
-    "http": {
-        "method": "GET",
-        "uri_template": "https://platform-api.max.ru/chats/XXXX",
-        "status": 200
-    },
-    "input_example": {
-        "chat_id": "XXXX"
-    },
-    "request_body_example": null,
-    "response_schema": {
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MAX API method schema: chats.getById",
+  "method": "chats.getById",
+  "outcome": "ok",
+  "sdk_result_type": "Webtolk\\Max\\Entity\\Chat",
+  "http": {
+    "method": "GET",
+    "uri_template": "https://platform-api2.max.ru/chats/XXXX",
+    "status": 200
+  },
+  "input_example": {
+    "chat_id": "XXXX"
+  },
+  "request_body_example": null,
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "chat_id": {
+        "type": "integer"
+      },
+      "type": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      },
+      "last_event_time": {
+        "type": "integer"
+      },
+      "participants_count": {
+        "type": "integer"
+      },
+      "is_public": {
+        "type": "boolean"
+      },
+      "description": {
+        "type": "string"
+      },
+      "owner_id": {
+        "type": "integer"
+      },
+      "participants": {
         "type": "object",
         "properties": {
-            "chat_id": {
-                "type": "integer"
-            },
-            "type": {
-                "type": "string"
-            },
-            "status": {
-                "type": "string"
-            },
-            "title": {
-                "type": "string"
-            },
-            "last_event_time": {
-                "type": "integer"
-            },
-            "participants_count": {
-                "type": "integer"
-            },
-            "is_public": {
-                "type": "boolean"
-            },
-            "owner_id": {
-                "type": "integer"
-            },
-            "participants": {
-                "type": "object",
-                "properties": {
-                    "XXXX": {
-                        "type": "integer"
-                    }
-                },
-                "required": [
-                    "XXXX"
-                ],
-                "additionalProperties": true
-            },
-            "link": {
-                "type": "string"
-            },
-            "messages_count": {
-                "type": "integer"
-            }
+          "8737252": {
+            "type": "integer"
+          },
+          "267812104": {
+            "type": "integer"
+          }
         },
         "required": [
-            "chat_id",
-            "type",
-            "status",
-            "title",
-            "last_event_time",
-            "participants_count",
-            "is_public",
-            "owner_id",
-            "participants",
-            "link",
-            "messages_count"
+          "8737252",
+          "267812104"
         ],
         "additionalProperties": true
+      },
+      "link": {
+        "type": "string"
+      },
+      "messages_count": {
+        "type": "integer"
+      }
     },
-    "response_example": {
-        "chat_id": "XXXX",
-        "type": "chat",
-        "status": "active",
-        "title": "XXXX",
-        "last_event_time": "XXXX",
-        "participants_count": 2,
-        "is_public": false,
-        "owner_id": "XXXX",
-        "participants": {
-            "XXXX": 1777031052966
-        },
-        "link": "XXXX",
-        "messages_count": 14
+    "required": [
+      "chat_id",
+      "type",
+      "status",
+      "title",
+      "last_event_time",
+      "participants_count",
+      "is_public",
+      "description",
+      "owner_id",
+      "participants",
+      "link",
+      "messages_count"
+    ],
+    "additionalProperties": true
+  },
+  "response_example": {
+    "chat_id": "XXXX",
+    "type": "chat",
+    "status": "active",
+    "title": "XXXX",
+    "last_event_time": "XXXX",
+    "participants_count": "XXXX",
+    "is_public": false,
+    "description": "XXXX",
+    "owner_id": "XXXX",
+    "participants": {
+      "8737252": "XXXX",
+      "267812104": "XXXX"
     },
-    "error_example": null,
-    "notes": [
-        "This is an anonymized development schema, not a raw API dump.",
-        "Use response_schema for structural assertions and response_example for field-shape orientation only."
-    ]
+    "link": "XXXX",
+    "messages_count": "XXXX"
+  },
+  "error_example": null,
+  "notes": [
+    "This is an anonymized development schema, not a raw API dump.",
+    "Use response_schema for structural assertions and response_example for field-shape orientation only.",
+    "Live verification was executed against a local integration runner; transport security settings are local-only and are not part of the public API contract."
+  ],
+  "live_verification_2026_07_05": {
+    "date": "2026-07-05",
+    "runner": "local integration runner",
+    "tls_verify": "disabled_for_test_runner_only",
+    "status": "ok"
+  }
 }

@@ -4,7 +4,9 @@ Query-классы управляют URL parameters и валидируют и�
 
 ## `MessageQuery`
 
-Назначение: фильтрация `messages.list()` и `messages.getById()`-style запросов через `message_ids`.
+Назначение: фильтрация `messages.list()` и совместимых query-based запросов через `message_ids`.
+
+Для прямого чтения одного сообщения используйте `$max->messages()->getById()`, который начиная с `0.2.0` вызывает `GET /messages/{messageId}`. Для прежнего query-based lookup используйте `$max->messages()->getByQueryId()`.
 
 Публичные методы:
 

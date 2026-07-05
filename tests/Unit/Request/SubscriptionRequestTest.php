@@ -16,7 +16,7 @@ final class SubscriptionRequestTest extends TestCase
 
     public function testListBuildsSubscriptionListResponse(): void
     {
-        $response = $this->createJsonResponse($this, json_encode([
+        $response = $this->createJsonResponse($this, $this->encodeJson([
             'subscriptions' => [
                 ['url' => 'https://example.com/hook'],
             ],
@@ -42,7 +42,7 @@ final class SubscriptionRequestTest extends TestCase
             'secret_1',
         );
 
-        $response = $this->createJsonResponse($this, json_encode([
+        $response = $this->createJsonResponse($this, $this->encodeJson([
             'success' => true,
         ]));
 
@@ -70,7 +70,7 @@ final class SubscriptionRequestTest extends TestCase
 
     public function testDeleteSendsUrlQuery(): void
     {
-        $response = $this->createJsonResponse($this, json_encode([
+        $response = $this->createJsonResponse($this, $this->encodeJson([
             'success' => true,
         ]));
 

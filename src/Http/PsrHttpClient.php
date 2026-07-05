@@ -80,9 +80,9 @@ final class PsrHttpClient implements ApiTransportInterface
      *
      * @param string $method HTTP-метод (`GET`, `POST`, `PUT`, `DELETE` и т.д.), который нужно использовать для вызова MAX API.
      * @param string $path Относительный путь endpoint-а MAX API без базового домена.
-     * @param array $query Массив query-параметров, который будет включён в URL запроса к MAX API.
-     * @param array $headers Набор HTTP-заголовков, которые нужно отправить или санитизировать.
-     * @param ?array $json Ассоциативный массив JSON-тела запроса; `null` означает запрос без JSON payload.
+     * @param array<string, bool|int|string|array<int, int|string>|null> $query Массив query-параметров, который будет включён в URL запроса к MAX API.
+     * @param array<string, string> $headers Набор HTTP-заголовков, которые нужно отправить или санитизировать.
+     * @param ?array<string, mixed> $json Ассоциативный массив JSON-тела запроса; `null` означает запрос без JSON payload.
      * @return ResponseInterface Объект типа `ResponseInterface`, соответствующий контракту SDK или PSR.
      * @throws JsonException
      * @throws TransportException
@@ -248,7 +248,7 @@ final class PsrHttpClient implements ApiTransportInterface
      * Нужен, чтобы изолировать техническую подготовку данных и не размазывать её по нескольким методам.
      *
      * @param string $path Относительный путь endpoint-а MAX API без базового домена.
-     * @param array $query Массив query-параметров, который будет включён в URL запроса к MAX API.
+     * @param array<string, bool|int|string|array<int, int|string>|null> $query Массив query-параметров, который будет включён в URL запроса к MAX API.
      * @return string Строковое значение, относящееся к текущему объекту или операции.
      * @since v.0.1.0
      */
@@ -267,7 +267,7 @@ final class PsrHttpClient implements ApiTransportInterface
      * Собирает значение `query string` для внутреннего использования SDK.
      * Нужен, чтобы изолировать техническую подготовку данных и не размазывать её по нескольким методам.
      *
-     * @param array<string, mixed> $query Массив query-параметров, который будет включён в URL запроса к MAX API.
+     * @param array<string, bool|int|string|array<int, int|string>|null> $query Массив query-параметров, который будет включён в URL запроса к MAX API.
      * @return string Строковое значение, относящееся к текущему объекту или операции.
      * @since v.0.1.0
      */
@@ -327,7 +327,7 @@ final class PsrHttpClient implements ApiTransportInterface
      * Нужен, чтобы в логи или служебные структуры не попадали чувствительные либо шумные данные.
      *
      * @param array<string, mixed> $headers Набор HTTP-заголовков, которые нужно отправить или санитизировать.
-     * @return array Массив значений, подготовленный или возвращённый этим методом SDK.
+     * @return array<string, list<string>>
      * @since v.0.1.0
      */
     private static function sanitizeHeaders(array $headers): array
@@ -396,7 +396,7 @@ final class PsrHttpClient implements ApiTransportInterface
      * Нужен, чтобы изолировать техническую подготовку данных и не размазывать её по нескольким методам.
      *
      * @param ResponseInterface $response HTTP-ответ PSR-7, полученный от transport-слоя и ещё не преобразованный в сущность SDK.
-     * @return array Массив значений, подготовленный или возвращённый этим методом SDK.
+     * @return array{status:int, reason:string, headers:array<string, list<string>>, body:string, body_length:int}
      * @since v.0.1.0
      */
     private function buildResponseLogContext(ResponseInterface $response): array

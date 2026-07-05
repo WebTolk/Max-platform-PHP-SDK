@@ -14,7 +14,7 @@ final class MaxConfigTest extends TestCase
         $config = new MaxConfig('token');
 
         $this->assertSame('token', $config->getToken());
-        $this->assertSame('https://platform-api.max.ru', MaxConfig::DEFAULT_BASE_URI);
+        $this->assertSame('https://platform-api2.max.ru', MaxConfig::DEFAULT_BASE_URI);
     }
 
     public function testPreservesDefaultHeaders(): void

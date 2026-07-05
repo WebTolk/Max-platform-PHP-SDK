@@ -17,13 +17,19 @@
 ```json
 {
   "code": "not.found",
-  "message": "Message mid.ffffbcbf8f1f1a1c019dc33c9d523adf not found"
+  "message": "Message XXXX not found"
 }
 ```
 
 Источник: `docs/api-schemas/index.json`
 
 Практический вывод: если вы работаете с ранее полученным `mid`, не предполагайте, что MAX сохранит доступность сообщения навсегда.
+
+### Channel `notify=false`
+
+В live smoke на канале MAX отклонил post payload с `notify=false` кодом `errors.send-message.channel-notify`. Та же серия отправок без поля `notify` прошла успешно для обычного текста, inline-кнопок, файла, изображения и изображения с inline-кнопками.
+
+Практический вывод: для channel posts оставляйте `notify` неуказанным. Это live-evidence caveat текущего API, а не отдельная строка из официальной документации.
 
 ## `AttachmentNotReadyException`
 

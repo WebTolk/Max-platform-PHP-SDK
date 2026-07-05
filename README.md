@@ -19,7 +19,7 @@
 composer require webtolk/max
 ```
 
-Установка вместе со всеми необходимыми библиотеками. HTTP-клиент может быть любой: Guzzle, Joomla, Simphony и т.д.
+Установка вместе со всеми необходимыми библиотеками. HTTP-клиент может быть любой: Guzzle, Joomla, Symfony и т.д.
 
 ```bash
 composer require webtolk/max joomla/http laminas/laminas-diactoros
@@ -95,13 +95,14 @@ echo 'Message text: ' . ($message->getBody()?->getText() ?? '') . PHP_EOL;
 
 ### Chats
 
-- `chats()->list()` — список чатов
+- `chats()->list()` — legacy-метод `GET /chats`; по документации MAX с июня 2026 больше не поддерживается, для новых интеграций сохраняйте `chat_id` из webhook subscription events
 - `chats()->getById()` — карточка чата
+- `chats()->getByLink()` — карточка публичного канала по совместимой публичной ссылке канала
 - `chats()->members()` — участники
 - `chats()->memberMe()` — текущий участник
 - `chats()->admins()` — администраторы
 - `chats()->update()` — изменение названия, иконки и pinned message
-- `chats()->delete()` — удаление чата
+- `chats()->delete()` — legacy/unconfirmed удаление чата; SDK-метод сохранён, но текущая официальная копия MAX API от 2026-07-05 не содержит `DELETE /chats/{chatId}`
 - `chats()->getPinnedMessage()` — чтение закреплённого сообщения
 - `chats()->pin()` — закрепление сообщения
 - `chats()->unpin()` — снятие закрепления
@@ -116,7 +117,8 @@ echo 'Message text: ' . ($message->getBody()?->getText() ?? '') . PHP_EOL;
 
 - `messages()->sendToChat()` — отправка в чат
 - `messages()->sendToUser()` — отправка пользователю
-- `messages()->getById()` — чтение по `message_ids`
+- `messages()->getById()` — чтение через `GET /messages/{messageId}`
+- `messages()->getByQueryId()` — совместимое чтение через `GET /messages?message_ids[]=...`
 - `messages()->list()` — выборка сообщений
 - `messages()->edit()` — редактирование
 - `messages()->delete()` — удаление
@@ -146,7 +148,10 @@ echo 'Message text: ' . ($message->getBody()?->getText() ?? '') . PHP_EOL;
 ## Что важно учитывать
 
 - До вызова `setTransport()` модули использовать нельзя.
-- `messages.getById()` использует `GET /messages` с параметром `message_ids`.
+- По умолчанию SDK использует `https://platform-api2.max.ru`.
+- `messages()->getById()` использует прямой endpoint `GET /messages/{messageId}`.
+- Для старого query-based lookup используйте `messages()->getByQueryId()`.
+- Для channel posts не передавайте `NewMessageBody::withNotify(false)`: live smoke на канале вернул `errors.send-message.channel-notify`; без поля `notify` отправка постов, кнопок и вложений проходит.
 - Для `audio` и `video` после успешной загрузки возможен временный `attachment.not.ready`.
 - Для `messages.answerCallback()` в публичном schema pack уже есть подтверждённый success example.
 

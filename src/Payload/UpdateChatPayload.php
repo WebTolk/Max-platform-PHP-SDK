@@ -15,6 +15,7 @@ use Webtolk\Max\Exception\ValidationException;
  */
 final class UpdateChatPayload
 {
+    /** @var ?array<string, mixed> */
     private ?array $icon = null;
     private ?string $title = null;
     private ?string $pin = null;
@@ -25,6 +26,9 @@ final class UpdateChatPayload
         return new self();
     }
 
+    /**
+     * @param array<string, mixed> $icon
+     */
     public function withIcon(array $icon): self
     {
         if ($icon === []) {

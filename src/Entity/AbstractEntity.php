@@ -33,7 +33,7 @@ abstract class AbstractEntity implements JsonSerializable
      * Возвращает исходный декодированный payload сущности.
      * Нужен как escape hatch на случай, когда typed-геттеров объекта недостаточно для текущего сценария интеграции.
      *
-     * @return array Сырой декодированный payload сущности без дополнительной трансформации.
+     * @return array<string, mixed> Сырой декодированный payload сущности без дополнительной трансформации.
      * @since v.0.1.0
      */
     public function toArray(): array
@@ -45,7 +45,7 @@ abstract class AbstractEntity implements JsonSerializable
      * Преобразует объект в массив для `json_encode()`.
      * Нужен, чтобы сущность корректно сериализовалась обратно в исходный raw payload при JSON-представлении.
      *
-     * @return array Сырой декодированный payload сущности без дополнительной трансформации.
+     * @return array<string, mixed> Сырой декодированный payload сущности без дополнительной трансформации.
      * @since v.0.1.0
      */
     public function jsonSerialize(): array

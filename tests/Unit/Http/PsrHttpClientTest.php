@@ -49,7 +49,7 @@ final class PsrHttpClientTest extends TestCase
         $this->assertSame('GET', $requestRecord['context']['method']);
         $this->assertSame([
             'scheme' => 'https',
-            'host' => 'platform-api.max.ru',
+            'host' => 'platform-api2.max.ru',
             'path' => '/messages',
             'query_keys' => ['chat_id', 'callback_id', 'sig'],
         ], $requestRecord['context']['uri']);
@@ -122,7 +122,7 @@ final class PsrHttpClientTest extends TestCase
             $this->assertNotNull($warningRecord);
             $this->assertSame([
                 'scheme' => 'https',
-                'host' => 'platform-api.max.ru',
+                'host' => 'platform-api2.max.ru',
                 'path' => '/subscriptions',
                 'query_keys' => ['url', 'token'],
             ], $warningRecord['context']['uri']);
@@ -133,6 +133,10 @@ final class PsrHttpClientTest extends TestCase
     private function createJsonResponse(string $body): Response
     {
         $stream = fopen('php://temp', 'r+');
+        if ($stream === false) {
+            self::fail('Unable to open temporary stream.');
+        }
+
         fwrite($stream, $body);
         rewind($stream);
 
@@ -143,7 +147,7 @@ final class PsrHttpClientTest extends TestCase
 final class TestLogger implements LoggerInterface
 {
     /**
-     * @var list<array{level: string, message: string, context: array}>
+     * @var list<array{level: string, message: string, context: array<string, mixed>}>
      */
     public array $records = [];
 
@@ -197,7 +201,7 @@ final class TestLogger implements LoggerInterface
     }
 
     /**
-     * @return array{level: string, message: string, context: array}|null
+     * @return array{level: string, message: string, context: array<string, mixed>}|null
      */
     public function findRecord(string $level, string $message): ?array
     {

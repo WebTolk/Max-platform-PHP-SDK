@@ -25,6 +25,7 @@ final class EditMessageBody
 
     private ?string $text = null;
     private ?bool $isClearText = null;
+    /** @var list<AttachmentPayloadInterface|array<string, mixed>>|null */
     private ?array $attachments = null;
     private ?NewMessageLink $link = null;
     private ?bool $notify = null;
@@ -84,7 +85,7 @@ final class EditMessageBody
      * Полностью заменяет набор вложений в объекте сообщения.
      * Нужен, чтобы при редактировании сообщения явно задать новый список attachment без смешивания со старым состоянием.
      *
-     * @param list<AttachmentPayloadInterface|array<string, mixed>> $attachments Список вложений SDK или сырых attachment-массивов в формате MAX API.
+     * @param list<mixed> $attachments Список вложений SDK или сырых attachment-массивов в формате MAX API.
      * @return self Текущий экземпляр объекта для продолжения fluent-цепочки вызовов.
      * @since v.0.1.0
      * @link https://dev.max.ru/docs-api/methods/PUT/messages
@@ -95,13 +96,16 @@ final class EditMessageBody
             throw new ValidationException('Attachments cannot be empty. Use clearAttachments() to remove them.');
         }
 
+        $normalized = [];
         foreach ($attachments as $attachment) {
             if (!$attachment instanceof AttachmentPayloadInterface && !is_array($attachment)) {
                 throw new ValidationException('Attachment must be AttachmentPayloadInterface or array.');
             }
+
+            $normalized[] = $attachment;
         }
 
-        $this->attachments = array_values($attachments);
+        $this->attachments = $normalized;
         $this->isAttachmentsSet = true;
 
         return $this;
@@ -220,7 +224,7 @@ final class EditMessageBody
      * Сериализует объект в массив тела запроса MAX API.
      * Нужен, чтобы request-слой мог отправить подготовленный payload без ручной сборки структуры массива.
      *
-     * @return array Массив тела запроса в формате, который ожидает MAX API.
+     * @return array<string, mixed> Массив тела запроса в формате, который ожидает MAX API.
      * @since v.0.1.0
      * @link https://dev.max.ru/docs-api/methods/PUT/messages
      */

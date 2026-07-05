@@ -29,7 +29,7 @@ class ValidationException extends MaxException
      * Возвращает список ошибок валидации.
      * Нужен, чтобы читать это значение из объекта `ValidationException` без обращения к сырому payload MAX API.
      *
-     * @return array Массив значений, подготовленный или возвращённый этим методом SDK.
+     * @return array<string, string> Массив значений, подготовленный или возвращённый этим методом SDK.
      * @since v.0.1.0
      */
     public function getErrors(): array

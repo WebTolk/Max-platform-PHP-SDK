@@ -23,11 +23,13 @@ Payload-классы не выполняют HTTP-запросы. Они вал�
 - пустой текст запрещён
 - длина текста больше 4000 символов запрещена
 - пустой список attachments запрещён
+- для channel posts не используйте `withNotify(false)`: текущий live API отклоняет такие payloads с `errors.send-message.channel-notify`; оставляйте `notify` неуказанным
 
 Пример:
 
 ```php
 use Webtolk\Max\Payload\Attachment\InlineKeyboardAttachment;
+use Webtolk\Max\Payload\Attachment\Button\ClipboardButton;
 use Webtolk\Max\Payload\Attachment\Button\LinkButton;
 use Webtolk\Max\Payload\NewMessageBody;
 
@@ -35,6 +37,7 @@ $body = NewMessageBody::text('Документация')
     ->withAttachments([
         InlineKeyboardAttachment::rows([
             LinkButton::create('Открыть', 'https://web-tolk.ru'),
+            ClipboardButton::create('Промокод', 'PROMO-1'),
         ]),
     ]);
 ```
@@ -74,7 +77,7 @@ $body = NewMessageBody::text('Документация')
 Минимальный reply link:
 
 ```php
-$link = NewMessageLink::replyTo('mid.ffffbcbf8f1f1a1c019dc384145f5a67');
+$link = NewMessageLink::replyTo('XXXX');
 ```
 
 Сериализация:
@@ -97,7 +100,8 @@ $link = NewMessageLink::replyTo('mid.ffffbcbf8f1f1a1c019dc384145f5a67');
 
 Валидация:
 
-- URL должен начинаться с `http://` или `https://`
+- для действующего MAX API URL должен начинаться с `https://`; webhook endpoint должен быть доступен на порту 443 без явного порта в URL
+- текущий SDK-валидатор всё ещё выполняет только shape-проверку `http(s)://`, поэтому `http://` может пройти локальную сборку payload, но будет нерабочей схемой для реального `POST /subscriptions`
 - `secret`, если задан, должен иметь длину `5..256` и содержать только `a-z`, `A-Z`, `0-9`, `_`, `-`
 
 Нормализация update types:
@@ -164,7 +168,7 @@ $payload = UpdateChatPayload::create()
 ```php
 use Webtolk\Max\Payload\PinChatMessagePayload;
 
-$payload = PinChatMessagePayload::create('mid.123')->withNotify(false);
+$payload = PinChatMessagePayload::create('XXXX')->withNotify(false);
 ```
 
 ## `AddChatMembersPayload`
@@ -181,6 +185,8 @@ $payload = PinChatMessagePayload::create('mid.123')->withNotify(false);
 - список `user_ids` не может быть пустым
 - `user_ids` должны быть положительными целыми числами
 
+Рабочий endpoint: `POST /chats/{chatId}/members`. Метод меняет состав участников, поэтому публичная schema помечена как safety-guarded, а не live-mutated.
+
 ## `ChatAdminAssignment`
 
 Назначение: описание одного администратора при назначении admin rights.
@@ -192,6 +198,8 @@ $payload = PinChatMessagePayload::create('mid.123')->withNotify(false);
 - `withAlias(string $alias): self`
 - `toRequestArray(): array`
 
+Поддерживаемые permissions передаются строками MAX API, например `write`, `pin_message`, `add_remove_members`, `add_admins`, `change_chat_info`. SDK не ограничивает список enum-ом, чтобы не ломаться при появлении новых прав на стороне MAX.
+
 ## `AddChatAdminsPayload`
 
 Назначение: payload для назначения одного или нескольких администраторов чата.
@@ -201,6 +209,8 @@ $payload = PinChatMessagePayload::create('mid.123')->withNotify(false);
 - `create(ChatAdminAssignment ...$admins): self`
 - `withMarker(int $marker): self`
 - `toRequestArray(): array`
+
+Рабочий endpoint: `POST /chats/{chatId}/members/admins`. Метод меняет административные права, поэтому публичная schema помечена как safety-guarded.
 
 ## `SenderAction`
 

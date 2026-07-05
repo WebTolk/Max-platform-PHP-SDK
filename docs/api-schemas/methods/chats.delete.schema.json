@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MAX API method schema: chats.delete",
+  "method": "chats.delete",
+  "outcome": "legacy_unconfirmed_official_absent",
+  "sdk_result_type": "Webtolk\\Max\\Entity\\OperationResult",
+  "http": {
+    "method": "DELETE",
+    "uri_template": "https://platform-api2.max.ru/chats/XXXX",
+    "status": 200
+  },
+  "input_example": {
+    "chat_id": "XXXX"
+  },
+  "request_body_example": null,
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "message": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "success"
+    ],
+    "additionalProperties": true
+  },
+  "response_example": {
+    "success": true
+  },
+  "error_example": null,
+  "notes": [
+    "This is an anonymized SDK method schema for a legacy/unconfirmed SDK surface, not a raw API dump.",
+    "The SDK request layer and unit tests still expose DELETE /chats/{chatId}.",
+    "The 2026-07-05 official MAX endpoint inventory does not include DELETE /chats/{chatId}; new integrations should not rely on this method without separate live confirmation."
+  ],
+  "live_verification_2026_07_05": {
+    "date": "2026-07-05",
+    "runner": "static audit",
+    "tls_verify": "not_applicable",
+    "status": "legacy_unconfirmed_official_absent",
+    "reason": "Skipped because the current official endpoint inventory does not list DELETE /chats/{chatId} and the operation would be destructive if available."
+  }
+}

@@ -13,6 +13,22 @@
 - `docs/api-schemas/methods/*.schema.json`
   Публичные обезличенные schema/examples для разработки и проверки контрактов.
 
+## Static analysis
+
+Maintainer-level PHPStan check runs at level 8 against `src/` and `tests/`:
+
+```bash
+vendor/bin/phpstan analyse src tests --level=8 --no-progress --memory-limit=512M
+```
+
+In the local WebTolk development environment this command uses the shared PHP QA toolchain:
+
+```powershell
+php E:\.agents\tools\php-qa\vendor\bin\phpstan analyse src tests --level=8 --no-progress --memory-limit=512M
+```
+
+If the local PHP runtime points its temp/cache directory to a restricted OSPanel folder, set `TEMP`, `TMP` and `sys_temp_dir` to a writable directory before running PHPStan. This affects only tool cache files, not SDK behavior.
+
 ## Как читать response examples
 
 - Фрагмент может быть меньше полного ответа.
@@ -30,12 +46,19 @@
 
 - `bots.me`
 - `chats.list`
+- `chats.addAdmins`
+- `chats.addMembers`
+- `chats.delete`
 - `chats.getById`
+- `chats.getByLink`
 - `chats.getPinnedMessage`
+- `chats.leave`
 - `chats.members`
 - `chats.memberMe`
 - `chats.admins`
 - `chats.pin`
+- `chats.removeAdmin`
+- `chats.removeMember`
 - `chats.sendAction`
 - `chats.unpin`
 - `chats.update`
@@ -47,6 +70,7 @@
 - `messages.sendToChat`
 - `messages.sendToUser`
 - `messages.getById`
+- `messages.getByQueryId`
 - `messages.edit`
 - `messages.delete`
 - `updates.list`
@@ -55,9 +79,12 @@
 - `subscriptions.delete`
 - `messages.answerCallback`
 
-Метод без подтверждённого успешного example:
+Методы без подтверждённого успешного live example:
 
 - `interaction.reply_update` как отдельный live sample для long-polling reply flow
+- `chats.getByLink` до появления совместимой публичной ссылки канала в test context
+- `chats.addMembers`, `chats.removeMember`, `chats.leave`, `chats.addAdmins`, `chats.removeAdmin` помечены `not_run_safety_guard`, потому что live-вызовы меняют участников или права канала
+- `chats.delete` помечен `legacy_unconfirmed_official_absent`, потому что SDK-метод существует, но текущий официальный endpoint inventory MAX не содержит `DELETE /chats/{chatId}`
 
 ## Рекомендация по обновлению документации
 

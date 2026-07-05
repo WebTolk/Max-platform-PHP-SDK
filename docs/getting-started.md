@@ -57,7 +57,7 @@ $max->setTransport(
 
 $bot = $max->bots()->me();
 
-var_dump($bot->toArray());
+echo json_encode($bot->toArray(), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) . PHP_EOL;
 ```
 
 ## Что происходит внутри
@@ -96,6 +96,9 @@ var_dump($bot->toArray());
 ## Важные ограничения
 
 - До вызова `setTransport()` модули использовать нельзя.
-- `messages.getById()` использует `GET /messages` с параметром `message_ids`.
+- По умолчанию SDK использует `https://platform-api2.max.ru`.
+- `messages()->getById()` использует прямой endpoint `GET /messages/{messageId}`.
+- Для старого query-based lookup используйте `messages()->getByQueryId()`.
+- Для channel posts не задавайте `notify=false`; рабочая схема для канала — оставить `notify` неуказанным.
 - Для `video` и `audio` после успешного upload возможен временный `attachment.not.ready`.
 - `messages.answerCallback()` зависит от callback-события со стороны MAX. В текущем schema pack уже есть подтверждённый успешный live response, но `reply_update` как отдельный live sample пока не сохранён.

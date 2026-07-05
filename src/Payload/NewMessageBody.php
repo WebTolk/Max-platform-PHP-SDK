@@ -149,7 +149,7 @@ final class NewMessageBody
      * Устанавливает вложения.
      * Нужен, чтобы подготовить объект к последующей сериализации или отправке в MAX API через fluent-интерфейс.
      *
-     * @param list<AttachmentPayloadInterface|array<string, mixed>> $attachments Список вложений SDK или сырых attachment-массивов в формате MAX API.
+     * @param list<mixed> $attachments Список вложений SDK или сырых attachment-массивов в формате MAX API.
      * @return self Текущий экземпляр объекта для продолжения fluent-цепочки вызовов.
      * @since v.0.1.0
      * @link https://dev.max.ru/docs-api/objects/NewMessageBody
@@ -160,13 +160,16 @@ final class NewMessageBody
             throw new ValidationException('Attachments cannot be empty.');
         }
 
+        $normalized = [];
         foreach ($attachments as $attachment) {
             if (!$attachment instanceof AttachmentPayloadInterface && !is_array($attachment)) {
                 throw new ValidationException('Attachment must be AttachmentPayloadInterface or array.');
             }
+
+            $normalized[] = $attachment;
         }
 
-        $this->attachments = array_values($attachments);
+        $this->attachments = $normalized;
         $this->isAttachmentsSet = true;
 
         return $this;
@@ -196,7 +199,7 @@ final class NewMessageBody
      * Сериализует объект в массив тела запроса MAX API.
      * Нужен, чтобы request-слой мог отправить подготовленный payload без ручной сборки структуры массива.
      *
-     * @return array Массив тела запроса в формате, который ожидает MAX API.
+     * @return array<string, mixed> Массив тела запроса в формате, который ожидает MAX API.
      * @since v.0.1.0
      * @link https://dev.max.ru/docs-api/objects/NewMessageBody
      */

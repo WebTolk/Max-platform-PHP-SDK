@@ -68,7 +68,9 @@ HTTP: `GET /me`
 
 HTTP: `GET /chats`
 
-Возвращает список чатов с optional pagination.
+Возвращает список чатов с optional pagination. По документации MAX от 2026-07-05 метод `GET /chats` больше не поддерживается с июня 2026. Для новых интеграций рабочая схема другая: создайте webhook subscription через `subscriptions()->create()`, обрабатывайте события добавления/старта/удаления бота и сохраняйте `chat_id` в своём хранилище.
+
+Long Polling через `updates()->list()` остаётся способом читать поток updates, но официальная документация MAX отдельно указывает, что Long Polling не предназначен для получения списка чатов и каналов бота.
 
 Подтверждённый фрагмент ответа:
 
@@ -81,7 +83,7 @@ HTTP: `GET /chats`
       "status": "active",
       "participants_count": 2,
       "owner_id": "XXXX",
-      "link": "https://max.ru/join/RlYuhje0_xdIHI10XRpjP-zfWwo0wvYt0yWw1P10DcY"
+      "link": "XXXX"
     }
   ]
 }
@@ -110,6 +112,14 @@ HTTP: `GET /chats/{chatId}`
 ```
 
 Источник: `docs/api-schemas/index.json`
+
+### `getByLink(string $chatLink): Chat`
+
+HTTP: `GET /chats/{chatLink}`
+
+Возвращает карточку публичного канала по его ссылке. Метод предназначен для каналов; invite/join-ссылка из карточки группового чата может возвращать `Chat not found by link`.
+
+Схема ответа сохранена в `docs/api-schemas/methods/chats.getbylink.schema.json`.
 
 ### `members(int $chatId, ?ChatMembersQuery $query = null): ChatMemberList`
 
@@ -236,9 +246,9 @@ HTTP: `PATCH /chats/{chatId}`
 
 HTTP: `DELETE /chats/{chatId}`
 
-Удаляет чат для всех участников.
+Legacy/unconfirmed SDK surface. Метод сохранён в SDK и unit-тестах как `DELETE /chats/{chatId}`, но текущая официальная копия MAX API от 2026-07-05 не содержит endpoint удаления самого чата. Новым интеграциям не стоит строить бизнес-логику на этом методе без отдельной live-проверки на своём боте.
 
-Текущая публичная документация для этого метода опирается на официальный контракт MAX API. Публичного schema example для него пока нет.
+Schema entry: `docs/api-schemas/methods/chats.delete.schema.json`.
 
 ### `getPinnedMessage(int $chatId): ?Message`
 
@@ -301,41 +311,41 @@ HTTP: `DELETE /chats/{chatId}/pin`
 
 HTTP: `POST /chats/{chatId}/members`
 
-Добавляет одного или нескольких пользователей в чат.
+Добавляет одного или нескольких пользователей в групповой чат или канал. Бот должен быть администратором с правом добавления/удаления участников.
 
-Текущая публичная документация для этого метода опирается на официальный контракт MAX API. Публичного schema example для него пока нет.
+Schema entry: `docs/api-schemas/methods/chats.addmembers.schema.json`. Live-вызов помечен safety-guarded, потому что он меняет состав участников.
 
 ### `removeMember(int $chatId, int $userId, ?bool $block = null): OperationResult`
 
 HTTP: `DELETE /chats/{chatId}/members`
 
-Удаляет участника из чата. Дополнительно можно передать `block=true`.
+Удаляет участника из группового чата или канала. Дополнительно можно передать `block=true`; по текущей MAX-документации блокировка применяется только для чатов с публичной или приватной ссылкой.
 
-Текущая публичная документация для этого метода опирается на официальный контракт MAX API. Публичного schema example для него пока нет.
+Schema entry: `docs/api-schemas/methods/chats.removemember.schema.json`. Live-вызов помечен safety-guarded, потому что он меняет состав участников.
 
 ### `leave(int $chatId): OperationResult`
 
 HTTP: `DELETE /chats/{chatId}/members/me`
 
-Удаляет текущего бота из участников чата.
+Удаляет текущего бота из участников группового чата или канала.
 
-Текущая публичная документация для этого метода опирается на официальный контракт MAX API. Публичного schema example для него пока нет.
+Schema entry: `docs/api-schemas/methods/chats.leave.schema.json`. Live-вызов помечен safety-guarded, потому что он выводит тестового бота из канала/чата.
 
 ### `addAdmins(int $chatId, AddChatAdminsPayload $payload): OperationResult`
 
 HTTP: `POST /chats/{chatId}/members/admins`
 
-Назначает одного или нескольких администраторов чата.
+Назначает одного или нескольких администраторов группового чата или канала. Бот должен быть администратором с правом `add_admins`.
 
-Текущая публичная документация для этого метода опирается на официальный контракт MAX API. Публичного schema example для него пока нет.
+Schema entry: `docs/api-schemas/methods/chats.addadmins.schema.json`. Live-вызов помечен safety-guarded, потому что он меняет административные права.
 
 ### `removeAdmin(int $chatId, int $userId): OperationResult`
 
 HTTP: `DELETE /chats/{chatId}/members/admins/{userId}`
 
-Снимает административные права у пользователя.
+Снимает административные права у пользователя или бота, не удаляя его из чата или канала.
 
-Текущая публичная документация для этого метода опирается на официальный контракт MAX API. Публичного schema example для него пока нет.
+Schema entry: `docs/api-schemas/methods/chats.removeadmin.schema.json`. Live-вызов помечен safety-guarded, потому что он меняет административные права.
 
 ### `sendAction(int $chatId, SenderAction $action): OperationResult`
 
@@ -360,6 +370,8 @@ HTTP: `POST /chats/{chatId}/actions`
 HTTP: `POST /messages?chat_id=...`
 
 Отправляет сообщение в чат.
+
+Для channel posts не задавайте `NewMessageBody::withNotify(false)`. В live smoke на канале MAX вернул `errors.send-message.channel-notify` при наличии `notify=false`; та же отправка без поля `notify` прошла для текста, кнопок, файла, изображения и изображения с кнопками.
 
 Подтверждённый фрагмент ответа:
 
@@ -406,9 +418,9 @@ HTTP: `POST /messages?user_id=...`
 
 ### `getById(string $messageId): Message`
 
-HTTP: `GET /messages?message_ids[]=...`
+HTTP: `GET /messages/{messageId}`
 
-Важно: метод использует список `message_ids` в query-параметрах.
+Начиная с `0.2.0`, метод использует прямой официальный endpoint для одного сообщения.
 
 Подтверждённый фрагмент ответа:
 
@@ -425,6 +437,14 @@ HTTP: `GET /messages?message_ids[]=...`
   }
 }
 ```
+
+Источник: `docs/api-schemas/index.json`
+
+### `getByQueryId(string $messageId): Message`
+
+HTTP: `GET /messages?message_ids[]=...`
+
+Сохраняет прежний query-based сценарий чтения по `message_ids` для совместимости с кодом, которому нужна batch-compatible семантика `GET /messages`.
 
 Источник: `docs/api-schemas/index.json`
 

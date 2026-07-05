@@ -1,14 +1,20 @@
 * text=auto eol=lf
 
-/.agents export-ignore
+/.webtolk export-ignore
 /.github export-ignore
 /.idea export-ignore
 /.serena export-ignore
+/.playwright-mcp export-ignore
 /.tmp export-ignore
+/playwright-report export-ignore
+/test-results export-ignore
 /docs-local export-ignore
 /tests export-ignore
 /vendor export-ignore
 /.env export-ignore
+/.php-cs-fixer.cache export-ignore
+/.phpstan.resultCache export-ignore
+/max-api-buttons-dom-*.json export-ignore
 /.gitignore export-ignore
 /.phpunit.result.cache export-ignore
 /phpunit.xml export-ignore

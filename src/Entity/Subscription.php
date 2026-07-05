@@ -43,7 +43,7 @@ final class Subscription extends AbstractEntity
      * Возвращает типы обновлений.
      * Нужен, чтобы читать это значение из объекта `Subscription` без обращения к сырому payload MAX API.
      *
-     * @return array Массив значений, подготовленный или возвращённый этим методом SDK.
+     * @return list<string> Массив значений, подготовленный или возвращённый этим методом SDK.
      * @since v.0.1.0
      * @link https://dev.max.ru/docs-api/methods/GET/subscriptions
      */

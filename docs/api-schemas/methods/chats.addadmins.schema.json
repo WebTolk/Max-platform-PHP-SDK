@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MAX API method schema: chats.addAdmins",
+  "method": "chats.addAdmins",
+  "outcome": "official_contract_safety_guarded",
+  "sdk_result_type": "Webtolk\\Max\\Entity\\OperationResult",
+  "http": {
+    "method": "POST",
+    "uri_template": "https://platform-api2.max.ru/chats/XXXX/members/admins",
+    "status": 200
+  },
+  "input_example": {
+    "chat_id": "XXXX",
+    "admins": [
+      {
+        "user_id": "XXXX",
+        "permissions": [
+          "write",
+          "pin_message"
+        ],
+        "alias": "XXXX"
+      }
+    ],
+    "marker": "XXXX"
+  },
+  "request_body_example": {
+    "admins": [
+      {
+        "user_id": "XXXX",
+        "permissions": [
+          "write",
+          "pin_message"
+        ],
+        "alias": "XXXX"
+      }
+    ],
+    "marker": "XXXX"
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "message": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "success"
+    ],
+    "additionalProperties": true
+  },
+  "response_example": {
+    "success": true
+  },
+  "error_example": null,
+  "notes": [
+    "This is an anonymized SDK method schema, not a raw API dump.",
+    "The endpoint is present in the 2026-07-05 official MAX documentation and in the SDK request layer.",
+    "Live verification was intentionally skipped because assigning admins mutates administrator rights in the shared test chat or channel."
+  ],
+  "live_verification_2026_07_05": {
+    "date": "2026-07-05",
+    "runner": "local integration runner",
+    "tls_verify": "disabled_for_test_runner_only",
+    "status": "not_run_safety_guard",
+    "reason": "Skipped to avoid changing administrator rights in the shared test chat or channel."
+  }
+}

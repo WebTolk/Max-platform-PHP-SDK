@@ -12,6 +12,9 @@ final class AddChatAdminsPayload
     private array $admins;
     private ?int $marker = null;
 
+    /**
+     * @param list<ChatAdminAssignment> $admins
+     */
     private function __construct(array $admins)
     {
         $this->admins = $admins;
@@ -23,7 +26,7 @@ final class AddChatAdminsPayload
             throw new ValidationException('admins cannot be empty.');
         }
 
-        return new self($admins);
+        return new self(array_values($admins));
     }
 
     public function withMarker(int $marker): self

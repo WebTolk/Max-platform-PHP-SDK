@@ -1,193 +1,162 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "title": "MAX API method schema: chats.admins",
-    "method": "chats.admins",
-    "outcome": "ok",
-    "sdk_result_type": "Webtolk\\Max\\Entity\\ChatMemberList",
-    "http": {
-        "method": "GET",
-        "uri_template": "https://platform-api.max.ru/chats/XXXX/members/admins",
-        "status": 200
-    },
-    "input_example": {
-        "chat_id": "XXXX"
-    },
-    "request_body_example": null,
-    "response_schema": {
-        "type": "object",
-        "properties": {
-            "members": {
-                "type": "array",
-                "items": {
-                    "oneOf": [
-                        {
-                            "type": "object",
-                            "properties": {
-                                "last_access_time": {
-                                    "type": "integer"
-                                },
-                                "is_owner": {
-                                    "type": "boolean"
-                                },
-                                "is_admin": {
-                                    "type": "boolean"
-                                },
-                                "join_time": {
-                                    "type": "integer"
-                                },
-                                "permissions": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string"
-                                    }
-                                },
-                                "user_id": {
-                                    "type": "integer"
-                                },
-                                "first_name": {
-                                    "type": "string"
-                                },
-                                "last_name": {
-                                    "type": "string"
-                                },
-                                "is_bot": {
-                                    "type": "boolean"
-                                },
-                                "last_activity_time": {
-                                    "type": "integer"
-                                },
-                                "description": {
-                                    "type": "string"
-                                },
-                                "avatar_url": {
-                                    "type": "string"
-                                },
-                                "full_avatar_url": {
-                                    "type": "string"
-                                },
-                                "name": {
-                                    "type": "string"
-                                }
-                            },
-                            "required": [
-                                "last_access_time",
-                                "is_owner",
-                                "is_admin",
-                                "join_time",
-                                "permissions",
-                                "user_id",
-                                "first_name",
-                                "last_name",
-                                "is_bot",
-                                "last_activity_time",
-                                "description",
-                                "avatar_url",
-                                "full_avatar_url",
-                                "name"
-                            ],
-                            "additionalProperties": true
-                        },
-                        {
-                            "type": "object",
-                            "properties": {
-                                "last_access_time": {
-                                    "type": "integer"
-                                },
-                                "is_owner": {
-                                    "type": "boolean"
-                                },
-                                "is_admin": {
-                                    "type": "boolean"
-                                },
-                                "join_time": {
-                                    "type": "integer"
-                                },
-                                "permissions": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string"
-                                    }
-                                },
-                                "user_id": {
-                                    "type": "integer"
-                                },
-                                "first_name": {
-                                    "type": "string"
-                                },
-                                "username": {
-                                    "type": "string"
-                                },
-                                "is_bot": {
-                                    "type": "boolean"
-                                },
-                                "last_activity_time": {
-                                    "type": "integer"
-                                },
-                                "description": {
-                                    "type": "string"
-                                },
-                                "avatar_url": {
-                                    "type": "string"
-                                },
-                                "full_avatar_url": {
-                                    "type": "string"
-                                },
-                                "name": {
-                                    "type": "string"
-                                }
-                            },
-                            "required": [
-                                "last_access_time",
-                                "is_owner",
-                                "is_admin",
-                                "join_time",
-                                "permissions",
-                                "user_id",
-                                "first_name",
-                                "username",
-                                "is_bot",
-                                "last_activity_time",
-                                "description",
-                                "avatar_url",
-                                "full_avatar_url",
-                                "name"
-                            ],
-                            "additionalProperties": true
-                        }
-                    ]
-                }
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MAX API method schema: chats.admins",
+  "method": "chats.admins",
+  "outcome": "ok",
+  "sdk_result_type": "Webtolk\\Max\\Entity\\ChatMemberList",
+  "http": {
+    "method": "GET",
+    "uri_template": "https://platform-api2.max.ru/chats/XXXX/members/admins",
+    "status": 200
+  },
+  "input_example": {
+    "chat_id": "XXXX"
+  },
+  "request_body_example": null,
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "members": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "last_access_time": {
+              "type": "integer"
+            },
+            "is_owner": {
+              "type": "boolean"
+            },
+            "is_admin": {
+              "type": "boolean"
+            },
+            "join_time": {
+              "type": "integer"
+            },
+            "permissions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "user_id": {
+              "type": "integer"
+            },
+            "first_name": {
+              "type": "string"
+            },
+            "last_name": {
+              "type": "string"
+            },
+            "is_bot": {
+              "type": "boolean"
+            },
+            "last_activity_time": {
+              "type": "integer"
+            },
+            "description": {
+              "type": "string"
+            },
+            "avatar_url": {
+              "type": "string"
+            },
+            "full_avatar_url": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
             }
-        },
-        "required": [
-            "members"
-        ],
-        "additionalProperties": true
-    },
-    "response_example": {
-        "members": {
-            "XXXX": {
-                "last_access_time": "XXXX",
-                "is_owner": false,
-                "is_admin": true,
-                "join_time": "XXXX",
-                "permissions": {
-                    "XXXX": "write"
-                },
-                "user_id": "XXXX",
-                "first_name": "XXXX",
-                "username": "XXXX",
-                "is_bot": true,
-                "last_activity_time": "XXXX",
-                "description": "XXXX",
-                "avatar_url": "XXXX",
-                "full_avatar_url": "XXXX",
-                "name": "XXXX"
-            }
+          },
+          "required": [
+            "last_access_time",
+            "is_owner",
+            "is_admin",
+            "join_time",
+            "permissions",
+            "user_id",
+            "first_name",
+            "last_name",
+            "is_bot",
+            "last_activity_time",
+            "description",
+            "avatar_url",
+            "full_avatar_url",
+            "name"
+          ],
+          "additionalProperties": true
         }
+      }
     },
-    "error_example": null,
-    "notes": [
-        "This is an anonymized development schema, not a raw API dump.",
-        "Use response_schema for structural assertions and response_example for field-shape orientation only."
+    "required": [
+      "members"
+    ],
+    "additionalProperties": true
+  },
+  "response_example": {
+    "members": [
+      {
+        "last_access_time": "XXXX",
+        "is_owner": true,
+        "is_admin": true,
+        "join_time": "XXXX",
+        "permissions": [
+          "XXXX",
+          "XXXX",
+          "XXXX",
+          "XXXX",
+          "XXXX",
+          "XXXX",
+          "XXXX",
+          "XXXX",
+          "XXXX",
+          "XXXX",
+          "XXXX"
+        ],
+        "user_id": "XXXX",
+        "first_name": "XXXX",
+        "last_name": "XXXX",
+        "is_bot": false,
+        "last_activity_time": "XXXX",
+        "description": "XXXX",
+        "avatar_url": "XXXX",
+        "full_avatar_url": "XXXX",
+        "name": "XXXX"
+      },
+      {
+        "last_access_time": "XXXX",
+        "is_owner": false,
+        "is_admin": true,
+        "join_time": "XXXX",
+        "permissions": [
+          "XXXX",
+          "XXXX",
+          "XXXX",
+          "XXXX",
+          "XXXX",
+          "XXXX"
+        ],
+        "user_id": "XXXX",
+        "first_name": "XXXX",
+        "username": "XXXX",
+        "is_bot": true,
+        "last_activity_time": "XXXX",
+        "description": "XXXX",
+        "avatar_url": "XXXX",
+        "full_avatar_url": "XXXX",
+        "name": "XXXX"
+      }
     ]
+  },
+  "error_example": null,
+  "notes": [
+    "This is an anonymized development schema, not a raw API dump.",
+    "Use response_schema for structural assertions and response_example for field-shape orientation only.",
+    "Live verification was executed against a local integration runner; transport security settings are local-only and are not part of the public API contract."
+  ],
+  "live_verification_2026_07_05": {
+    "date": "2026-07-05",
+    "runner": "local integration runner",
+    "tls_verify": "disabled_for_test_runner_only",
+    "status": "ok"
+  }
 }

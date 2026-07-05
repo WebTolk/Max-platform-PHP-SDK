@@ -42,7 +42,8 @@ SDK сам интерпретирует HTTP status и поднимает сво
 
 ```php
 $me = $max->bots()->me();
-print_r($me->toArray());
+
+echo json_encode($me->toArray(), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) . PHP_EOL;
 ```
 
 Подтверждённый фрагмент ответа:

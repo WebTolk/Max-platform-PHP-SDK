@@ -16,7 +16,7 @@ interface AttachmentPayloadInterface
      * Сериализует объект в массив тела запроса MAX API.
      * Нужен, чтобы request-слой мог отправить подготовленный payload без ручной сборки структуры массива.
      *
-     * @return array Массив тела запроса в формате, который ожидает MAX API.
+     * @return array<string, mixed> Массив тела запроса в формате, который ожидает MAX API.
      * @since v.0.1.0
      */
     public function toRequestArray(): array;

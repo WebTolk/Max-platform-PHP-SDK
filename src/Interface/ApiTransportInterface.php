@@ -21,7 +21,7 @@ interface ApiTransportInterface
      *
      * @param string $method HTTP-метод (`GET`, `POST`, `PUT`, `DELETE` и т.д.), который нужно использовать для вызова MAX API.
      * @param string $path Относительный путь endpoint-а MAX API без базового домена.
-     * @param array<string, string|array<int, string>|null> $query Массив query-параметров, который будет включён в URL запроса к MAX API.
+     * @param array<string, bool|int|string|array<int, int|string>|null> $query Массив query-параметров, который будет включён в URL запроса к MAX API.
      * @param array<string, string> $headers Набор HTTP-заголовков, которые нужно отправить или санитизировать.
      * @param array<string, mixed>|null $json Ассоциативный массив JSON-тела запроса; `null` означает запрос без JSON payload.
      * @return ResponseInterface Объект типа `ResponseInterface`, соответствующий контракту SDK или PSR.

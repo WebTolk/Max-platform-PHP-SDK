@@ -18,7 +18,7 @@ final class UploadRequestTest extends TestCase
 
     public function testCreateReturnsUploadUrl(): void
     {
-        $response = $this->createJsonResponse($this, json_encode([
+        $response = $this->createJsonResponse($this, $this->encodeJson([
             'url' => 'https://vu.okcdn.ru/upload.do?type=video',
             'token' => 'slot-token',
             'type' => 'video',
@@ -39,7 +39,7 @@ final class UploadRequestTest extends TestCase
 
     public function testGetVideoUsesVideoLookupEndpoint(): void
     {
-        $response = $this->createJsonResponse($this, json_encode([
+        $response = $this->createJsonResponse($this, $this->encodeJson([
             'token' => 'video-token',
             'urls' => [
                 'mp4' => 'https://cdn.example.test/video.mp4',
@@ -71,7 +71,7 @@ final class UploadRequestTest extends TestCase
 
     public function testUploadDelegatesToCreateAndPushBinary(): void
     {
-        $createResponse = $this->createJsonResponse($this, json_encode([
+        $createResponse = $this->createJsonResponse($this, $this->encodeJson([
             'url' => 'https://vu.okcdn.ru/upload.do?type=video',
             'token' => 'slot-token',
         ]));
@@ -107,7 +107,7 @@ final class UploadRequestTest extends TestCase
 
     public function testPushBinaryExtractsNestedImageTokenFromMultipartUploadResponse(): void
     {
-        $pushResponse = $this->createJsonResponse($this, json_encode([
+        $pushResponse = $this->createJsonResponse($this, $this->encodeJson([
             'photos' => [
                 'abc123' => [
                     'token' => 'image-token',
@@ -161,7 +161,7 @@ final class UploadRequestTest extends TestCase
 
     public function testUploadThrowsWhenCreateResponseMissesUrl(): void
     {
-        $createResponse = $this->createJsonResponse($this, json_encode([
+        $createResponse = $this->createJsonResponse($this, $this->encodeJson([
             'token' => 'slot-token',
         ]));
 
@@ -234,7 +234,7 @@ final class UploadRequestTest extends TestCase
 
     public function testCreateRejectsUntrustedUploadHost(): void
     {
-        $response = $this->createJsonResponse($this, json_encode([
+        $response = $this->createJsonResponse($this, $this->encodeJson([
             'url' => 'https://evil.example/upload.do?type=file',
             'token' => 'slot-token',
         ]));

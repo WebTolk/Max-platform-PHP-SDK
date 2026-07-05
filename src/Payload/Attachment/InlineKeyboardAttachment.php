@@ -19,7 +19,7 @@ final class InlineKeyboardAttachment implements AttachmentPayloadInterface
      * Создаёт объект `InlineKeyboardAttachment`.
      * Нужен, чтобы зафиксировать обязательные зависимости и исходные данные этого объекта до его дальнейшего использования в SDK.
      *
-     * @param array<int, array<int, KeyboardButtonInterface|array<string, mixed>>> $rows Строки inline-клавиатуры в порядке, в котором они должны быть показаны в сообщении.
+     * @param list<list<mixed>> $rows Строки inline-клавиатуры в порядке, в котором они должны быть показаны в сообщении.
      * @since v.0.1.0
      * @link https://dev.max.ru/docs-api/methods/POST/messages
      */
@@ -31,21 +31,21 @@ final class InlineKeyboardAttachment implements AttachmentPayloadInterface
      * Создаёт inline-клавиатуру из переданных строк кнопок.
      * Нужен, чтобы compact-формой собрать attachment для сообщения без ручной упаковки вложенных массивов.
      *
-     * @param array $rows Строки inline-клавиатуры в порядке, в котором они должны быть показаны в сообщении.
+     * @param list<mixed> ...$rows Строки inline-клавиатуры в порядке, в котором они должны быть показаны в сообщении.
      * @return self Текущий экземпляр объекта для продолжения fluent-цепочки вызовов.
      * @since v.0.1.0
      * @link https://dev.max.ru/docs-api/methods/POST/messages
      */
     public static function rows(array ...$rows): self
     {
-        return new self($rows);
+        return new self(array_values($rows));
     }
 
     /**
      * Сериализует объект в массив тела запроса MAX API.
      * Нужен, чтобы request-слой мог отправить подготовленный payload без ручной сборки структуры массива.
      *
-     * @return array Массив тела запроса в формате, который ожидает MAX API.
+     * @return array<string, mixed> Массив тела запроса в формате, который ожидает MAX API.
      * @since v.0.1.0
      * @link https://dev.max.ru/docs-api/methods/POST/messages
      */

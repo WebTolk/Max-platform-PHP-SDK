@@ -18,6 +18,9 @@ final class Video extends AbstractEntity
         return $this->rawData['token'] ?? null;
     }
 
+    /**
+     * @return ?array<string, string>
+     */
     public function getUrls(): ?array
     {
         $urls = $this->rawData['urls'] ?? null;
@@ -25,6 +28,9 @@ final class Video extends AbstractEntity
         return is_array($urls) ? $urls : null;
     }
 
+    /**
+     * @return ?array<string, mixed>
+     */
     public function getThumbnail(): ?array
     {
         $thumbnail = $this->rawData['thumbnail'] ?? null;

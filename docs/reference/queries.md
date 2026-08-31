@@ -47,6 +47,23 @@ $query = MessageQuery::forChat($chatId)->withCount(1);
 
 Источник: `docs/api-schemas/index.json`
 
+## `CommentQuery`
+
+Назначение: параметры для `messages()->listComments()`.
+
+Публичные методы:
+
+- `all(): self`
+- `forIds(string ...$commentIds): self`
+- `before(int $timestamp): self`
+- `after(int $timestamp): self`
+- `beforeTimestamp(int $timestamp): self`
+- `afterTimestamp(int $timestamp): self`
+- `withCount(int $count): self`
+- `toQueryParams(): array`
+
+Пустую выборку создавайте через `all()`. `count` должен быть в диапазоне `1..100`, а временные метки не могут быть отрицательными.
+
 ## `ChatMembersQuery`
 
 Назначение: параметры для `chats.members()`.

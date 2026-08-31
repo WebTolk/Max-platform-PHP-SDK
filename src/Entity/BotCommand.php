@@ -21,7 +21,18 @@ final class BotCommand extends AbstractEntity
      */
     public function getCommand(): ?string
     {
-        return $this->rawData['command'] ?? null;
+        return $this->rawData['command'] ?? $this->rawData['name'] ?? null;
+    }
+
+    /**
+     * Возвращает имя команды.
+     *
+     * @return ?string Имя команды из ответа MAX API.
+     * @since v.0.3.0
+     */
+    public function getName(): ?string
+    {
+        return $this->rawData['name'] ?? $this->rawData['command'] ?? null;
     }
 
     /**

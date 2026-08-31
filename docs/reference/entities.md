@@ -21,6 +21,24 @@ SDK гидратирует ответы MAX API в простые entity-объ�
 - `getFullAvatarUrl()`
 - `getCommands()`
 
+## `User` и `UserWithPhoto`
+
+`User` предоставляет базовые сведения о пользователе:
+
+- `getId()`
+- `getFirstName()`
+- `getLastName()`
+- `getUsername()`
+- `isBot()`
+- `getLastActivityTime()`
+- `getName()`
+
+`UserWithPhoto` дополняет их методами `getAvatarUrl()` и `getFullAvatarUrl()`.
+
+## `BotCommand` и `BotCommandList`
+
+`BotCommand` предоставляет `getName()`, `getCommand()` и `getDescription()`. Гидратор принимает как актуальное поле `name`, так и прежнее `command`. `BotCommandList::getCommands()` возвращает типизированный список команд.
+
 ## `Chat`
 
 Ключевые getter-методы:
@@ -29,6 +47,7 @@ SDK гидратирует ответы MAX API в простые entity-объ�
 - `getType()`
 - `getStatus()`
 - `getTitle()`
+- `getIcon()`
 - `getLastEventTime()`
 - `getParticipantsCount()`
 - `getOwnerId()`
@@ -37,6 +56,7 @@ SDK гидратирует ответы MAX API в простые entity-объ�
 - `getLink()`
 - `getDescription()`
 - `getDialogWithUser()`
+- `getChatMessageId()`
 - `getPinnedMessage()`
 
 Подтверждённый фрагмент ответа:
@@ -105,7 +125,7 @@ SDK гидратирует ответы MAX API в простые entity-объ�
   "body": {
     "mid": "XXXX",
     "seq": "XXXX",
-    "text": "max-sdk live audit"
+    "text": "XXXX"
   }
 }
 ```
@@ -142,6 +162,15 @@ SDK гидратирует ответы MAX API в простые entity-объ�
 Главный метод:
 
 - `getViews(): ?int`
+
+## Сущности комментариев
+
+- `CommentMessage`: `getId()`, `getSender()`, `getRecipient()`, `getTimestamp()`, `getLink()`, `getBody()`, `getText()`
+- `CommentMessageBody`: `getMessageId()`, `getText()`, `getMarkup()`
+- `CommentLinkedMessage`: `getType()`, `getChatId()`, `getMessageId()`, `getMessage()`
+- `CommentMessageList`: `getMessages()`, `getMarker()`
+
+Все comment entities сохраняют полный исходный ответ через унаследованные `toArray()` и `jsonSerialize()`.
 
 ## `Recipient`
 
@@ -194,6 +223,9 @@ SDK гидратирует ответы MAX API в простые entity-объ�
 - `Update::getType()`
 - `Update::getTimestamp()`
 - `Update::getMessage()`
+- `Update::getChatId()`
+- `Update::getUser()`
+- `Update::isChannel()`
 - `Update::getUserLocale()`
 - `UpdateList::getUpdates()`
 - `UpdateList::getMarker()`
@@ -217,7 +249,9 @@ SDK гидратирует ответы MAX API в простые entity-объ�
 - `UploadUrl::getType()`
 - `UploadUrl::getToken()`
 - `UploadUrl::hasToken()`
+- `UploadUrl::requireTrustedUrl()`
 - `UploadUrl::toAttachment()`
+- `UploadResult::fromUploadRequest()`
 - `UploadResult::getType()`
 - `UploadResult::getToken()`
 - `UploadResult::hasToken()`

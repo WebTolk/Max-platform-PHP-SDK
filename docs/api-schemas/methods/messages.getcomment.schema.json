@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MAX API method schema: messages.getComment",
+  "method": "messages.getComment",
+  "outcome": "ok",
+  "sdk_result_type": "Webtolk\\Max\\Entity\\CommentMessage",
+  "http": {
+    "method": "GET",
+    "uri_template": "https://platform-api2.max.ru/messages/XXXX/comments/XXXX",
+    "status": 200
+  },
+  "input_example": {
+    "message_id": "XXXX",
+    "comment_id": "XXXX"
+  },
+  "request_body_example": null,
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "recipient": {"type": "object", "additionalProperties": true},
+      "timestamp": {"type": "integer"},
+      "body": {"type": "object", "required": ["mid"], "additionalProperties": true},
+      "sender": {"type": "object", "additionalProperties": true}
+    },
+    "required": ["recipient", "timestamp", "body", "sender"],
+    "additionalProperties": true
+  },
+  "response_example": {
+    "recipient": {"chat_type": "chat", "chat_id": "XXXX", "post_id": "XXXX"},
+    "timestamp": "XXXX",
+    "body": {"mid": "XXXX", "seq": "XXXX", "text": "XXXX"},
+    "sender": {"user_id": "XXXX", "first_name": "XXXX", "username": "XXXX", "is_bot": true, "last_activity_time": "XXXX", "name": "XXXX"}
+  },
+  "error_example": null,
+  "notes": [
+    "Successful comment reads before and after edit were verified through both transports on 2026-08-31.",
+    "The live response stores the comment identifier in body.mid; SDK hydration supports this shape.",
+    "Sanitized raw response bodies are published under docs/api-responses/2026-08-31/comment-crud/."
+  ],
+  "live_verification_2026_08_31": {
+    "date": "2026-08-31",
+    "transports": [
+      "guzzle",
+      "joomla-http"
+    ],
+    "status": "ok",
+    "http_status": 200
+  }
+}

@@ -4,9 +4,11 @@ declare(strict_types=1);
 
 namespace Webtolk\Max\Request;
 
+use Webtolk\Max\Entity\BotCommandList;
 use Webtolk\Max\Entity\BotInfo;
 use Webtolk\Max\Hydration\JsonDecoder;
 use Webtolk\Max\Interface\ApiTransportInterface;
+use Webtolk\Max\Payload\BotCommandsPayload;
 
 /**
  * Низкоуровневый request-адаптер для bot endpoint-ов MAX API.
@@ -44,5 +46,27 @@ final class BotRequest
         $payload = JsonDecoder::decode($response);
 
         return new BotInfo($payload);
+    }
+
+    /**
+     * Выполняет HTTP-запрос `PATCH /me/commands` для обновления команд бота.
+     *
+     * @param BotCommandsPayload $payload Команды бота для сохранения.
+     * @return BotCommandList Обновлённый список команд.
+     * @since v.0.3.0
+     * @link https://dev.max.ru/docs-api/methods/PATCH/me/commands
+     */
+    public function updateCommands(BotCommandsPayload $payload): BotCommandList
+    {
+        $response = $this->httpClient->requestJson(
+            'PATCH',
+            '/me/commands',
+            [],
+            [],
+            $payload->toRequestArray(),
+        );
+        $decoded = JsonDecoder::decode($response);
+
+        return new BotCommandList($decoded);
     }
 }

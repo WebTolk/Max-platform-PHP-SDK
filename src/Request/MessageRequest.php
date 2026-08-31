@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Webtolk\Max\Request;
 
+use Webtolk\Max\Entity\CommentMessage;
+use Webtolk\Max\Entity\CommentMessageList;
 use Webtolk\Max\Entity\Message;
 use Webtolk\Max\Entity\MessageList;
 use Webtolk\Max\Entity\OperationResult;
@@ -11,7 +13,9 @@ use Webtolk\Max\Hydration\JsonDecoder;
 use Webtolk\Max\Interface\ApiTransportInterface;
 use Webtolk\Max\Payload\CallbackAnswerPayload;
 use Webtolk\Max\Payload\EditMessageBody;
+use Webtolk\Max\Payload\NewCommentBody;
 use Webtolk\Max\Payload\NewMessageBody;
+use Webtolk\Max\Query\CommentQuery;
 use Webtolk\Max\Query\MessageQuery;
 
 /**
@@ -166,21 +170,126 @@ final class MessageRequest
     }
 
     /**
+     * Выполняет HTTP-запрос `POST /messages/{messageId}/comments`.
+     *
+     * @since v.0.3.0
+     * @link https://dev.max.ru/docs-api/methods/POST/messages/-messageId-/comments
+     */
+    public function sendComment(
+        string $messageId,
+        NewCommentBody $body,
+        ?bool $disableLinkPreview = null,
+    ): CommentMessage {
+        $response = $this->httpClient->requestJson(
+            'POST',
+            '/messages/' . rawurlencode($messageId) . '/comments',
+            ['disable_link_preview' => $disableLinkPreview],
+            [],
+            $body->toRequestArray(),
+        );
+        $payload = JsonDecoder::decode($response);
+        $message = $payload['message'] ?? [];
+
+        return new CommentMessage(is_array($message) ? $message : []);
+    }
+
+    /**
+     * Выполняет HTTP-запрос `GET /messages/{messageId}/comments`.
+     *
+     * @since v.0.3.0
+     * @link https://dev.max.ru/docs-api/methods/GET/messages/-messageId-/comments
+     */
+    public function listComments(string $messageId, ?CommentQuery $query = null): CommentMessageList
+    {
+        $query ??= CommentQuery::all();
+        $response = $this->httpClient->requestJson(
+            'GET',
+            '/messages/' . rawurlencode($messageId) . '/comments',
+            $query->toQueryParams(),
+        );
+        $payload = JsonDecoder::decode($response);
+
+        return new CommentMessageList($payload);
+    }
+
+    /**
+     * Выполняет HTTP-запрос `GET /messages/{messageId}/comments/{commentId}`.
+     *
+     * @since v.0.3.0
+     * @link https://dev.max.ru/docs-api/methods/GET/messages/-messageId-/comments/-commentId-
+     */
+    public function getComment(string $messageId, string $commentId): CommentMessage
+    {
+        $response = $this->httpClient->requestJson(
+            'GET',
+            '/messages/' . rawurlencode($messageId) . '/comments/' . rawurlencode($commentId),
+        );
+        $payload = JsonDecoder::decode($response);
+
+        return new CommentMessage($payload);
+    }
+
+    /**
+     * Выполняет HTTP-запрос `PUT /messages/{messageId}/comments`.
+     *
+     * @since v.0.3.0
+     * @link https://dev.max.ru/docs-api/methods/PUT/messages/-messageId-/comments
+     */
+    public function editComment(string $messageId, string $commentId, NewCommentBody $body): OperationResult
+    {
+        $response = $this->httpClient->requestJson(
+            'PUT',
+            '/messages/' . rawurlencode($messageId) . '/comments',
+            ['comment_id' => $commentId],
+            [],
+            $body->toRequestArray(),
+        );
+        $payload = JsonDecoder::decode($response);
+
+        return new OperationResult($payload);
+    }
+
+    /**
+     * Выполняет HTTP-запрос `DELETE /messages/{messageId}/comments`.
+     *
+     * @since v.0.3.0
+     * @link https://dev.max.ru/docs-api/methods/DELETE/messages/-messageId-/comments
+     */
+    public function deleteComment(string $messageId, string $commentId): OperationResult
+    {
+        $response = $this->httpClient->requestJson(
+            'DELETE',
+            '/messages/' . rawurlencode($messageId) . '/comments',
+            ['comment_id' => $commentId],
+        );
+        $payload = JsonDecoder::decode($response);
+
+        return new OperationResult($payload);
+    }
+
+    /**
      * Выполняет HTTP-запрос `POST /answers` для callback-ответа.
      * Нужен, чтобы отправить MAX API уведомление или сообщение по `callback_id` и вернуть `OperationResult`.
      *
      * @param string $callbackId Идентификатор callback-события, который приходит от MAX для inline-кнопки.
      * @param CallbackAnswerPayload $payload Payload-объект SDK, который будет сериализован в формат запроса MAX API.
+     * @param ?bool $disableLinkPreview Флаг отключения превью ссылок; `null` оставляет поведение API по умолчанию.
      * @return OperationResult Результат метода в виде объекта `OperationResult`, подготовленного для дальнейшего использования в SDK или прикладном коде.
      * @since v.0.1.0
      * @link https://dev.max.ru/docs-api/methods/POST/answers
      */
-    public function answerCallback(string $callbackId, CallbackAnswerPayload $payload): OperationResult
-    {
+    public function answerCallback(
+        string $callbackId,
+        CallbackAnswerPayload $payload,
+        ?bool $disableLinkPreview = null,
+    ): OperationResult {
         $response = $this->httpClient->requestJson(
             'POST',
             '/answers',
-            ['callback_id' => $callbackId],
+            [
+                'callback_id' => $callbackId,
+                'disable_link_preview' => $disableLinkPreview,
+            ],
             [],
             $payload->toRequestArray(),
         );

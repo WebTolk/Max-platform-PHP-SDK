@@ -1,0 +1,25 @@
+{
+    "messages": [
+        {
+            "recipient": {
+                "chat_type": "chat",
+                "chat_id": "XXXX",
+                "post_id": "XXXX"
+            },
+            "timestamp": "XXXX",
+            "body": {
+                "mid": "XXXX",
+                "seq": "XXXX",
+                "text": "XXXX"
+            },
+            "sender": {
+                "user_id": "XXXX",
+                "first_name": "XXXX",
+                "username": "XXXX",
+                "is_bot": true,
+                "last_activity_time": "XXXX",
+                "name": "XXXX"
+            }
+        }
+    ]
+}

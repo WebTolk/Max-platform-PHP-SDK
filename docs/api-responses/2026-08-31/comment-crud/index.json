@@ -1,0 +1,113 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Sanitized live MAX API comment responses",
+    "date": "2026-08-31",
+    "source": "Live MAX Platform API calls through the SDK; private raw evidence is excluded from distribution.",
+    "sanitization": [
+        "Identifiers, timestamps, names, usernames, free-form text and links are replaced with XXXX.",
+        "Authorization data and request payloads are not published.",
+        "Files contain sanitized API response bodies, not synthetic examples."
+    ],
+    "snapshots": [
+        {
+            "transport": "guzzle",
+            "sdk_method": "messages.sendComment",
+            "scenario": "messages.sendComment",
+            "http_status": 200,
+            "file": "./guzzle/messages.sendComment.response.json"
+        },
+        {
+            "transport": "guzzle",
+            "sdk_method": "messages.listComments",
+            "scenario": "messages.listComments.beforeEdit",
+            "http_status": 200,
+            "file": "./guzzle/messages.listComments.beforeEdit.response.json"
+        },
+        {
+            "transport": "guzzle",
+            "sdk_method": "messages.getComment",
+            "scenario": "messages.getComment.beforeEdit",
+            "http_status": 200,
+            "file": "./guzzle/messages.getComment.beforeEdit.response.json"
+        },
+        {
+            "transport": "guzzle",
+            "sdk_method": "messages.editComment",
+            "scenario": "messages.editComment",
+            "http_status": 200,
+            "file": "./guzzle/messages.editComment.response.json"
+        },
+        {
+            "transport": "guzzle",
+            "sdk_method": "messages.getComment",
+            "scenario": "messages.getComment.afterEdit",
+            "http_status": 200,
+            "file": "./guzzle/messages.getComment.afterEdit.response.json"
+        },
+        {
+            "transport": "guzzle",
+            "sdk_method": "messages.deleteComment",
+            "scenario": "messages.deleteComment",
+            "http_status": 200,
+            "file": "./guzzle/messages.deleteComment.response.json"
+        },
+        {
+            "transport": "guzzle",
+            "sdk_method": "messages.listComments",
+            "scenario": "messages.listComments.afterDelete",
+            "http_status": 200,
+            "file": "./guzzle/messages.listComments.afterDelete.response.json"
+        },
+        {
+            "transport": "joomla-http",
+            "sdk_method": "messages.sendComment",
+            "scenario": "messages.sendComment",
+            "http_status": 200,
+            "file": "./joomla-http/messages.sendComment.response.json"
+        },
+        {
+            "transport": "joomla-http",
+            "sdk_method": "messages.listComments",
+            "scenario": "messages.listComments.beforeEdit",
+            "http_status": 200,
+            "file": "./joomla-http/messages.listComments.beforeEdit.response.json"
+        },
+        {
+            "transport": "joomla-http",
+            "sdk_method": "messages.getComment",
+            "scenario": "messages.getComment.beforeEdit",
+            "http_status": 200,
+            "file": "./joomla-http/messages.getComment.beforeEdit.response.json"
+        },
+        {
+            "transport": "joomla-http",
+            "sdk_method": "messages.editComment",
+            "scenario": "messages.editComment",
+            "http_status": 200,
+            "file": "./joomla-http/messages.editComment.response.json"
+        },
+        {
+            "transport": "joomla-http",
+            "sdk_method": "messages.getComment",
+            "scenario": "messages.getComment.afterEdit",
+            "http_status": 200,
+            "file": "./joomla-http/messages.getComment.afterEdit.response.json"
+        },
+        {
+            "transport": "joomla-http",
+            "sdk_method": "messages.deleteComment",
+            "scenario": "messages.deleteComment",
+            "http_status": 200,
+            "file": "./joomla-http/messages.deleteComment.response.json"
+        },
+        {
+            "transport": "joomla-http",
+            "sdk_method": "messages.listComments",
+            "scenario": "messages.listComments.afterDelete",
+            "http_status": 200,
+            "file": "./joomla-http/messages.listComments.afterDelete.response.json"
+        }
+    ],
+    "transport_shapes_equal": true,
+    "snapshot_count": 14
+}

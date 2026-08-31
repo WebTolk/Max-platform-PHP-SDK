@@ -11,11 +11,12 @@
   },
   "input_example": {
     "chat_id": "XXXX",
-    "title": "XXXX"
+    "title": "XXXX",
+    "description": "XXXX"
   },
   "request_body_example": {
     "title": "XXXX",
-    "notify": false
+    "description": "XXXX"
   },
   "response_schema": {
     "type": "object",
@@ -30,6 +31,9 @@
         "type": "string"
       },
       "title": {
+        "type": "string"
+      },
+      "description": {
         "type": "string"
       },
       "last_event_time": {
@@ -56,6 +60,7 @@
       "type",
       "status",
       "title",
+      "description",
       "last_event_time",
       "participants_count",
       "is_public",
@@ -70,6 +75,7 @@
     "type": "chat",
     "status": "active",
     "title": "XXXX",
+    "description": "XXXX",
     "last_event_time": "XXXX",
     "participants_count": 2,
     "is_public": false,
@@ -89,5 +95,15 @@
     "tls_verify": "disabled_for_test_runner_only",
     "status": "not_run_safety_guard",
     "reason": "Skipped to avoid mutating test chat title/icon/notification state."
+  },
+  "live_verification_2026_08_31": {
+    "date": "2026-08-31",
+    "transports": [
+      "guzzle",
+      "joomla-http"
+    ],
+    "status": "ok",
+    "http_status": 200,
+    "state_handling": "Existing title and description were submitted unchanged."
   }
 }

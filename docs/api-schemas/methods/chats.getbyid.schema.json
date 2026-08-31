@@ -45,19 +45,9 @@
       },
       "participants": {
         "type": "object",
-        "properties": {
-          "8737252": {
-            "type": "integer"
-          },
-          "267812104": {
-            "type": "integer"
-          }
-        },
-        "required": [
-          "8737252",
-          "267812104"
-        ],
-        "additionalProperties": true
+        "additionalProperties": {
+          "type": "integer"
+        }
       },
       "link": {
         "type": "string"
@@ -93,8 +83,7 @@
     "description": "XXXX",
     "owner_id": "XXXX",
     "participants": {
-      "8737252": "XXXX",
-      "267812104": "XXXX"
+      "XXXX": "XXXX"
     },
     "link": "XXXX",
     "messages_count": "XXXX"

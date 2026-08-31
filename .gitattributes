@@ -1,6 +1,7 @@
 * text=auto eol=lf
 
 /.webtolk export-ignore
+/.codex export-ignore
 /.github export-ignore
 /.idea export-ignore
 /.serena export-ignore

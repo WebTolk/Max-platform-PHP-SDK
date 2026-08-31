@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MAX API method schema: messages.deleteComment",
+  "method": "messages.deleteComment",
+  "outcome": "ok",
+  "sdk_result_type": "Webtolk\\Max\\Entity\\OperationResult",
+  "http": {
+    "method": "DELETE",
+    "uri_template": "https://platform-api2.max.ru/messages/XXXX/comments?comment_id=XXXX",
+    "status": 200
+  },
+  "input_example": {
+    "message_id": "XXXX",
+    "comment_id": "XXXX"
+  },
+  "request_body_example": null,
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "message": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "success"
+    ],
+    "additionalProperties": true
+  },
+  "response_example": {"success": true},
+  "error_example": null,
+  "notes": [
+    "Successful comment deletion was verified through Guzzle and Joomla HTTP on 2026-08-31.",
+    "A follow-up listComments returned an empty messages array on both transports.",
+    "Sanitized raw response bodies are published under docs/api-responses/2026-08-31/comment-crud/."
+  ],
+  "live_verification_2026_08_31": {
+    "date": "2026-08-31",
+    "transports": [
+      "guzzle",
+      "joomla-http"
+    ],
+    "status": "ok",
+    "http_status": 200
+  }
+}

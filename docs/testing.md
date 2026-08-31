@@ -1,6 +1,6 @@
 # Тестирование
 
-В публичном репозитории сохраняются unit tests и обезличенные JSON schemas. Локальные live/debug evidence-файлы не входят в состав коммита.
+В публичном репозитории сохраняются unit tests, обезличенные JSON schemas и очищенные тела реальных API-ответов. Полные локальные live/debug evidence-файлы не входят в состав коммита.
 
 ## Что входит в публичную проверку
 
@@ -12,6 +12,8 @@
   Публичный индекс по всем методам SDK.
 - `docs/api-schemas/methods/*.schema.json`
   Публичные обезличенные schema/examples для разработки и проверки контрактов.
+- `docs/api-responses/**`
+  Очищенные JSON-тела реальных live-ответов с сохранённой структурой MAX API.
 
 ## Static analysis
 
@@ -45,6 +47,7 @@ If the local PHP runtime points its temp/cache directory to a restricted OSPanel
 Список методов, для которых в schema pack сохранены обезличенные examples:
 
 - `bots.me`
+- `bots.updateCommands`
 - `chats.list`
 - `chats.addAdmins`
 - `chats.addMembers`
@@ -73,6 +76,11 @@ If the local PHP runtime points its temp/cache directory to a restricted OSPanel
 - `messages.getByQueryId`
 - `messages.edit`
 - `messages.delete`
+- `messages.sendComment`
+- `messages.listComments`
+- `messages.getComment`
+- `messages.editComment`
+- `messages.deleteComment`
 - `updates.list`
 - `subscriptions.list`
 - `subscriptions.create`
@@ -82,9 +90,31 @@ If the local PHP runtime points its temp/cache directory to a restricted OSPanel
 Методы без подтверждённого успешного live example:
 
 - `interaction.reply_update` как отдельный live sample для long-polling reply flow
-- `chats.getByLink` до появления совместимой публичной ссылки канала в test context
+- `chats.getByLink`: переданная invite-ссылка канала возвращает `404 chat.not.found`; канал был безопасно разрешён через доступный боту `chats.list`
 - `chats.addMembers`, `chats.removeMember`, `chats.leave`, `chats.addAdmins`, `chats.removeAdmin` помечены `not_run_safety_guard`, потому что live-вызовы меняют участников или права канала
-- `chats.delete` помечен `legacy_unconfirmed_official_absent`, потому что SDK-метод существует, но текущий официальный endpoint inventory MAX не содержит `DELETE /chats/{chatId}`
+- `chats.delete` подтверждён безопасным запросом к отсутствующему chat ID: endpoint вернул HTTP 200 и `OperationResult(success=false)`; реальное удаление чата не выполнялось
+
+## Live evidence 2026-08-31
+
+Локальный dual-transport runner выполнил 43 сценария на каждом транспорте, нормализованные в 40 публичных методов SDK:
+
+- основной прогон Guzzle: 33 `ok`, 10 контролируемых `api_error`
+- основной прогон Joomla HTTP: 33 `ok`, 10 контролируемых `api_error`
+- supplemental `updates.list` с официальными `comment_created`, `comment_edited`, `comment_removed`: HTTP 200 на обоих транспортах
+- пропущенных публичных методов: 0
+- различий transport shape: 1, только optional `icon` в разных страницах `chats.list`
+- все 90 JSON-файлов и вложенные raw JSON bodies валидны
+- токен и незамаскированный Authorization header в evidence отсутствуют
+
+Raw evidence хранится только в игнорируемом приватном каталоге и не публикуется. Публичные схемы в `docs/api-schemas/` обезличены.
+
+Дополнительный channel-backed comment CRUD run сохранён только локально:
+
+- `messages.sendComment`, `listComments`, `getComment`, `editComment`, `deleteComment`: HTTP 200 через Guzzle и Joomla HTTP;
+- follow-up `getComment` подтвердил отредактированный текст;
+- follow-up `listComments` после удаления вернул пустой `messages`;
+- тестовые комментарии и родительские посты удалены;
+- 14 очищенных тел ответов опубликованы в `docs/api-responses/2026-08-31/comment-crud/`.
 
 ## Рекомендация по обновлению документации
 

@@ -23,7 +23,7 @@
 - В больших ответах намеренно опускаются шумные или длинные поля, если они не важны для контракта метода.
 - Возле каждого response example указан публичный schema source.
 - Если по методу нет подтверждённого live response example, это указано явно в schema-файле через `live_verification_2026_07_05.status`.
-- Публичная документация не ссылается на локальные live dumps, `.webtolk`, `.playwright-mcp` или другие технические артефакты. Для машинного чтения используйте только `docs/api-schemas/index.json` и `docs/api-schemas/methods/*.schema.json`.
+- Публичная документация не ссылается на локальные live dumps или другие внутренние технические артефакты. Для машинного чтения используйте только `docs/api-schemas/index.json` и `docs/api-schemas/methods/*.schema.json`.
 
 ## Карта разделов
 

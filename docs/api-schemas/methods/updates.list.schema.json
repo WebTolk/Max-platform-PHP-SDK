@@ -6,12 +6,17 @@
   "sdk_result_type": "Webtolk\\Max\\Entity\\UpdateList",
   "http": {
     "method": "GET",
-    "uri_template": "https://platform-api2.max.ru/updates?limit=XXXX&timeout=XXXX",
+    "uri_template": "https://platform-api2.max.ru/updates?limit=XXXX&timeout=XXXX&types=XXXX",
     "status": 200
   },
   "input_example": {
     "limit": 5,
-    "timeout": 0
+    "timeout": 0,
+    "types": [
+      "comment_created",
+      "comment_edited",
+      "comment_removed"
+    ]
   },
   "request_body_example": null,
   "response_schema": {
@@ -46,5 +51,14 @@
     "runner": "local integration runner",
     "tls_verify": "disabled_for_test_runner_only",
     "status": "ok"
+  },
+  "live_verification_2026_08_31": {
+    "date": "2026-08-31",
+    "transports": [
+      "guzzle",
+      "joomla-http"
+    ],
+    "status": "ok",
+    "http_status": 200
   }
 }

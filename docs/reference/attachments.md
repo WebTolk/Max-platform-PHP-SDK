@@ -164,7 +164,7 @@ $keyboard = InlineKeyboardAttachment::rows([
 
 ```json
 {
-  "url": "https://vu.okcdn.ru/upload.do?...",
+  "url": "XXXX",
   "token": "XXXX"
 }
 ```

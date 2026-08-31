@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Webtolk\Max\Module;
 
+use Webtolk\Max\Entity\BotCommandList;
 use Webtolk\Max\Entity\BotInfo;
+use Webtolk\Max\Payload\BotCommandsPayload;
 use Webtolk\Max\Request\BotRequest;
 
 /**
@@ -40,5 +42,18 @@ final class BotModule
     public function me(): BotInfo
     {
         return $this->request->me();
+    }
+
+    /**
+     * Обновляет команды бота через публичный модуль SDK.
+     *
+     * @param BotCommandsPayload $payload Команды бота для сохранения.
+     * @return BotCommandList Обновлённый список команд.
+     * @since v.0.3.0
+     * @link https://dev.max.ru/docs-api/methods/PATCH/me/commands
+     */
+    public function updateCommands(BotCommandsPayload $payload): BotCommandList
+    {
+        return $this->request->updateCommands($payload);
     }
 }

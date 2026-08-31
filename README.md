@@ -92,17 +92,18 @@ echo 'Message text: ' . ($message->getBody()?->getText() ?? '') . PHP_EOL;
 ### Bots
 
 - `bots()->me()` — получить профиль текущего бота
+- `bots()->updateCommands()` — заменить список команд бота (до 32 команд)
 
 ### Chats
 
-- `chats()->list()` — legacy-метод `GET /chats`; по документации MAX с июня 2026 больше не поддерживается, для новых интеграций сохраняйте `chat_id` из webhook subscription events
+- `chats()->list()` — compatibility-метод `GET /chats`: changelog MAX объявляет его неподдерживаемым, но 2026-08-31 live API всё ещё возвращает список; для новых интеграций надёжнее сохранять `chat_id` из webhook events
 - `chats()->getById()` — карточка чата
 - `chats()->getByLink()` — карточка публичного канала по совместимой публичной ссылке канала
 - `chats()->members()` — участники
 - `chats()->memberMe()` — текущий участник
 - `chats()->admins()` — администраторы
-- `chats()->update()` — изменение названия, иконки и pinned message
-- `chats()->delete()` — legacy/unconfirmed удаление чата; SDK-метод сохранён, но текущая официальная копия MAX API от 2026-07-05 не содержит `DELETE /chats/{chatId}`
+- `chats()->update()` — изменение названия, описания, иконки и pinned message
+- `chats()->delete()` — compatibility-удаление чата; endpoint принял безопасный live-запрос 2026-08-31, но отсутствует в части официальной навигации
 - `chats()->getPinnedMessage()` — чтение закреплённого сообщения
 - `chats()->pin()` — закрепление сообщения
 - `chats()->unpin()` — снятие закрепления
@@ -122,7 +123,12 @@ echo 'Message text: ' . ($message->getBody()?->getText() ?? '') . PHP_EOL;
 - `messages()->list()` — выборка сообщений
 - `messages()->edit()` — редактирование
 - `messages()->delete()` — удаление
-- `messages()->answerCallback()` — callback answer
+- `messages()->sendComment()` — отправка комментария к посту канала
+- `messages()->listComments()` — список комментариев к посту
+- `messages()->getComment()` — чтение отдельного комментария
+- `messages()->editComment()` — редактирование комментария
+- `messages()->deleteComment()` — удаление комментария
+- `messages()->answerCallback()` — callback answer с optional `disable_link_preview`
 
 ### Uploads
 
@@ -154,6 +160,7 @@ echo 'Message text: ' . ($message->getBody()?->getText() ?? '') . PHP_EOL;
 - Для channel posts не передавайте `NewMessageBody::withNotify(false)`: live smoke на канале вернул `errors.send-message.channel-notify`; без поля `notify` отправка постов, кнопок и вложений проходит.
 - Для `audio` и `video` после успешной загрузки возможен временный `attachment.not.ready`.
 - Для `messages.answerCallback()` в публичном schema pack уже есть подтверждённый success example.
+- События комментариев можно передавать в `GetUpdatesQuery::withTypes()` и `CreateSubscriptionPayload` строками `comment_created`, `comment_edited` и `comment_removed`.
 
 ## Тестирование
 
@@ -182,3 +189,4 @@ vendor/bin/phpunit --configuration phpunit.xml
 - [Сущности](./docs/reference/entities.md)
 - [Ошибки и edge cases](./docs/errors.md)
 - [Тестирование](./docs/testing.md)
+- [Обезличенные ответы MAX API](./docs/api-responses/README.md)

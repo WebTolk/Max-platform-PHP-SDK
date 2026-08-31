@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MAX API method schema: messages.listComments",
+  "method": "messages.listComments",
+  "outcome": "ok",
+  "sdk_result_type": "Webtolk\\Max\\Entity\\CommentMessageList",
+  "http": {
+    "method": "GET",
+    "uri_template": "https://platform-api2.max.ru/messages/XXXX/comments?count=XXXX",
+    "status": 200
+  },
+  "input_example": {
+    "message_id": "XXXX",
+    "count": 10
+  },
+  "request_body_example": null,
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "messages": {
+        "type": "array",
+        "items": {"type": "object", "additionalProperties": true}
+      },
+      "marker": {"type": "integer"}
+    },
+    "required": ["messages"],
+    "additionalProperties": true
+  },
+  "response_example": {
+    "messages": [
+      {
+        "recipient": {"chat_type": "chat", "chat_id": "XXXX", "post_id": "XXXX"},
+        "timestamp": "XXXX",
+        "body": {"mid": "XXXX", "seq": "XXXX", "text": "XXXX"},
+        "sender": {"user_id": "XXXX", "first_name": "XXXX", "username": "XXXX", "is_bot": true, "last_activity_time": "XXXX", "name": "XXXX"}
+      }
+    ]
+  },
+  "error_example": null,
+  "notes": [
+    "Successful comment listing before edit and an empty list after deletion were verified through both transports on 2026-08-31.",
+    "Sanitized raw response bodies are published under docs/api-responses/2026-08-31/comment-crud/."
+  ],
+  "live_verification_2026_08_31": {
+    "date": "2026-08-31",
+    "transports": [
+      "guzzle",
+      "joomla-http"
+    ],
+    "status": "ok",
+    "http_status": 200
+  }
+}

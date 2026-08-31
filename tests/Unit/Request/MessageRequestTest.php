@@ -8,7 +8,9 @@ use PHPUnit\Framework\TestCase;
 use Webtolk\Max\Interface\ApiTransportInterface;
 use Webtolk\Max\Payload\CallbackAnswerPayload;
 use Webtolk\Max\Payload\EditMessageBody;
+use Webtolk\Max\Payload\NewCommentBody;
 use Webtolk\Max\Payload\NewMessageBody;
+use Webtolk\Max\Query\CommentQuery;
 use Webtolk\Max\Query\MessageQuery;
 use Webtolk\Max\Request\MessageRequest;
 use Webtolk\Max\Tests\Unit\Support\ResponseFactoryTrait;
@@ -210,6 +212,110 @@ final class MessageRequestTest extends TestCase
         $this->assertSame('a', $result->getMessages()[0]->getBody()?->getText());
     }
 
+    public function testSendCommentBuildsEncodedRequestAndHydratesWrappedMessage(): void
+    {
+        $response = $this->createJsonResponse($this, $this->encodeJson([
+            'message' => ['body' => ['text' => 'Комментарий']],
+        ]));
+
+        $httpClient = $this->createMock(ApiTransportInterface::class);
+        $httpClient->expects($this->once())
+            ->method('requestJson')
+            ->with(
+                'POST',
+                '/messages/mid%2F1/comments',
+                ['disable_link_preview' => true],
+                [],
+                ['text' => 'Комментарий'],
+            )
+            ->willReturn($response);
+
+        $request = new MessageRequest($httpClient);
+        $result = $request->sendComment('mid/1', NewCommentBody::text('Комментарий'), true);
+
+        $this->assertSame('Комментарий', $result->getBody()?->getText());
+    }
+
+    public function testListCommentsUsesQueryAndHydratesCollection(): void
+    {
+        $query = CommentQuery::all()->withCount(2);
+        $response = $this->createJsonResponse($this, $this->encodeJson([
+            'messages' => [
+                ['body' => ['text' => 'Первый']],
+                ['body' => ['text' => 'Второй']],
+            ],
+            'marker' => 42,
+        ]));
+
+        $httpClient = $this->createMock(ApiTransportInterface::class);
+        $httpClient->expects($this->once())
+            ->method('requestJson')
+            ->with('GET', '/messages/post-1/comments', ['count' => 2])
+            ->willReturn($response);
+
+        $request = new MessageRequest($httpClient);
+        $result = $request->listComments('post-1', $query);
+
+        $this->assertSame('Первый', $result->getMessages()[0]->getBody()?->getText());
+        $this->assertSame(42, $result->getMarker());
+    }
+
+    public function testGetCommentEncodesBothPathSegments(): void
+    {
+        $response = $this->createJsonResponse($this, $this->encodeJson([
+            'body' => ['text' => 'Ответ'],
+        ]));
+
+        $httpClient = $this->createMock(ApiTransportInterface::class);
+        $httpClient->expects($this->once())
+            ->method('requestJson')
+            ->with('GET', '/messages/post%2F1/comments/comment%2F2')
+            ->willReturn($response);
+
+        $request = new MessageRequest($httpClient);
+        $result = $request->getComment('post/1', 'comment/2');
+
+        $this->assertSame('Ответ', $result->getBody()?->getText());
+    }
+
+    public function testEditCommentUsesCommentIdQuery(): void
+    {
+        $response = $this->createJsonResponse($this, $this->encodeJson(['success' => true]));
+
+        $httpClient = $this->createMock(ApiTransportInterface::class);
+        $httpClient->expects($this->once())
+            ->method('requestJson')
+            ->with(
+                'PUT',
+                '/messages/post-1/comments',
+                ['comment_id' => 'comment-2'],
+                [],
+                ['text' => 'Изменено'],
+            )
+            ->willReturn($response);
+
+        $request = new MessageRequest($httpClient);
+
+        $this->assertTrue(
+            $request->editComment('post-1', 'comment-2', NewCommentBody::text('Изменено'))->isSuccess(),
+        );
+    }
+
+    public function testDeleteCommentUsesCommentIdQuery(): void
+    {
+        $response = $this->createJsonResponse($this, $this->encodeJson(['success' => true]));
+
+        $httpClient = $this->createMock(ApiTransportInterface::class);
+        $httpClient->expects($this->once())
+            ->method('requestJson')
+            ->with('DELETE', '/messages/post-1/comments', ['comment_id' => 'comment-2'])
+            ->willReturn($response);
+
+        $request = new MessageRequest($httpClient);
+
+        $this->assertTrue($request->deleteComment('post-1', 'comment-2')->isSuccess());
+    }
+
     public function testEditReturnsOperationResult(): void
     {
         $response = $this->createJsonResponse($this, $this->encodeJson([
@@ -260,7 +366,7 @@ final class MessageRequestTest extends TestCase
             ->with(
                 'POST',
                 '/answers',
-                ['callback_id' => 'cb1'],
+                ['callback_id' => 'cb1', 'disable_link_preview' => null],
                 [],
                 ['message' => ['text' => 'accepted']],
             )
@@ -268,6 +374,32 @@ final class MessageRequestTest extends TestCase
 
         $request = new MessageRequest($httpClient);
         $result = $request->answerCallback('cb1', CallbackAnswerPayload::fromMessage(NewMessageBody::text('accepted')));
+
+        $this->assertTrue($result->isSuccess());
+    }
+
+    public function testAnswerCallbackPassesDisableLinkPreviewFlag(): void
+    {
+        $response = $this->createJsonResponse($this, $this->encodeJson(['success' => true]));
+
+        $httpClient = $this->createMock(ApiTransportInterface::class);
+        $httpClient->expects($this->once())
+            ->method('requestJson')
+            ->with(
+                'POST',
+                '/answers',
+                ['callback_id' => 'cb1', 'disable_link_preview' => false],
+                [],
+                ['message' => ['text' => 'accepted']],
+            )
+            ->willReturn($response);
+
+        $request = new MessageRequest($httpClient);
+        $result = $request->answerCallback(
+            'cb1',
+            CallbackAnswerPayload::fromMessage(NewMessageBody::text('accepted')),
+            false,
+        );
 
         $this->assertTrue($result->isSuccess());
     }

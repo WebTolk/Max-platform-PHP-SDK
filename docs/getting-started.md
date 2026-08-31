@@ -77,8 +77,8 @@ echo json_encode($bot->toArray(), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) . 
   "user_id": "XXXX",
   "username": "XXXX",
   "is_bot": true,
-  "last_activity_time": 1777106679356,
-  "avatar_url": "https://i.oneme.ru/i?r=XXXX"
+  "last_activity_time": "XXXX",
+  "avatar_url": "XXXX"
 }
 ```
 

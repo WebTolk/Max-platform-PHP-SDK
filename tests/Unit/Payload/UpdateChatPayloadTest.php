@@ -14,6 +14,7 @@ final class UpdateChatPayloadTest extends TestCase
     {
         $payload = UpdateChatPayload::create()
             ->withTitle('Новый чат')
+            ->withDescription('Новое описание')
             ->withIcon(['url' => 'https://example.com/icon.jpg'])
             ->withPinnedMessageId('mid-1')
             ->withNotify(false);
@@ -21,6 +22,7 @@ final class UpdateChatPayloadTest extends TestCase
         $this->assertSame([
             'icon' => ['url' => 'https://example.com/icon.jpg'],
             'title' => 'Новый чат',
+            'description' => 'Новое описание',
             'pin' => 'mid-1',
             'notify' => false,
         ], $payload->toRequestArray());
@@ -56,5 +58,21 @@ final class UpdateChatPayloadTest extends TestCase
         $this->expectExceptionMessage('Pinned message id cannot be empty.');
 
         UpdateChatPayload::create()->withPinnedMessageId('');
+    }
+
+    public function testWithDescriptionAllowsEmptyStringToRemoveDescription(): void
+    {
+        $this->assertSame(
+            ['description' => ''],
+            UpdateChatPayload::create()->withDescription('')->toRequestArray(),
+        );
+    }
+
+    public function testWithDescriptionRejectsValuesLongerThan16000Characters(): void
+    {
+        $this->expectException(ValidationException::class);
+        $this->expectExceptionMessage('Chat description cannot exceed 16000 characters.');
+
+        UpdateChatPayload::create()->withDescription(str_repeat('я', 16001));
     }
 }

@@ -2,6 +2,23 @@
 
 Payload-классы не выполняют HTTP-запросы. Они валидируют входные данные и сериализуют их в массив для request layer.
 
+## `BotCommandPayload` и `BotCommandsPayload`
+
+`BotCommandPayload::create(string $name, string $description)` описывает одну команду. Оба значения обязательны и не могут быть пустыми.
+
+`BotCommandsPayload::create(BotCommandPayload ...$commands)` собирает полный список для `bots()->updateCommands()`. MAX принимает не более 32 команд; пустой список очищает команды бота.
+
+```php
+use Webtolk\Max\Payload\BotCommandPayload;
+use Webtolk\Max\Payload\BotCommandsPayload;
+
+$commands = BotCommandsPayload::create(
+    BotCommandPayload::create('help', 'Показать справку'),
+);
+
+$max->bots()->updateCommands($commands);
+```
+
 ## `NewMessageBody`
 
 Назначение: тело нового сообщения.
@@ -113,7 +130,7 @@ $link = NewMessageLink::replyTo('XXXX');
 
 ```json
 {
-  "url": "https://example.com/max-sdk-live-audit-20260425-081018",
+  "url": "XXXX",
   "update_types": [
     "message_created",
     "message_callback"
@@ -125,13 +142,14 @@ $link = NewMessageLink::replyTo('XXXX');
 
 ## `UpdateChatPayload`
 
-Назначение: изменение title, icon, pinned message и notify-флага для чата.
+Назначение: изменение title, description, icon, pinned message и notify-флага для чата.
 
 Публичные методы:
 
 - `create(): self`
 - `withIcon(array $icon): self`
 - `withTitle(string $title): self`
+- `withDescription(string $description): self`
 - `withPinnedMessageId(string $messageId): self`
 - `withNotify(bool $notify): self`
 - `toRequestArray(): array`
@@ -140,6 +158,7 @@ $link = NewMessageLink::replyTo('XXXX');
 
 - payload не может быть пустым
 - `title` должен быть длиной `1..200`
+- `description` должен быть длиной до 16000 символов; пустая строка удаляет описание
 - `icon` не может быть пустым массивом
 - `pin` не может быть пустой строкой
 
@@ -150,8 +169,25 @@ use Webtolk\Max\Payload\UpdateChatPayload;
 
 $payload = UpdateChatPayload::create()
     ->withTitle('Новый заголовок чата')
+    ->withDescription('Описание чата')
     ->withNotify(true);
 ```
+
+## `NewCommentBody`
+
+Назначение: тело нового или редактируемого комментария к посту канала.
+
+Публичные методы:
+
+- `text(string $text): self`
+- `markdown(string $text): self`
+- `html(string $text): self`
+- `withText(string $text): self`
+- `withLink(NewMessageLink $link): self`
+- `withFormat(TextFormat $format): self`
+- `toRequestArray(): array`
+
+Текст должен иметь длину `1..4000`. Для ответа на другой комментарий передайте официальный link payload через `withLink()`.
 
 ## `PinChatMessagePayload`
 

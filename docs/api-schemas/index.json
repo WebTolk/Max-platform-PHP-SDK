@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-05T11:35:00Z",
-  "source": "Generated from the 2026-07-05 local MAX API documentation snapshot, sanitized live API evidence, official safety-guarded contracts, and explicitly marked legacy SDK surfaces.",
+  "generated_at": "2026-08-31T05:13:40Z",
+  "source": "Generated from the 2026-08-31 local MAX API documentation snapshot, sanitized dual-transport live evidence, official contracts, and explicitly marked environment-limited or legacy SDK surfaces.",
   "anonymization": "Sensitive IDs, usernames, bot/user names, chat IDs, user IDs, message IDs, callback IDs, tokens, URLs and message-like values are replaced with XXXX.",
   "methods": {
     "bots.me": {
@@ -8,6 +8,12 @@
       "outcome": "ok",
       "http_method": "GET",
       "uri_template": "https://platform-api2.max.ru/me"
+    },
+    "bots.updateCommands": {
+      "file": "methods/bots.updatecommands.schema.json",
+      "outcome": "ok",
+      "http_method": "PATCH",
+      "uri_template": "https://platform-api2.max.ru/me/commands"
     },
     "chats.addAdmins": {
       "file": "methods/chats.addadmins.schema.json",
@@ -29,13 +35,19 @@
     },
     "chats.delete": {
       "file": "methods/chats.delete.schema.json",
-      "outcome": "legacy_unconfirmed_official_absent",
+      "outcome": "live_endpoint_reachable_invalid_target",
       "http_method": "DELETE",
       "uri_template": "https://platform-api2.max.ru/chats/XXXX"
     },
     "chats.getById": {
       "file": "methods/chats.getbyid.schema.json",
       "outcome": "ok",
+      "http_method": "GET",
+      "uri_template": "https://platform-api2.max.ru/chats/XXXX"
+    },
+    "chats.getByLink": {
+      "file": "methods/chats.getbylink.schema.json",
+      "outcome": "documentation_aligned_pending_compatible_live_resource",
       "http_method": "GET",
       "uri_template": "https://platform-api2.max.ru/chats/XXXX"
     },
@@ -109,7 +121,7 @@
       "file": "methods/messages.answercallback.schema.json",
       "outcome": "ok",
       "http_method": "POST",
-      "uri_template": "https://platform-api2.max.ru/answers?callback_id=XXXX"
+      "uri_template": "https://platform-api2.max.ru/answers?callback_id=XXXX&disable_link_preview=XXXX"
     },
     "messages.delete": {
       "file": "methods/messages.delete.schema.json",
@@ -117,11 +129,23 @@
       "http_method": "DELETE",
       "uri_template": "https://platform-api2.max.ru/messages?message_id=XXXX"
     },
+    "messages.deleteComment": {
+      "file": "methods/messages.deletecomment.schema.json",
+      "outcome": "ok",
+      "http_method": "DELETE",
+      "uri_template": "https://platform-api2.max.ru/messages/XXXX/comments?comment_id=XXXX"
+    },
     "messages.edit": {
       "file": "methods/messages.edit.schema.json",
       "outcome": "ok",
       "http_method": "PUT",
       "uri_template": "https://platform-api2.max.ru/messages?message_id=XXXX"
+    },
+    "messages.editComment": {
+      "file": "methods/messages.editcomment.schema.json",
+      "outcome": "ok",
+      "http_method": "PUT",
+      "uri_template": "https://platform-api2.max.ru/messages/XXXX/comments?comment_id=XXXX"
     },
     "messages.getById": {
       "file": "methods/messages.getbyid.schema.json",
@@ -129,11 +153,35 @@
       "http_method": "GET",
       "uri_template": "https://platform-api2.max.ru/messages/XXXX"
     },
+    "messages.getByQueryId": {
+      "file": "methods/messages.getbyqueryid.schema.json",
+      "outcome": "ok",
+      "http_method": "GET",
+      "uri_template": "https://platform-api2.max.ru/messages?message_ids=XXXX"
+    },
+    "messages.getComment": {
+      "file": "methods/messages.getcomment.schema.json",
+      "outcome": "ok",
+      "http_method": "GET",
+      "uri_template": "https://platform-api2.max.ru/messages/XXXX/comments/XXXX"
+    },
     "messages.list": {
       "file": "methods/messages.list.schema.json",
       "outcome": "ok",
       "http_method": "GET",
       "uri_template": "https://platform-api2.max.ru/messages?chat_id=XXXX&count=XXXX"
+    },
+    "messages.listComments": {
+      "file": "methods/messages.listcomments.schema.json",
+      "outcome": "ok",
+      "http_method": "GET",
+      "uri_template": "https://platform-api2.max.ru/messages/XXXX/comments?count=XXXX"
+    },
+    "messages.sendComment": {
+      "file": "methods/messages.sendcomment.schema.json",
+      "outcome": "ok",
+      "http_method": "POST",
+      "uri_template": "https://platform-api2.max.ru/messages/XXXX/comments?disable_link_preview=XXXX"
     },
     "messages.sendToChat": {
       "file": "methods/messages.sendtochat.schema.json",
@@ -169,7 +217,7 @@
       "file": "methods/updates.list.schema.json",
       "outcome": "ok",
       "http_method": "GET",
-      "uri_template": "https://platform-api2.max.ru/updates?limit=XXXX&timeout=XXXX"
+      "uri_template": "https://platform-api2.max.ru/updates?limit=XXXX&timeout=XXXX&types=XXXX"
     },
     "uploads.create": {
       "file": "methods/uploads.create.schema.json",
@@ -194,18 +242,6 @@
       "outcome": "ok",
       "http_method": "POST",
       "uri_template": "https://platform-api2.max.ru/uploads?type=XXXX"
-    },
-    "chats.getByLink": {
-      "file": "methods/chats.getbylink.schema.json",
-      "outcome": "documentation_aligned_pending_compatible_live_resource",
-      "http_method": "GET",
-      "uri_template": "https://platform-api2.max.ru/chats/XXXX"
-    },
-    "messages.getByQueryId": {
-      "file": "methods/messages.getbyqueryid.schema.json",
-      "outcome": "ok",
-      "http_method": "GET",
-      "uri_template": "https://platform-api2.max.ru/messages?message_ids=XXXX"
     }
   }
 }

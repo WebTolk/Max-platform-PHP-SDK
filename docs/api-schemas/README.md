@@ -1,16 +1,19 @@
 # MAX API JSON Schemas
 
-This directory contains anonymized SDK method-level JSON schemas generated from local live API dumps, official method contracts, and explicitly marked safety-guarded or legacy SDK surfaces.
+This directory contains 40 anonymized SDK method-level JSON schemas generated from the 2026-08-31 local documentation snapshot, dual-transport live API dumps, official method contracts, and explicitly marked environment-limited or legacy SDK surfaces.
 
-The schema pack is not a one-to-one official MAX endpoint inventory. Some entries are SDK helper/evidence methods, for example `uploads.pushBinary`; some entries are official contracts that were not live-mutated for safety; `chats.delete` is kept as a legacy/unconfirmed SDK surface because the current SDK exposes it while the 2026-07-05 official inventory does not list `DELETE /chats/{chatId}`.
+The schema pack is not a one-to-one official MAX endpoint inventory. Some entries are SDK helper/evidence methods, for example `uploads.pushBinary`. All five comment endpoints were successfully verified against an enabled test channel through Guzzle and Joomla HTTP. `chats.delete` remains a backward-compatible SDK surface despite conflicting official navigation; the endpoint itself was reachable with a deliberately absent target.
 
 The published schema pack intentionally excludes local raw-dump file references. Public indexes and examples link only to files committed under `docs/api-schemas/`.
+
+Sanitized real response bodies are published separately under [`docs/api-responses/`](../api-responses/README.md). Private unsanitized evidence remains excluded from distribution.
 
 Sensitive IDs, usernames, bot/user names, chat IDs, user IDs, message IDs, callback IDs, tokens, URLs and message-like values are replaced with `XXXX`. If a sensitive value appears inside a longer string, query parameter or URL, the sensitive part is replaced with `XXXX`; when the whole URL is evidence-only, the whole URL is replaced with `XXXX`.
 
 ## Methods
 
 - `bots.me` -> [`methods/bots.me.schema.json`](./methods/bots.me.schema.json)
+- `bots.updateCommands` -> [`methods/bots.updatecommands.schema.json`](./methods/bots.updatecommands.schema.json)
 - `chats.addAdmins` -> [`methods/chats.addadmins.schema.json`](./methods/chats.addadmins.schema.json)
 - `chats.addMembers` -> [`methods/chats.addmembers.schema.json`](./methods/chats.addmembers.schema.json)
 - `chats.admins` -> [`methods/chats.admins.schema.json`](./methods/chats.admins.schema.json)
@@ -29,11 +32,16 @@ Sensitive IDs, usernames, bot/user names, chat IDs, user IDs, message IDs, callb
 - `chats.unpin` -> [`methods/chats.unpin.schema.json`](./methods/chats.unpin.schema.json)
 - `chats.update` -> [`methods/chats.update.schema.json`](./methods/chats.update.schema.json)
 - `messages.answerCallback` -> [`methods/messages.answercallback.schema.json`](./methods/messages.answercallback.schema.json)
+- `messages.deleteComment` -> [`methods/messages.deletecomment.schema.json`](./methods/messages.deletecomment.schema.json)
 - `messages.delete` -> [`methods/messages.delete.schema.json`](./methods/messages.delete.schema.json)
+- `messages.editComment` -> [`methods/messages.editcomment.schema.json`](./methods/messages.editcomment.schema.json)
 - `messages.edit` -> [`methods/messages.edit.schema.json`](./methods/messages.edit.schema.json)
+- `messages.getComment` -> [`methods/messages.getcomment.schema.json`](./methods/messages.getcomment.schema.json)
 - `messages.getById` -> [`methods/messages.getbyid.schema.json`](./methods/messages.getbyid.schema.json)
 - `messages.getByQueryId` -> [`methods/messages.getbyqueryid.schema.json`](./methods/messages.getbyqueryid.schema.json)
 - `messages.list` -> [`methods/messages.list.schema.json`](./methods/messages.list.schema.json)
+- `messages.listComments` -> [`methods/messages.listcomments.schema.json`](./methods/messages.listcomments.schema.json)
+- `messages.sendComment` -> [`methods/messages.sendcomment.schema.json`](./methods/messages.sendcomment.schema.json)
 - `messages.sendToChat` -> [`methods/messages.sendtochat.schema.json`](./methods/messages.sendtochat.schema.json)
 - `messages.sendToUser` -> [`methods/messages.sendtouser.schema.json`](./methods/messages.sendtouser.schema.json)
 - `subscriptions.create` -> [`methods/subscriptions.create.schema.json`](./methods/subscriptions.create.schema.json)

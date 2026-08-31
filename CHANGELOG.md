@@ -2,6 +2,19 @@
 
 All notable changes to `webtolk/max` will be documented in this file.
 
+## 0.3.0 - 2026-08-31
+
+- Added `bots()->updateCommands()` for `PATCH /me/commands`, including typed command payloads and response entities.
+- Added the complete channel-comment surface: create, list, get, edit and delete comments.
+- Added `CommentQuery`, `NewCommentBody` and typed comment entities.
+- Added chat description updates through `UpdateChatPayload::withDescription()`.
+- Added optional `disable_link_preview` support to `messages()->answerCallback()`.
+- Added typed accessors for comment-related update fields and support for comment event names in existing update-type normalization.
+- Fixed live comment identifier hydration: MAX returns the comment id as `body.mid`.
+- Refreshed unit coverage, live-response evidence and the public API schema pack against the 2026-08-31 MAX documentation snapshot.
+- Added sanitized real comment-response snapshots for Guzzle and Joomla HTTP under `docs/api-responses/`.
+- Kept `chats()->getByLink()` and all other 0.2.0 public methods for backward compatibility despite inconsistencies in the current documentation navigation.
+
 ## 0.2.0 - 2026-07-05
 
 - Changed the default API host to `https://platform-api2.max.ru`.

@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MAX API method schema: bots.updateCommands",
+  "method": "bots.updateCommands",
+  "outcome": "ok",
+  "sdk_result_type": "Webtolk\\Max\\Entity\\BotCommandList",
+  "http": {
+    "method": "PATCH",
+    "uri_template": "https://platform-api2.max.ru/me/commands",
+    "status": 200
+  },
+  "input_example": {
+    "commands": []
+  },
+  "request_body_example": {
+    "commands": []
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "commands": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "description"
+          ],
+          "additionalProperties": true
+        }
+      }
+    },
+    "required": [],
+    "additionalProperties": true
+  },
+  "response_example": {},
+  "error_example": null,
+  "notes": [
+    "This is an anonymized development schema, not a raw API dump.",
+    "MAX returned an empty JSON object for an empty command list; the official contract defines an optional commands array."
+  ],
+  "live_verification_2026_08_31": {
+    "date": "2026-08-31",
+    "transports": [
+      "guzzle",
+      "joomla-http"
+    ],
+    "status": "ok",
+    "http_status": 200
+  }
+}

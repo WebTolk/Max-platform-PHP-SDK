@@ -55,12 +55,18 @@ HTTP: `GET /me`
   "user_id": "XXXX",
   "username": "XXXX",
   "is_bot": true,
-  "last_activity_time": 1777106679356,
-  "avatar_url": "https://i.oneme.ru/i?r=XXXX"
+  "last_activity_time": "XXXX",
+  "avatar_url": "XXXX"
 }
 ```
 
 Источник: `docs/api-schemas/index.json`
+
+### `updateCommands(BotCommandsPayload $payload): BotCommandList`
+
+HTTP: `PATCH /me/commands`
+
+Полностью заменяет список команд текущего бота. Payload может содержать до 32 команд; пустой список удаляет все команды. Ответ гидрируется в `BotCommandList`.
 
 ## `ChatModule`
 
@@ -68,7 +74,7 @@ HTTP: `GET /me`
 
 HTTP: `GET /chats`
 
-Возвращает список чатов с optional pagination. По документации MAX от 2026-07-05 метод `GET /chats` больше не поддерживается с июня 2026. Для новых интеграций рабочая схема другая: создайте webhook subscription через `subscriptions()->create()`, обрабатывайте события добавления/старта/удаления бота и сохраняйте `chat_id` в своём хранилище.
+Возвращает список чатов с optional pagination. Changelog MAX объявляет `GET /chats` неподдерживаемым с июня 2026, однако dual-transport live-проверка 2026-08-31 получила HTTP 200 и актуальный список. Для новых интеграций всё равно надёжнее сохранять `chat_id` из webhook events.
 
 Long Polling через `updates()->list()` остаётся способом читать поток updates, но официальная документация MAX отдельно указывает, что Long Polling не предназначен для получения списка чатов и каналов бота.
 
@@ -106,7 +112,7 @@ HTTP: `GET /chats/{chatId}`
   "status": "active",
   "participants_count": 2,
   "participants": {
-    "XXXX": 1777101726893
+    "XXXX": "XXXX"
   }
 }
 ```
@@ -226,7 +232,7 @@ HTTP: `GET /chats/{chatId}/members/admins`
 
 HTTP: `PATCH /chats/{chatId}`
 
-Обновляет информацию о чате: title, icon, pinned message и notify-флаг.
+Обновляет информацию о чате: title, description, icon, pinned message и notify-флаг. Пустая строка в `description` удаляет описание.
 
 Подтверждённый фрагмент ответа:
 
@@ -246,7 +252,7 @@ HTTP: `PATCH /chats/{chatId}`
 
 HTTP: `DELETE /chats/{chatId}`
 
-Legacy/unconfirmed SDK surface. Метод сохранён в SDK и unit-тестах как `DELETE /chats/{chatId}`, но текущая официальная копия MAX API от 2026-07-05 не содержит endpoint удаления самого чата. Новым интеграциям не стоит строить бизнес-логику на этом методе без отдельной live-проверки на своём боте.
+Compatibility SDK surface. В dual-transport проверке 2026-08-31 endpoint принял запрос к заведомо отсутствующему chat ID и вернул типизированный `OperationResult` с HTTP 200 и `success=false`. Реальное удаление общего test chat намеренно не выполнялось.
 
 Schema entry: `docs/api-schemas/methods/chats.delete.schema.json`.
 
@@ -381,11 +387,11 @@ HTTP: `POST /messages?chat_id=...`
     "chat_id": "XXXX",
     "chat_type": "chat"
   },
-  "timestamp": 1777106700385,
+  "timestamp": "XXXX",
   "body": {
     "mid": "XXXX",
     "seq": "XXXX",
-    "text": "max-sdk live audit"
+    "text": "XXXX"
   }
 }
 ```
@@ -409,7 +415,7 @@ HTTP: `POST /messages?user_id=...`
   },
   "body": {
     "mid": "XXXX",
-    "text": "max-sdk live audit user"
+    "text": "XXXX"
   }
 }
 ```
@@ -433,7 +439,7 @@ HTTP: `GET /messages/{messageId}`
   "body": {
     "mid": "XXXX",
     "seq": "XXXX",
-    "text": "max-sdk live audit"
+    "text": "XXXX"
   }
 }
 ```
@@ -525,11 +531,41 @@ HTTP: `GET /messages`
 
 Источник: `docs/api-schemas/index.json`
 
-### `answerCallback(string $callbackId, CallbackAnswerPayload $payload): OperationResult`
+### `sendComment(string $messageId, NewCommentBody $body, ?bool $disableLinkPreview = null): CommentMessage`
 
-HTTP: `POST /answers?callback_id=...`
+HTTP: `POST /messages/{messageId}/comments`
 
-Используется для ответа на callback-кнопку.
+Добавляет комментарий к посту канала. Optional query-параметр `disable_link_preview` передаётся в API без изменения значения.
+
+### `listComments(string $messageId, ?CommentQuery $query = null): CommentMessageList`
+
+HTTP: `GET /messages/{messageId}/comments`
+
+Возвращает комментарии к посту. Query поддерживает `comment_ids`, `before`, `after` и `count`.
+
+### `getComment(string $messageId, string $commentId): CommentMessage`
+
+HTTP: `GET /messages/{messageId}/comments/{commentId}`
+
+Возвращает один комментарий по идентификатору.
+
+### `editComment(string $messageId, string $commentId, NewCommentBody $body): OperationResult`
+
+HTTP: `PUT /messages/{messageId}/comments?comment_id=...`
+
+Редактирует комментарий, созданный текущим ботом.
+
+### `deleteComment(string $messageId, string $commentId): OperationResult`
+
+HTTP: `DELETE /messages/{messageId}/comments?comment_id=...`
+
+Удаляет комментарий текущего бота.
+
+### `answerCallback(string $callbackId, CallbackAnswerPayload $payload, ?bool $disableLinkPreview = null): OperationResult`
+
+HTTP: `POST /answers?callback_id=...&disable_link_preview=...`
+
+Используется для ответа на callback-кнопку. `disable_link_preview` необязателен и при `null` не отправляется на wire.
 
 Что подтверждено:
 
@@ -565,7 +601,7 @@ HTTP: `POST /uploads?type=...`
 
 ```json
 {
-  "url": "https://fu.oneme.ru/api/upload.do?..."
+  "url": "XXXX"
 }
 ```
 
@@ -575,7 +611,7 @@ HTTP: `POST /uploads?type=...`
 
 ```json
 {
-  "url": "https://vu.okcdn.ru/upload.do?...",
+  "url": "XXXX",
   "token": "XXXX"
 }
 ```
@@ -690,7 +726,7 @@ HTTP: `POST /subscriptions`
 
 ```json
 {
-  "url": "https://example.com/max-sdk-live-audit-20260425-081018",
+  "url": "XXXX",
   "update_types": [
     "message_created",
     "message_callback"

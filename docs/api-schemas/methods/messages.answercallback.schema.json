@@ -6,11 +6,12 @@
   "sdk_result_type": "Webtolk\\Max\\Entity\\OperationResult",
   "http": {
     "method": "POST",
-    "uri_template": "https://platform-api2.max.ru/answers?callback_id=XXXX",
+    "uri_template": "https://platform-api2.max.ru/answers?callback_id=XXXX&disable_link_preview=XXXX",
     "status": 200
   },
   "input_example": {
-    "callback_id": "XXXX"
+    "callback_id": "XXXX",
+    "disable_link_preview": false
   },
   "request_body_example": {
     "notification": "Callback received: XXXX"
@@ -42,5 +43,16 @@
     "tls_verify": "disabled_for_test_runner_only",
     "status": "not_run_safety_guard",
     "reason": "Skipped because callback_id is only available from a real callback update."
+  },
+  "live_verification_2026_08_31": {
+    "date": "2026-08-31",
+    "transports": [
+      "guzzle",
+      "joomla-http"
+    ],
+    "status": "api_error",
+    "http_status": 400,
+    "api_code": "proto.payload",
+    "reason": "The endpoint and disable_link_preview query parameter were exercised with a deliberately invalid callback id."
   }
 }

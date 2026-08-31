@@ -4,12 +4,16 @@ declare(strict_types=1);
 
 namespace Webtolk\Max\Module;
 
+use Webtolk\Max\Entity\CommentMessage;
+use Webtolk\Max\Entity\CommentMessageList;
 use Webtolk\Max\Entity\Message;
 use Webtolk\Max\Entity\MessageList;
 use Webtolk\Max\Entity\OperationResult;
 use Webtolk\Max\Payload\CallbackAnswerPayload;
 use Webtolk\Max\Payload\EditMessageBody;
+use Webtolk\Max\Payload\NewCommentBody;
 use Webtolk\Max\Payload\NewMessageBody;
+use Webtolk\Max\Query\CommentQuery;
 use Webtolk\Max\Query\MessageQuery;
 use Webtolk\Max\Request\MessageRequest;
 
@@ -139,17 +143,79 @@ final class MessageModule
     }
 
     /**
+     * Отправляет комментарий к посту в канале.
+     *
+     * @since v.0.3.0
+     * @link https://dev.max.ru/docs-api/methods/POST/messages/-messageId-/comments
+     */
+    public function sendComment(
+        string $messageId,
+        NewCommentBody $body,
+        ?bool $disableLinkPreview = null,
+    ): CommentMessage {
+        return $this->request->sendComment($messageId, $body, $disableLinkPreview);
+    }
+
+    /**
+     * Запрашивает комментарии к посту в канале.
+     *
+     * @since v.0.3.0
+     * @link https://dev.max.ru/docs-api/methods/GET/messages/-messageId-/comments
+     */
+    public function listComments(string $messageId, ?CommentQuery $query = null): CommentMessageList
+    {
+        return $this->request->listComments($messageId, $query);
+    }
+
+    /**
+     * Запрашивает комментарий по идентификатору.
+     *
+     * @since v.0.3.0
+     * @link https://dev.max.ru/docs-api/methods/GET/messages/-messageId-/comments/-commentId-
+     */
+    public function getComment(string $messageId, string $commentId): CommentMessage
+    {
+        return $this->request->getComment($messageId, $commentId);
+    }
+
+    /**
+     * Редактирует комментарий бота к посту.
+     *
+     * @since v.0.3.0
+     * @link https://dev.max.ru/docs-api/methods/PUT/messages/-messageId-/comments
+     */
+    public function editComment(string $messageId, string $commentId, NewCommentBody $body): OperationResult
+    {
+        return $this->request->editComment($messageId, $commentId, $body);
+    }
+
+    /**
+     * Удаляет комментарий к посту.
+     *
+     * @since v.0.3.0
+     * @link https://dev.max.ru/docs-api/methods/DELETE/messages/-messageId-/comments
+     */
+    public function deleteComment(string $messageId, string $commentId): OperationResult
+    {
+        return $this->request->deleteComment($messageId, $commentId);
+    }
+
+    /**
      * Отправляет ответ на callback от inline-кнопки.
      * Нужен, чтобы завершать callback flow и показывать пользователю уведомление или новое сообщение.
      *
      * @param string $callbackId Идентификатор callback-события, который приходит от MAX для inline-кнопки.
      * @param CallbackAnswerPayload $payload Payload-объект SDK, который будет сериализован в формат запроса MAX API.
+     * @param ?bool $disableLinkPreview Флаг отключения превью ссылок; `null` оставляет поведение API по умолчанию.
      * @return OperationResult Результат метода в виде объекта `OperationResult`, подготовленного для дальнейшего использования в SDK или прикладном коде.
      * @since v.0.1.0
      * @link https://dev.max.ru/docs-api/methods/POST/answers
      */
-    public function answerCallback(string $callbackId, CallbackAnswerPayload $payload): OperationResult
-    {
-        return $this->request->answerCallback($callbackId, $payload);
+    public function answerCallback(
+        string $callbackId,
+        CallbackAnswerPayload $payload,
+        ?bool $disableLinkPreview = null,
+    ): OperationResult {
+        return $this->request->answerCallback($callbackId, $payload, $disableLinkPreview);
     }
 }

@@ -18,6 +18,8 @@ final class UpdateChatPayload
     /** @var ?array<string, mixed> */
     private ?array $icon = null;
     private ?string $title = null;
+    private ?string $description = null;
+    private bool $isDescriptionSet = false;
     private ?string $pin = null;
     private ?bool $notify = null;
 
@@ -48,6 +50,23 @@ final class UpdateChatPayload
         }
 
         $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * Устанавливает описание чата или канала; пустая строка удаляет описание.
+     *
+     * @since v.0.3.0
+     */
+    public function withDescription(string $description): self
+    {
+        if (mb_strlen($description) > 16000) {
+            throw new ValidationException('Chat description cannot exceed 16000 characters.');
+        }
+
+        $this->description = $description;
+        $this->isDescriptionSet = true;
 
         return $this;
     }
@@ -83,6 +102,10 @@ final class UpdateChatPayload
 
         if ($this->title !== null) {
             $payload['title'] = $this->title;
+        }
+
+        if ($this->isDescriptionSet) {
+            $payload['description'] = $this->description;
         }
 
         if ($this->pin !== null) {

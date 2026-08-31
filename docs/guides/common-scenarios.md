@@ -32,7 +32,7 @@ $chatId = (int) $config['chat_id'];
 
 $message = $max->messages()->sendToChat(
     $chatId,
-    NewMessageBody::text('max-sdk live audit')
+    NewMessageBody::text('Тестовое сообщение')
 );
 
 echo $message->getBody()?->getMessageId();
@@ -48,7 +48,7 @@ echo $message->getBody()?->getMessageId();
   },
   "body": {
     "mid": "XXXX",
-    "text": "max-sdk live audit"
+    "text": "XXXX"
   }
 }
 ```
@@ -66,7 +66,7 @@ $userId = (int) $config['user_id'];
 
 $message = $max->messages()->sendToUser(
     $userId,
-    NewMessageBody::text('max-sdk live audit user')
+    NewMessageBody::text('Личное тестовое сообщение')
 );
 ```
 
@@ -81,7 +81,7 @@ $message = $max->messages()->sendToUser(
   },
   "body": {
     "mid": "XXXX",
-    "text": "max-sdk live audit user"
+    "text": "XXXX"
   }
 }
 ```
@@ -105,7 +105,7 @@ $message = $max->messages()->getById($messageId);
   },
   "body": {
     "mid": "XXXX",
-    "text": "max-sdk live audit"
+    "text": "XXXX"
   }
 }
 ```
@@ -119,7 +119,7 @@ use Webtolk\Max\Payload\EditMessageBody;
 
 $max->messages()->edit(
     'XXXX',
-    EditMessageBody::text('max-sdk live audit edited')
+    EditMessageBody::text('Обновлённое тестовое сообщение')
 );
 
 $max->messages()->delete('XXXX');
@@ -220,7 +220,7 @@ $upload = $max->uploads()->pushBinary($uploadUrl, $binaryAudio, 'audio/mpeg');
 
 ```json
 {
-  "url": "https://vu.okcdn.ru/upload.do?...",
+  "url": "XXXX",
   "token": "XXXX"
 }
 ```
@@ -350,6 +350,49 @@ $result = $max->messages()->answerCallback(
 
 Источник: `docs/api-schemas/index.json`
 
+## Обновить команды бота
+
+```php
+use Webtolk\Max\Payload\BotCommandPayload;
+use Webtolk\Max\Payload\BotCommandsPayload;
+
+$commands = BotCommandsPayload::create(
+    BotCommandPayload::create('help', 'Показать справку'),
+    BotCommandPayload::create('status', 'Показать статус'),
+);
+
+$saved = $max->bots()->updateCommands($commands);
+```
+
+Передавайте весь желаемый список: `PATCH /me/commands` заменяет команды целиком. Для очистки используйте `BotCommandsPayload::create()`.
+
+## Работать с комментариями к посту
+
+```php
+use Webtolk\Max\Payload\NewCommentBody;
+use Webtolk\Max\Query\CommentQuery;
+
+$comment = $max->messages()->sendComment(
+    $postMessageId,
+    NewCommentBody::markdown('Комментарий **бота**'),
+    true,
+);
+
+$comments = $max->messages()->listComments(
+    $postMessageId,
+    CommentQuery::all()->withCount(20),
+);
+
+$commentId = $comment->getId();
+if ($commentId !== null) {
+    $max->messages()->getComment($postMessageId, $commentId);
+    $max->messages()->editComment($postMessageId, $commentId, NewCommentBody::text('Обновлено'));
+    $max->messages()->deleteComment($postMessageId, $commentId);
+}
+```
+
+Комментарии поддерживаются для постов каналов. Для long polling или webhook используйте типы `comment_created`, `comment_edited` и `comment_removed`.
+
 ## Настроить long polling
 
 ```php
@@ -379,7 +422,7 @@ $updates = $max->updates()->list(
 use Webtolk\Max\Payload\CreateSubscriptionPayload;
 
 $payload = CreateSubscriptionPayload::create(
-    'https://example.com/max-sdk-live-audit-20260425-081018',
+    'https://example.com/max-webhook',
     ['message_created', 'message_callback']
 );
 

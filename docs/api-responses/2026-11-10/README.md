@@ -15,6 +15,14 @@
 - [source-hashes.json](source-hashes.json): точная ревизия всех исходных PHP-файлов.
 - [verification.json](verification.json): результаты независимой проверки набора.
 
+Публикуемые файлы хранятся с окончаниями строк **LF**, чтобы Git/Composer export
+сохранял их контрольные суммы. Поля `sha256` в списках `method_snapshots` и
+`network_responses` файла `index.json` относятся к файлам этой публикации.
+Исторические хэши исходников, `raw_body_sha256`, `receipt_sha256` и
+`execution_record.sha256` относятся к первичному прогону и не пересчитываются
+при нормализации публикации. JSON-значения и маски совпадают с исходным
+обезличенным набором; различия CRLF/LF относятся только к формату файлов.
+
 В каждом файле метода указаны parameters, return_type, фактические snapshots,
 provenance, outcome и redactions. Origin `synthetic_local_fixture_execution`
 означает реальное выполнение SDK на явно тестовых данных; это не ответ MAX.

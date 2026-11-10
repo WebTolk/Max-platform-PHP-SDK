@@ -230,6 +230,12 @@ final class ChatRequest
         return new OperationResult($payload);
     }
 
+    /**
+     * Вызывает сохранённый контракт добавления участников группового чата.
+     * Работа endpoint ограничена MAX с 2026-09-09; wire payload не изменяется.
+     *
+     * @link https://dev.max.ru/docs-api/methods/POST/chats/-chatId-/members
+     */
     public function addMembers(int $chatId, AddChatMembersPayload $payload): OperationResult
     {
         $response = $this->httpClient->requestJson(

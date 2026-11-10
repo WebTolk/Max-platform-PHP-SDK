@@ -1,0 +1,90 @@
+{
+  "method": "Webtolk\\Max\\Payload\\Attachment\\Button\\ClipboardButton::create",
+  "declared_method": "Webtolk\\Max\\Payload\\Attachment\\Button\\ClipboardButton::create",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "self",
+  "parameters": [
+    {
+      "name": "text",
+      "type": "string",
+      "required": true,
+      "variadic": false
+    },
+    {
+      "name": "payload",
+      "type": "string",
+      "required": true,
+      "variadic": false
+    }
+  ],
+  "implementation_methods": [],
+  "observed_call_count": 1,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\Attachment\\Button\\ClipboardButton::create",
+      "declared_method": "Webtolk\\Max\\Payload\\Attachment\\Button\\ClipboardButton::create",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\Attachment\\Button\\ClipboardButton",
+          "properties": {
+            "text": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "payload": {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/arguments/items/1/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/text/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/payload/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "1c0c2b67c88f696c1f843cfdd5d1ca8538f7bf0c9bbeb1fd0710508f3d26cfd8"
+      }
+    }
+  ]
+}

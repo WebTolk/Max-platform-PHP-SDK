@@ -1,0 +1,297 @@
+{
+  "method": "Webtolk\\Max\\Query\\CommentQuery::before",
+  "declared_method": "Webtolk\\Max\\Query\\CommentQuery::before",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "self",
+  "parameters": [
+    {
+      "name": "timestamp",
+      "type": "int",
+      "required": true,
+      "variadic": false
+    }
+  ],
+  "implementation_methods": [],
+  "observed_call_count": 3,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Query\\CommentQuery::before",
+      "declared_method": "Webtolk\\Max\\Query\\CommentQuery::before",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Query\\CommentQuery",
+          "properties": {
+            "commentIds": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            },
+            "before": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "after": {
+              "php_type": "null",
+              "value": null
+            },
+            "count": {
+              "php_type": "null",
+              "value": null
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Query\\CommentQuery",
+          "properties": {
+            "commentIds": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            },
+            "before": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "after": {
+              "php_type": "null",
+              "value": null
+            },
+            "count": {
+              "php_type": "null",
+              "value": null
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/before/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/before/value",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "7b161bdad1e88c2b265f683ac168598028ba554a5d4c9abf041a319daa0a454e"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Query\\CommentQuery::before",
+      "declared_method": "Webtolk\\Max\\Query\\CommentQuery::before",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Query\\CommentQuery",
+          "properties": {
+            "commentIds": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": [
+                {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                {
+                  "php_type": "string",
+                  "value": "XXXX"
+                }
+              ]
+            },
+            "before": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "after": {
+              "php_type": "null",
+              "value": null
+            },
+            "count": {
+              "php_type": "null",
+              "value": null
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Query\\CommentQuery",
+          "properties": {
+            "commentIds": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": [
+                {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                {
+                  "php_type": "string",
+                  "value": "XXXX"
+                }
+              ]
+            },
+            "before": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "after": {
+              "php_type": "null",
+              "value": null
+            },
+            "count": {
+              "php_type": "null",
+              "value": null
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/commentIds/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/commentIds/items/1/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/before/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/commentIds/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/commentIds/items/1/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/before/value",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "06a17a877834465f86e0c9516adc1b294786906508f16fd6652aef50558c9b28"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Query\\CommentQuery::before",
+      "declared_method": "Webtolk\\Max\\Query\\CommentQuery::before",
+      "outcome": "threw",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Query\\CommentQuery",
+          "properties": {
+            "commentIds": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            },
+            "before": {
+              "php_type": "null",
+              "value": null
+            },
+            "after": {
+              "php_type": "null",
+              "value": null
+            },
+            "count": {
+              "php_type": "null",
+              "value": null
+            }
+          }
+        },
+        "exception": {
+          "class": "Webtolk\\Max\\Exception\\ValidationException",
+          "message": "XXXX",
+          "code": "XXXX"
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/exception/message",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/exception/code",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "48eeda6e7f45871c51a0b6e8dd489f3ec871a00d3e509619dca92b4ecab4a1ad"
+      }
+    }
+  ]
+}

@@ -167,7 +167,7 @@ $messages = $max->messages()->list(
                 [
                   {
                     "type": "link",
-                    "url": "https://web-tolk.ru"
+                    "url": "XXXX"
                   }
                 ]
               ]
@@ -303,7 +303,7 @@ $message = $max->messages()->sendToChat($chatId, $body);
             [
               {
                 "type": "link",
-                "url": "https://web-tolk.ru"
+                "url": "XXXX"
               }
             ]
           ]
@@ -328,7 +328,7 @@ $result = $max->messages()->answerCallback(
 );
 ```
 
-Подтверждённый фрагмент ответа:
+Контрактная иллюстрация успешного ответа; сохранённые прогоны подтверждают только отрицательный callback-сценарий:
 
 ```json
 {
@@ -336,14 +336,14 @@ $result = $max->messages()->answerCallback(
 }
 ```
 
-Подтверждённый callback update, из которого берётся `callback_id`:
+Иллюстрация callback update, из которого обработчик получает `callback_id`:
 
 ```json
 {
   "update_type": "message_callback",
   "callback": {
     "callback_id": "XXXX",
-    "payload": "sdk-callback-160753"
+    "payload": "XXXX"
   }
 }
 ```

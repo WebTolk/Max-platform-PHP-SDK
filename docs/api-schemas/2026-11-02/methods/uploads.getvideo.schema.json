@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:webtolk:max:0.4.0:methods:uploads.getVideo",
+  "title": "uploads.getVideo observed MAX JSON responses",
+  "description": "Only captured shapes are described. Optional or unobserved variants may exist.",
+  "type": "object",
+  "properties": {
+    "token": {
+      "type": "string"
+    },
+    "width": {
+      "type": "integer"
+    },
+    "height": {
+      "type": "integer"
+    },
+    "duration": {
+      "type": "integer"
+    },
+    "urls": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true,
+  "required": [
+    "duration",
+    "height",
+    "token",
+    "urls",
+    "width"
+  ],
+  "x-live-observations": [
+    {
+      "transport": "guzzle",
+      "dataset": "main",
+      "case": "uploads.getVideo",
+      "scenario": "reserved_video_token",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "e3042886129cc25cd83d237eb11ad9639a158f78161533061fa199036c7c7754"
+    },
+    {
+      "transport": "joomla-http",
+      "dataset": "main",
+      "case": "uploads.getVideo",
+      "scenario": "reserved_video_token",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "2dccff594dfc46548481896323ceb0cf4e1f6259818a1d399b8679df1c842192"
+    }
+  ]
+}

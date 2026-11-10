@@ -1,0 +1,221 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:webtolk:max:0.4.0:methods:chats.getById",
+  "title": "chats.getById observed MAX JSON responses",
+  "description": "Only captured shapes are described. Optional or unobserved variants may exist.",
+  "anyOf": [
+    {
+      "type": "object",
+      "properties": {
+        "chat_id": {
+          "type": "integer"
+        },
+        "type": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "last_event_time": {
+          "type": "integer"
+        },
+        "participants_count": {
+          "type": "integer"
+        },
+        "is_public": {
+          "type": "boolean"
+        },
+        "title": {
+          "type": "string"
+        },
+        "icon": {
+          "type": "object",
+          "properties": {
+            "url": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": true,
+          "required": [
+            "url"
+          ]
+        },
+        "owner_id": {
+          "type": "integer"
+        },
+        "participants": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": true,
+          "patternProperties": {
+            "^-?\\d+$|^[0-9a-fA-F-]{16,}$|^mid\\..+$": {
+              "type": "integer"
+            }
+          }
+        },
+        "link": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "messages_count": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": true,
+      "required": [
+        "chat_id",
+        "description",
+        "icon",
+        "is_public",
+        "last_event_time",
+        "link",
+        "messages_count",
+        "owner_id",
+        "participants",
+        "participants_count",
+        "status",
+        "title",
+        "type"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "chat_id": {
+          "type": "integer"
+        },
+        "type": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "last_event_time": {
+          "type": "integer"
+        },
+        "participants_count": {
+          "type": "integer"
+        },
+        "is_public": {
+          "type": "boolean"
+        },
+        "title": {
+          "type": "string"
+        },
+        "owner_id": {
+          "type": "integer"
+        },
+        "participants": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": true,
+          "patternProperties": {
+            "^-?\\d+$|^[0-9a-fA-F-]{16,}$|^mid\\..+$": {
+              "type": "integer"
+            }
+          }
+        },
+        "link": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "messages_count": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": true,
+      "required": [
+        "chat_id",
+        "description",
+        "is_public",
+        "last_event_time",
+        "link",
+        "messages_count",
+        "owner_id",
+        "participants",
+        "participants_count",
+        "status",
+        "title",
+        "type"
+      ]
+    }
+  ],
+  "x-live-observations": [
+    {
+      "transport": "guzzle",
+      "dataset": "main",
+      "case": "chats.getById",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "60167be44a9aebf2d9ebde82587bf0c473a5426bc141b1803fee73131cafefae"
+    },
+    {
+      "transport": "guzzle",
+      "dataset": "main",
+      "case": "chats.getById.testChannel",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "275cdc41ffdaa83454142195699e210aa85cebe27be299c7516f0611dcf04fcc"
+    },
+    {
+      "transport": "guzzle",
+      "dataset": "main",
+      "case": "chats.getById.afterCleanup",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "1d712e53ee8fba63723896574249e340ab64172a67ba4720a997c03f3757c3c0"
+    },
+    {
+      "transport": "guzzle",
+      "dataset": "comments",
+      "case": "chats.getById.testChannel",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "275cdc41ffdaa83454142195699e210aa85cebe27be299c7516f0611dcf04fcc"
+    },
+    {
+      "transport": "joomla-http",
+      "dataset": "main",
+      "case": "chats.getById",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "1d712e53ee8fba63723896574249e340ab64172a67ba4720a997c03f3757c3c0"
+    },
+    {
+      "transport": "joomla-http",
+      "dataset": "main",
+      "case": "chats.getById.testChannel",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "275cdc41ffdaa83454142195699e210aa85cebe27be299c7516f0611dcf04fcc"
+    },
+    {
+      "transport": "joomla-http",
+      "dataset": "main",
+      "case": "chats.getById.afterCleanup",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "45a9571c6ef976b53d6189ae11543b6500f78bc6bb7faace37de1830f4bfd45c"
+    },
+    {
+      "transport": "joomla-http",
+      "dataset": "comments",
+      "case": "chats.getById.testChannel",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "275cdc41ffdaa83454142195699e210aa85cebe27be299c7516f0611dcf04fcc"
+    }
+  ]
+}

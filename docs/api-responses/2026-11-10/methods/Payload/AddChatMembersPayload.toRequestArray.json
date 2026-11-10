@@ -1,0 +1,216 @@
+{
+  "method": "Webtolk\\Max\\Payload\\AddChatMembersPayload::toRequestArray",
+  "declared_method": "Webtolk\\Max\\Payload\\AddChatMembersPayload::toRequestArray",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "array",
+  "parameters": [],
+  "implementation_methods": [],
+  "observed_call_count": 4,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "live-guzzle",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\AddChatMembersPayload::toRequestArray",
+      "declared_method": "Webtolk\\Max\\Payload\\AddChatMembersPayload::toRequestArray",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "map",
+          "items": {
+            "user_ids": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": [
+                {
+                  "php_type": "int",
+                  "value": "XXXX"
+                }
+              ]
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\AddChatMembersPayload",
+          "properties": {
+            "userIds": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": [
+                {
+                  "php_type": "int",
+                  "value": "XXXX"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/items/user_ids/items/0/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/userIds/items/0/value",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "2596d13452fc3b2e035f5c35975d79a4e2e3898e40ca3f01523a0429f1c91997"
+      }
+    },
+    {
+      "phase": "live-joomla-http",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\AddChatMembersPayload::toRequestArray",
+      "declared_method": "Webtolk\\Max\\Payload\\AddChatMembersPayload::toRequestArray",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "map",
+          "items": {
+            "user_ids": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": [
+                {
+                  "php_type": "int",
+                  "value": "XXXX"
+                }
+              ]
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\AddChatMembersPayload",
+          "properties": {
+            "userIds": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": [
+                {
+                  "php_type": "int",
+                  "value": "XXXX"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/items/user_ids/items/0/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/userIds/items/0/value",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "8a05e7724154fa8a74434159910a8a4543976bd1c30b60cefab8763ef336ef93"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\AddChatMembersPayload::toRequestArray",
+      "declared_method": "Webtolk\\Max\\Payload\\AddChatMembersPayload::toRequestArray",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "map",
+          "items": {
+            "user_ids": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": [
+                {
+                  "php_type": "int",
+                  "value": "XXXX"
+                },
+                {
+                  "php_type": "int",
+                  "value": "XXXX"
+                }
+              ]
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\AddChatMembersPayload",
+          "properties": {
+            "userIds": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": [
+                {
+                  "php_type": "int",
+                  "value": "XXXX"
+                },
+                {
+                  "php_type": "int",
+                  "value": "XXXX"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/items/user_ids/items/0/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/items/user_ids/items/1/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/userIds/items/0/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/userIds/items/1/value",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "49e013f62dcbaf542a58391d9b88e27ef4a21917600327757df0844aa2e41124"
+      }
+    }
+  ]
+}

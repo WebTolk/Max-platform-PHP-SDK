@@ -1,0 +1,531 @@
+{
+  "method": "Webtolk\\Max\\Payload\\ChatAdminAssignment::withPermissions",
+  "declared_method": "Webtolk\\Max\\Payload\\ChatAdminAssignment::withPermissions",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "self",
+  "parameters": [
+    {
+      "name": "permissions",
+      "type": "string",
+      "required": false,
+      "variadic": true
+    }
+  ],
+  "implementation_methods": [],
+  "observed_call_count": 6,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "live-guzzle",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\ChatAdminAssignment::withPermissions",
+      "declared_method": "Webtolk\\Max\\Payload\\ChatAdminAssignment::withPermissions",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\ChatAdminAssignment",
+          "properties": {
+            "permissions": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": [
+                {
+                  "php_type": "string",
+                  "value": "XXXX"
+                }
+              ]
+            },
+            "alias": {
+              "php_type": "null",
+              "value": null
+            },
+            "userId": {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\ChatAdminAssignment",
+          "properties": {
+            "permissions": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": [
+                {
+                  "php_type": "string",
+                  "value": "XXXX"
+                }
+              ]
+            },
+            "alias": {
+              "php_type": "null",
+              "value": null
+            },
+            "userId": {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/permissions/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/userId/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/permissions/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/userId/value",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "72dc1556692a977dfa2277264a32e3b5615af062e4ee9b22ded184cde33dc7de"
+      }
+    },
+    {
+      "phase": "live-joomla-http",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\ChatAdminAssignment::withPermissions",
+      "declared_method": "Webtolk\\Max\\Payload\\ChatAdminAssignment::withPermissions",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\ChatAdminAssignment",
+          "properties": {
+            "permissions": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": [
+                {
+                  "php_type": "string",
+                  "value": "XXXX"
+                }
+              ]
+            },
+            "alias": {
+              "php_type": "null",
+              "value": null
+            },
+            "userId": {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\ChatAdminAssignment",
+          "properties": {
+            "permissions": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": [
+                {
+                  "php_type": "string",
+                  "value": "XXXX"
+                }
+              ]
+            },
+            "alias": {
+              "php_type": "null",
+              "value": null
+            },
+            "userId": {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/permissions/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/userId/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/permissions/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/userId/value",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "221fd0d46d053c4ab4ec823aca46a880db22a448f076cde8c8942b57a0dc31b2"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\ChatAdminAssignment::withPermissions",
+      "declared_method": "Webtolk\\Max\\Payload\\ChatAdminAssignment::withPermissions",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\ChatAdminAssignment",
+          "properties": {
+            "permissions": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": [
+                {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                {
+                  "php_type": "string",
+                  "value": "XXXX"
+                }
+              ]
+            },
+            "alias": {
+              "php_type": "null",
+              "value": null
+            },
+            "userId": {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\ChatAdminAssignment",
+          "properties": {
+            "permissions": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": [
+                {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                {
+                  "php_type": "string",
+                  "value": "XXXX"
+                }
+              ]
+            },
+            "alias": {
+              "php_type": "null",
+              "value": null
+            },
+            "userId": {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/arguments/items/1/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/permissions/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/permissions/items/1/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/userId/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/permissions/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/permissions/items/1/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/userId/value",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "8987bf315b4132378209114d52b1a85135dbcd8aa74d34ea3168628874b099c0"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\ChatAdminAssignment::withPermissions",
+      "declared_method": "Webtolk\\Max\\Payload\\ChatAdminAssignment::withPermissions",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\ChatAdminAssignment",
+          "properties": {
+            "permissions": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": [
+                {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                {
+                  "php_type": "string",
+                  "value": "XXXX"
+                }
+              ]
+            },
+            "alias": {
+              "php_type": "null",
+              "value": null
+            },
+            "userId": {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\ChatAdminAssignment",
+          "properties": {
+            "permissions": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": [
+                {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                {
+                  "php_type": "string",
+                  "value": "XXXX"
+                }
+              ]
+            },
+            "alias": {
+              "php_type": "null",
+              "value": null
+            },
+            "userId": {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/arguments/items/1/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/arguments/items/2/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/permissions/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/permissions/items/1/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/userId/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/permissions/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/permissions/items/1/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/userId/value",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "2f0055c5afbe86354db5b3c8b1378f417ca425d653f7b6f862009d6acdcc96db"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\ChatAdminAssignment::withPermissions",
+      "declared_method": "Webtolk\\Max\\Payload\\ChatAdminAssignment::withPermissions",
+      "outcome": "threw",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\ChatAdminAssignment",
+          "properties": {
+            "permissions": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            },
+            "alias": {
+              "php_type": "null",
+              "value": null
+            },
+            "userId": {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          }
+        },
+        "exception": {
+          "class": "Webtolk\\Max\\Exception\\ValidationException",
+          "message": "XXXX",
+          "code": "XXXX"
+        }
+      },
+      "redactions": [
+        {
+          "path": "/receiver_after/properties/userId/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/exception/message",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/exception/code",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "edb30e0ecc06d72f54a2b6afaa94604a8f407a135b506edfdfdd8d3f2e2d1415"
+      }
+    }
+  ]
+}

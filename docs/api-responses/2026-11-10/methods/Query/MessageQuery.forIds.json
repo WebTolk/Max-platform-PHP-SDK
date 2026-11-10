@@ -1,0 +1,148 @@
+{
+  "method": "Webtolk\\Max\\Query\\MessageQuery::forIds",
+  "declared_method": "Webtolk\\Max\\Query\\MessageQuery::forIds",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "self",
+  "parameters": [
+    {
+      "name": "messageIds",
+      "type": "string",
+      "required": false,
+      "variadic": true
+    }
+  ],
+  "implementation_methods": [],
+  "observed_call_count": 2,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Query\\MessageQuery::forIds",
+      "declared_method": "Webtolk\\Max\\Query\\MessageQuery::forIds",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Query\\MessageQuery",
+          "properties": {
+            "forChatSet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "forMessageIdsSet": {
+              "php_type": "bool",
+              "value": true
+            },
+            "chatId": {
+              "php_type": "null",
+              "value": null
+            },
+            "messageIds": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": [
+                {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                {
+                  "php_type": "string",
+                  "value": "XXXX"
+                }
+              ]
+            },
+            "from": {
+              "php_type": "null",
+              "value": null
+            },
+            "to": {
+              "php_type": "null",
+              "value": null
+            },
+            "count": {
+              "php_type": "null",
+              "value": null
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/arguments/items/1/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/messageIds/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/messageIds/items/1/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "9b99ad22229476c9e83e48a8ce20337fe02e247b9a042752f3c1d0ac5b41d80c"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Query\\MessageQuery::forIds",
+      "declared_method": "Webtolk\\Max\\Query\\MessageQuery::forIds",
+      "outcome": "threw",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "exception": {
+          "class": "Webtolk\\Max\\Exception\\ValidationException",
+          "message": "XXXX",
+          "code": "XXXX"
+        }
+      },
+      "redactions": [
+        {
+          "path": "/exception/message",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/exception/code",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "e72dea5228a0eaa1eab39e66c8b02542d579666b5d172c8aa8da050c1ec177a4"
+      }
+    }
+  ]
+}

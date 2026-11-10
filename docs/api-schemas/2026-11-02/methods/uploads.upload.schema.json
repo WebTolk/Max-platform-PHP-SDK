@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:webtolk:max:0.4.0:methods:uploads.upload",
+  "title": "uploads.upload observed MAX JSON responses",
+  "description": "Only captured shapes are described. Optional or unobserved variants may exist.",
+  "type": "object",
+  "properties": {
+    "fileId": {
+      "type": "integer"
+    },
+    "token": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true,
+  "required": [
+    "fileId",
+    "token"
+  ],
+  "x-live-observations": [
+    {
+      "transport": "guzzle",
+      "dataset": "main",
+      "case": "uploads.upload",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "a54467b58a5949e7ee43fadb509eb4f8ff4fefec154c60759a223a6ddfe6fc54"
+    },
+    {
+      "transport": "joomla-http",
+      "dataset": "main",
+      "case": "uploads.upload",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "29acd81e3ac42e375b63ea70bf7f170fa82c9f51636f232ef50ebfcc9205d42f"
+    }
+  ]
+}

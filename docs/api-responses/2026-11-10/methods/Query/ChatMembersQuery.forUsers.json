@@ -1,0 +1,184 @@
+{
+  "method": "Webtolk\\Max\\Query\\ChatMembersQuery::forUsers",
+  "declared_method": "Webtolk\\Max\\Query\\ChatMembersQuery::forUsers",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "self",
+  "parameters": [
+    {
+      "name": "userIds",
+      "type": "int",
+      "required": false,
+      "variadic": true
+    }
+  ],
+  "implementation_methods": [],
+  "observed_call_count": 4,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Query\\ChatMembersQuery::forUsers",
+      "declared_method": "Webtolk\\Max\\Query\\ChatMembersQuery::forUsers",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Query\\ChatMembersQuery",
+          "properties": {
+            "forUsersSet": {
+              "php_type": "bool",
+              "value": true
+            },
+            "forPageSet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "userIds": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": [
+                {
+                  "php_type": "int",
+                  "value": "XXXX"
+                },
+                {
+                  "php_type": "int",
+                  "value": "XXXX"
+                }
+              ]
+            },
+            "marker": {
+              "php_type": "null",
+              "value": null
+            },
+            "count": {
+              "php_type": "null",
+              "value": null
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/arguments/items/1/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/userIds/items/0/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/userIds/items/1/value",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "f5d03a23d1f2605fdabe6b9a50461aac2a60fcf2433f4b7d96a20772f0dd7ba6"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Query\\ChatMembersQuery::forUsers",
+      "declared_method": "Webtolk\\Max\\Query\\ChatMembersQuery::forUsers",
+      "outcome": "threw",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "exception": {
+          "class": "Webtolk\\Max\\Exception\\ValidationException",
+          "message": "XXXX",
+          "code": "XXXX"
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/exception/message",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/exception/code",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "ca2675b187f22d070d0212b49f941a5ea68b4676f306c5e25656933e24aa3140"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Query\\ChatMembersQuery::forUsers",
+      "declared_method": "Webtolk\\Max\\Query\\ChatMembersQuery::forUsers",
+      "outcome": "threw",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "exception": {
+          "class": "Webtolk\\Max\\Exception\\ValidationException",
+          "message": "XXXX",
+          "code": "XXXX"
+        }
+      },
+      "redactions": [
+        {
+          "path": "/exception/message",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/exception/code",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "4d4abc8faf853389b07501e9d983f65c009d2bf90eddf2610497ac1742bcd0d4"
+      }
+    }
+  ]
+}

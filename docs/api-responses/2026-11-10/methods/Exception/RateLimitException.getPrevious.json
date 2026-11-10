@@ -1,0 +1,93 @@
+{
+  "method": "Webtolk\\Max\\Exception\\RateLimitException::getPrevious",
+  "declared_method": "Exception::getPrevious",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": true,
+  "native_method": true,
+  "return_type": "?Throwable",
+  "parameters": [],
+  "implementation_methods": [],
+  "observed_call_count": 1,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "local-fixtures-v2",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Exception\\RateLimitException::getPrevious",
+      "declared_method": "Exception::getPrevious",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "null",
+          "value": null
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Exception\\RateLimitException",
+          "properties": {
+            "statusCode": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "apiCode": {
+              "php_type": "null",
+              "value": null
+            },
+            "message": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "code": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "file": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "line": {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/receiver_after/properties/statusCode/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/message/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/code/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/file/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/line/value",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "192a205224d96855fffd596b2f307e3281bc5adf5a7f76ebd69bf217ce3a6a75"
+      }
+    }
+  ]
+}

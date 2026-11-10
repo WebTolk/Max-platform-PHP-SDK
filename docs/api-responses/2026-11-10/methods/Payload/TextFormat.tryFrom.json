@@ -1,0 +1,92 @@
+{
+  "method": "Webtolk\\Max\\Payload\\TextFormat::tryFrom",
+  "declared_method": "Webtolk\\Max\\Payload\\TextFormat::tryFrom",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": true,
+  "return_type": "?static",
+  "parameters": [
+    {
+      "name": "value",
+      "type": "string|int",
+      "required": true,
+      "variadic": false
+    }
+  ],
+  "implementation_methods": [],
+  "observed_call_count": 3,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "local-fixtures-v2",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\TextFormat::tryFrom",
+      "declared_method": "Webtolk\\Max\\Payload\\TextFormat::tryFrom",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "enum",
+          "class": "Webtolk\\Max\\Payload\\TextFormat",
+          "enum_case": "MARKDOWN",
+          "enum_value": "markdown"
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "fbb7510b9e6df0f477feaae91b8d85a85fefa16cef274647963ff8da53901578"
+      }
+    },
+    {
+      "phase": "local-fixtures-v2",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\TextFormat::tryFrom",
+      "declared_method": "Webtolk\\Max\\Payload\\TextFormat::tryFrom",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "enum",
+          "class": "Webtolk\\Max\\Payload\\TextFormat",
+          "enum_case": "HTML",
+          "enum_value": "html"
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "9c2dad680e2579eb683c9d83f08a25b8917bd98f471d42ba97514f8c9b179a85"
+      }
+    }
+  ]
+}

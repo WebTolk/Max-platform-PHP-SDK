@@ -1,0 +1,82 @@
+{
+  "method": "Webtolk\\Max\\Payload\\BotCommandPayload::toRequestArray",
+  "declared_method": "Webtolk\\Max\\Payload\\BotCommandPayload::toRequestArray",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "array",
+  "parameters": [],
+  "implementation_methods": [],
+  "observed_call_count": 2,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\BotCommandPayload::toRequestArray",
+      "declared_method": "Webtolk\\Max\\Payload\\BotCommandPayload::toRequestArray",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "map",
+          "items": {
+            "name": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "description": {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\BotCommandPayload",
+          "properties": {
+            "name": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "description": {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/items/name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/description/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/description/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "6b740ff09129c1b21e5e13becb96b506c36d27b284afbc51c2dd38b19a30de03"
+      }
+    }
+  ]
+}

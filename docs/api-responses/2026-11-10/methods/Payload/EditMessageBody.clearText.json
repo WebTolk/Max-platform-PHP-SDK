@@ -1,0 +1,141 @@
+{
+  "method": "Webtolk\\Max\\Payload\\EditMessageBody::clearText",
+  "declared_method": "Webtolk\\Max\\Payload\\EditMessageBody::clearText",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "self",
+  "parameters": [],
+  "implementation_methods": [],
+  "observed_call_count": 1,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\EditMessageBody::clearText",
+      "declared_method": "Webtolk\\Max\\Payload\\EditMessageBody::clearText",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\EditMessageBody",
+          "properties": {
+            "isTextSet": {
+              "php_type": "bool",
+              "value": true
+            },
+            "isAttachmentsSet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "isLinkSet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "isClearLink": {
+              "php_type": "bool",
+              "value": false
+            },
+            "isNotifySet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "isFormatSet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "text": {
+              "php_type": "null",
+              "value": null
+            },
+            "isClearText": {
+              "php_type": "bool",
+              "value": true
+            },
+            "attachments": {
+              "php_type": "null",
+              "value": null
+            },
+            "link": {
+              "php_type": "null",
+              "value": null
+            },
+            "notify": {
+              "php_type": "null",
+              "value": null
+            },
+            "format": {
+              "php_type": "null",
+              "value": null
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\EditMessageBody",
+          "properties": {
+            "isTextSet": {
+              "php_type": "bool",
+              "value": true
+            },
+            "isAttachmentsSet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "isLinkSet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "isClearLink": {
+              "php_type": "bool",
+              "value": false
+            },
+            "isNotifySet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "isFormatSet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "text": {
+              "php_type": "null",
+              "value": null
+            },
+            "isClearText": {
+              "php_type": "bool",
+              "value": true
+            },
+            "attachments": {
+              "php_type": "null",
+              "value": null
+            },
+            "link": {
+              "php_type": "null",
+              "value": null
+            },
+            "notify": {
+              "php_type": "null",
+              "value": null
+            },
+            "format": {
+              "php_type": "null",
+              "value": null
+            }
+          }
+        }
+      },
+      "redactions": [],
+      "execution_record": {
+        "sha256": "b04df3e7b868b8ef164dc27801fa06ec71b2c6ab84b94c3fd7ad383c08149a85"
+      }
+    }
+  ]
+}

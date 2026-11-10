@@ -1,0 +1,1804 @@
+{
+  "method": "Webtolk\\Max\\Entity\\BotInfo::getFullAvatarUrl",
+  "declared_method": "Webtolk\\Max\\Entity\\UserWithPhoto::getFullAvatarUrl",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": true,
+  "native_method": false,
+  "return_type": "?string",
+  "parameters": [],
+  "implementation_methods": [],
+  "observed_call_count": 3,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "live-guzzle",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Entity\\BotInfo::getFullAvatarUrl",
+      "declared_method": "Webtolk\\Max\\Entity\\UserWithPhoto::getFullAvatarUrl",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "string",
+          "value": "XXXX"
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Entity\\BotInfo",
+          "properties": {
+            "rawData": {
+              "php_type": "array",
+              "array_kind": "map",
+              "items": {
+                "user_id": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                },
+                "first_name": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "is_bot": {
+                  "php_type": "bool",
+                  "value": true
+                },
+                "username": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "last_activity_time": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                },
+                "description": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "avatar_url": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "full_avatar_url": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "name": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                }
+              }
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/user_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/first_name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/username/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/last_activity_time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/description/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/avatar_url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/full_avatar_url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/name/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "697fb5fde9d3bc1bc9a52e287e2e335f412293f9c5b05ae891a260da72778913"
+      }
+    },
+    {
+      "phase": "live-joomla-http",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Entity\\BotInfo::getFullAvatarUrl",
+      "declared_method": "Webtolk\\Max\\Entity\\UserWithPhoto::getFullAvatarUrl",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "string",
+          "value": "XXXX"
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Entity\\BotInfo",
+          "properties": {
+            "rawData": {
+              "php_type": "array",
+              "array_kind": "map",
+              "items": {
+                "user_id": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                },
+                "first_name": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "is_bot": {
+                  "php_type": "bool",
+                  "value": true
+                },
+                "username": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "last_activity_time": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                },
+                "description": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "avatar_url": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "full_avatar_url": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "name": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                }
+              }
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/user_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/first_name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/username/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/last_activity_time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/description/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/avatar_url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/full_avatar_url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/name/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "035dee67e6c50994d87b9d4fe6d07728a94335924744957a87d1ba7fb0d23282"
+      }
+    },
+    {
+      "phase": "local-fixtures-v2",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Entity\\BotInfo::getFullAvatarUrl",
+      "declared_method": "Webtolk\\Max\\Entity\\UserWithPhoto::getFullAvatarUrl",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "string",
+          "value": "XXXX"
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Entity\\BotInfo",
+          "properties": {
+            "rawData": {
+              "php_type": "array",
+              "array_kind": "map",
+              "items": {
+                "user_id": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                },
+                "first_name": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "last_name": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "username": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "is_bot": {
+                  "php_type": "bool",
+                  "value": false
+                },
+                "last_activity_time": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                },
+                "name": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "chat_id": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                },
+                "type": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "status": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "title": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "icon": {
+                  "php_type": "array",
+                  "array_kind": "map",
+                  "items": {
+                    "url": {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    }
+                  }
+                },
+                "last_event_time": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                },
+                "participants_count": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                },
+                "owner_id": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                },
+                "participants": {
+                  "XXXX_1": "array",
+                  "XXXX_2": "map",
+                  "XXXX_3": {
+                    "XXXX_1": {
+                      "php_type": "int",
+                      "value": "XXXX"
+                    }
+                  }
+                },
+                "is_public": {
+                  "php_type": "bool",
+                  "value": false
+                },
+                "link": {
+                  "php_type": "array",
+                  "array_kind": "map",
+                  "items": {
+                    "type": {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    },
+                    "chat_id": {
+                      "php_type": "int",
+                      "value": "XXXX"
+                    },
+                    "sender": {
+                      "php_type": "array",
+                      "array_kind": "map",
+                      "items": {
+                        "user_id": {
+                          "php_type": "int",
+                          "value": "XXXX"
+                        },
+                        "first_name": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "last_name": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "username": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "is_bot": {
+                          "php_type": "bool",
+                          "value": false
+                        },
+                        "last_activity_time": {
+                          "php_type": "int",
+                          "value": "XXXX"
+                        },
+                        "name": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        }
+                      }
+                    },
+                    "message": {
+                      "php_type": "array",
+                      "array_kind": "map",
+                      "items": {
+                        "mid": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "seq": {
+                          "php_type": "int",
+                          "value": "XXXX"
+                        },
+                        "text": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "attachments": {
+                          "php_type": "array",
+                          "array_kind": "list",
+                          "items": []
+                        },
+                        "markup": {
+                          "php_type": "array",
+                          "array_kind": "list",
+                          "items": []
+                        }
+                      }
+                    }
+                  }
+                },
+                "description": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "dialog_with_user": {
+                  "php_type": "array",
+                  "array_kind": "map",
+                  "items": {
+                    "user_id": {
+                      "php_type": "int",
+                      "value": "XXXX"
+                    },
+                    "first_name": {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    },
+                    "last_name": {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    },
+                    "username": {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    },
+                    "is_bot": {
+                      "php_type": "bool",
+                      "value": false
+                    },
+                    "last_activity_time": {
+                      "php_type": "int",
+                      "value": "XXXX"
+                    },
+                    "name": {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    }
+                  }
+                },
+                "chat_message_id": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "pinned_message": {
+                  "php_type": "array",
+                  "array_kind": "map",
+                  "items": {
+                    "sender": {
+                      "php_type": "array",
+                      "array_kind": "map",
+                      "items": {
+                        "user_id": {
+                          "php_type": "int",
+                          "value": "XXXX"
+                        },
+                        "first_name": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "last_name": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "username": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "is_bot": {
+                          "php_type": "bool",
+                          "value": false
+                        },
+                        "last_activity_time": {
+                          "php_type": "int",
+                          "value": "XXXX"
+                        },
+                        "name": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        }
+                      }
+                    },
+                    "recipient": {
+                      "php_type": "array",
+                      "array_kind": "map",
+                      "items": {
+                        "chat_id": {
+                          "php_type": "int",
+                          "value": "XXXX"
+                        },
+                        "chat_type": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "user_id": {
+                          "php_type": "int",
+                          "value": "XXXX"
+                        }
+                      }
+                    },
+                    "body": {
+                      "php_type": "array",
+                      "array_kind": "map",
+                      "items": {
+                        "mid": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "seq": {
+                          "php_type": "int",
+                          "value": "XXXX"
+                        },
+                        "text": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "attachments": {
+                          "php_type": "array",
+                          "array_kind": "list",
+                          "items": []
+                        },
+                        "markup": {
+                          "php_type": "array",
+                          "array_kind": "list",
+                          "items": []
+                        }
+                      }
+                    },
+                    "timestamp": {
+                      "php_type": "int",
+                      "value": "XXXX"
+                    }
+                  }
+                },
+                "last_access_time": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                },
+                "join_time": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                },
+                "permissions": {
+                  "php_type": "array",
+                  "array_kind": "list",
+                  "items": [
+                    {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    }
+                  ]
+                },
+                "alias": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "is_owner": {
+                  "php_type": "bool",
+                  "value": false
+                },
+                "is_admin": {
+                  "php_type": "bool",
+                  "value": false
+                },
+                "recipient": {
+                  "php_type": "array",
+                  "array_kind": "map",
+                  "items": {
+                    "chat_id": {
+                      "php_type": "int",
+                      "value": "XXXX"
+                    },
+                    "chat_type": {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    },
+                    "user_id": {
+                      "php_type": "int",
+                      "value": "XXXX"
+                    }
+                  }
+                },
+                "timestamp": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                },
+                "body": {
+                  "php_type": "array",
+                  "array_kind": "map",
+                  "items": {
+                    "mid": {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    },
+                    "seq": {
+                      "php_type": "int",
+                      "value": "XXXX"
+                    },
+                    "text": {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    },
+                    "attachments": {
+                      "php_type": "array",
+                      "array_kind": "list",
+                      "items": []
+                    },
+                    "markup": {
+                      "php_type": "array",
+                      "array_kind": "list",
+                      "items": []
+                    }
+                  }
+                },
+                "sender": {
+                  "php_type": "array",
+                  "array_kind": "map",
+                  "items": {
+                    "user_id": {
+                      "php_type": "int",
+                      "value": "XXXX"
+                    },
+                    "first_name": {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    },
+                    "last_name": {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    },
+                    "username": {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    },
+                    "is_bot": {
+                      "php_type": "bool",
+                      "value": false
+                    },
+                    "last_activity_time": {
+                      "php_type": "int",
+                      "value": "XXXX"
+                    },
+                    "name": {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    }
+                  }
+                },
+                "stat": {
+                  "php_type": "array",
+                  "array_kind": "map",
+                  "items": {
+                    "views": {
+                      "php_type": "int",
+                      "value": "XXXX"
+                    }
+                  }
+                },
+                "url": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "avatar_url": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "full_avatar_url": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "commands": {
+                  "php_type": "array",
+                  "array_kind": "list",
+                  "items": [
+                    {
+                      "php_type": "array",
+                      "array_kind": "map",
+                      "items": {
+                        "name": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "description": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "chats": {
+                  "php_type": "array",
+                  "array_kind": "list",
+                  "items": [
+                    {
+                      "php_type": "array",
+                      "array_kind": "map",
+                      "items": {
+                        "chat_id": {
+                          "php_type": "int",
+                          "value": "XXXX"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "members": {
+                  "php_type": "array",
+                  "array_kind": "list",
+                  "items": [
+                    {
+                      "php_type": "array",
+                      "array_kind": "map",
+                      "items": {
+                        "user_id": {
+                          "php_type": "int",
+                          "value": "XXXX"
+                        },
+                        "first_name": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "last_name": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "username": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "is_bot": {
+                          "php_type": "bool",
+                          "value": false
+                        },
+                        "last_activity_time": {
+                          "php_type": "int",
+                          "value": "XXXX"
+                        },
+                        "name": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "messages": {
+                  "php_type": "array",
+                  "array_kind": "list",
+                  "items": [
+                    {
+                      "php_type": "array",
+                      "array_kind": "map",
+                      "items": {
+                        "sender": {
+                          "php_type": "array",
+                          "array_kind": "map",
+                          "items": {
+                            "user_id": {
+                              "php_type": "int",
+                              "value": "XXXX"
+                            },
+                            "first_name": {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            },
+                            "last_name": {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            },
+                            "username": {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            },
+                            "is_bot": {
+                              "php_type": "bool",
+                              "value": false
+                            },
+                            "last_activity_time": {
+                              "php_type": "int",
+                              "value": "XXXX"
+                            },
+                            "name": {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            }
+                          }
+                        },
+                        "recipient": {
+                          "php_type": "array",
+                          "array_kind": "map",
+                          "items": {
+                            "chat_id": {
+                              "php_type": "int",
+                              "value": "XXXX"
+                            },
+                            "chat_type": {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            },
+                            "user_id": {
+                              "php_type": "int",
+                              "value": "XXXX"
+                            }
+                          }
+                        },
+                        "body": {
+                          "php_type": "array",
+                          "array_kind": "map",
+                          "items": {
+                            "mid": {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            },
+                            "seq": {
+                              "php_type": "int",
+                              "value": "XXXX"
+                            },
+                            "text": {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            },
+                            "attachments": {
+                              "php_type": "array",
+                              "array_kind": "list",
+                              "items": []
+                            },
+                            "markup": {
+                              "php_type": "array",
+                              "array_kind": "list",
+                              "items": []
+                            }
+                          }
+                        },
+                        "timestamp": {
+                          "php_type": "int",
+                          "value": "XXXX"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "subscriptions": {
+                  "php_type": "array",
+                  "array_kind": "list",
+                  "items": [
+                    {
+                      "php_type": "array",
+                      "array_kind": "map",
+                      "items": {
+                        "url": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "time": {
+                          "php_type": "int",
+                          "value": "XXXX"
+                        },
+                        "update_types": {
+                          "php_type": "array",
+                          "array_kind": "list",
+                          "items": [
+                            {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ]
+                },
+                "updates": {
+                  "php_type": "array",
+                  "array_kind": "list",
+                  "items": [
+                    {
+                      "php_type": "array",
+                      "array_kind": "map",
+                      "items": {
+                        "update_type": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "timestamp": {
+                          "php_type": "int",
+                          "value": "XXXX"
+                        },
+                        "message": {
+                          "php_type": "array",
+                          "array_kind": "map",
+                          "items": {
+                            "sender": {
+                              "php_type": "array",
+                              "array_kind": "map",
+                              "items": {
+                                "user_id": {
+                                  "php_type": "int",
+                                  "value": "XXXX"
+                                },
+                                "first_name": {
+                                  "php_type": "string",
+                                  "value": "XXXX"
+                                },
+                                "last_name": {
+                                  "php_type": "string",
+                                  "value": "XXXX"
+                                },
+                                "username": {
+                                  "php_type": "string",
+                                  "value": "XXXX"
+                                },
+                                "is_bot": {
+                                  "php_type": "bool",
+                                  "value": false
+                                },
+                                "last_activity_time": {
+                                  "php_type": "int",
+                                  "value": "XXXX"
+                                },
+                                "name": {
+                                  "php_type": "string",
+                                  "value": "XXXX"
+                                }
+                              }
+                            },
+                            "recipient": {
+                              "php_type": "array",
+                              "array_kind": "map",
+                              "items": {
+                                "chat_id": {
+                                  "php_type": "int",
+                                  "value": "XXXX"
+                                },
+                                "chat_type": {
+                                  "php_type": "string",
+                                  "value": "XXXX"
+                                },
+                                "user_id": {
+                                  "php_type": "int",
+                                  "value": "XXXX"
+                                }
+                              }
+                            },
+                            "body": {
+                              "php_type": "array",
+                              "array_kind": "map",
+                              "items": {
+                                "mid": {
+                                  "php_type": "string",
+                                  "value": "XXXX"
+                                },
+                                "seq": {
+                                  "php_type": "int",
+                                  "value": "XXXX"
+                                },
+                                "text": {
+                                  "php_type": "string",
+                                  "value": "XXXX"
+                                },
+                                "attachments": {
+                                  "php_type": "array",
+                                  "array_kind": "list",
+                                  "items": []
+                                },
+                                "markup": {
+                                  "php_type": "array",
+                                  "array_kind": "list",
+                                  "items": []
+                                }
+                              }
+                            },
+                            "timestamp": {
+                              "php_type": "int",
+                              "value": "XXXX"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                "marker": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                },
+                "views": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                },
+                "success": {
+                  "php_type": "bool",
+                  "value": true
+                },
+                "message": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "time": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                },
+                "update_types": {
+                  "php_type": "array",
+                  "array_kind": "list",
+                  "items": [
+                    {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    }
+                  ]
+                },
+                "token": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "fileId": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                },
+                "width": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                },
+                "height": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                },
+                "duration": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                },
+                "urls": {
+                  "php_type": "array",
+                  "array_kind": "map",
+                  "items": {
+                    "mp4_1080": {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    }
+                  }
+                },
+                "thumbnail": {
+                  "php_type": "array",
+                  "array_kind": "map",
+                  "items": {
+                    "url": {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    }
+                  }
+                },
+                "update_type": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "user_locale": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "bot_id": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                },
+                "user": {
+                  "php_type": "array",
+                  "array_kind": "map",
+                  "items": {
+                    "user_id": {
+                      "php_type": "int",
+                      "value": "XXXX"
+                    },
+                    "first_name": {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    },
+                    "last_name": {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    },
+                    "username": {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    },
+                    "is_bot": {
+                      "php_type": "bool",
+                      "value": false
+                    },
+                    "last_activity_time": {
+                      "php_type": "int",
+                      "value": "XXXX"
+                    },
+                    "name": {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/user_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/first_name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/last_name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/username/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/last_activity_time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/chat_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/type/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/status/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/title/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/icon/items/url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/last_event_time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/participants_count/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/owner_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/participants/XXXX_1",
+          "kind": "object_key",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/participants/XXXX_2",
+          "kind": "object_key",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/participants/XXXX_3",
+          "kind": "object_key",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/participants/XXXX_3/XXXX_1",
+          "kind": "object_key",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/participants/XXXX_3/XXXX_1/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/link/items/type/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/link/items/chat_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/link/items/sender/items/user_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/link/items/sender/items/first_name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/link/items/sender/items/last_name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/link/items/sender/items/username/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/link/items/sender/items/last_activity_time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/link/items/sender/items/name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/link/items/message/items/mid/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/link/items/message/items/seq/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/link/items/message/items/text/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/description/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/dialog_with_user/items/user_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/dialog_with_user/items/first_name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/dialog_with_user/items/last_name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/dialog_with_user/items/username/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/dialog_with_user/items/last_activity_time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/dialog_with_user/items/name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/chat_message_id/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/pinned_message/items/sender/items/user_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/pinned_message/items/sender/items/first_name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/pinned_message/items/sender/items/last_name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/pinned_message/items/sender/items/username/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/pinned_message/items/sender/items/last_activity_time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/pinned_message/items/sender/items/name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/pinned_message/items/recipient/items/chat_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/pinned_message/items/recipient/items/chat_type/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/pinned_message/items/recipient/items/user_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/pinned_message/items/body/items/mid/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/pinned_message/items/body/items/seq/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/pinned_message/items/body/items/text/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/pinned_message/items/timestamp/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/last_access_time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/join_time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/permissions/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/alias/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/recipient/items/chat_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/recipient/items/chat_type/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/recipient/items/user_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/timestamp/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/body/items/mid/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/body/items/seq/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/body/items/text/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/sender/items/user_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/sender/items/first_name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/sender/items/last_name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/sender/items/username/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/sender/items/last_activity_time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/sender/items/name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/stat/items/views/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/avatar_url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/full_avatar_url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/commands/items/0/items/name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/commands/items/0/items/description/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/chats/items/0/items/chat_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/members/items/0/items/user_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/members/items/0/items/first_name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/members/items/0/items/last_name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/members/items/0/items/username/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/members/items/0/items/last_activity_time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/members/items/0/items/name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/messages/items/0/items/sender/items/user_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/messages/items/0/items/sender/items/first_name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/messages/items/0/items/sender/items/last_name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/messages/items/0/items/sender/items/username/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/messages/items/0/items/sender/items/last_activity_time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/messages/items/0/items/sender/items/name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/messages/items/0/items/recipient/items/chat_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/messages/items/0/items/recipient/items/chat_type/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/messages/items/0/items/recipient/items/user_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/messages/items/0/items/body/items/mid/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/messages/items/0/items/body/items/seq/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/messages/items/0/items/body/items/text/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/messages/items/0/items/timestamp/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/subscriptions/items/0/items/url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/subscriptions/items/0/items/time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/subscriptions/items/0/items/update_types/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/updates/items/0/items/update_type/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/updates/items/0/items/timestamp/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/updates/items/0/items/message/items/sender/items/user_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/updates/items/0/items/message/items/sender/items/first_name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/updates/items/0/items/message/items/sender/items/last_name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/updates/items/0/items/message/items/sender/items/username/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/updates/items/0/items/message/items/sender/items/last_activity_time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/updates/items/0/items/message/items/sender/items/name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/updates/items/0/items/message/items/recipient/items/chat_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/updates/items/0/items/message/items/recipient/items/chat_type/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/updates/items/0/items/message/items/recipient/items/user_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/updates/items/0/items/message/items/body/items/mid/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/updates/items/0/items/message/items/body/items/seq/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/updates/items/0/items/message/items/body/items/text/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/updates/items/0/items/message/items/timestamp/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/marker/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/views/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/message/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/update_types/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/token/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/fileId/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/width/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/height/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/duration/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/urls/items/mp4_1080/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/thumbnail/items/url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/update_type/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/user_locale/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/bot_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/user/items/user_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/user/items/first_name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/user/items/last_name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/user/items/username/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/user/items/last_activity_time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/rawData/items/user/items/name/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "ef16e34f57c76ab53b5117d33db016648226b1221ad3a6a383d6df2e8b6fd11a"
+      }
+    }
+  ]
+}

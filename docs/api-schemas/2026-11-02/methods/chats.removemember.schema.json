@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:webtolk:max:0.4.0:methods:chats.removeMember",
+  "title": "chats.removeMember observed MAX JSON responses",
+  "description": "Only captured shapes are described. Optional or unobserved variants may exist.",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true,
+  "required": [
+    "code",
+    "message"
+  ],
+  "x-live-observations": [
+    {
+      "transport": "guzzle",
+      "dataset": "main",
+      "case": "chats.removeMember",
+      "scenario": "negative_invalid_chat",
+      "outcome": "api_error",
+      "http_status": 400,
+      "raw_body_sha256": "1a1492085aa3eeeab7bf7cd32185d5bee9b2be9141f8c76a74ffe998b1553085"
+    },
+    {
+      "transport": "joomla-http",
+      "dataset": "main",
+      "case": "chats.removeMember",
+      "scenario": "negative_invalid_chat",
+      "outcome": "api_error",
+      "http_status": 400,
+      "raw_body_sha256": "1a1492085aa3eeeab7bf7cd32185d5bee9b2be9141f8c76a74ffe998b1553085"
+    }
+  ]
+}

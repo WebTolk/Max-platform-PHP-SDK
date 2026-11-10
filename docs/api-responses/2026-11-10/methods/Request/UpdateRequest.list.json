@@ -1,0 +1,483 @@
+{
+  "method": "Webtolk\\Max\\Request\\UpdateRequest::list",
+  "declared_method": "Webtolk\\Max\\Request\\UpdateRequest::list",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "Webtolk\\Max\\Entity\\UpdateList",
+  "parameters": [
+    {
+      "name": "query",
+      "type": "?Webtolk\\Max\\Query\\GetUpdatesQuery",
+      "required": false,
+      "variadic": false
+    }
+  ],
+  "implementation_methods": [],
+  "observed_call_count": 4,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "live-guzzle",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Request\\UpdateRequest::list",
+      "declared_method": "Webtolk\\Max\\Request\\UpdateRequest::list",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Query\\GetUpdatesQuery",
+              "properties": {
+                "marker": {
+                  "php_type": "null",
+                  "value": null
+                },
+                "limit": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                },
+                "timeout": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                },
+                "types": {
+                  "php_type": "array",
+                  "array_kind": "list",
+                  "items": [
+                    {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    },
+                    {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    },
+                    {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Entity\\UpdateList",
+          "properties": {
+            "rawData": {
+              "php_type": "array",
+              "array_kind": "map",
+              "items": {
+                "updates": {
+                  "php_type": "array",
+                  "array_kind": "list",
+                  "items": []
+                },
+                "marker": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                }
+              }
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Request\\UpdateRequest",
+          "properties": {
+            "httpClient": {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Http\\PsrHttpClient",
+              "properties": {
+                "client": {
+                  "php_type": "object",
+                  "class": "Webtolk\\Max\\Tests\\Live\\RecordingClient"
+                },
+                "requestFactory": {
+                  "php_type": "object",
+                  "class": "Laminas\\Diactoros\\RequestFactory"
+                },
+                "streamFactory": {
+                  "php_type": "object",
+                  "class": "Laminas\\Diactoros\\StreamFactory"
+                },
+                "config": {
+                  "php_type": "object",
+                  "class": "Webtolk\\Max\\Config\\MaxConfig",
+                  "properties": {
+                    "token": {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    },
+                    "defaultHeaders": {
+                      "php_type": "array",
+                      "array_kind": "list",
+                      "items": []
+                    }
+                  }
+                },
+                "logger": {
+                  "php_type": "object",
+                  "class": "Psr\\Log\\NullLogger"
+                }
+              }
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/properties/limit/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/arguments/items/0/properties/timeout/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/arguments/items/0/properties/types/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/arguments/items/0/properties/types/items/1/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/arguments/items/0/properties/types/items/2/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/marker/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/httpClient/properties/config/properties/token/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "a1bf555f0e2866386dae7ed9d22b34cdda223c5af34c328c55ee2486319f5f36"
+      }
+    },
+    {
+      "phase": "live-joomla-http",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Request\\UpdateRequest::list",
+      "declared_method": "Webtolk\\Max\\Request\\UpdateRequest::list",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Query\\GetUpdatesQuery",
+              "properties": {
+                "marker": {
+                  "php_type": "null",
+                  "value": null
+                },
+                "limit": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                },
+                "timeout": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                },
+                "types": {
+                  "php_type": "array",
+                  "array_kind": "list",
+                  "items": [
+                    {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    },
+                    {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    },
+                    {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Entity\\UpdateList",
+          "properties": {
+            "rawData": {
+              "php_type": "array",
+              "array_kind": "map",
+              "items": {
+                "updates": {
+                  "php_type": "array",
+                  "array_kind": "list",
+                  "items": []
+                },
+                "marker": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                }
+              }
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Request\\UpdateRequest",
+          "properties": {
+            "httpClient": {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Http\\PsrHttpClient",
+              "properties": {
+                "client": {
+                  "php_type": "object",
+                  "class": "Webtolk\\Max\\Tests\\Live\\RecordingClient"
+                },
+                "requestFactory": {
+                  "php_type": "object",
+                  "class": "Laminas\\Diactoros\\RequestFactory"
+                },
+                "streamFactory": {
+                  "php_type": "object",
+                  "class": "Laminas\\Diactoros\\StreamFactory"
+                },
+                "config": {
+                  "php_type": "object",
+                  "class": "Webtolk\\Max\\Config\\MaxConfig",
+                  "properties": {
+                    "token": {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    },
+                    "defaultHeaders": {
+                      "php_type": "array",
+                      "array_kind": "list",
+                      "items": []
+                    }
+                  }
+                },
+                "logger": {
+                  "php_type": "object",
+                  "class": "Psr\\Log\\NullLogger"
+                }
+              }
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/properties/limit/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/arguments/items/0/properties/timeout/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/arguments/items/0/properties/types/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/arguments/items/0/properties/types/items/1/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/arguments/items/0/properties/types/items/2/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/marker/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/httpClient/properties/config/properties/token/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "5e2f101e101687ef7dda1e5d687cd2e10e9867be169de4d78a93599280ae843f"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Request\\UpdateRequest::list",
+      "declared_method": "Webtolk\\Max\\Request\\UpdateRequest::list",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Entity\\UpdateList",
+          "properties": {
+            "rawData": {
+              "php_type": "array",
+              "array_kind": "map",
+              "items": {
+                "updates": {
+                  "php_type": "array",
+                  "array_kind": "list",
+                  "items": [
+                    {
+                      "php_type": "array",
+                      "array_kind": "map",
+                      "items": {
+                        "update_type": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Request\\UpdateRequest",
+          "properties": {
+            "httpClient": {
+              "php_type": "object",
+              "class": "MockObject_ApiTransportInterface_c800120b"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/properties/rawData/items/updates/items/0/items/update_type/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "9bca6a5deae30452cf7a2f83ca0b74bbaaf9b6a9e31a2dfbe683e5ba4be8f12d"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Request\\UpdateRequest::list",
+      "declared_method": "Webtolk\\Max\\Request\\UpdateRequest::list",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Query\\GetUpdatesQuery",
+              "properties": {
+                "marker": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                },
+                "limit": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                },
+                "timeout": {
+                  "php_type": "null",
+                  "value": null
+                },
+                "types": {
+                  "php_type": "array",
+                  "array_kind": "list",
+                  "items": []
+                }
+              }
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Entity\\UpdateList",
+          "properties": {
+            "rawData": {
+              "php_type": "array",
+              "array_kind": "map",
+              "items": {
+                "updates": {
+                  "php_type": "array",
+                  "array_kind": "list",
+                  "items": []
+                },
+                "marker": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                }
+              }
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Request\\UpdateRequest",
+          "properties": {
+            "httpClient": {
+              "php_type": "object",
+              "class": "MockObject_ApiTransportInterface_c800120b"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/properties/marker/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/arguments/items/0/properties/limit/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/rawData/items/marker/value",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "03f20d4a25f0ce6e74a6051c6c0fc0f125fb820a62e93565fc116fcc6995d066"
+      }
+    }
+  ]
+}

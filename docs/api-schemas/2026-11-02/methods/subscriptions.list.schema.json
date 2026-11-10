@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:webtolk:max:0.4.0:methods:subscriptions.list",
+  "title": "subscriptions.list observed MAX JSON responses",
+  "description": "Only captured shapes are described. Optional or unobserved variants may exist.",
+  "type": "object",
+  "properties": {
+    "subscriptions": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "url": {
+                "type": "string"
+              },
+              "time": {
+                "type": "integer"
+              },
+              "update_types": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "additionalProperties": true,
+            "required": [
+              "time",
+              "update_types",
+              "url"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "url": {
+                "type": "string"
+              },
+              "time": {
+                "type": "integer"
+              }
+            },
+            "additionalProperties": true,
+            "required": [
+              "time",
+              "url"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "additionalProperties": true,
+  "required": [
+    "subscriptions"
+  ],
+  "x-live-observations": [
+    {
+      "transport": "guzzle",
+      "dataset": "main",
+      "case": "subscriptions.list",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "5895ce2600c871a718b46e3cb66bc4bffe891dd9c2cf10f5c01032c7bb23c684"
+    },
+    {
+      "transport": "guzzle",
+      "dataset": "main",
+      "case": "subscriptions.list.afterCreate",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "10c0659d7a61c1e155af744491bf3b93ff87745678f9d03f346897eea7f2525d"
+    },
+    {
+      "transport": "guzzle",
+      "dataset": "main",
+      "case": "subscriptions.list.afterCleanup",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "5895ce2600c871a718b46e3cb66bc4bffe891dd9c2cf10f5c01032c7bb23c684"
+    },
+    {
+      "transport": "joomla-http",
+      "dataset": "main",
+      "case": "subscriptions.list",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "5895ce2600c871a718b46e3cb66bc4bffe891dd9c2cf10f5c01032c7bb23c684"
+    },
+    {
+      "transport": "joomla-http",
+      "dataset": "main",
+      "case": "subscriptions.list.afterCreate",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "4812937a0cda4bebd9bd89ec0bb1cc811023cbe22bbce377b49761f2b9f8096b"
+    },
+    {
+      "transport": "joomla-http",
+      "dataset": "main",
+      "case": "subscriptions.list.afterCleanup",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "5895ce2600c871a718b46e3cb66bc4bffe891dd9c2cf10f5c01032c7bb23c684"
+    }
+  ]
+}

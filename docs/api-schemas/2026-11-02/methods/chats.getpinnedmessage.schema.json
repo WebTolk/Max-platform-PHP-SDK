@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:webtolk:max:0.4.0:methods:chats.getPinnedMessage",
+  "title": "chats.getPinnedMessage observed MAX JSON responses",
+  "description": "Only captured shapes are described. Optional or unobserved variants may exist.",
+  "type": "object",
+  "properties": {},
+  "additionalProperties": true,
+  "x-live-observations": [
+    {
+      "transport": "guzzle",
+      "dataset": "main",
+      "case": "chats.getPinnedMessage",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+    },
+    {
+      "transport": "joomla-http",
+      "dataset": "main",
+      "case": "chats.getPinnedMessage",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+    }
+  ]
+}

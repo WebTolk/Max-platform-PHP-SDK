@@ -1,0 +1,10 @@
+{
+  "replacement": "XXXX",
+  "redactions": [
+    {
+      "path": "/message",
+      "kind": "value",
+      "original_type": "string"
+    }
+  ]
+}

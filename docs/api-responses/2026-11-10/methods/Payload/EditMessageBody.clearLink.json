@@ -1,0 +1,180 @@
+{
+  "method": "Webtolk\\Max\\Payload\\EditMessageBody::clearLink",
+  "declared_method": "Webtolk\\Max\\Payload\\EditMessageBody::clearLink",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "self",
+  "parameters": [],
+  "implementation_methods": [],
+  "observed_call_count": 1,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\EditMessageBody::clearLink",
+      "declared_method": "Webtolk\\Max\\Payload\\EditMessageBody::clearLink",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\EditMessageBody",
+          "properties": {
+            "isTextSet": {
+              "php_type": "bool",
+              "value": true
+            },
+            "isAttachmentsSet": {
+              "php_type": "bool",
+              "value": true
+            },
+            "isLinkSet": {
+              "php_type": "bool",
+              "value": true
+            },
+            "isClearLink": {
+              "php_type": "bool",
+              "value": true
+            },
+            "isNotifySet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "isFormatSet": {
+              "php_type": "bool",
+              "value": true
+            },
+            "text": {
+              "php_type": "null",
+              "value": null
+            },
+            "isClearText": {
+              "php_type": "bool",
+              "value": true
+            },
+            "attachments": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": [
+                {
+                  "php_type": "array",
+                  "array_kind": "map",
+                  "items": {
+                    "type": {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    }
+                  }
+                }
+              ]
+            },
+            "link": {
+              "php_type": "null",
+              "value": null
+            },
+            "notify": {
+              "php_type": "null",
+              "value": null
+            },
+            "format": {
+              "php_type": "enum",
+              "class": "Webtolk\\Max\\Payload\\TextFormat",
+              "enum_case": "MARKDOWN",
+              "enum_value": "markdown"
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\EditMessageBody",
+          "properties": {
+            "isTextSet": {
+              "php_type": "bool",
+              "value": true
+            },
+            "isAttachmentsSet": {
+              "php_type": "bool",
+              "value": true
+            },
+            "isLinkSet": {
+              "php_type": "bool",
+              "value": true
+            },
+            "isClearLink": {
+              "php_type": "bool",
+              "value": true
+            },
+            "isNotifySet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "isFormatSet": {
+              "php_type": "bool",
+              "value": true
+            },
+            "text": {
+              "php_type": "null",
+              "value": null
+            },
+            "isClearText": {
+              "php_type": "bool",
+              "value": true
+            },
+            "attachments": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": [
+                {
+                  "php_type": "array",
+                  "array_kind": "map",
+                  "items": {
+                    "type": {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    }
+                  }
+                }
+              ]
+            },
+            "link": {
+              "php_type": "null",
+              "value": null
+            },
+            "notify": {
+              "php_type": "null",
+              "value": null
+            },
+            "format": {
+              "php_type": "enum",
+              "class": "Webtolk\\Max\\Payload\\TextFormat",
+              "enum_case": "MARKDOWN",
+              "enum_value": "markdown"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/properties/attachments/items/0/items/type/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/attachments/items/0/items/type/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "af711d32a30e557ddb345575889ef794271a6b04911d83b4c219c86dc428c7a3"
+      }
+    }
+  ]
+}

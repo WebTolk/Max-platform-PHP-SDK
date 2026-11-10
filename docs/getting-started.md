@@ -11,6 +11,11 @@
 
 SDK не создаёт транспорт сам. Его нужно передать через `Max::setTransport()` до первого вызова любого модуля.
 
+Минимум PHP 8.1 относится к SDK и его runtime PSR-контрактам. Минимум PHP
+выбранного HTTP-клиента и PSR-17 factories проверяйте отдельно: установленный
+набор для разработки с Joomla HTTP 4.0.2 требует PHP 8.3. На PHP 8.1 SDK
+проверяется с совместимыми Guzzle и PSR-17 factories.
+
 ## Установка
 
 ```bash
@@ -101,4 +106,4 @@ echo json_encode($bot->toArray(), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) . 
 - Для старого query-based lookup используйте `messages()->getByQueryId()`.
 - Для channel posts не задавайте `notify=false`; рабочая схема для канала — оставить `notify` неуказанным.
 - Для `video` и `audio` после успешного upload возможен временный `attachment.not.ready`.
-- `messages.answerCallback()` зависит от callback-события со стороны MAX. В текущем schema pack уже есть подтверждённый успешный live response, но `reply_update` как отдельный live sample пока не сохранён.
+- `messages.answerCallback()` требует выданный MAX callback_id. В сохранённых наборах 2026-08-31 и 2026-11-02 есть только отрицательный сценарий; JSON success в старой схеме является контрактной иллюстрацией.

@@ -1,0 +1,192 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:webtolk:max:0.4.0:methods:messages.listComments",
+  "title": "messages.listComments observed MAX JSON responses",
+  "description": "Only captured shapes are described. Optional or unobserved variants may exist.",
+  "anyOf": [
+    {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true,
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "messages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "recipient": {
+                "type": "object",
+                "properties": {
+                  "chat_type": {
+                    "type": "string"
+                  },
+                  "chat_id": {
+                    "type": "integer"
+                  },
+                  "post_id": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": true,
+                "required": [
+                  "chat_id",
+                  "chat_type",
+                  "post_id"
+                ]
+              },
+              "timestamp": {
+                "type": "integer"
+              },
+              "body": {
+                "type": "object",
+                "properties": {
+                  "mid": {
+                    "type": "string"
+                  },
+                  "seq": {
+                    "type": "integer"
+                  },
+                  "text": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": true,
+                "required": [
+                  "mid",
+                  "seq",
+                  "text"
+                ]
+              },
+              "sender": {
+                "type": "object",
+                "properties": {
+                  "user_id": {
+                    "type": "integer"
+                  },
+                  "first_name": {
+                    "type": "string"
+                  },
+                  "is_bot": {
+                    "type": "boolean"
+                  },
+                  "username": {
+                    "type": "string"
+                  },
+                  "last_activity_time": {
+                    "type": "integer"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": true,
+                "required": [
+                  "first_name",
+                  "is_bot",
+                  "last_activity_time",
+                  "name",
+                  "user_id",
+                  "username"
+                ]
+              }
+            },
+            "additionalProperties": true,
+            "required": [
+              "body",
+              "recipient",
+              "sender",
+              "timestamp"
+            ]
+          }
+        }
+      },
+      "additionalProperties": true,
+      "required": [
+        "messages"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "messages": {
+          "type": "array",
+          "items": {}
+        }
+      },
+      "additionalProperties": true,
+      "required": [
+        "messages"
+      ]
+    }
+  ],
+  "x-live-observations": [
+    {
+      "transport": "guzzle",
+      "dataset": "main",
+      "case": "messages.listComments",
+      "scenario": "positive",
+      "outcome": "api_error",
+      "http_status": 404,
+      "raw_body_sha256": "9c09d11e71c89ff6306625842197831965aa2dec6ca3626723db8ce0444e5acf"
+    },
+    {
+      "transport": "guzzle",
+      "dataset": "comments",
+      "case": "messages.listComments",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "33b90bf695c4d4341a704d44a375e082ef77056cf67ebfcac47b09dd8369306b"
+    },
+    {
+      "transport": "guzzle",
+      "dataset": "comments",
+      "case": "messages.listComments.afterDelete",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "5e4ce7b36ba37b78a5d5f9fd08e6b7b54ba6879d651aa46ec9e1d6fa24ebe30a"
+    },
+    {
+      "transport": "joomla-http",
+      "dataset": "main",
+      "case": "messages.listComments",
+      "scenario": "positive",
+      "outcome": "api_error",
+      "http_status": 404,
+      "raw_body_sha256": "9c09d11e71c89ff6306625842197831965aa2dec6ca3626723db8ce0444e5acf"
+    },
+    {
+      "transport": "joomla-http",
+      "dataset": "comments",
+      "case": "messages.listComments",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "dfa2e6961bc1c40b3ad3b8783727e7276e55f90da274bbfe7fe1c2f2a3c42014"
+    },
+    {
+      "transport": "joomla-http",
+      "dataset": "comments",
+      "case": "messages.listComments.afterDelete",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "5e4ce7b36ba37b78a5d5f9fd08e6b7b54ba6879d651aa46ec9e1d6fa24ebe30a"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "method": "Webtolk\\Max\\Payload\\SenderAction::cases",
+  "declared_method": "Webtolk\\Max\\Payload\\SenderAction::cases",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": true,
+  "return_type": "array",
+  "parameters": [],
+  "implementation_methods": [],
+  "observed_call_count": 1,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "local-fixtures-v2",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\SenderAction::cases",
+      "declared_method": "Webtolk\\Max\\Payload\\SenderAction::cases",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "enum",
+              "class": "Webtolk\\Max\\Payload\\SenderAction",
+              "enum_case": "TYPING_ON",
+              "enum_value": "typing_on"
+            },
+            {
+              "php_type": "enum",
+              "class": "Webtolk\\Max\\Payload\\SenderAction",
+              "enum_case": "SENDING_PHOTO",
+              "enum_value": "sending_photo"
+            },
+            {
+              "php_type": "enum",
+              "class": "Webtolk\\Max\\Payload\\SenderAction",
+              "enum_case": "SENDING_VIDEO",
+              "enum_value": "sending_video"
+            },
+            {
+              "php_type": "enum",
+              "class": "Webtolk\\Max\\Payload\\SenderAction",
+              "enum_case": "SENDING_AUDIO",
+              "enum_value": "sending_audio"
+            },
+            {
+              "php_type": "enum",
+              "class": "Webtolk\\Max\\Payload\\SenderAction",
+              "enum_case": "SENDING_FILE",
+              "enum_value": "sending_file"
+            },
+            {
+              "php_type": "enum",
+              "class": "Webtolk\\Max\\Payload\\SenderAction",
+              "enum_case": "MARK_SEEN",
+              "enum_value": "mark_seen"
+            }
+          ]
+        }
+      },
+      "redactions": [],
+      "execution_record": {
+        "sha256": "80af4d672b9347f26fe137671334c562e758fd4c545edba68eb8566cb35b53b6"
+      }
+    }
+  ]
+}

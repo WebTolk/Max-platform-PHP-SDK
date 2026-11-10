@@ -1,0 +1,384 @@
+{
+  "method": "Webtolk\\Max\\Query\\GetUpdatesQuery::withTimeout",
+  "declared_method": "Webtolk\\Max\\Query\\GetUpdatesQuery::withTimeout",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "self",
+  "parameters": [
+    {
+      "name": "timeout",
+      "type": "int",
+      "required": true,
+      "variadic": false
+    }
+  ],
+  "implementation_methods": [],
+  "observed_call_count": 4,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "live-guzzle",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Query\\GetUpdatesQuery::withTimeout",
+      "declared_method": "Webtolk\\Max\\Query\\GetUpdatesQuery::withTimeout",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Query\\GetUpdatesQuery",
+          "properties": {
+            "marker": {
+              "php_type": "null",
+              "value": null
+            },
+            "limit": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "timeout": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "types": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Query\\GetUpdatesQuery",
+          "properties": {
+            "marker": {
+              "php_type": "null",
+              "value": null
+            },
+            "limit": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "timeout": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "types": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/limit/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/timeout/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/limit/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/timeout/value",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "a222c33d3768fda697972bbc9f97aec140ce3bfec0919ff7d8b8bfd1b759c510"
+      }
+    },
+    {
+      "phase": "live-joomla-http",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Query\\GetUpdatesQuery::withTimeout",
+      "declared_method": "Webtolk\\Max\\Query\\GetUpdatesQuery::withTimeout",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Query\\GetUpdatesQuery",
+          "properties": {
+            "marker": {
+              "php_type": "null",
+              "value": null
+            },
+            "limit": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "timeout": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "types": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Query\\GetUpdatesQuery",
+          "properties": {
+            "marker": {
+              "php_type": "null",
+              "value": null
+            },
+            "limit": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "timeout": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "types": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/limit/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/timeout/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/limit/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/timeout/value",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "c617982fc9a6a95a377025c57e30a992a066c762e3696f68e8254a464afaa305"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Query\\GetUpdatesQuery::withTimeout",
+      "declared_method": "Webtolk\\Max\\Query\\GetUpdatesQuery::withTimeout",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Query\\GetUpdatesQuery",
+          "properties": {
+            "marker": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "limit": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "timeout": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "types": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Query\\GetUpdatesQuery",
+          "properties": {
+            "marker": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "limit": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "timeout": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "types": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/marker/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/limit/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/timeout/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/marker/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/limit/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/timeout/value",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "163470f26b73e60992638839a5ae41a32c11d8949b1531fdb5d3eb226acea4f9"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Query\\GetUpdatesQuery::withTimeout",
+      "declared_method": "Webtolk\\Max\\Query\\GetUpdatesQuery::withTimeout",
+      "outcome": "threw",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Query\\GetUpdatesQuery",
+          "properties": {
+            "marker": {
+              "php_type": "null",
+              "value": null
+            },
+            "limit": {
+              "php_type": "null",
+              "value": null
+            },
+            "timeout": {
+              "php_type": "null",
+              "value": null
+            },
+            "types": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            }
+          }
+        },
+        "exception": {
+          "class": "Webtolk\\Max\\Exception\\ValidationException",
+          "message": "XXXX",
+          "code": "XXXX"
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/exception/message",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/exception/code",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "2ca2512948eaa5d39efda0722d68fbb77ce191cecc0e95788cbef14cee6f2fda"
+      }
+    }
+  ]
+}

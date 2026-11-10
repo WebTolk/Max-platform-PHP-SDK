@@ -1,0 +1,15 @@
+{
+  "replacement": "XXXX",
+  "redactions": [
+    {
+      "path": "/url",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/token",
+      "kind": "value",
+      "original_type": "string"
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "method": "Webtolk\\Max\\Query\\CommentQuery::forIds",
+  "declared_method": "Webtolk\\Max\\Query\\CommentQuery::forIds",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "self",
+  "parameters": [
+    {
+      "name": "commentIds",
+      "type": "string",
+      "required": false,
+      "variadic": true
+    }
+  ],
+  "implementation_methods": [],
+  "observed_call_count": 2,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Query\\CommentQuery::forIds",
+      "declared_method": "Webtolk\\Max\\Query\\CommentQuery::forIds",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Query\\CommentQuery",
+          "properties": {
+            "commentIds": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": [
+                {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                {
+                  "php_type": "string",
+                  "value": "XXXX"
+                }
+              ]
+            },
+            "before": {
+              "php_type": "null",
+              "value": null
+            },
+            "after": {
+              "php_type": "null",
+              "value": null
+            },
+            "count": {
+              "php_type": "null",
+              "value": null
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/arguments/items/1/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/commentIds/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/commentIds/items/1/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "b0665471c615f04677a3a361fd5c9e488428e246e7ea0d7ca174aba06a7f44e7"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Query\\CommentQuery::forIds",
+      "declared_method": "Webtolk\\Max\\Query\\CommentQuery::forIds",
+      "outcome": "threw",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "exception": {
+          "class": "Webtolk\\Max\\Exception\\ValidationException",
+          "message": "XXXX",
+          "code": "XXXX"
+        }
+      },
+      "redactions": [
+        {
+          "path": "/exception/message",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/exception/code",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "eb7aa83ccc8e52817ef8eead5b00feb3edaee2a9e6f0a46ebc7471a334d0c3ff"
+      }
+    }
+  ]
+}

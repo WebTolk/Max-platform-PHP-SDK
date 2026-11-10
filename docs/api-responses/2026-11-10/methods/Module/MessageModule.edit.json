@@ -1,0 +1,344 @@
+{
+  "method": "Webtolk\\Max\\Module\\MessageModule::edit",
+  "declared_method": "Webtolk\\Max\\Module\\MessageModule::edit",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "Webtolk\\Max\\Entity\\OperationResult",
+  "parameters": [
+    {
+      "name": "messageId",
+      "type": "string",
+      "required": true,
+      "variadic": false
+    },
+    {
+      "name": "body",
+      "type": "Webtolk\\Max\\Payload\\EditMessageBody",
+      "required": true,
+      "variadic": false
+    }
+  ],
+  "implementation_methods": [],
+  "observed_call_count": 2,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "live-guzzle",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Module\\MessageModule::edit",
+      "declared_method": "Webtolk\\Max\\Module\\MessageModule::edit",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\EditMessageBody",
+              "properties": {
+                "isTextSet": {
+                  "php_type": "bool",
+                  "value": true
+                },
+                "isAttachmentsSet": {
+                  "php_type": "bool",
+                  "value": false
+                },
+                "isLinkSet": {
+                  "php_type": "bool",
+                  "value": false
+                },
+                "isClearLink": {
+                  "php_type": "bool",
+                  "value": false
+                },
+                "isNotifySet": {
+                  "php_type": "bool",
+                  "value": false
+                },
+                "isFormatSet": {
+                  "php_type": "bool",
+                  "value": false
+                },
+                "text": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "isClearText": {
+                  "php_type": "bool",
+                  "value": false
+                },
+                "attachments": {
+                  "php_type": "null",
+                  "value": null
+                },
+                "link": {
+                  "php_type": "null",
+                  "value": null
+                },
+                "notify": {
+                  "php_type": "null",
+                  "value": null
+                },
+                "format": {
+                  "php_type": "null",
+                  "value": null
+                }
+              }
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Entity\\OperationResult",
+          "properties": {
+            "rawData": {
+              "php_type": "array",
+              "array_kind": "map",
+              "items": {
+                "success": {
+                  "php_type": "bool",
+                  "value": true
+                }
+              }
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Module\\MessageModule",
+          "properties": {
+            "request": {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Request\\MessageRequest",
+              "properties": {
+                "httpClient": {
+                  "php_type": "object",
+                  "class": "Webtolk\\Max\\Http\\PsrHttpClient",
+                  "properties": {
+                    "client": {
+                      "php_type": "object",
+                      "class": "Webtolk\\Max\\Tests\\Live\\RecordingClient"
+                    },
+                    "requestFactory": {
+                      "php_type": "object",
+                      "class": "Laminas\\Diactoros\\RequestFactory"
+                    },
+                    "streamFactory": {
+                      "php_type": "object",
+                      "class": "Laminas\\Diactoros\\StreamFactory"
+                    },
+                    "config": {
+                      "php_type": "object",
+                      "class": "Webtolk\\Max\\Config\\MaxConfig",
+                      "properties": {
+                        "token": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "defaultHeaders": {
+                          "php_type": "array",
+                          "array_kind": "list",
+                          "items": []
+                        }
+                      }
+                    },
+                    "logger": {
+                      "php_type": "object",
+                      "class": "Psr\\Log\\NullLogger"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/arguments/items/1/properties/text/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/request/properties/httpClient/properties/config/properties/token/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "178a661ba26e9cc0c5fdd94fc90eac5775e2a703d0bf9c6b50e0788c15384c27"
+      }
+    },
+    {
+      "phase": "live-joomla-http",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Module\\MessageModule::edit",
+      "declared_method": "Webtolk\\Max\\Module\\MessageModule::edit",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\EditMessageBody",
+              "properties": {
+                "isTextSet": {
+                  "php_type": "bool",
+                  "value": true
+                },
+                "isAttachmentsSet": {
+                  "php_type": "bool",
+                  "value": false
+                },
+                "isLinkSet": {
+                  "php_type": "bool",
+                  "value": false
+                },
+                "isClearLink": {
+                  "php_type": "bool",
+                  "value": false
+                },
+                "isNotifySet": {
+                  "php_type": "bool",
+                  "value": false
+                },
+                "isFormatSet": {
+                  "php_type": "bool",
+                  "value": false
+                },
+                "text": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "isClearText": {
+                  "php_type": "bool",
+                  "value": false
+                },
+                "attachments": {
+                  "php_type": "null",
+                  "value": null
+                },
+                "link": {
+                  "php_type": "null",
+                  "value": null
+                },
+                "notify": {
+                  "php_type": "null",
+                  "value": null
+                },
+                "format": {
+                  "php_type": "null",
+                  "value": null
+                }
+              }
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Entity\\OperationResult",
+          "properties": {
+            "rawData": {
+              "php_type": "array",
+              "array_kind": "map",
+              "items": {
+                "success": {
+                  "php_type": "bool",
+                  "value": true
+                }
+              }
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Module\\MessageModule",
+          "properties": {
+            "request": {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Request\\MessageRequest",
+              "properties": {
+                "httpClient": {
+                  "php_type": "object",
+                  "class": "Webtolk\\Max\\Http\\PsrHttpClient",
+                  "properties": {
+                    "client": {
+                      "php_type": "object",
+                      "class": "Webtolk\\Max\\Tests\\Live\\RecordingClient"
+                    },
+                    "requestFactory": {
+                      "php_type": "object",
+                      "class": "Laminas\\Diactoros\\RequestFactory"
+                    },
+                    "streamFactory": {
+                      "php_type": "object",
+                      "class": "Laminas\\Diactoros\\StreamFactory"
+                    },
+                    "config": {
+                      "php_type": "object",
+                      "class": "Webtolk\\Max\\Config\\MaxConfig",
+                      "properties": {
+                        "token": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "defaultHeaders": {
+                          "php_type": "array",
+                          "array_kind": "list",
+                          "items": []
+                        }
+                      }
+                    },
+                    "logger": {
+                      "php_type": "object",
+                      "class": "Psr\\Log\\NullLogger"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/arguments/items/1/properties/text/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/request/properties/httpClient/properties/config/properties/token/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "2c97d21c588fb4f96f0aa5840a0d043c6283cf078c1e1ceef1ae7686f82a22be"
+      }
+    }
+  ]
+}

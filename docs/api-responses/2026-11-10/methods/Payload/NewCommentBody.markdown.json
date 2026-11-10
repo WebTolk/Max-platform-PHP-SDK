@@ -1,0 +1,88 @@
+{
+  "method": "Webtolk\\Max\\Payload\\NewCommentBody::markdown",
+  "declared_method": "Webtolk\\Max\\Payload\\NewCommentBody::markdown",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "self",
+  "parameters": [
+    {
+      "name": "text",
+      "type": "string",
+      "required": true,
+      "variadic": false
+    }
+  ],
+  "implementation_methods": [],
+  "observed_call_count": 1,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\NewCommentBody::markdown",
+      "declared_method": "Webtolk\\Max\\Payload\\NewCommentBody::markdown",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\NewCommentBody",
+          "properties": {
+            "text": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "link": {
+              "php_type": "null",
+              "value": null
+            },
+            "format": {
+              "php_type": "enum",
+              "class": "Webtolk\\Max\\Payload\\TextFormat",
+              "enum_case": "MARKDOWN",
+              "enum_value": "markdown"
+            },
+            "textSet": {
+              "php_type": "bool",
+              "value": true
+            },
+            "linkSet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "formatSet": {
+              "php_type": "bool",
+              "value": true
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/text/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "f1d6981493627e212c078b301f4474a03e6eda7e993d19b842fd24239c353638"
+      }
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "method": "Webtolk\\Max\\Payload\\EditMessageBody::clearAttachments",
+  "declared_method": "Webtolk\\Max\\Payload\\EditMessageBody::clearAttachments",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "self",
+  "parameters": [],
+  "implementation_methods": [],
+  "observed_call_count": 1,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\EditMessageBody::clearAttachments",
+      "declared_method": "Webtolk\\Max\\Payload\\EditMessageBody::clearAttachments",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\EditMessageBody",
+          "properties": {
+            "isTextSet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "isAttachmentsSet": {
+              "php_type": "bool",
+              "value": true
+            },
+            "isLinkSet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "isClearLink": {
+              "php_type": "bool",
+              "value": false
+            },
+            "isNotifySet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "isFormatSet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "text": {
+              "php_type": "null",
+              "value": null
+            },
+            "isClearText": {
+              "php_type": "null",
+              "value": null
+            },
+            "attachments": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            },
+            "link": {
+              "php_type": "null",
+              "value": null
+            },
+            "notify": {
+              "php_type": "null",
+              "value": null
+            },
+            "format": {
+              "php_type": "null",
+              "value": null
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\EditMessageBody",
+          "properties": {
+            "isTextSet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "isAttachmentsSet": {
+              "php_type": "bool",
+              "value": true
+            },
+            "isLinkSet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "isClearLink": {
+              "php_type": "bool",
+              "value": false
+            },
+            "isNotifySet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "isFormatSet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "text": {
+              "php_type": "null",
+              "value": null
+            },
+            "isClearText": {
+              "php_type": "null",
+              "value": null
+            },
+            "attachments": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            },
+            "link": {
+              "php_type": "null",
+              "value": null
+            },
+            "notify": {
+              "php_type": "null",
+              "value": null
+            },
+            "format": {
+              "php_type": "null",
+              "value": null
+            }
+          }
+        }
+      },
+      "redactions": [],
+      "execution_record": {
+        "sha256": "71e53f8d85821aa92a611ef4a25899dae526b3019106303b597e19b2b8b9d28d"
+      }
+    }
+  ]
+}

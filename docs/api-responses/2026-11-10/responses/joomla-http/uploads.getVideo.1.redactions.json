@@ -1,0 +1,25 @@
+{
+  "replacement": "XXXX",
+  "redactions": [
+    {
+      "path": "/token",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/width",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/height",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/duration",
+      "kind": "value",
+      "original_type": "integer"
+    }
+  ]
+}

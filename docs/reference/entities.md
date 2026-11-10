@@ -224,11 +224,25 @@ SDK гидратирует ответы MAX API в простые entity-объ�
 - `Update::getTimestamp()`
 - `Update::getMessage()`
 - `Update::getChatId()`
+- `Update::getUserId(): ?int` — отдельное поле `user_id`, начиная с 0.4.0
+- `Update::getBotId(): ?int` — поле `bot_id`, начиная с 0.4.0
+- `Update::isAdmin(): ?bool` — поле `is_admin`, начиная с 0.4.0
+- `Update::getPermissions(): array` — список строк `permissions`, начиная с 0.4.0
 - `Update::getUser()`
 - `Update::isChannel()`
 - `Update::getUserLocale()`
 - `UpdateList::getUpdates()`
 - `UpdateList::getMarker()`
+
+Для `bot_admin_permissions_changed` доступны новые геттеры, а `toArray()` и
+`jsonSerialize()` сохраняют полный исходный event. Отсутствующие IDs и admin flag
+дают `null`; явный `false` сохраняется. Отсутствующий список прав даёт `[]`;
+неизвестные имена прав сохраняются. `getUserId()` не создаёт вложенный `User`:
+`getUser()` по-прежнему читает только объект `user`.
+
+Событие пока Webhook-only. Его гидратация проверена синтетическим fixture
+официального контракта; получение нового реального Webhook этим прогоном не
+подтверждено. Подробнее — [изменения 0.4.0](../guides/sdk-0.4.0.md).
 
 Подтверждённый фрагмент ответа:
 

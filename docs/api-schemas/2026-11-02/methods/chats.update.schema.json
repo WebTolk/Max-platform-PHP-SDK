@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:webtolk:max:0.4.0:methods:chats.update",
+  "title": "chats.update observed MAX JSON responses",
+  "description": "Only captured shapes are described. Optional or unobserved variants may exist.",
+  "type": "object",
+  "properties": {
+    "chat_id": {
+      "type": "integer"
+    },
+    "type": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "last_event_time": {
+      "type": "integer"
+    },
+    "participants_count": {
+      "type": "integer"
+    },
+    "is_public": {
+      "type": "boolean"
+    },
+    "title": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true,
+      "required": [
+        "url"
+      ]
+    },
+    "owner_id": {
+      "type": "integer"
+    },
+    "link": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "messages_count": {
+      "type": "integer"
+    }
+  },
+  "additionalProperties": true,
+  "required": [
+    "chat_id",
+    "description",
+    "icon",
+    "is_public",
+    "last_event_time",
+    "link",
+    "messages_count",
+    "owner_id",
+    "participants_count",
+    "status",
+    "title",
+    "type"
+  ],
+  "x-live-observations": [
+    {
+      "transport": "guzzle",
+      "dataset": "main",
+      "case": "chats.update",
+      "scenario": "same_observed_settings",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "b2e192237318f2cb52a614bca78a55a98fd91946750db2e8a39b8d04bb0834ab"
+    },
+    {
+      "transport": "joomla-http",
+      "dataset": "main",
+      "case": "chats.update",
+      "scenario": "same_observed_settings",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "4aa4806c81fb30a019087d399cb89ee7be8e9b09206c0d739b84f13d797e86f0"
+    }
+  ]
+}

@@ -1,0 +1,362 @@
+{
+  "method": "Webtolk\\Max\\Payload\\NewCommentBody::toRequestArray",
+  "declared_method": "Webtolk\\Max\\Payload\\NewCommentBody::toRequestArray",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "array",
+  "parameters": [],
+  "implementation_methods": [],
+  "observed_call_count": 9,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "live-guzzle",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\NewCommentBody::toRequestArray",
+      "declared_method": "Webtolk\\Max\\Payload\\NewCommentBody::toRequestArray",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "map",
+          "items": {
+            "text": {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\NewCommentBody",
+          "properties": {
+            "text": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "link": {
+              "php_type": "null",
+              "value": null
+            },
+            "format": {
+              "php_type": "null",
+              "value": null
+            },
+            "textSet": {
+              "php_type": "bool",
+              "value": true
+            },
+            "linkSet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "formatSet": {
+              "php_type": "bool",
+              "value": false
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/items/text/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/text/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "81923015ffa6245fa24b8ba97587b9fbdda8427c59fbe359daf9af024fa3996c"
+      }
+    },
+    {
+      "phase": "live-joomla-http",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\NewCommentBody::toRequestArray",
+      "declared_method": "Webtolk\\Max\\Payload\\NewCommentBody::toRequestArray",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "map",
+          "items": {
+            "text": {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\NewCommentBody",
+          "properties": {
+            "text": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "link": {
+              "php_type": "null",
+              "value": null
+            },
+            "format": {
+              "php_type": "null",
+              "value": null
+            },
+            "textSet": {
+              "php_type": "bool",
+              "value": true
+            },
+            "linkSet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "formatSet": {
+              "php_type": "bool",
+              "value": false
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/items/text/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/text/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "07783a90c52a4b7b479cf0f7142e709cf6c22bdba581724cec2c6d485ecde5a3"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\NewCommentBody::toRequestArray",
+      "declared_method": "Webtolk\\Max\\Payload\\NewCommentBody::toRequestArray",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "map",
+          "items": {
+            "text": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "link": {
+              "php_type": "array",
+              "array_kind": "map",
+              "items": {
+                "type": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "mid": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                }
+              }
+            },
+            "format": {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\NewCommentBody",
+          "properties": {
+            "text": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "link": {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\NewMessageLink",
+              "properties": {
+                "type": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "messageId": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "payload": {
+                  "php_type": "array",
+                  "array_kind": "list",
+                  "items": []
+                }
+              }
+            },
+            "format": {
+              "php_type": "enum",
+              "class": "Webtolk\\Max\\Payload\\TextFormat",
+              "enum_case": "HTML",
+              "enum_value": "html"
+            },
+            "textSet": {
+              "php_type": "bool",
+              "value": true
+            },
+            "linkSet": {
+              "php_type": "bool",
+              "value": true
+            },
+            "formatSet": {
+              "php_type": "bool",
+              "value": true
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/items/text/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/link/items/type/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/link/items/mid/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/format/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/text/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/link/properties/type/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/link/properties/messageId/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "11124439b88692de6870a5adda7580ecaea18c86f89ec6eda368e53b0c229ab0"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\NewCommentBody::toRequestArray",
+      "declared_method": "Webtolk\\Max\\Payload\\NewCommentBody::toRequestArray",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "map",
+          "items": {
+            "text": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "format": {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\NewCommentBody",
+          "properties": {
+            "text": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "link": {
+              "php_type": "null",
+              "value": null
+            },
+            "format": {
+              "php_type": "enum",
+              "class": "Webtolk\\Max\\Payload\\TextFormat",
+              "enum_case": "HTML",
+              "enum_value": "html"
+            },
+            "textSet": {
+              "php_type": "bool",
+              "value": true
+            },
+            "linkSet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "formatSet": {
+              "php_type": "bool",
+              "value": true
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/items/text/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/format/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/text/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "7da58e111c2710d5ffd40a3d42c42b9072536f3f69c65712cacae0696a3df0d7"
+      }
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:webtolk:max:0.4.0:methods:updates.list",
+  "title": "updates.list observed MAX JSON responses",
+  "description": "Only captured shapes are described. Optional or unobserved variants may exist.",
+  "type": "object",
+  "properties": {
+    "updates": {
+      "type": "array",
+      "items": {}
+    },
+    "marker": {
+      "type": "integer"
+    }
+  },
+  "additionalProperties": true,
+  "required": [
+    "marker",
+    "updates"
+  ],
+  "x-live-observations": [
+    {
+      "transport": "guzzle",
+      "dataset": "main",
+      "case": "updates.list",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "355624e94ce27ee11bac708f558dd2ec7a488c473e9f4f7c66b5f2403cd4cdd2"
+    },
+    {
+      "transport": "joomla-http",
+      "dataset": "main",
+      "case": "updates.list",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "bd470b1aab1af81771a28276fe4953172ee63b4df029eb0cdcb864ed27c52957"
+    }
+  ]
+}

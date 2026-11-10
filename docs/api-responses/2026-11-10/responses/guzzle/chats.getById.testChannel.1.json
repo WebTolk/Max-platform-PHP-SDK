@@ -1,0 +1,16 @@
+{
+  "chat_id": "XXXX",
+  "type": "channel",
+  "status": "active",
+  "last_event_time": "XXXX",
+  "participants_count": "XXXX",
+  "is_public": false,
+  "title": "XXXX",
+  "owner_id": "XXXX",
+  "participants": {
+    "XXXX_1": "XXXX"
+  },
+  "link": "XXXX",
+  "description": "XXXX",
+  "messages_count": "XXXX"
+}

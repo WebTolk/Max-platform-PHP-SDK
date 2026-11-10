@@ -1,0 +1,80 @@
+{
+  "method": "Webtolk\\Max\\Payload\\NewMessageLink::replyTo",
+  "declared_method": "Webtolk\\Max\\Payload\\NewMessageLink::replyTo",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "self",
+  "parameters": [
+    {
+      "name": "messageId",
+      "type": "string",
+      "required": true,
+      "variadic": false
+    }
+  ],
+  "implementation_methods": [],
+  "observed_call_count": 3,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\NewMessageLink::replyTo",
+      "declared_method": "Webtolk\\Max\\Payload\\NewMessageLink::replyTo",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\NewMessageLink",
+          "properties": {
+            "type": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "messageId": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "payload": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/type/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/messageId/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "a5b32e84752616612e07ea6668858e9c52ac9a6973c298230e40f08da82f35ca"
+      }
+    }
+  ]
+}

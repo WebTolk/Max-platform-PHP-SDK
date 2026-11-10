@@ -1,0 +1,117 @@
+{
+  "method": "Webtolk\\Max\\Query\\CommentQuery::afterTimestamp",
+  "declared_method": "Webtolk\\Max\\Query\\CommentQuery::afterTimestamp",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "self",
+  "parameters": [
+    {
+      "name": "timestamp",
+      "type": "int",
+      "required": true,
+      "variadic": false
+    }
+  ],
+  "implementation_methods": [],
+  "observed_call_count": 1,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Query\\CommentQuery::afterTimestamp",
+      "declared_method": "Webtolk\\Max\\Query\\CommentQuery::afterTimestamp",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Query\\CommentQuery",
+          "properties": {
+            "commentIds": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            },
+            "before": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "after": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "count": {
+              "php_type": "null",
+              "value": null
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Query\\CommentQuery",
+          "properties": {
+            "commentIds": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            },
+            "before": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "after": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "count": {
+              "php_type": "null",
+              "value": null
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/before/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/after/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/before/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/after/value",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "00523804a0a544d0b78b24f539d30f8633bfb0ba1dd48c671afb7835cf4a755c"
+      }
+    }
+  ]
+}

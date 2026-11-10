@@ -1,0 +1,138 @@
+{
+  "method": "Webtolk\\Max\\Query\\CommentQuery::all",
+  "declared_method": "Webtolk\\Max\\Query\\CommentQuery::all",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "self",
+  "parameters": [],
+  "implementation_methods": [],
+  "observed_call_count": 6,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "live-guzzle",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Query\\CommentQuery::all",
+      "declared_method": "Webtolk\\Max\\Query\\CommentQuery::all",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Query\\CommentQuery",
+          "properties": {
+            "commentIds": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            },
+            "before": {
+              "php_type": "null",
+              "value": null
+            },
+            "after": {
+              "php_type": "null",
+              "value": null
+            },
+            "count": {
+              "php_type": "null",
+              "value": null
+            }
+          }
+        }
+      },
+      "redactions": [],
+      "execution_record": {
+        "sha256": "bef3f702a6d9a2c42478d1c96202106796788da60365ac1e45400f31ee7f7f4a"
+      }
+    },
+    {
+      "phase": "live-joomla-http",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Query\\CommentQuery::all",
+      "declared_method": "Webtolk\\Max\\Query\\CommentQuery::all",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Query\\CommentQuery",
+          "properties": {
+            "commentIds": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            },
+            "before": {
+              "php_type": "null",
+              "value": null
+            },
+            "after": {
+              "php_type": "null",
+              "value": null
+            },
+            "count": {
+              "php_type": "null",
+              "value": null
+            }
+          }
+        }
+      },
+      "redactions": [],
+      "execution_record": {
+        "sha256": "ef71711c6a1e7eb4ddfa02a14329cc58a7dea4ed536b5a974bab4f5b3b1c1a07"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Query\\CommentQuery::all",
+      "declared_method": "Webtolk\\Max\\Query\\CommentQuery::all",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Query\\CommentQuery",
+          "properties": {
+            "commentIds": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            },
+            "before": {
+              "php_type": "null",
+              "value": null
+            },
+            "after": {
+              "php_type": "null",
+              "value": null
+            },
+            "count": {
+              "php_type": "null",
+              "value": null
+            }
+          }
+        }
+      },
+      "redactions": [],
+      "execution_record": {
+        "sha256": "b620267f4b24a58de2037443dd0fea9c90a65d34a68d0c28ef307d123fa91ac5"
+      }
+    }
+  ]
+}

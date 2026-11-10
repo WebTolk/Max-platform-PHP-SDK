@@ -1,0 +1,23 @@
+{
+  "last_access_time": "XXXX",
+  "is_owner": false,
+  "is_admin": true,
+  "join_time": "XXXX",
+  "user_id": "XXXX",
+  "first_name": "XXXX",
+  "is_bot": true,
+  "username": "XXXX",
+  "last_activity_time": "XXXX",
+  "description": "XXXX",
+  "avatar_url": "XXXX",
+  "full_avatar_url": "XXXX",
+  "permissions": [
+    "XXXX",
+    "XXXX",
+    "XXXX",
+    "XXXX",
+    "XXXX",
+    "XXXX"
+  ],
+  "name": "XXXX"
+}

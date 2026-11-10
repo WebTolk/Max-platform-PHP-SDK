@@ -1,0 +1,87 @@
+{
+  "method": "Webtolk\\Max\\Payload\\NewMessageLink::toRequestArray",
+  "declared_method": "Webtolk\\Max\\Payload\\NewMessageLink::toRequestArray",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "array",
+  "parameters": [],
+  "implementation_methods": [],
+  "observed_call_count": 5,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\NewMessageLink::toRequestArray",
+      "declared_method": "Webtolk\\Max\\Payload\\NewMessageLink::toRequestArray",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "map",
+          "items": {
+            "type": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "mid": {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\NewMessageLink",
+          "properties": {
+            "type": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "messageId": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "payload": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/items/type/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/mid/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/type/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/messageId/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "da96ccc1868b1e52938245244e0b1d07fdf896bca2facdf4c5f6929d76a62976"
+      }
+    }
+  ]
+}

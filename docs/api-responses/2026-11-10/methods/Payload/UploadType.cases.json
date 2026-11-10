@@ -1,0 +1,63 @@
+{
+  "method": "Webtolk\\Max\\Payload\\UploadType::cases",
+  "declared_method": "Webtolk\\Max\\Payload\\UploadType::cases",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": true,
+  "return_type": "array",
+  "parameters": [],
+  "implementation_methods": [],
+  "observed_call_count": 1,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "local-fixtures-v2",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\UploadType::cases",
+      "declared_method": "Webtolk\\Max\\Payload\\UploadType::cases",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "enum",
+              "class": "Webtolk\\Max\\Payload\\UploadType",
+              "enum_case": "IMAGE",
+              "enum_value": "image"
+            },
+            {
+              "php_type": "enum",
+              "class": "Webtolk\\Max\\Payload\\UploadType",
+              "enum_case": "VIDEO",
+              "enum_value": "video"
+            },
+            {
+              "php_type": "enum",
+              "class": "Webtolk\\Max\\Payload\\UploadType",
+              "enum_case": "AUDIO",
+              "enum_value": "audio"
+            },
+            {
+              "php_type": "enum",
+              "class": "Webtolk\\Max\\Payload\\UploadType",
+              "enum_case": "FILE",
+              "enum_value": "file"
+            }
+          ]
+        }
+      },
+      "redactions": [],
+      "execution_record": {
+        "sha256": "550a236fa859ff802483730af6d8a18fd4a1a80fe2eaf80e8380b7b33b2a8fc9"
+      }
+    }
+  ]
+}

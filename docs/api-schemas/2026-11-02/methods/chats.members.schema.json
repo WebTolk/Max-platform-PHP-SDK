@@ -1,0 +1,174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:webtolk:max:0.4.0:methods:chats.members",
+  "title": "chats.members observed MAX JSON responses",
+  "description": "Only captured shapes are described. Optional or unobserved variants may exist.",
+  "type": "object",
+  "properties": {
+    "members": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "last_access_time": {
+                "type": "integer"
+              },
+              "is_owner": {
+                "type": "boolean"
+              },
+              "is_admin": {
+                "type": "boolean"
+              },
+              "join_time": {
+                "type": "integer"
+              },
+              "user_id": {
+                "type": "integer"
+              },
+              "first_name": {
+                "type": "string"
+              },
+              "is_bot": {
+                "type": "boolean"
+              },
+              "last_name": {
+                "type": "string"
+              },
+              "last_activity_time": {
+                "type": "integer"
+              },
+              "description": {
+                "type": "string"
+              },
+              "avatar_url": {
+                "type": "string"
+              },
+              "full_avatar_url": {
+                "type": "string"
+              },
+              "permissions": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true,
+            "required": [
+              "avatar_url",
+              "description",
+              "first_name",
+              "full_avatar_url",
+              "is_admin",
+              "is_bot",
+              "is_owner",
+              "join_time",
+              "last_access_time",
+              "last_activity_time",
+              "last_name",
+              "name",
+              "permissions",
+              "user_id"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "last_access_time": {
+                "type": "integer"
+              },
+              "is_owner": {
+                "type": "boolean"
+              },
+              "is_admin": {
+                "type": "boolean"
+              },
+              "join_time": {
+                "type": "integer"
+              },
+              "user_id": {
+                "type": "integer"
+              },
+              "first_name": {
+                "type": "string"
+              },
+              "is_bot": {
+                "type": "boolean"
+              },
+              "username": {
+                "type": "string"
+              },
+              "last_activity_time": {
+                "type": "integer"
+              },
+              "description": {
+                "type": "string"
+              },
+              "avatar_url": {
+                "type": "string"
+              },
+              "full_avatar_url": {
+                "type": "string"
+              },
+              "permissions": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true,
+            "required": [
+              "avatar_url",
+              "description",
+              "first_name",
+              "full_avatar_url",
+              "is_admin",
+              "is_bot",
+              "is_owner",
+              "join_time",
+              "last_access_time",
+              "last_activity_time",
+              "name",
+              "permissions",
+              "user_id",
+              "username"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "additionalProperties": true,
+  "required": [
+    "members"
+  ],
+  "x-live-observations": [
+    {
+      "transport": "guzzle",
+      "dataset": "main",
+      "case": "chats.members",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "9e13c92a49f021bc97a0f55d8820af7d503341d3192fde0c31b8c3896f66b965"
+    },
+    {
+      "transport": "joomla-http",
+      "dataset": "main",
+      "case": "chats.members",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "2561e0eb4f96d3b3507fa35f14c6c5f24b73497a62bc66adaba47c211c2c2279"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "replacement": "XXXX",
+  "redactions": [
+    {
+      "path": "/marker",
+      "kind": "value",
+      "original_type": "integer"
+    }
+  ]
+}

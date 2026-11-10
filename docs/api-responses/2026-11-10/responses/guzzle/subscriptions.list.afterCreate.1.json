@@ -1,0 +1,30 @@
+{
+  "subscriptions": [
+    {
+      "url": "XXXX",
+      "time": "XXXX",
+      "update_types": [
+        "XXXX",
+        "XXXX"
+      ]
+    },
+    {
+      "url": "XXXX",
+      "time": "XXXX",
+      "update_types": [
+        "XXXX"
+      ]
+    },
+    {
+      "url": "XXXX",
+      "time": "XXXX"
+    },
+    {
+      "url": "XXXX",
+      "time": "XXXX",
+      "update_types": [
+        "XXXX"
+      ]
+    }
+  ]
+}

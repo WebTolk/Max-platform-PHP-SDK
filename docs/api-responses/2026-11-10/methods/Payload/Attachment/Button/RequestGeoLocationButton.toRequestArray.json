@@ -1,0 +1,73 @@
+{
+  "method": "Webtolk\\Max\\Payload\\Attachment\\Button\\RequestGeoLocationButton::toRequestArray",
+  "declared_method": "Webtolk\\Max\\Payload\\Attachment\\Button\\RequestGeoLocationButton::toRequestArray",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "array",
+  "parameters": [],
+  "implementation_methods": [],
+  "observed_call_count": 1,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\Attachment\\Button\\RequestGeoLocationButton::toRequestArray",
+      "declared_method": "Webtolk\\Max\\Payload\\Attachment\\Button\\RequestGeoLocationButton::toRequestArray",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "map",
+          "items": {
+            "type": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "text": {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\Attachment\\Button\\RequestGeoLocationButton",
+          "properties": {
+            "text": {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/items/type/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/text/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/text/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "53612cd95f85912b3dcf3dc594d2e209324ca63bab7ce2bc6ea003c31317c58b"
+      }
+    }
+  ]
+}

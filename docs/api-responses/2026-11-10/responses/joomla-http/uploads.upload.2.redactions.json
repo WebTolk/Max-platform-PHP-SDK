@@ -1,0 +1,15 @@
+{
+  "replacement": "XXXX",
+  "redactions": [
+    {
+      "path": "/fileId",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/token",
+      "kind": "value",
+      "original_type": "string"
+    }
+  ]
+}

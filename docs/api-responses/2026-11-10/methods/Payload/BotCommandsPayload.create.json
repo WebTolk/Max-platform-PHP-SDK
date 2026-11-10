@@ -1,0 +1,408 @@
+{
+  "method": "Webtolk\\Max\\Payload\\BotCommandsPayload::create",
+  "declared_method": "Webtolk\\Max\\Payload\\BotCommandsPayload::create",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "self",
+  "parameters": [
+    {
+      "name": "commands",
+      "type": "Webtolk\\Max\\Payload\\BotCommandPayload",
+      "required": false,
+      "variadic": true
+    }
+  ],
+  "implementation_methods": [],
+  "observed_call_count": 6,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "live-guzzle",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\BotCommandsPayload::create",
+      "declared_method": "Webtolk\\Max\\Payload\\BotCommandsPayload::create",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\BotCommandsPayload",
+          "properties": {
+            "commands": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            }
+          }
+        }
+      },
+      "redactions": [],
+      "execution_record": {
+        "sha256": "eb4082cf25732a5ecfa0cd2b01429ad8cafbdc50cbf3c214796cfed96ea5c333"
+      }
+    },
+    {
+      "phase": "live-joomla-http",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\BotCommandsPayload::create",
+      "declared_method": "Webtolk\\Max\\Payload\\BotCommandsPayload::create",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\BotCommandsPayload",
+          "properties": {
+            "commands": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            }
+          }
+        }
+      },
+      "redactions": [],
+      "execution_record": {
+        "sha256": "e77c0ef9f704be4f33a61faaef75422737c32b0b4c834698c75e795c14c1f437"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\BotCommandsPayload::create",
+      "declared_method": "Webtolk\\Max\\Payload\\BotCommandsPayload::create",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\BotCommandPayload",
+              "properties": {
+                "name": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "description": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                }
+              }
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\BotCommandsPayload",
+          "properties": {
+            "commands": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": [
+                {
+                  "php_type": "object",
+                  "class": "Webtolk\\Max\\Payload\\BotCommandPayload",
+                  "properties": {
+                    "name": {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    },
+                    "description": {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/properties/name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/arguments/items/0/properties/description/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/commands/items/0/properties/name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/commands/items/0/properties/description/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "ab3c1f6453d648817ad3e00609927c4af84063ddf46b3e9fbac620b9d2928cb9"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\BotCommandsPayload::create",
+      "declared_method": "Webtolk\\Max\\Payload\\BotCommandsPayload::create",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\BotCommandsPayload",
+          "properties": {
+            "commands": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            }
+          }
+        }
+      },
+      "redactions": [],
+      "execution_record": {
+        "sha256": "e4c1884d8f780f38bd73dd5d1b49b4c9001bc40bf75fc614791a73159dfbb3fb"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\BotCommandsPayload::create",
+      "declared_method": "Webtolk\\Max\\Payload\\BotCommandsPayload::create",
+      "outcome": "threw",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\BotCommandPayload",
+              "properties": {
+                "name": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "description": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                }
+              }
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\BotCommandPayload",
+              "recursive_reference": true
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\BotCommandPayload",
+              "recursive_reference": true
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\BotCommandPayload",
+              "recursive_reference": true
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\BotCommandPayload",
+              "recursive_reference": true
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\BotCommandPayload",
+              "recursive_reference": true
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\BotCommandPayload",
+              "recursive_reference": true
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\BotCommandPayload",
+              "recursive_reference": true
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\BotCommandPayload",
+              "recursive_reference": true
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\BotCommandPayload",
+              "recursive_reference": true
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\BotCommandPayload",
+              "recursive_reference": true
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\BotCommandPayload",
+              "recursive_reference": true
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\BotCommandPayload",
+              "recursive_reference": true
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\BotCommandPayload",
+              "recursive_reference": true
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\BotCommandPayload",
+              "recursive_reference": true
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\BotCommandPayload",
+              "recursive_reference": true
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\BotCommandPayload",
+              "recursive_reference": true
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\BotCommandPayload",
+              "recursive_reference": true
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\BotCommandPayload",
+              "recursive_reference": true
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\BotCommandPayload",
+              "recursive_reference": true
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\BotCommandPayload",
+              "recursive_reference": true
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\BotCommandPayload",
+              "recursive_reference": true
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\BotCommandPayload",
+              "recursive_reference": true
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\BotCommandPayload",
+              "recursive_reference": true
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\BotCommandPayload",
+              "recursive_reference": true
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\BotCommandPayload",
+              "recursive_reference": true
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\BotCommandPayload",
+              "recursive_reference": true
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\BotCommandPayload",
+              "recursive_reference": true
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\BotCommandPayload",
+              "recursive_reference": true
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\BotCommandPayload",
+              "recursive_reference": true
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\BotCommandPayload",
+              "recursive_reference": true
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\BotCommandPayload",
+              "recursive_reference": true
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\BotCommandPayload",
+              "recursive_reference": true
+            }
+          ]
+        },
+        "exception": {
+          "class": "Webtolk\\Max\\Exception\\ValidationException",
+          "message": "XXXX",
+          "code": "XXXX"
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/properties/name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/arguments/items/0/properties/description/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/exception/message",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/exception/code",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "d9bb536f74671c0b65f63fb88969dcacecfd79d98322ea4957a62ea30db8c7ec"
+      }
+    }
+  ]
+}

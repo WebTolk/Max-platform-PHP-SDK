@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:webtolk:max:0.4.0:methods:messages.getComment",
+  "title": "messages.getComment observed MAX JSON responses",
+  "description": "Only captured shapes are described. Optional or unobserved variants may exist.",
+  "anyOf": [
+    {
+      "type": "object",
+      "properties": {
+        "recipient": {
+          "type": "object",
+          "properties": {
+            "chat_type": {
+              "type": "string"
+            },
+            "chat_id": {
+              "type": "integer"
+            },
+            "post_id": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": true,
+          "required": [
+            "chat_id",
+            "chat_type",
+            "post_id"
+          ]
+        },
+        "timestamp": {
+          "type": "integer"
+        },
+        "body": {
+          "type": "object",
+          "properties": {
+            "mid": {
+              "type": "string"
+            },
+            "seq": {
+              "type": "integer"
+            },
+            "text": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": true,
+          "required": [
+            "mid",
+            "seq",
+            "text"
+          ]
+        },
+        "sender": {
+          "type": "object",
+          "properties": {
+            "user_id": {
+              "type": "integer"
+            },
+            "first_name": {
+              "type": "string"
+            },
+            "is_bot": {
+              "type": "boolean"
+            },
+            "username": {
+              "type": "string"
+            },
+            "last_activity_time": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": true,
+          "required": [
+            "first_name",
+            "is_bot",
+            "last_activity_time",
+            "name",
+            "user_id",
+            "username"
+          ]
+        }
+      },
+      "additionalProperties": true,
+      "required": [
+        "body",
+        "recipient",
+        "sender",
+        "timestamp"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true,
+      "required": [
+        "code",
+        "message"
+      ]
+    }
+  ],
+  "x-live-observations": [
+    {
+      "transport": "guzzle",
+      "dataset": "main",
+      "case": "messages.getComment",
+      "scenario": "negative_unissued_comment",
+      "outcome": "api_error",
+      "http_status": 400,
+      "raw_body_sha256": "6b7ef6bd610d0c355aa4cdd7a74ce3661a4a02a7ea724afe3183770d10afae70"
+    },
+    {
+      "transport": "guzzle",
+      "dataset": "comments",
+      "case": "messages.getComment",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "9048f2967ff0fb3f21273b795ad80129080044e50de011ea642a7f0f42429403"
+    },
+    {
+      "transport": "guzzle",
+      "dataset": "comments",
+      "case": "messages.getComment.afterEdit",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "3f49d7b2cf7efc512c0a96f710103f7228bd214994116af4004079f1a12bebb6"
+    },
+    {
+      "transport": "joomla-http",
+      "dataset": "main",
+      "case": "messages.getComment",
+      "scenario": "negative_unissued_comment",
+      "outcome": "api_error",
+      "http_status": 400,
+      "raw_body_sha256": "a3863a68e0851a8d244d2708452d9834f167945bddc11bc26a6f3786c6da69dd"
+    },
+    {
+      "transport": "joomla-http",
+      "dataset": "comments",
+      "case": "messages.getComment",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "211c34e27760a60adc423fad4c866c496aa0ea947e5c52b9766d607bd779ae17"
+    },
+    {
+      "transport": "joomla-http",
+      "dataset": "comments",
+      "case": "messages.getComment.afterEdit",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "43030398bee61966e4c71a50fd7cb53cab3bce7b31ebe00891aaf7b342ff95e9"
+    }
+  ]
+}

@@ -50,6 +50,59 @@ final class Update extends AbstractEntity
     }
 
     /**
+     * Возвращает ID пользователя из update, если он передан отдельным полем.
+     * В bot_admin_permissions_changed это пользователь, изменивший права бота.
+     *
+     * @since v.0.4.0
+     * @link https://dev.max.ru/docs-api/objects/Update
+     */
+    public function getUserId(): ?int
+    {
+        return isset($this->rawData['user_id']) ? (int)$this->rawData['user_id'] : null;
+    }
+
+    /**
+     * Возвращает ID бота, чьи права изменились в bot_admin_permissions_changed.
+     *
+     * @since v.0.4.0
+     * @link https://dev.max.ru/docs-api/objects/Update
+     */
+    public function getBotId(): ?int
+    {
+        return isset($this->rawData['bot_id']) ? (int)$this->rawData['bot_id'] : null;
+    }
+
+    /**
+     * Возвращает новое состояние администратора или null, если поля в update нет.
+     * Событие bot_admin_permissions_changed пока доставляется только Webhook.
+     *
+     * @since v.0.4.0
+     * @link https://dev.max.ru/docs-api/objects/Update
+     */
+    public function isAdmin(): ?bool
+    {
+        return isset($this->rawData['is_admin']) ? (bool)$this->rawData['is_admin'] : null;
+    }
+
+    /**
+     * Возвращает права бота после изменения; отсутствующий список даёт [].
+     * Новые имена прав не отбрасываются, исходный payload не изменяется.
+     *
+     * @return list<string>
+     * @since v.0.4.0
+     * @link https://dev.max.ru/docs-api/objects/Update
+     */
+    public function getPermissions(): array
+    {
+        $permissions = $this->rawData['permissions'] ?? [];
+        if (!is_array($permissions)) {
+            return [];
+        }
+
+        return array_values(array_filter($permissions, static fn (mixed $permission): bool => is_string($permission)));
+    }
+
+    /**
      * Возвращает пользователя, связанного с update, если поле присутствует.
      *
      * @since v.0.3.0

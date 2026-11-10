@@ -1,0 +1,17 @@
+{
+  "message": {
+    "recipient": {
+      "chat_type": "channel",
+      "chat_id": "XXXX"
+    },
+    "timestamp": "XXXX",
+    "body": {
+      "mid": "XXXX",
+      "seq": "XXXX",
+      "text": "XXXX"
+    },
+    "stat": {
+      "views": "XXXX"
+    }
+  }
+}

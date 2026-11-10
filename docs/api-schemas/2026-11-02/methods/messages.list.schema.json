@@ -1,0 +1,578 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:webtolk:max:0.4.0:methods:messages.list",
+  "title": "messages.list observed MAX JSON responses",
+  "description": "Only captured shapes are described. Optional or unobserved variants may exist.",
+  "type": "object",
+  "properties": {
+    "messages": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "recipient": {
+                "type": "object",
+                "properties": {
+                  "chat_type": {
+                    "type": "string"
+                  },
+                  "chat_id": {
+                    "type": "integer"
+                  }
+                },
+                "additionalProperties": true,
+                "required": [
+                  "chat_id",
+                  "chat_type"
+                ]
+              },
+              "timestamp": {
+                "type": "integer"
+              },
+              "body": {
+                "type": "object",
+                "properties": {
+                  "mid": {
+                    "type": "string"
+                  },
+                  "seq": {
+                    "type": "integer"
+                  },
+                  "text": {
+                    "type": "string"
+                  },
+                  "attachments": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "payload": {
+                          "type": "object",
+                          "properties": {
+                            "url": {
+                              "type": "string"
+                            },
+                            "token": {
+                              "type": "string"
+                            }
+                          },
+                          "additionalProperties": true,
+                          "required": [
+                            "token",
+                            "url"
+                          ]
+                        },
+                        "title": {
+                          "type": "string"
+                        },
+                        "description": {
+                          "type": "string"
+                        },
+                        "type": {
+                          "type": "string"
+                        }
+                      },
+                      "additionalProperties": true,
+                      "required": [
+                        "description",
+                        "payload",
+                        "title",
+                        "type"
+                      ]
+                    }
+                  },
+                  "markup": {
+                    "type": "array",
+                    "items": {
+                      "anyOf": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "url": {
+                              "type": "string"
+                            },
+                            "from": {
+                              "type": "integer"
+                            },
+                            "length": {
+                              "type": "integer"
+                            },
+                            "type": {
+                              "type": "string"
+                            }
+                          },
+                          "additionalProperties": true,
+                          "required": [
+                            "from",
+                            "length",
+                            "type",
+                            "url"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "from": {
+                              "type": "integer"
+                            },
+                            "length": {
+                              "type": "integer"
+                            },
+                            "type": {
+                              "type": "string"
+                            }
+                          },
+                          "additionalProperties": true,
+                          "required": [
+                            "from",
+                            "length",
+                            "type"
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                },
+                "additionalProperties": true,
+                "required": [
+                  "attachments",
+                  "markup",
+                  "mid",
+                  "seq",
+                  "text"
+                ]
+              },
+              "sender": {
+                "type": "object",
+                "properties": {
+                  "user_id": {
+                    "type": "integer"
+                  },
+                  "first_name": {
+                    "type": "string"
+                  },
+                  "is_bot": {
+                    "type": "boolean"
+                  },
+                  "username": {
+                    "type": "string"
+                  },
+                  "last_activity_time": {
+                    "type": "integer"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": true,
+                "required": [
+                  "first_name",
+                  "is_bot",
+                  "last_activity_time",
+                  "name",
+                  "user_id",
+                  "username"
+                ]
+              }
+            },
+            "additionalProperties": true,
+            "required": [
+              "body",
+              "recipient",
+              "sender",
+              "timestamp"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "recipient": {
+                "type": "object",
+                "properties": {
+                  "chat_type": {
+                    "type": "string"
+                  },
+                  "chat_id": {
+                    "type": "integer"
+                  }
+                },
+                "additionalProperties": true,
+                "required": [
+                  "chat_id",
+                  "chat_type"
+                ]
+              },
+              "timestamp": {
+                "type": "integer"
+              },
+              "body": {
+                "type": "object",
+                "properties": {
+                  "mid": {
+                    "type": "string"
+                  },
+                  "seq": {
+                    "type": "integer"
+                  },
+                  "text": {
+                    "type": "string"
+                  },
+                  "attachments": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "payload": {
+                          "type": "object",
+                          "properties": {
+                            "url": {
+                              "type": "string"
+                            },
+                            "token": {
+                              "type": "string"
+                            }
+                          },
+                          "additionalProperties": true,
+                          "required": [
+                            "token",
+                            "url"
+                          ]
+                        },
+                        "title": {
+                          "type": "string"
+                        },
+                        "type": {
+                          "type": "string"
+                        }
+                      },
+                      "additionalProperties": true,
+                      "required": [
+                        "payload",
+                        "title",
+                        "type"
+                      ]
+                    }
+                  },
+                  "markup": {
+                    "type": "array",
+                    "items": {
+                      "anyOf": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "url": {
+                              "type": "string"
+                            },
+                            "from": {
+                              "type": "integer"
+                            },
+                            "length": {
+                              "type": "integer"
+                            },
+                            "type": {
+                              "type": "string"
+                            }
+                          },
+                          "additionalProperties": true,
+                          "required": [
+                            "from",
+                            "length",
+                            "type",
+                            "url"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "from": {
+                              "type": "integer"
+                            },
+                            "length": {
+                              "type": "integer"
+                            },
+                            "type": {
+                              "type": "string"
+                            }
+                          },
+                          "additionalProperties": true,
+                          "required": [
+                            "from",
+                            "length",
+                            "type"
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                },
+                "additionalProperties": true,
+                "required": [
+                  "attachments",
+                  "markup",
+                  "mid",
+                  "seq",
+                  "text"
+                ]
+              },
+              "sender": {
+                "type": "object",
+                "properties": {
+                  "user_id": {
+                    "type": "integer"
+                  },
+                  "first_name": {
+                    "type": "string"
+                  },
+                  "is_bot": {
+                    "type": "boolean"
+                  },
+                  "username": {
+                    "type": "string"
+                  },
+                  "last_activity_time": {
+                    "type": "integer"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": true,
+                "required": [
+                  "first_name",
+                  "is_bot",
+                  "last_activity_time",
+                  "name",
+                  "user_id",
+                  "username"
+                ]
+              }
+            },
+            "additionalProperties": true,
+            "required": [
+              "body",
+              "recipient",
+              "sender",
+              "timestamp"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "recipient": {
+                "type": "object",
+                "properties": {
+                  "chat_type": {
+                    "type": "string"
+                  },
+                  "chat_id": {
+                    "type": "integer"
+                  }
+                },
+                "additionalProperties": true,
+                "required": [
+                  "chat_id",
+                  "chat_type"
+                ]
+              },
+              "timestamp": {
+                "type": "integer"
+              },
+              "body": {
+                "type": "object",
+                "properties": {
+                  "mid": {
+                    "type": "string"
+                  },
+                  "seq": {
+                    "type": "integer"
+                  },
+                  "text": {
+                    "type": "string"
+                  },
+                  "markup": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "from": {
+                          "type": "integer"
+                        },
+                        "length": {
+                          "type": "integer"
+                        },
+                        "type": {
+                          "type": "string"
+                        }
+                      },
+                      "additionalProperties": true,
+                      "required": [
+                        "from",
+                        "length",
+                        "type"
+                      ]
+                    }
+                  }
+                },
+                "additionalProperties": true,
+                "required": [
+                  "markup",
+                  "mid",
+                  "seq",
+                  "text"
+                ]
+              },
+              "sender": {
+                "type": "object",
+                "properties": {
+                  "user_id": {
+                    "type": "integer"
+                  },
+                  "first_name": {
+                    "type": "string"
+                  },
+                  "is_bot": {
+                    "type": "boolean"
+                  },
+                  "username": {
+                    "type": "string"
+                  },
+                  "last_activity_time": {
+                    "type": "integer"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": true,
+                "required": [
+                  "first_name",
+                  "is_bot",
+                  "last_activity_time",
+                  "name",
+                  "user_id",
+                  "username"
+                ]
+              }
+            },
+            "additionalProperties": true,
+            "required": [
+              "body",
+              "recipient",
+              "sender",
+              "timestamp"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "recipient": {
+                "type": "object",
+                "properties": {
+                  "chat_type": {
+                    "type": "string"
+                  },
+                  "chat_id": {
+                    "type": "integer"
+                  }
+                },
+                "additionalProperties": true,
+                "required": [
+                  "chat_id",
+                  "chat_type"
+                ]
+              },
+              "timestamp": {
+                "type": "integer"
+              },
+              "body": {
+                "type": "object",
+                "properties": {
+                  "mid": {
+                    "type": "string"
+                  },
+                  "seq": {
+                    "type": "integer"
+                  },
+                  "text": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": true,
+                "required": [
+                  "mid",
+                  "seq",
+                  "text"
+                ]
+              },
+              "sender": {
+                "type": "object",
+                "properties": {
+                  "user_id": {
+                    "type": "integer"
+                  },
+                  "first_name": {
+                    "type": "string"
+                  },
+                  "is_bot": {
+                    "type": "boolean"
+                  },
+                  "username": {
+                    "type": "string"
+                  },
+                  "last_activity_time": {
+                    "type": "integer"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": true,
+                "required": [
+                  "first_name",
+                  "is_bot",
+                  "last_activity_time",
+                  "name",
+                  "user_id",
+                  "username"
+                ]
+              }
+            },
+            "additionalProperties": true,
+            "required": [
+              "body",
+              "recipient",
+              "sender",
+              "timestamp"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "additionalProperties": true,
+  "required": [
+    "messages"
+  ],
+  "x-live-observations": [
+    {
+      "transport": "guzzle",
+      "dataset": "main",
+      "case": "messages.list",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "f372202ef78b966c8934007cd39d8fa30b948896ac9c2547e16b35d3c98d9fea"
+    },
+    {
+      "transport": "joomla-http",
+      "dataset": "main",
+      "case": "messages.list",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "84377213dc60fa66dceef1cc7a8487f48354d7aebe529488b058abcb8df5587e"
+    }
+  ]
+}

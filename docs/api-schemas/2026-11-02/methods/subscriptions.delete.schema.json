@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:webtolk:max:0.4.0:methods:subscriptions.delete",
+  "title": "subscriptions.delete observed MAX JSON responses",
+  "description": "Only captured shapes are described. Optional or unobserved variants may exist.",
+  "anyOf": [
+    {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true,
+      "required": [
+        "message",
+        "success"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true,
+      "required": [
+        "success"
+      ]
+    }
+  ],
+  "x-live-observations": [
+    {
+      "transport": "guzzle",
+      "dataset": "main",
+      "case": "subscriptions.delete",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+    },
+    {
+      "transport": "guzzle",
+      "dataset": "main",
+      "case": "subscriptions.delete.cleanup",
+      "scenario": "cleanup",
+      "outcome": "operation_rejected",
+      "http_status": 200,
+      "raw_body_sha256": "5f52ec096d123d4db6bc8febf717234bc21dadec18502a6692ecc04baf5519d7"
+    },
+    {
+      "transport": "joomla-http",
+      "dataset": "main",
+      "case": "subscriptions.delete",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+    },
+    {
+      "transport": "joomla-http",
+      "dataset": "main",
+      "case": "subscriptions.delete.cleanup",
+      "scenario": "cleanup",
+      "outcome": "operation_rejected",
+      "http_status": 200,
+      "raw_body_sha256": "e7d4f73b531ec2a7829b47b81bea086b6f5ddf9a9347ce4b33e83eb4438cf564"
+    }
+  ]
+}

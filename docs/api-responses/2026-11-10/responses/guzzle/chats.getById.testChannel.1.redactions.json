@@ -1,0 +1,55 @@
+{
+  "replacement": "XXXX",
+  "redactions": [
+    {
+      "path": "/chat_id",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/last_event_time",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/participants_count",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/title",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/owner_id",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/participants/XXXX_1",
+      "kind": "object_key",
+      "original_type": "string"
+    },
+    {
+      "path": "/participants/XXXX_1",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/link",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/description",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages_count",
+      "kind": "value",
+      "original_type": "integer"
+    }
+  ]
+}

@@ -9,6 +9,14 @@ use Webtolk\Max\Support\UpdateTypeNormalizer;
 
 final class UpdateTypeNormalizerTest extends TestCase
 {
+    public function testBotAdminPermissionsChangedPassesThroughWithoutAlias(): void
+    {
+        $this->assertSame(
+            ['message_created', 'bot_admin_permissions_changed'],
+            UpdateTypeNormalizer::normalize(['message', 'bot_admin_permissions_changed', 'bot_admin_permissions_changed']),
+        );
+    }
+
     public function testCommentEventTypesPassThroughWithoutAliases(): void
     {
         $this->assertSame(

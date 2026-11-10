@@ -1,0 +1,63 @@
+{
+  "method": "Webtolk\\Max\\Payload\\UpdateChatPayload::create",
+  "declared_method": "Webtolk\\Max\\Payload\\UpdateChatPayload::create",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "self",
+  "parameters": [],
+  "implementation_methods": [],
+  "observed_call_count": 8,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\UpdateChatPayload::create",
+      "declared_method": "Webtolk\\Max\\Payload\\UpdateChatPayload::create",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\UpdateChatPayload",
+          "properties": {
+            "icon": {
+              "php_type": "null",
+              "value": null
+            },
+            "title": {
+              "php_type": "null",
+              "value": null
+            },
+            "description": {
+              "php_type": "null",
+              "value": null
+            },
+            "isDescriptionSet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "pin": {
+              "php_type": "null",
+              "value": null
+            },
+            "notify": {
+              "php_type": "null",
+              "value": null
+            }
+          }
+        }
+      },
+      "redactions": [],
+      "execution_record": {
+        "sha256": "0a31bc4b29d8b7d2bff7e2027d2fed8b3bea34393a65aa57ee24a4a2232c8c84"
+      }
+    }
+  ]
+}

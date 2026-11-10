@@ -1,0 +1,278 @@
+{
+  "method": "Webtolk\\Max\\Query\\ChatMembersQuery::page",
+  "declared_method": "Webtolk\\Max\\Query\\ChatMembersQuery::page",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "self",
+  "parameters": [
+    {
+      "name": "marker",
+      "type": "?int",
+      "required": false,
+      "variadic": false
+    },
+    {
+      "name": "count",
+      "type": "?int",
+      "required": false,
+      "variadic": false
+    }
+  ],
+  "implementation_methods": [],
+  "observed_call_count": 5,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "live-guzzle",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Query\\ChatMembersQuery::page",
+      "declared_method": "Webtolk\\Max\\Query\\ChatMembersQuery::page",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "null",
+              "value": null
+            },
+            {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Query\\ChatMembersQuery",
+          "properties": {
+            "forUsersSet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "forPageSet": {
+              "php_type": "bool",
+              "value": true
+            },
+            "userIds": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            },
+            "marker": {
+              "php_type": "null",
+              "value": null
+            },
+            "count": {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/1/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/count/value",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "0ce2e4524a8438251d01102d18a75f8c73a78a51cc13ba9cb6961dd4b764b074"
+      }
+    },
+    {
+      "phase": "live-joomla-http",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Query\\ChatMembersQuery::page",
+      "declared_method": "Webtolk\\Max\\Query\\ChatMembersQuery::page",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "null",
+              "value": null
+            },
+            {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Query\\ChatMembersQuery",
+          "properties": {
+            "forUsersSet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "forPageSet": {
+              "php_type": "bool",
+              "value": true
+            },
+            "userIds": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            },
+            "marker": {
+              "php_type": "null",
+              "value": null
+            },
+            "count": {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/1/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/count/value",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "06486fa097cfcdcbe83db726f094194285b78e71ba27eb18844b65bb5a62e1ba"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Query\\ChatMembersQuery::page",
+      "declared_method": "Webtolk\\Max\\Query\\ChatMembersQuery::page",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Query\\ChatMembersQuery",
+          "properties": {
+            "forUsersSet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "forPageSet": {
+              "php_type": "bool",
+              "value": true
+            },
+            "userIds": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            },
+            "marker": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "count": {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/arguments/items/1/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/marker/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/count/value",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "e2ca5f57c1ac52bd09604f721b90383fd413aefdc968d11692d4297bbabd4b5d"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Query\\ChatMembersQuery::page",
+      "declared_method": "Webtolk\\Max\\Query\\ChatMembersQuery::page",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Query\\ChatMembersQuery",
+          "properties": {
+            "forUsersSet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "forPageSet": {
+              "php_type": "bool",
+              "value": true
+            },
+            "userIds": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            },
+            "marker": {
+              "php_type": "null",
+              "value": null
+            },
+            "count": {
+              "php_type": "null",
+              "value": null
+            }
+          }
+        }
+      },
+      "redactions": [],
+      "execution_record": {
+        "sha256": "96d71e20f81d9addcd7a14fbb463e02486cb88be5913fe17abe24f81160b4879"
+      }
+    }
+  ]
+}

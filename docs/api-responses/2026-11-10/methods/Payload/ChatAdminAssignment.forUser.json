@@ -1,0 +1,225 @@
+{
+  "method": "Webtolk\\Max\\Payload\\ChatAdminAssignment::forUser",
+  "declared_method": "Webtolk\\Max\\Payload\\ChatAdminAssignment::forUser",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "self",
+  "parameters": [
+    {
+      "name": "userId",
+      "type": "int",
+      "required": true,
+      "variadic": false
+    }
+  ],
+  "implementation_methods": [],
+  "observed_call_count": 8,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "live-guzzle",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\ChatAdminAssignment::forUser",
+      "declared_method": "Webtolk\\Max\\Payload\\ChatAdminAssignment::forUser",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\ChatAdminAssignment",
+          "properties": {
+            "permissions": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            },
+            "alias": {
+              "php_type": "null",
+              "value": null
+            },
+            "userId": {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/userId/value",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "004234b8be674fe2a195797a9e481b9bad5a05ea9bcb07b0601d63111141260a"
+      }
+    },
+    {
+      "phase": "live-joomla-http",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\ChatAdminAssignment::forUser",
+      "declared_method": "Webtolk\\Max\\Payload\\ChatAdminAssignment::forUser",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\ChatAdminAssignment",
+          "properties": {
+            "permissions": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            },
+            "alias": {
+              "php_type": "null",
+              "value": null
+            },
+            "userId": {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/userId/value",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "5cfd81a8cbe40028220d1c1107a65e9cb5ed5cfd35e970950b8fce828f2e9e8f"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\ChatAdminAssignment::forUser",
+      "declared_method": "Webtolk\\Max\\Payload\\ChatAdminAssignment::forUser",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\ChatAdminAssignment",
+          "properties": {
+            "permissions": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            },
+            "alias": {
+              "php_type": "null",
+              "value": null
+            },
+            "userId": {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/userId/value",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "377c8726f8208d4a7d491d38e745b8bcff15fffd84a79e493e8a1c5d7fde40b3"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\ChatAdminAssignment::forUser",
+      "declared_method": "Webtolk\\Max\\Payload\\ChatAdminAssignment::forUser",
+      "outcome": "threw",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "exception": {
+          "class": "Webtolk\\Max\\Exception\\ValidationException",
+          "message": "XXXX",
+          "code": "XXXX"
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/exception/message",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/exception/code",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "a92aac58c3cd4ada37fde777b3a7f498dc9712320918a4b37056da816a889ae7"
+      }
+    }
+  ]
+}

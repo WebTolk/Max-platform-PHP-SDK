@@ -1,0 +1,45 @@
+{
+  "replacement": "XXXX",
+  "redactions": [
+    {
+      "path": "/user_id",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/first_name",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/username",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/last_activity_time",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/description",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/avatar_url",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/full_avatar_url",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/name",
+      "kind": "value",
+      "original_type": "string"
+    }
+  ]
+}

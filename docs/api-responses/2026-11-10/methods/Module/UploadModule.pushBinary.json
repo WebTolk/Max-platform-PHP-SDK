@@ -1,0 +1,362 @@
+{
+  "method": "Webtolk\\Max\\Module\\UploadModule::pushBinary",
+  "declared_method": "Webtolk\\Max\\Module\\UploadModule::pushBinary",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "Webtolk\\Max\\Entity\\UploadResult",
+  "parameters": [
+    {
+      "name": "target",
+      "type": "Webtolk\\Max\\Entity\\UploadUrl",
+      "required": true,
+      "variadic": false
+    },
+    {
+      "name": "contents",
+      "type": "Psr\\Http\\Message\\StreamInterface|string",
+      "required": true,
+      "variadic": false
+    },
+    {
+      "name": "contentType",
+      "type": "?string",
+      "required": false,
+      "variadic": false
+    }
+  ],
+  "implementation_methods": [],
+  "observed_call_count": 2,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "live-guzzle",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Module\\UploadModule::pushBinary",
+      "declared_method": "Webtolk\\Max\\Module\\UploadModule::pushBinary",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Entity\\UploadUrl",
+              "properties": {
+                "type": {
+                  "php_type": "enum",
+                  "class": "Webtolk\\Max\\Payload\\UploadType",
+                  "enum_case": "FILE",
+                  "enum_value": "file"
+                },
+                "rawData": {
+                  "php_type": "array",
+                  "array_kind": "map",
+                  "items": {
+                    "url": {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Entity\\UploadResult",
+          "properties": {
+            "type": {
+              "php_type": "enum",
+              "class": "Webtolk\\Max\\Payload\\UploadType",
+              "enum_case": "FILE",
+              "enum_value": "file"
+            },
+            "token": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "rawData": {
+              "php_type": "array",
+              "array_kind": "map",
+              "items": {
+                "fileId": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                },
+                "token": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                }
+              }
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Module\\UploadModule",
+          "properties": {
+            "request": {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Request\\UploadRequest",
+              "properties": {
+                "httpClient": {
+                  "php_type": "object",
+                  "class": "Webtolk\\Max\\Http\\PsrHttpClient",
+                  "properties": {
+                    "client": {
+                      "php_type": "object",
+                      "class": "Webtolk\\Max\\Tests\\Live\\RecordingClient"
+                    },
+                    "requestFactory": {
+                      "php_type": "object",
+                      "class": "Laminas\\Diactoros\\RequestFactory"
+                    },
+                    "streamFactory": {
+                      "php_type": "object",
+                      "class": "Laminas\\Diactoros\\StreamFactory"
+                    },
+                    "config": {
+                      "php_type": "object",
+                      "class": "Webtolk\\Max\\Config\\MaxConfig",
+                      "properties": {
+                        "token": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "defaultHeaders": {
+                          "php_type": "array",
+                          "array_kind": "list",
+                          "items": []
+                        }
+                      }
+                    },
+                    "logger": {
+                      "php_type": "object",
+                      "class": "Psr\\Log\\NullLogger"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/properties/rawData/items/url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/arguments/items/1/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/arguments/items/2/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/token/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/fileId/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/rawData/items/token/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/request/properties/httpClient/properties/config/properties/token/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "ff4b24db8f11fee3c8928757979cbb8d6a179a3f1478b00bf3d58fa702d999cc"
+      }
+    },
+    {
+      "phase": "live-joomla-http",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Module\\UploadModule::pushBinary",
+      "declared_method": "Webtolk\\Max\\Module\\UploadModule::pushBinary",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Entity\\UploadUrl",
+              "properties": {
+                "type": {
+                  "php_type": "enum",
+                  "class": "Webtolk\\Max\\Payload\\UploadType",
+                  "enum_case": "FILE",
+                  "enum_value": "file"
+                },
+                "rawData": {
+                  "php_type": "array",
+                  "array_kind": "map",
+                  "items": {
+                    "url": {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Entity\\UploadResult",
+          "properties": {
+            "type": {
+              "php_type": "enum",
+              "class": "Webtolk\\Max\\Payload\\UploadType",
+              "enum_case": "FILE",
+              "enum_value": "file"
+            },
+            "token": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "rawData": {
+              "php_type": "array",
+              "array_kind": "map",
+              "items": {
+                "fileId": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                },
+                "token": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                }
+              }
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Module\\UploadModule",
+          "properties": {
+            "request": {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Request\\UploadRequest",
+              "properties": {
+                "httpClient": {
+                  "php_type": "object",
+                  "class": "Webtolk\\Max\\Http\\PsrHttpClient",
+                  "properties": {
+                    "client": {
+                      "php_type": "object",
+                      "class": "Webtolk\\Max\\Tests\\Live\\RecordingClient"
+                    },
+                    "requestFactory": {
+                      "php_type": "object",
+                      "class": "Laminas\\Diactoros\\RequestFactory"
+                    },
+                    "streamFactory": {
+                      "php_type": "object",
+                      "class": "Laminas\\Diactoros\\StreamFactory"
+                    },
+                    "config": {
+                      "php_type": "object",
+                      "class": "Webtolk\\Max\\Config\\MaxConfig",
+                      "properties": {
+                        "token": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "defaultHeaders": {
+                          "php_type": "array",
+                          "array_kind": "list",
+                          "items": []
+                        }
+                      }
+                    },
+                    "logger": {
+                      "php_type": "object",
+                      "class": "Psr\\Log\\NullLogger"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/properties/rawData/items/url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/arguments/items/1/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/arguments/items/2/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/token/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/fileId/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/rawData/items/token/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/request/properties/httpClient/properties/config/properties/token/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "dcbe99532195286b5fcc30383a7419bd149ebac360a4f7d94dde0340b487be1c"
+      }
+    }
+  ]
+}

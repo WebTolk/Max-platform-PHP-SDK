@@ -152,6 +152,13 @@ final class ChatModule
         return $this->request->unpin($chatId);
     }
 
+    /**
+     * Добавляет участников в групповой чат при наличии права add_remove_members.
+     * MAX ограничил работу endpoint с 2026-09-09; доступность проверяйте по ответу
+     * API. Метод не предназначен для добавления подписчиков в канал.
+     *
+     * @link https://dev.max.ru/docs-api/methods/POST/chats/-chatId-/members
+     */
     public function addMembers(int $chatId, AddChatMembersPayload $payload): OperationResult
     {
         return $this->request->addMembers($chatId, $payload);

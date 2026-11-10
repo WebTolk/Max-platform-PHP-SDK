@@ -1,5 +1,20 @@
 # MAX API JSON Schemas
 
+## Observed snapshot 2026-11-02 / SDK 0.4.0 candidate
+
+[The current observed index](./2026-11-02/index.json) contains 40 method schemas
+derived from 124 real JSON responses through Guzzle and Joomla HTTP on the Joomla
+test stand. All 124 private response bodies passed independent JSON Schema
+validation. These schemas preserve original types and contain no response values,
+examples, IDs or credentials. Identifier-shaped dictionary keys use patternProperties.
+
+31 methods have positive observations; 9 have only controlled negative or legacy
+endpoint observations. Each entry states this boundary. An empty observed array
+does not establish every possible item shape; the snapshot is not an exhaustive
+provider specification. Fresh response bodies remain private.
+
+## Historical reference snapshot 2026-08-31
+
 This directory contains 40 anonymized SDK method-level JSON schemas generated from the 2026-08-31 local documentation snapshot, dual-transport live API dumps, official method contracts, and explicitly marked environment-limited or legacy SDK surfaces.
 
 The schema pack is not a one-to-one official MAX endpoint inventory. Some entries are SDK helper/evidence methods, for example `uploads.pushBinary`. All five comment endpoints were successfully verified against an enabled test channel through Guzzle and Joomla HTTP. `chats.delete` remains a backward-compatible SDK surface despite conflicting official navigation; the endpoint itself was reachable with a deliberately absent target.
@@ -52,3 +67,25 @@ Sensitive IDs, usernames, bot/user names, chat IDs, user IDs, message IDs, callb
 - `uploads.getVideo` -> [`methods/uploads.getvideo.schema.json`](./methods/uploads.getvideo.schema.json)
 - `uploads.pushBinary` -> [`methods/uploads.pushbinary.schema.json`](./methods/uploads.pushbinary.schema.json)
 - `uploads.upload` -> [`methods/uploads.upload.schema.json`](./methods/uploads.upload.schema.json)
+
+## Обезличенные представления и проверка типов
+
+Проект маскирует идентификаторы и время строкой XXXX. Поэтому исторические
+response_example не являются валидными API fixtures: 18 из них не проходят
+собственный response_schema, в основном из-за намеренно скрытых чисел.
+Проверяйте схемами исходные ответы. В новом [наборе представлений](../api-responses/2026-11-10/index.json)
+у каждого тела есть redaction map с исходными типами; количество полей и элементов
+сохраняется. Схемы нельзя расширять до string только ради маскировки числа.
+
+Исторический `outcome: ok` в схеме callback обозначает форму контрактной
+иллюстрации, а не подтверждение успешного вызова. Для `messages.answerCallback`
+записи `live_verification_2026_08_31` и свежие observations подтверждают только
+отрицательный сценарий. Применяйте датированный verification status; старые
+иллюстрации не являются самостоятельным live evidence.
+
+## Повторная проверка 2026-11-10
+
+Все 111 свежих HTTP-тел из [набора 2026-11-10](../api-responses/2026-11-10/index.json)
+прошли соответствующие схемы 2026-11-02. Это повторная валидация новых наблюдений,
+а не заявление о полной спецификации провайдера. Набор также содержит фактические
+снимки локальных методов; они явно помечены synthetic_local_fixture_execution.

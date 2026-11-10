@@ -1,0 +1,471 @@
+{
+  "method": "Webtolk\\Max\\Entity\\UploadResult::fromUploadRequest",
+  "declared_method": "Webtolk\\Max\\Entity\\UploadResult::fromUploadRequest",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "self",
+  "parameters": [
+    {
+      "name": "uploadResponse",
+      "type": "array",
+      "required": true,
+      "variadic": false
+    },
+    {
+      "name": "type",
+      "type": "Webtolk\\Max\\Payload\\UploadType",
+      "required": true,
+      "variadic": false
+    },
+    {
+      "name": "initialToken",
+      "type": "?string",
+      "required": false,
+      "variadic": false
+    }
+  ],
+  "implementation_methods": [],
+  "observed_call_count": 8,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "live-guzzle",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Entity\\UploadResult::fromUploadRequest",
+      "declared_method": "Webtolk\\Max\\Entity\\UploadResult::fromUploadRequest",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "array",
+              "array_kind": "map",
+              "items": {
+                "fileId": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                },
+                "token": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                }
+              }
+            },
+            {
+              "php_type": "enum",
+              "class": "Webtolk\\Max\\Payload\\UploadType",
+              "enum_case": "FILE",
+              "enum_value": "file"
+            },
+            {
+              "php_type": "null",
+              "value": null
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Entity\\UploadResult",
+          "properties": {
+            "type": {
+              "php_type": "enum",
+              "class": "Webtolk\\Max\\Payload\\UploadType",
+              "enum_case": "FILE",
+              "enum_value": "file"
+            },
+            "token": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "rawData": {
+              "php_type": "array",
+              "array_kind": "map",
+              "items": {
+                "fileId": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                },
+                "token": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                }
+              }
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/items/fileId/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/arguments/items/0/items/token/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/token/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/fileId/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/rawData/items/token/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "d2d19d1930c4dccf4e7110f7b666bdb869cc90db9384eb07fec16d91962be939"
+      }
+    },
+    {
+      "phase": "live-joomla-http",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Entity\\UploadResult::fromUploadRequest",
+      "declared_method": "Webtolk\\Max\\Entity\\UploadResult::fromUploadRequest",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "array",
+              "array_kind": "map",
+              "items": {
+                "fileId": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                },
+                "token": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                }
+              }
+            },
+            {
+              "php_type": "enum",
+              "class": "Webtolk\\Max\\Payload\\UploadType",
+              "enum_case": "FILE",
+              "enum_value": "file"
+            },
+            {
+              "php_type": "null",
+              "value": null
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Entity\\UploadResult",
+          "properties": {
+            "type": {
+              "php_type": "enum",
+              "class": "Webtolk\\Max\\Payload\\UploadType",
+              "enum_case": "FILE",
+              "enum_value": "file"
+            },
+            "token": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "rawData": {
+              "php_type": "array",
+              "array_kind": "map",
+              "items": {
+                "fileId": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                },
+                "token": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                }
+              }
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/items/fileId/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/arguments/items/0/items/token/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/token/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/fileId/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/rawData/items/token/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "ac21a247468fc623f7be9f81d87edc5dabd1edae487344b4bf7ad8698ad45a85"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Entity\\UploadResult::fromUploadRequest",
+      "declared_method": "Webtolk\\Max\\Entity\\UploadResult::fromUploadRequest",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "array",
+              "array_kind": "map",
+              "items": {
+                "retval": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "raw_body": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                }
+              }
+            },
+            {
+              "php_type": "enum",
+              "class": "Webtolk\\Max\\Payload\\UploadType",
+              "enum_case": "VIDEO",
+              "enum_value": "video"
+            },
+            {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Entity\\UploadResult",
+          "properties": {
+            "type": {
+              "php_type": "enum",
+              "class": "Webtolk\\Max\\Payload\\UploadType",
+              "enum_case": "VIDEO",
+              "enum_value": "video"
+            },
+            "token": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "rawData": {
+              "php_type": "array",
+              "array_kind": "map",
+              "items": {
+                "retval": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "raw_body": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                }
+              }
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/items/retval/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/arguments/items/0/items/raw_body/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/arguments/items/2/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/token/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/retval/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/raw_body/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "5d3e38feaf51e2f67b99b3b14af4045736eb7327a8fb778b5942400f11ae259b"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Entity\\UploadResult::fromUploadRequest",
+      "declared_method": "Webtolk\\Max\\Entity\\UploadResult::fromUploadRequest",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "array",
+              "array_kind": "map",
+              "items": {
+                "photos": {
+                  "XXXX_1": "array",
+                  "XXXX_2": "map",
+                  "XXXX_3": {
+                    "abc123": {
+                      "php_type": "array",
+                      "array_kind": "map",
+                      "items": {
+                        "token": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "php_type": "enum",
+              "class": "Webtolk\\Max\\Payload\\UploadType",
+              "enum_case": "IMAGE",
+              "enum_value": "image"
+            },
+            {
+              "php_type": "null",
+              "value": null
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Entity\\UploadResult",
+          "properties": {
+            "type": {
+              "php_type": "enum",
+              "class": "Webtolk\\Max\\Payload\\UploadType",
+              "enum_case": "IMAGE",
+              "enum_value": "image"
+            },
+            "token": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "rawData": {
+              "php_type": "array",
+              "array_kind": "map",
+              "items": {
+                "photos": {
+                  "XXXX_1": "array",
+                  "XXXX_2": "map",
+                  "XXXX_3": {
+                    "abc123": {
+                      "php_type": "array",
+                      "array_kind": "map",
+                      "items": {
+                        "token": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/items/photos/XXXX_1",
+          "kind": "object_key",
+          "original_type": "string"
+        },
+        {
+          "path": "/arguments/items/0/items/photos/XXXX_2",
+          "kind": "object_key",
+          "original_type": "string"
+        },
+        {
+          "path": "/arguments/items/0/items/photos/XXXX_3",
+          "kind": "object_key",
+          "original_type": "string"
+        },
+        {
+          "path": "/arguments/items/0/items/photos/XXXX_3/abc123/items/token/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/token/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/photos/XXXX_1",
+          "kind": "object_key",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/photos/XXXX_2",
+          "kind": "object_key",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/photos/XXXX_3",
+          "kind": "object_key",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/photos/XXXX_3/abc123/items/token/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "cd17ba464927c365ee474a101b318dcf59f0250663423cbf30604d3b2659a598"
+      }
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "method": "Webtolk\\Max\\Exception\\TransportException::__toString",
+  "declared_method": "Exception::__toString",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": true,
+  "native_method": true,
+  "return_type": "string",
+  "parameters": [],
+  "implementation_methods": [],
+  "observed_call_count": 1,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "local-fixtures-v2",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Exception\\TransportException::__toString",
+      "declared_method": "Exception::__toString",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "string",
+          "value": "XXXX"
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Exception\\TransportException",
+          "properties": {
+            "message": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "code": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "file": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "line": {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/message/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/code/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/file/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/line/value",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "9948b2b7af68420b442edb186fec2990c28dc9d6854935b7b534f6ec3b8e369e"
+      }
+    }
+  ]
+}

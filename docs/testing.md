@@ -7,8 +7,9 @@
 PHPUnit 10.5.66, Guzzle 7.16.1 и Diactoros 3.7.0. Composer проверил требования
 реальной платформы; `--ignore-platform-reqs` не применялся.
 
-Для воспроизведения используйте PHP 8.1 с требуемыми расширениями и отдельный
-[профиль тестовых зависимостей](../tests/Compatibility/php81/composer.json):
+Для воспроизведения из исходного checkout используйте PHP 8.1 с требуемыми
+расширениями и профиль `tests/Compatibility/php81/composer.json`.
+Каталог tests предназначен для разработки и не входит в Composer-архив.
 
 ```bash
 composer update --working-dir=tests/Compatibility/php81

@@ -572,9 +572,7 @@ HTTP: `POST /answers?callback_id=...&disable_link_preview=...`
 
 Используется для ответа на callback-кнопку. `disable_link_preview` необязателен и при `null` не отправляется на wire.
 
-Что подтверждено:
-
-- request shape:
+Форма запроса:
 
 ```json
 {
@@ -584,7 +582,7 @@ HTTP: `POST /answers?callback_id=...&disable_link_preview=...`
 
 Источник request evidence: `docs/api-schemas/index.json`
 
-- успешный response example:
+Контрактная иллюстрация успешного ответа:
 
 ```json
 {
@@ -592,7 +590,7 @@ HTTP: `POST /answers?callback_id=...&disable_link_preview=...`
 }
 ```
 
-Источник: `docs/api-schemas/index.json`
+Источник иллюстрации: `docs/api-schemas/index.json`. Успешный live-ответ пока не подтверждён. В [сохранённых прогонах](../api-responses/2026-11-10/index.json) обоих транспортов наблюдался только отрицательный сценарий `negative_unissued_callback` с HTTP 400.
 
 ## `UploadModule`
 

@@ -103,7 +103,7 @@ $keyboard = InlineKeyboardAttachment::rows([
 }
 ```
 
-Подтверждённый live callback flow теперь есть: успешная callback-кнопка приводит к `message_callback` update и позволяет вызвать `messages.answerCallback()` с `success: true`.
+Обработчик callback-кнопки передаёт `callback_id` из `message_callback` update в `messages.answerCallback()`. Успешный live callback flow пока не подтверждён: в [сохранённых прогонах](../api-responses/2026-11-10/index.json) для обоих транспортов есть только отрицательный сценарий `negative_unissued_callback` с HTTP 400. Ответ с `success: true` приведён в документации как контрактная иллюстрация.
 
 ### `MessageButton`
 

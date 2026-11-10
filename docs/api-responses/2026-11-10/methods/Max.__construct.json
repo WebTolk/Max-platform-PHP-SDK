@@ -1,0 +1,436 @@
+{
+  "method": "Webtolk\\Max\\Max::__construct",
+  "declared_method": "Webtolk\\Max\\Max::__construct",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "",
+  "parameters": [
+    {
+      "name": "config",
+      "type": "Webtolk\\Max\\Config\\MaxConfig",
+      "required": true,
+      "variadic": false
+    },
+    {
+      "name": "logger",
+      "type": "?Psr\\Log\\LoggerInterface",
+      "required": false,
+      "variadic": false
+    }
+  ],
+  "implementation_methods": [],
+  "observed_call_count": 8,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "after-cleanup",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Max::__construct",
+      "declared_method": "Webtolk\\Max\\Max::__construct",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Config\\MaxConfig",
+              "properties": {
+                "token": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "defaultHeaders": {
+                  "php_type": "array",
+                  "array_kind": "list",
+                  "items": []
+                }
+              }
+            }
+          ]
+        },
+        "result": {
+          "php_type": "null",
+          "value": null
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Max",
+          "properties": {
+            "config": {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Config\\MaxConfig",
+              "properties": {
+                "token": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "defaultHeaders": {
+                  "php_type": "array",
+                  "array_kind": "list",
+                  "items": []
+                }
+              }
+            },
+            "logger": {
+              "php_type": "object",
+              "class": "Psr\\Log\\NullLogger"
+            },
+            "transport": {
+              "php_type": "null",
+              "value": null
+            },
+            "botModule": {
+              "php_type": "null",
+              "value": null
+            },
+            "messageModule": {
+              "php_type": "null",
+              "value": null
+            },
+            "chatModule": {
+              "php_type": "null",
+              "value": null
+            },
+            "uploadModule": {
+              "php_type": "null",
+              "value": null
+            },
+            "subscriptionModule": {
+              "php_type": "null",
+              "value": null
+            },
+            "updateModule": {
+              "php_type": "null",
+              "value": null
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/properties/token/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/config/properties/token/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "b5dfbf1eaf2ba05850df8ea3cbf7debe2bd0e80647616816c36d11ffe3c113bb"
+      }
+    },
+    {
+      "phase": "live-guzzle",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Max::__construct",
+      "declared_method": "Webtolk\\Max\\Max::__construct",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Config\\MaxConfig",
+              "properties": {
+                "token": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "defaultHeaders": {
+                  "php_type": "array",
+                  "array_kind": "list",
+                  "items": []
+                }
+              }
+            }
+          ]
+        },
+        "result": {
+          "php_type": "null",
+          "value": null
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Max",
+          "properties": {
+            "config": {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Config\\MaxConfig",
+              "properties": {
+                "token": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "defaultHeaders": {
+                  "php_type": "array",
+                  "array_kind": "list",
+                  "items": []
+                }
+              }
+            },
+            "logger": {
+              "php_type": "object",
+              "class": "Psr\\Log\\NullLogger"
+            },
+            "transport": {
+              "php_type": "null",
+              "value": null
+            },
+            "botModule": {
+              "php_type": "null",
+              "value": null
+            },
+            "messageModule": {
+              "php_type": "null",
+              "value": null
+            },
+            "chatModule": {
+              "php_type": "null",
+              "value": null
+            },
+            "uploadModule": {
+              "php_type": "null",
+              "value": null
+            },
+            "subscriptionModule": {
+              "php_type": "null",
+              "value": null
+            },
+            "updateModule": {
+              "php_type": "null",
+              "value": null
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/properties/token/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/config/properties/token/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "a539e21555ac731e0531ad5032ed83c6a0cb556ff1fd92caa8fc865f0baaf0b6"
+      }
+    },
+    {
+      "phase": "live-joomla-http",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Max::__construct",
+      "declared_method": "Webtolk\\Max\\Max::__construct",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Config\\MaxConfig",
+              "properties": {
+                "token": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "defaultHeaders": {
+                  "php_type": "array",
+                  "array_kind": "list",
+                  "items": []
+                }
+              }
+            }
+          ]
+        },
+        "result": {
+          "php_type": "null",
+          "value": null
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Max",
+          "properties": {
+            "config": {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Config\\MaxConfig",
+              "properties": {
+                "token": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "defaultHeaders": {
+                  "php_type": "array",
+                  "array_kind": "list",
+                  "items": []
+                }
+              }
+            },
+            "logger": {
+              "php_type": "object",
+              "class": "Psr\\Log\\NullLogger"
+            },
+            "transport": {
+              "php_type": "null",
+              "value": null
+            },
+            "botModule": {
+              "php_type": "null",
+              "value": null
+            },
+            "messageModule": {
+              "php_type": "null",
+              "value": null
+            },
+            "chatModule": {
+              "php_type": "null",
+              "value": null
+            },
+            "uploadModule": {
+              "php_type": "null",
+              "value": null
+            },
+            "subscriptionModule": {
+              "php_type": "null",
+              "value": null
+            },
+            "updateModule": {
+              "php_type": "null",
+              "value": null
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/properties/token/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/config/properties/token/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "fada6be6437a57ca3fd472ee0ebe2b7179277b41a2e158ff2837dea5a70ec8e7"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Max::__construct",
+      "declared_method": "Webtolk\\Max\\Max::__construct",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Config\\MaxConfig",
+              "properties": {
+                "token": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "defaultHeaders": {
+                  "php_type": "array",
+                  "array_kind": "list",
+                  "items": []
+                }
+              }
+            }
+          ]
+        },
+        "result": {
+          "php_type": "null",
+          "value": null
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Max",
+          "properties": {
+            "config": {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Config\\MaxConfig",
+              "properties": {
+                "token": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                },
+                "defaultHeaders": {
+                  "php_type": "array",
+                  "array_kind": "list",
+                  "items": []
+                }
+              }
+            },
+            "logger": {
+              "php_type": "object",
+              "class": "Psr\\Log\\NullLogger"
+            },
+            "transport": {
+              "php_type": "null",
+              "value": null
+            },
+            "botModule": {
+              "php_type": "null",
+              "value": null
+            },
+            "messageModule": {
+              "php_type": "null",
+              "value": null
+            },
+            "chatModule": {
+              "php_type": "null",
+              "value": null
+            },
+            "uploadModule": {
+              "php_type": "null",
+              "value": null
+            },
+            "subscriptionModule": {
+              "php_type": "null",
+              "value": null
+            },
+            "updateModule": {
+              "php_type": "null",
+              "value": null
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/properties/token/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/config/properties/token/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "6253aa58624e36c7af1af0e2948335c3e3060f27c3dacda2dbb643dfc19a516a"
+      }
+    }
+  ]
+}

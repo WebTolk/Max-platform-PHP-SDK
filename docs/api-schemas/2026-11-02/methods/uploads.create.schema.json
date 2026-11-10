@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:webtolk:max:0.4.0:methods:uploads.create",
+  "title": "uploads.create observed MAX JSON responses",
+  "description": "Only captured shapes are described. Optional or unobserved variants may exist.",
+  "anyOf": [
+    {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "token": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true,
+      "required": [
+        "token",
+        "url"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true,
+      "required": [
+        "url"
+      ]
+    }
+  ],
+  "x-live-observations": [
+    {
+      "transport": "guzzle",
+      "dataset": "main",
+      "case": "uploads.create",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "0596fa28f7b17f08a102e7c5b50a0a18672d4e398e8efa1b4a87d2cf9d0fe50e"
+    },
+    {
+      "transport": "guzzle",
+      "dataset": "main",
+      "case": "uploads.create.video",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "fab8edf6293cd83b883173c42e210d1ebdfb493dad930ab242f3b9d2dbf8a228"
+    },
+    {
+      "transport": "joomla-http",
+      "dataset": "main",
+      "case": "uploads.create",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "0f3b56313e50637bd23f8b471ec0eb77e08eed63f1e28f248faf881e96ece0a9"
+    },
+    {
+      "transport": "joomla-http",
+      "dataset": "main",
+      "case": "uploads.create.video",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "5e222485186399c967de74820c8703b4d23dc32bd065a49d8f6f7fe1368c90cc"
+    }
+  ]
+}

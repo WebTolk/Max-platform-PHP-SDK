@@ -1,0 +1,207 @@
+{
+  "method": "Webtolk\\Max\\Config\\MaxConfig::getToken",
+  "declared_method": "Webtolk\\Max\\Config\\MaxConfig::getToken",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "string",
+  "parameters": [],
+  "implementation_methods": [],
+  "observed_call_count": 119,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "after-cleanup",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Config\\MaxConfig::getToken",
+      "declared_method": "Webtolk\\Max\\Config\\MaxConfig::getToken",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "string",
+          "value": "XXXX"
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Config\\MaxConfig",
+          "properties": {
+            "token": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "defaultHeaders": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/token/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "3324fae3fc41aad0be918f579f6549d9eba410a3897f8c219bd6217ff9682226"
+      }
+    },
+    {
+      "phase": "live-guzzle",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Config\\MaxConfig::getToken",
+      "declared_method": "Webtolk\\Max\\Config\\MaxConfig::getToken",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "string",
+          "value": "XXXX"
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Config\\MaxConfig",
+          "properties": {
+            "token": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "defaultHeaders": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/token/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "78d118f301730d7e7fcaa88534fd8e1b245cbd92091a0b8ed2f92a4590bd53a6"
+      }
+    },
+    {
+      "phase": "live-joomla-http",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Config\\MaxConfig::getToken",
+      "declared_method": "Webtolk\\Max\\Config\\MaxConfig::getToken",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "string",
+          "value": "XXXX"
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Config\\MaxConfig",
+          "properties": {
+            "token": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "defaultHeaders": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/token/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "c7b57154c8bb3b8dd9a3ccaf2aa719fe28b8cfe93d2ed09fd5f93255fbfc2e2d"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Config\\MaxConfig::getToken",
+      "declared_method": "Webtolk\\Max\\Config\\MaxConfig::getToken",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "string",
+          "value": "XXXX"
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Config\\MaxConfig",
+          "properties": {
+            "token": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "defaultHeaders": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/token/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "c404118062798f9b5a42967102845b28a63de9a7667a426370588cea1e918768"
+      }
+    }
+  ]
+}

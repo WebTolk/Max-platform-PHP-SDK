@@ -1,0 +1,177 @@
+{
+  "method": "Webtolk\\Max\\Exception\\ValidationException::getErrors",
+  "declared_method": "Webtolk\\Max\\Exception\\ValidationException::getErrors",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "array",
+  "parameters": [],
+  "implementation_methods": [],
+  "observed_call_count": 2,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "local-fixtures-v2",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Exception\\ValidationException::getErrors",
+      "declared_method": "Webtolk\\Max\\Exception\\ValidationException::getErrors",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Exception\\ValidationException",
+          "properties": {
+            "errors": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            },
+            "message": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "code": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "file": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "line": {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/receiver_after/properties/message/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/code/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/file/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/line/value",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "43d3b5c4f85ccf96c3749e9b1c7d1b89b779712949c8f13898b554e866f87625"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Exception\\ValidationException::getErrors",
+      "declared_method": "Webtolk\\Max\\Exception\\ValidationException::getErrors",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "map",
+          "items": {
+            "field": {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Exception\\ValidationException",
+          "properties": {
+            "errors": {
+              "php_type": "array",
+              "array_kind": "map",
+              "items": {
+                "field": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                }
+              }
+            },
+            "message": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "code": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "file": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "line": {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/items/field/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/errors/items/field/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/message/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/code/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/file/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/line/value",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "3523620bdc93a0f3b23339b25dd6571019752ed8ec465c760e60e88add449333"
+      }
+    }
+  ]
+}

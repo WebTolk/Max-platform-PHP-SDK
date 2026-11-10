@@ -1,6 +1,8 @@
 * text=auto eol=lf
 
 /.webtolk export-ignore
+/.pf export-ignore
+/AGENTS.md export-ignore
 /.codex export-ignore
 /.github export-ignore
 /.idea export-ignore

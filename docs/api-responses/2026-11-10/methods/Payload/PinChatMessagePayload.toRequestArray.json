@@ -1,0 +1,243 @@
+{
+  "method": "Webtolk\\Max\\Payload\\PinChatMessagePayload::toRequestArray",
+  "declared_method": "Webtolk\\Max\\Payload\\PinChatMessagePayload::toRequestArray",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "array",
+  "parameters": [],
+  "implementation_methods": [],
+  "observed_call_count": 4,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "live-guzzle",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\PinChatMessagePayload::toRequestArray",
+      "declared_method": "Webtolk\\Max\\Payload\\PinChatMessagePayload::toRequestArray",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "map",
+          "items": {
+            "message_id": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "notify": {
+              "php_type": "bool",
+              "value": false
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\PinChatMessagePayload",
+          "properties": {
+            "notify": {
+              "php_type": "bool",
+              "value": false
+            },
+            "messageId": {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/items/message_id/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/messageId/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "8203f2000509ef8d65dc67a2078780d48e4379166caf6ebb8e1cf80ea2edc56e"
+      }
+    },
+    {
+      "phase": "live-joomla-http",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\PinChatMessagePayload::toRequestArray",
+      "declared_method": "Webtolk\\Max\\Payload\\PinChatMessagePayload::toRequestArray",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "map",
+          "items": {
+            "message_id": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "notify": {
+              "php_type": "bool",
+              "value": false
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\PinChatMessagePayload",
+          "properties": {
+            "notify": {
+              "php_type": "bool",
+              "value": false
+            },
+            "messageId": {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/items/message_id/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/messageId/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "a737d680b75b551816af930853fc6851bccbe562374570f8110503e460d089cb"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\PinChatMessagePayload::toRequestArray",
+      "declared_method": "Webtolk\\Max\\Payload\\PinChatMessagePayload::toRequestArray",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "map",
+          "items": {
+            "message_id": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "notify": {
+              "php_type": "bool",
+              "value": true
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\PinChatMessagePayload",
+          "properties": {
+            "notify": {
+              "php_type": "bool",
+              "value": true
+            },
+            "messageId": {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/items/message_id/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/messageId/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "d30ebd7d98ffa698477f7f66f5e0f36c1f3f8179d828014f9e9e6b6728099640"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\PinChatMessagePayload::toRequestArray",
+      "declared_method": "Webtolk\\Max\\Payload\\PinChatMessagePayload::toRequestArray",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "map",
+          "items": {
+            "message_id": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "notify": {
+              "php_type": "bool",
+              "value": false
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\PinChatMessagePayload",
+          "properties": {
+            "notify": {
+              "php_type": "bool",
+              "value": false
+            },
+            "messageId": {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/items/message_id/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/messageId/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "8c1669e30c4979c832d17425af03e11c88c4aa461a8d2caff4f4c574a1ac6047"
+      }
+    }
+  ]
+}

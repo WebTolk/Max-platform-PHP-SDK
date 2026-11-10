@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:webtolk:max:0.4.0:methods:chats.getByLink",
+  "title": "chats.getByLink observed MAX JSON responses",
+  "description": "Only captured shapes are described. Optional or unobserved variants may exist.",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true,
+  "required": [
+    "code",
+    "message"
+  ],
+  "x-live-observations": [
+    {
+      "transport": "guzzle",
+      "dataset": "main",
+      "case": "chats.getByLink",
+      "scenario": "legacy_endpoint",
+      "outcome": "api_error",
+      "http_status": 404,
+      "raw_body_sha256": "d5750bd40fc915e3c2ef3b2918056926456f6f550c5edd35aad357f92e349067"
+    },
+    {
+      "transport": "joomla-http",
+      "dataset": "main",
+      "case": "chats.getByLink",
+      "scenario": "legacy_endpoint",
+      "outcome": "api_error",
+      "http_status": 404,
+      "raw_body_sha256": "d5750bd40fc915e3c2ef3b2918056926456f6f550c5edd35aad357f92e349067"
+    }
+  ]
+}

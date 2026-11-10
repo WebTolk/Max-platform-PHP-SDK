@@ -99,6 +99,9 @@ $query = MessageQuery::forChat($chatId)->withCount(1);
 - `limit` должен быть в диапазоне `1..1000`
 - `timeout` должен быть в диапазоне `0..90`
 - `withTypes()` использует ту же нормализацию, что и subscriptions
+- `bot_admin_permissions_changed` пока доставляется MAX только через Webhook;
+  его наличие в фильтре не делает событие доступным для Long Polling. SDK сохраняет
+  pass-through новых имён типов, не вводя закрытый whitelist.
 
 Подтверждённый query input:
 

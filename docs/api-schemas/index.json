@@ -243,5 +243,13 @@
       "http_method": "POST",
       "uri_template": "https://platform-api2.max.ru/uploads?type=XXXX"
     }
+  },
+  "latest_observed_snapshot": {
+    "sdk_version": "0.4.0",
+    "capture_date": "2026-11-02",
+    "index": "2026-11-02/index.json",
+    "schema_methods": 40,
+    "real_response_observations": 124,
+    "note": "The existing methods/examples below remain the historical 2026-08-31 reference."
   }
 }

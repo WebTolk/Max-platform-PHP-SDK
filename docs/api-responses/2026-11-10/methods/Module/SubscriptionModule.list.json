@@ -1,0 +1,1103 @@
+{
+  "method": "Webtolk\\Max\\Module\\SubscriptionModule::list",
+  "declared_method": "Webtolk\\Max\\Module\\SubscriptionModule::list",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "Webtolk\\Max\\Entity\\SubscriptionList",
+  "parameters": [],
+  "implementation_methods": [],
+  "observed_call_count": 7,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "after-cleanup",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Module\\SubscriptionModule::list",
+      "declared_method": "Webtolk\\Max\\Module\\SubscriptionModule::list",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Entity\\SubscriptionList",
+          "properties": {
+            "rawData": {
+              "php_type": "array",
+              "array_kind": "map",
+              "items": {
+                "subscriptions": {
+                  "php_type": "array",
+                  "array_kind": "list",
+                  "items": [
+                    {
+                      "php_type": "array",
+                      "array_kind": "map",
+                      "items": {
+                        "url": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "time": {
+                          "php_type": "int",
+                          "value": "XXXX"
+                        },
+                        "update_types": {
+                          "php_type": "array",
+                          "array_kind": "list",
+                          "items": [
+                            {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            },
+                            {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "php_type": "array",
+                      "array_kind": "map",
+                      "items": {
+                        "url": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "time": {
+                          "php_type": "int",
+                          "value": "XXXX"
+                        },
+                        "update_types": {
+                          "php_type": "array",
+                          "array_kind": "list",
+                          "items": [
+                            {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "php_type": "array",
+                      "array_kind": "map",
+                      "items": {
+                        "url": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "time": {
+                          "php_type": "int",
+                          "value": "XXXX"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Module\\SubscriptionModule",
+          "properties": {
+            "request": {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Request\\SubscriptionRequest",
+              "properties": {
+                "httpClient": {
+                  "php_type": "object",
+                  "class": "Webtolk\\Max\\Http\\PsrHttpClient",
+                  "properties": {
+                    "client": {
+                      "php_type": "object",
+                      "class": "Webtolk\\Max\\Tests\\Live\\RecordingClient"
+                    },
+                    "requestFactory": {
+                      "php_type": "object",
+                      "class": "Laminas\\Diactoros\\RequestFactory"
+                    },
+                    "streamFactory": {
+                      "php_type": "object",
+                      "class": "Laminas\\Diactoros\\StreamFactory"
+                    },
+                    "config": {
+                      "php_type": "object",
+                      "class": "Webtolk\\Max\\Config\\MaxConfig",
+                      "properties": {
+                        "token": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "defaultHeaders": {
+                          "php_type": "array",
+                          "array_kind": "list",
+                          "items": []
+                        }
+                      }
+                    },
+                    "logger": {
+                      "php_type": "object",
+                      "class": "Psr\\Log\\NullLogger"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/0/items/url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/0/items/time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/0/items/update_types/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/0/items/update_types/items/1/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/1/items/url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/1/items/time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/1/items/update_types/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/2/items/url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/2/items/time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/request/properties/httpClient/properties/config/properties/token/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "985ed6659d8250f088bbe32513fae6b78a70d3942d274f6c51b002eda6756553"
+      }
+    },
+    {
+      "phase": "live-guzzle",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Module\\SubscriptionModule::list",
+      "declared_method": "Webtolk\\Max\\Module\\SubscriptionModule::list",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Entity\\SubscriptionList",
+          "properties": {
+            "rawData": {
+              "php_type": "array",
+              "array_kind": "map",
+              "items": {
+                "subscriptions": {
+                  "php_type": "array",
+                  "array_kind": "list",
+                  "items": [
+                    {
+                      "php_type": "array",
+                      "array_kind": "map",
+                      "items": {
+                        "url": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "time": {
+                          "php_type": "int",
+                          "value": "XXXX"
+                        },
+                        "update_types": {
+                          "php_type": "array",
+                          "array_kind": "list",
+                          "items": [
+                            {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            },
+                            {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "php_type": "array",
+                      "array_kind": "map",
+                      "items": {
+                        "url": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "time": {
+                          "php_type": "int",
+                          "value": "XXXX"
+                        },
+                        "update_types": {
+                          "php_type": "array",
+                          "array_kind": "list",
+                          "items": [
+                            {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "php_type": "array",
+                      "array_kind": "map",
+                      "items": {
+                        "url": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "time": {
+                          "php_type": "int",
+                          "value": "XXXX"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Module\\SubscriptionModule",
+          "properties": {
+            "request": {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Request\\SubscriptionRequest",
+              "properties": {
+                "httpClient": {
+                  "php_type": "object",
+                  "class": "Webtolk\\Max\\Http\\PsrHttpClient",
+                  "properties": {
+                    "client": {
+                      "php_type": "object",
+                      "class": "Webtolk\\Max\\Tests\\Live\\RecordingClient"
+                    },
+                    "requestFactory": {
+                      "php_type": "object",
+                      "class": "Laminas\\Diactoros\\RequestFactory"
+                    },
+                    "streamFactory": {
+                      "php_type": "object",
+                      "class": "Laminas\\Diactoros\\StreamFactory"
+                    },
+                    "config": {
+                      "php_type": "object",
+                      "class": "Webtolk\\Max\\Config\\MaxConfig",
+                      "properties": {
+                        "token": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "defaultHeaders": {
+                          "php_type": "array",
+                          "array_kind": "list",
+                          "items": []
+                        }
+                      }
+                    },
+                    "logger": {
+                      "php_type": "object",
+                      "class": "Psr\\Log\\NullLogger"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/0/items/url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/0/items/time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/0/items/update_types/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/0/items/update_types/items/1/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/1/items/url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/1/items/time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/1/items/update_types/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/2/items/url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/2/items/time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/request/properties/httpClient/properties/config/properties/token/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "ad4066a49bb31323032f2abf5a333561c0ed050597e9fd797608e4601d36e0d5"
+      }
+    },
+    {
+      "phase": "live-guzzle",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Module\\SubscriptionModule::list",
+      "declared_method": "Webtolk\\Max\\Module\\SubscriptionModule::list",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Entity\\SubscriptionList",
+          "properties": {
+            "rawData": {
+              "php_type": "array",
+              "array_kind": "map",
+              "items": {
+                "subscriptions": {
+                  "php_type": "array",
+                  "array_kind": "list",
+                  "items": [
+                    {
+                      "php_type": "array",
+                      "array_kind": "map",
+                      "items": {
+                        "url": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "time": {
+                          "php_type": "int",
+                          "value": "XXXX"
+                        },
+                        "update_types": {
+                          "php_type": "array",
+                          "array_kind": "list",
+                          "items": [
+                            {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            },
+                            {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "php_type": "array",
+                      "array_kind": "map",
+                      "items": {
+                        "url": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "time": {
+                          "php_type": "int",
+                          "value": "XXXX"
+                        },
+                        "update_types": {
+                          "php_type": "array",
+                          "array_kind": "list",
+                          "items": [
+                            {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "php_type": "array",
+                      "array_kind": "map",
+                      "items": {
+                        "url": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "time": {
+                          "php_type": "int",
+                          "value": "XXXX"
+                        }
+                      }
+                    },
+                    {
+                      "php_type": "array",
+                      "array_kind": "map",
+                      "items": {
+                        "url": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "time": {
+                          "php_type": "int",
+                          "value": "XXXX"
+                        },
+                        "update_types": {
+                          "php_type": "array",
+                          "array_kind": "list",
+                          "items": [
+                            {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Module\\SubscriptionModule",
+          "properties": {
+            "request": {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Request\\SubscriptionRequest",
+              "properties": {
+                "httpClient": {
+                  "php_type": "object",
+                  "class": "Webtolk\\Max\\Http\\PsrHttpClient",
+                  "properties": {
+                    "client": {
+                      "php_type": "object",
+                      "class": "Webtolk\\Max\\Tests\\Live\\RecordingClient"
+                    },
+                    "requestFactory": {
+                      "php_type": "object",
+                      "class": "Laminas\\Diactoros\\RequestFactory"
+                    },
+                    "streamFactory": {
+                      "php_type": "object",
+                      "class": "Laminas\\Diactoros\\StreamFactory"
+                    },
+                    "config": {
+                      "php_type": "object",
+                      "class": "Webtolk\\Max\\Config\\MaxConfig",
+                      "properties": {
+                        "token": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "defaultHeaders": {
+                          "php_type": "array",
+                          "array_kind": "list",
+                          "items": []
+                        }
+                      }
+                    },
+                    "logger": {
+                      "php_type": "object",
+                      "class": "Psr\\Log\\NullLogger"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/0/items/url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/0/items/time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/0/items/update_types/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/0/items/update_types/items/1/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/1/items/url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/1/items/time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/1/items/update_types/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/2/items/url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/2/items/time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/3/items/url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/3/items/time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/3/items/update_types/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/request/properties/httpClient/properties/config/properties/token/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "eac604b46af63c6c80155b7df45c3f89a3679132a8623ada75f05884e1f8e84e"
+      }
+    },
+    {
+      "phase": "live-joomla-http",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Module\\SubscriptionModule::list",
+      "declared_method": "Webtolk\\Max\\Module\\SubscriptionModule::list",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Entity\\SubscriptionList",
+          "properties": {
+            "rawData": {
+              "php_type": "array",
+              "array_kind": "map",
+              "items": {
+                "subscriptions": {
+                  "php_type": "array",
+                  "array_kind": "list",
+                  "items": [
+                    {
+                      "php_type": "array",
+                      "array_kind": "map",
+                      "items": {
+                        "url": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "time": {
+                          "php_type": "int",
+                          "value": "XXXX"
+                        },
+                        "update_types": {
+                          "php_type": "array",
+                          "array_kind": "list",
+                          "items": [
+                            {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            },
+                            {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "php_type": "array",
+                      "array_kind": "map",
+                      "items": {
+                        "url": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "time": {
+                          "php_type": "int",
+                          "value": "XXXX"
+                        },
+                        "update_types": {
+                          "php_type": "array",
+                          "array_kind": "list",
+                          "items": [
+                            {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "php_type": "array",
+                      "array_kind": "map",
+                      "items": {
+                        "url": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "time": {
+                          "php_type": "int",
+                          "value": "XXXX"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Module\\SubscriptionModule",
+          "properties": {
+            "request": {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Request\\SubscriptionRequest",
+              "properties": {
+                "httpClient": {
+                  "php_type": "object",
+                  "class": "Webtolk\\Max\\Http\\PsrHttpClient",
+                  "properties": {
+                    "client": {
+                      "php_type": "object",
+                      "class": "Webtolk\\Max\\Tests\\Live\\RecordingClient"
+                    },
+                    "requestFactory": {
+                      "php_type": "object",
+                      "class": "Laminas\\Diactoros\\RequestFactory"
+                    },
+                    "streamFactory": {
+                      "php_type": "object",
+                      "class": "Laminas\\Diactoros\\StreamFactory"
+                    },
+                    "config": {
+                      "php_type": "object",
+                      "class": "Webtolk\\Max\\Config\\MaxConfig",
+                      "properties": {
+                        "token": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "defaultHeaders": {
+                          "php_type": "array",
+                          "array_kind": "list",
+                          "items": []
+                        }
+                      }
+                    },
+                    "logger": {
+                      "php_type": "object",
+                      "class": "Psr\\Log\\NullLogger"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/0/items/url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/0/items/time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/0/items/update_types/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/0/items/update_types/items/1/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/1/items/url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/1/items/time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/1/items/update_types/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/2/items/url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/2/items/time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/request/properties/httpClient/properties/config/properties/token/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "967910defedbae4f4d74d1f29b027f679231758f86a2fa0144192f1de35c3c9f"
+      }
+    },
+    {
+      "phase": "live-joomla-http",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Module\\SubscriptionModule::list",
+      "declared_method": "Webtolk\\Max\\Module\\SubscriptionModule::list",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Entity\\SubscriptionList",
+          "properties": {
+            "rawData": {
+              "php_type": "array",
+              "array_kind": "map",
+              "items": {
+                "subscriptions": {
+                  "php_type": "array",
+                  "array_kind": "list",
+                  "items": [
+                    {
+                      "php_type": "array",
+                      "array_kind": "map",
+                      "items": {
+                        "url": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "time": {
+                          "php_type": "int",
+                          "value": "XXXX"
+                        },
+                        "update_types": {
+                          "php_type": "array",
+                          "array_kind": "list",
+                          "items": [
+                            {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            },
+                            {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "php_type": "array",
+                      "array_kind": "map",
+                      "items": {
+                        "url": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "time": {
+                          "php_type": "int",
+                          "value": "XXXX"
+                        },
+                        "update_types": {
+                          "php_type": "array",
+                          "array_kind": "list",
+                          "items": [
+                            {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "php_type": "array",
+                      "array_kind": "map",
+                      "items": {
+                        "url": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "time": {
+                          "php_type": "int",
+                          "value": "XXXX"
+                        }
+                      }
+                    },
+                    {
+                      "php_type": "array",
+                      "array_kind": "map",
+                      "items": {
+                        "url": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "time": {
+                          "php_type": "int",
+                          "value": "XXXX"
+                        },
+                        "update_types": {
+                          "php_type": "array",
+                          "array_kind": "list",
+                          "items": [
+                            {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Module\\SubscriptionModule",
+          "properties": {
+            "request": {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Request\\SubscriptionRequest",
+              "properties": {
+                "httpClient": {
+                  "php_type": "object",
+                  "class": "Webtolk\\Max\\Http\\PsrHttpClient",
+                  "properties": {
+                    "client": {
+                      "php_type": "object",
+                      "class": "Webtolk\\Max\\Tests\\Live\\RecordingClient"
+                    },
+                    "requestFactory": {
+                      "php_type": "object",
+                      "class": "Laminas\\Diactoros\\RequestFactory"
+                    },
+                    "streamFactory": {
+                      "php_type": "object",
+                      "class": "Laminas\\Diactoros\\StreamFactory"
+                    },
+                    "config": {
+                      "php_type": "object",
+                      "class": "Webtolk\\Max\\Config\\MaxConfig",
+                      "properties": {
+                        "token": {
+                          "php_type": "string",
+                          "value": "XXXX"
+                        },
+                        "defaultHeaders": {
+                          "php_type": "array",
+                          "array_kind": "list",
+                          "items": []
+                        }
+                      }
+                    },
+                    "logger": {
+                      "php_type": "object",
+                      "class": "Psr\\Log\\NullLogger"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/0/items/url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/0/items/time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/0/items/update_types/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/0/items/update_types/items/1/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/1/items/url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/1/items/time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/1/items/update_types/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/2/items/url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/2/items/time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/3/items/url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/3/items/time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/rawData/items/subscriptions/items/3/items/update_types/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/request/properties/httpClient/properties/config/properties/token/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "adb54bf9e651be75ee15ea5f7312a6ac4ffdeefd7b432b6be3f5e8af0928f030"
+      }
+    }
+  ]
+}

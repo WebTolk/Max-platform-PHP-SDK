@@ -29,7 +29,7 @@
 
 В live smoke на канале MAX отклонил post payload с `notify=false` кодом `errors.send-message.channel-notify`. Та же серия отправок без поля `notify` прошла успешно для обычного текста, inline-кнопок, файла, изображения и изображения с inline-кнопками.
 
-Практический вывод: для channel posts оставляйте `notify` неуказанным. Это live-evidence caveat текущего API, а не отдельная строка из официальной документации.
+Практический вывод: для channel posts оставляйте `notify` неуказанным. Сверка документации MAX от 2026-11-10 также подтверждает правило: для канала true либо отсутствие notify.
 
 ## `AttachmentNotReadyException`
 

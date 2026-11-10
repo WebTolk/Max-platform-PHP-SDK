@@ -1,0 +1,327 @@
+{
+  "method": "Webtolk\\Max\\Payload\\Attachment\\Button\\KeyboardButtonInterface::toRequestArray",
+  "declared_method": "Webtolk\\Max\\Payload\\Attachment\\Button\\KeyboardButtonInterface::toRequestArray",
+  "coverage_kind": "interface_to_concrete_execution",
+  "interface": true,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "array",
+  "parameters": [],
+  "implementation_methods": [
+    "Webtolk\\Max\\Payload\\Attachment\\Button\\CallbackButton::toRequestArray",
+    "Webtolk\\Max\\Payload\\Attachment\\Button\\ClipboardButton::toRequestArray",
+    "Webtolk\\Max\\Payload\\Attachment\\Button\\LinkButton::toRequestArray",
+    "Webtolk\\Max\\Payload\\Attachment\\Button\\MessageButton::toRequestArray",
+    "Webtolk\\Max\\Payload\\Attachment\\Button\\OpenAppButton::toRequestArray",
+    "Webtolk\\Max\\Payload\\Attachment\\Button\\RequestContactButton::toRequestArray",
+    "Webtolk\\Max\\Payload\\Attachment\\Button\\RequestGeoLocationButton::toRequestArray"
+  ],
+  "observed_call_count": 9,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "live-guzzle",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\Attachment\\Button\\CallbackButton::toRequestArray",
+      "declared_method": "Webtolk\\Max\\Payload\\Attachment\\Button\\CallbackButton::toRequestArray",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "map",
+          "items": {
+            "type": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "text": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "payload": {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\Attachment\\Button\\CallbackButton",
+          "properties": {
+            "text": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "data": {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/items/type/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/text/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/payload/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/text/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/data/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "daa2d47ef6c99382065f01ebf075d06c6d53dbd363ba511b91f2118002c1e566"
+      }
+    },
+    {
+      "phase": "live-joomla-http",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\Attachment\\Button\\CallbackButton::toRequestArray",
+      "declared_method": "Webtolk\\Max\\Payload\\Attachment\\Button\\CallbackButton::toRequestArray",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "map",
+          "items": {
+            "type": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "text": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "payload": {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\Attachment\\Button\\CallbackButton",
+          "properties": {
+            "text": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "data": {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/items/type/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/text/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/payload/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/text/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/data/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "2748b3ef08eb408c3f06c6a4f91ad6694ba534f116734524523bcc2fc8de2763"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\Attachment\\Button\\CallbackButton::toRequestArray",
+      "declared_method": "Webtolk\\Max\\Payload\\Attachment\\Button\\CallbackButton::toRequestArray",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "map",
+          "items": {
+            "type": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "text": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "payload": {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\Attachment\\Button\\CallbackButton",
+          "properties": {
+            "text": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "data": {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/items/type/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/text/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/payload/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/text/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/data/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "a34c58067e41225b8da6db730f2192baebe176606083517a673f05933dcdb84e"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\Attachment\\Button\\ClipboardButton::toRequestArray",
+      "declared_method": "Webtolk\\Max\\Payload\\Attachment\\Button\\ClipboardButton::toRequestArray",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "map",
+          "items": {
+            "type": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "text": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "payload": {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\Attachment\\Button\\ClipboardButton",
+          "properties": {
+            "text": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "payload": {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/items/type/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/text/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/payload/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/text/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/payload/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "f30506d479a2fed0dc914bd1898cf0abfc8409a4ed17ad4cb9b0bbf69809257c"
+      }
+    }
+  ]
+}

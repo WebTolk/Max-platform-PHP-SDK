@@ -1,0 +1,92 @@
+{
+  "method": "Webtolk\\Max\\Payload\\SenderAction::tryFrom",
+  "declared_method": "Webtolk\\Max\\Payload\\SenderAction::tryFrom",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": true,
+  "return_type": "?static",
+  "parameters": [
+    {
+      "name": "value",
+      "type": "string|int",
+      "required": true,
+      "variadic": false
+    }
+  ],
+  "implementation_methods": [],
+  "observed_call_count": 7,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "local-fixtures-v2",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\SenderAction::tryFrom",
+      "declared_method": "Webtolk\\Max\\Payload\\SenderAction::tryFrom",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "enum",
+          "class": "Webtolk\\Max\\Payload\\SenderAction",
+          "enum_case": "TYPING_ON",
+          "enum_value": "typing_on"
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "b53af738a1ed7c61c0f6af922cbb985208cb3c2624eb544855c37dbeaf986389"
+      }
+    },
+    {
+      "phase": "local-fixtures-v2",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\SenderAction::tryFrom",
+      "declared_method": "Webtolk\\Max\\Payload\\SenderAction::tryFrom",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "enum",
+          "class": "Webtolk\\Max\\Payload\\SenderAction",
+          "enum_case": "SENDING_PHOTO",
+          "enum_value": "sending_photo"
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "f5d4d77242cf34f7af429285346626a483fd63316934d84bcdead6c8d9ce7c5d"
+      }
+    }
+  ]
+}

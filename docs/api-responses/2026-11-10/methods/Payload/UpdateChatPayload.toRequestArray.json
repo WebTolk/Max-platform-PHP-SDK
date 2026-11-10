@@ -1,0 +1,441 @@
+{
+  "method": "Webtolk\\Max\\Payload\\UpdateChatPayload::toRequestArray",
+  "declared_method": "Webtolk\\Max\\Payload\\UpdateChatPayload::toRequestArray",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "array",
+  "parameters": [],
+  "implementation_methods": [],
+  "observed_call_count": 6,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "live-guzzle",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\UpdateChatPayload::toRequestArray",
+      "declared_method": "Webtolk\\Max\\Payload\\UpdateChatPayload::toRequestArray",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "map",
+          "items": {
+            "title": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "description": {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\UpdateChatPayload",
+          "properties": {
+            "icon": {
+              "php_type": "null",
+              "value": null
+            },
+            "title": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "description": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "isDescriptionSet": {
+              "php_type": "bool",
+              "value": true
+            },
+            "pin": {
+              "php_type": "null",
+              "value": null
+            },
+            "notify": {
+              "php_type": "null",
+              "value": null
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/items/title/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/description/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/title/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/description/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "8da1a8002a4934f19e96d89b00d8fc3016c787ee96265fe70b8e2db5579b845f"
+      }
+    },
+    {
+      "phase": "live-joomla-http",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\UpdateChatPayload::toRequestArray",
+      "declared_method": "Webtolk\\Max\\Payload\\UpdateChatPayload::toRequestArray",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "map",
+          "items": {
+            "title": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "description": {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\UpdateChatPayload",
+          "properties": {
+            "icon": {
+              "php_type": "null",
+              "value": null
+            },
+            "title": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "description": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "isDescriptionSet": {
+              "php_type": "bool",
+              "value": true
+            },
+            "pin": {
+              "php_type": "null",
+              "value": null
+            },
+            "notify": {
+              "php_type": "null",
+              "value": null
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/items/title/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/description/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/title/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/description/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "6c754702d1a125d71d7aba7eeeebf32286abf28373a3b3b92e80c3dd4e96d024"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\UpdateChatPayload::toRequestArray",
+      "declared_method": "Webtolk\\Max\\Payload\\UpdateChatPayload::toRequestArray",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "map",
+          "items": {
+            "icon": {
+              "php_type": "array",
+              "array_kind": "map",
+              "items": {
+                "url": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                }
+              }
+            },
+            "title": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "description": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "pin": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "notify": {
+              "php_type": "bool",
+              "value": false
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\UpdateChatPayload",
+          "properties": {
+            "icon": {
+              "php_type": "array",
+              "array_kind": "map",
+              "items": {
+                "url": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                }
+              }
+            },
+            "title": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "description": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "isDescriptionSet": {
+              "php_type": "bool",
+              "value": true
+            },
+            "pin": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "notify": {
+              "php_type": "bool",
+              "value": false
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/items/icon/items/url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/title/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/description/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/pin/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/icon/items/url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/title/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/description/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/pin/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "6b179fbcfc97ec4e7ff794cb582aae0f2452eeefceb3e5200733ac18e816b1d0"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\UpdateChatPayload::toRequestArray",
+      "declared_method": "Webtolk\\Max\\Payload\\UpdateChatPayload::toRequestArray",
+      "outcome": "threw",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\UpdateChatPayload",
+          "properties": {
+            "icon": {
+              "php_type": "null",
+              "value": null
+            },
+            "title": {
+              "php_type": "null",
+              "value": null
+            },
+            "description": {
+              "php_type": "null",
+              "value": null
+            },
+            "isDescriptionSet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "pin": {
+              "php_type": "null",
+              "value": null
+            },
+            "notify": {
+              "php_type": "null",
+              "value": null
+            }
+          }
+        },
+        "exception": {
+          "class": "Webtolk\\Max\\Exception\\ValidationException",
+          "message": "XXXX",
+          "code": "XXXX"
+        }
+      },
+      "redactions": [
+        {
+          "path": "/exception/message",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/exception/code",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "5f7ade036db1f5af7a2aa2ec69e9399650dc4f66fb7e52b7c5fe359ba44f8b6a"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\UpdateChatPayload::toRequestArray",
+      "declared_method": "Webtolk\\Max\\Payload\\UpdateChatPayload::toRequestArray",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "map",
+          "items": {
+            "description": {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\UpdateChatPayload",
+          "properties": {
+            "icon": {
+              "php_type": "null",
+              "value": null
+            },
+            "title": {
+              "php_type": "null",
+              "value": null
+            },
+            "description": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "isDescriptionSet": {
+              "php_type": "bool",
+              "value": true
+            },
+            "pin": {
+              "php_type": "null",
+              "value": null
+            },
+            "notify": {
+              "php_type": "null",
+              "value": null
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/items/description/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/description/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "50abcafdc760d426c2ea242df354b9552cd5d6554c02639daafa87bbb41db1e1"
+      }
+    }
+  ]
+}

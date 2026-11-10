@@ -2,6 +2,18 @@
 
 All notable changes to `webtolk/max` will be documented in this file.
 
+## 0.4.0 - 2026-11-10
+
+- Added `Update::getUserId()`, `getBotId()`, `isAdmin()` and `getPermissions()` for the documented `bot_admin_permissions_changed` Webhook event, preserving raw payloads and all existing public signatures.
+- Documented Webhook-only delivery of the new event and MAX's restriction of `POST /chats/{chatId}/members` since 2026-09-09.
+- Added opt-in Guzzle/Joomla HTTP live runners and regression tests for the complete executable public method surface.
+- Verified 353 executable public methods per transport variant, including real calls to all 40 module operations; 31 operations have positive responses and 9 have controlled negative/legacy endpoint outcomes.
+- Added 40 observed response JSON Schemas from 124 real responses captured on 2026-11-02; private response values are excluded, and all 124 responses validate against the schemas.
+- Preserved historical schemas/examples and documented the observed channel `notify=false` rejection. Updated reference, testing and migration guidance.
+- Published sanitized execution snapshots for all 528 public method exposures (including inheritance and explicit interface mappings), plus 111 fresh HTTP response bodies from the 2026-11-10 Guzzle/Joomla HTTP runs.
+- Corrected callback evidence claims, webhook-secret PHPDoc and legacy connection examples; documented current `notify`, upload filename, contact and deep-link behavior.
+- Verified the unchanged executable SDK on PHP 8.1.34 and PHP 8.3.30 with 157 tests / 428 assertions per run; added an isolated PHP 8.1 test dependency profile.
+
 ## 0.3.0 - 2026-08-31
 
 - Added `bots()->updateCommands()` for `PATCH /me/commands`, including typed command payloads and response entities.

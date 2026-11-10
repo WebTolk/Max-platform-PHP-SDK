@@ -1,0 +1,85 @@
+{
+  "replacement": "XXXX",
+  "redactions": [
+    {
+      "path": "/last_access_time",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/join_time",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/user_id",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/first_name",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/username",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/last_activity_time",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/description",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/avatar_url",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/full_avatar_url",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/permissions/0",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/permissions/1",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/permissions/2",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/permissions/3",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/permissions/4",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/permissions/5",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/name",
+      "kind": "value",
+      "original_type": "string"
+    }
+  ]
+}

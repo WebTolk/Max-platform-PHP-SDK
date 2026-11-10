@@ -1,0 +1,562 @@
+{
+  "method": "Webtolk\\Max\\Query\\MessageQuery::toQueryParams",
+  "declared_method": "Webtolk\\Max\\Query\\MessageQuery::toQueryParams",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "array",
+  "parameters": [],
+  "implementation_methods": [],
+  "observed_call_count": 10,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "live-guzzle",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Query\\MessageQuery::toQueryParams",
+      "declared_method": "Webtolk\\Max\\Query\\MessageQuery::toQueryParams",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "map",
+          "items": {
+            "chat_id": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "count": {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Query\\MessageQuery",
+          "properties": {
+            "forChatSet": {
+              "php_type": "bool",
+              "value": true
+            },
+            "forMessageIdsSet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "chatId": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "messageIds": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            },
+            "from": {
+              "php_type": "null",
+              "value": null
+            },
+            "to": {
+              "php_type": "null",
+              "value": null
+            },
+            "count": {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/items/chat_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/items/count/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/chatId/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/count/value",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "c85444c9b3725ca67b3f753ca1c7722b25a4faf961493f7cce28874dd9a8fb14"
+      }
+    },
+    {
+      "phase": "live-joomla-http",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Query\\MessageQuery::toQueryParams",
+      "declared_method": "Webtolk\\Max\\Query\\MessageQuery::toQueryParams",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "map",
+          "items": {
+            "chat_id": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "count": {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Query\\MessageQuery",
+          "properties": {
+            "forChatSet": {
+              "php_type": "bool",
+              "value": true
+            },
+            "forMessageIdsSet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "chatId": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "messageIds": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            },
+            "from": {
+              "php_type": "null",
+              "value": null
+            },
+            "to": {
+              "php_type": "null",
+              "value": null
+            },
+            "count": {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/items/chat_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/items/count/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/chatId/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/count/value",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "73cc02a6f3e2ced7a1e13998bd6086234f3f78c46472bea68988f1618fa180d3"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Query\\MessageQuery::toQueryParams",
+      "declared_method": "Webtolk\\Max\\Query\\MessageQuery::toQueryParams",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "map",
+          "items": {
+            "chat_id": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "from": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "to": {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Query\\MessageQuery",
+          "properties": {
+            "forChatSet": {
+              "php_type": "bool",
+              "value": true
+            },
+            "forMessageIdsSet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "chatId": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "messageIds": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            },
+            "from": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "to": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "count": {
+              "php_type": "null",
+              "value": null
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/items/chat_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/items/from/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/items/to/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/chatId/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/from/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/to/value",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "1c7a2f2e270d1179fbf5898f250b05bc14e5d0a04112282932decb85947b68c6"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Query\\MessageQuery::toQueryParams",
+      "declared_method": "Webtolk\\Max\\Query\\MessageQuery::toQueryParams",
+      "outcome": "threw",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Query\\MessageQuery",
+          "properties": {
+            "forChatSet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "forMessageIdsSet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "chatId": {
+              "php_type": "null",
+              "value": null
+            },
+            "messageIds": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            },
+            "from": {
+              "php_type": "null",
+              "value": null
+            },
+            "to": {
+              "php_type": "null",
+              "value": null
+            },
+            "count": {
+              "php_type": "null",
+              "value": null
+            }
+          }
+        },
+        "exception": {
+          "class": "Webtolk\\Max\\Exception\\ValidationException",
+          "message": "XXXX",
+          "code": "XXXX"
+        }
+      },
+      "redactions": [
+        {
+          "path": "/exception/message",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/exception/code",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "73226484d2f3617b0a2f55a5d54bc47b1fe0ce61adea0cfbe19c336e283a6476"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Query\\MessageQuery::toQueryParams",
+      "declared_method": "Webtolk\\Max\\Query\\MessageQuery::toQueryParams",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "map",
+          "items": {
+            "chat_id": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "from": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "to": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "count": {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Query\\MessageQuery",
+          "properties": {
+            "forChatSet": {
+              "php_type": "bool",
+              "value": true
+            },
+            "forMessageIdsSet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "chatId": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "messageIds": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            },
+            "from": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "to": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "count": {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/items/chat_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/items/from/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/items/to/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/items/count/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/chatId/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/from/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/to/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/count/value",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "0e813169a9ac01a709021ffbfca29c5704ba763bb31d3746e80528b4b1324a1c"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Query\\MessageQuery::toQueryParams",
+      "declared_method": "Webtolk\\Max\\Query\\MessageQuery::toQueryParams",
+      "outcome": "threw",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Query\\MessageQuery",
+          "properties": {
+            "forChatSet": {
+              "php_type": "bool",
+              "value": true
+            },
+            "forMessageIdsSet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "chatId": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "messageIds": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            },
+            "from": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "to": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "count": {
+              "php_type": "null",
+              "value": null
+            }
+          }
+        },
+        "exception": {
+          "class": "Webtolk\\Max\\Exception\\ValidationException",
+          "message": "XXXX",
+          "code": "XXXX"
+        }
+      },
+      "redactions": [
+        {
+          "path": "/receiver_after/properties/chatId/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/from/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/to/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/exception/message",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/exception/code",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "300a5cf1bb67650cb90e15ac6104152c0fec9ee0e1da32c5709f932fda161e54"
+      }
+    }
+  ]
+}

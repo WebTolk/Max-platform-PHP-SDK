@@ -1,0 +1,502 @@
+{
+  "method": "Webtolk\\Max\\Request\\MessageRequest::answerCallback",
+  "declared_method": "Webtolk\\Max\\Request\\MessageRequest::answerCallback",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "Webtolk\\Max\\Entity\\OperationResult",
+  "parameters": [
+    {
+      "name": "callbackId",
+      "type": "string",
+      "required": true,
+      "variadic": false
+    },
+    {
+      "name": "payload",
+      "type": "Webtolk\\Max\\Payload\\CallbackAnswerPayload",
+      "required": true,
+      "variadic": false
+    },
+    {
+      "name": "disableLinkPreview",
+      "type": "?bool",
+      "required": false,
+      "variadic": false
+    }
+  ],
+  "implementation_methods": [],
+  "observed_call_count": 4,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "live-guzzle",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Request\\MessageRequest::answerCallback",
+      "declared_method": "Webtolk\\Max\\Request\\MessageRequest::answerCallback",
+      "outcome": "threw",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\CallbackAnswerPayload",
+              "properties": {
+                "message": {
+                  "php_type": "null",
+                  "value": null
+                },
+                "notification": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                }
+              }
+            },
+            {
+              "php_type": "bool",
+              "value": true
+            }
+          ]
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Request\\MessageRequest",
+          "properties": {
+            "httpClient": {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Http\\PsrHttpClient",
+              "properties": {
+                "client": {
+                  "php_type": "object",
+                  "class": "Webtolk\\Max\\Tests\\Live\\RecordingClient"
+                },
+                "requestFactory": {
+                  "php_type": "object",
+                  "class": "Laminas\\Diactoros\\RequestFactory"
+                },
+                "streamFactory": {
+                  "php_type": "object",
+                  "class": "Laminas\\Diactoros\\StreamFactory"
+                },
+                "config": {
+                  "php_type": "object",
+                  "class": "Webtolk\\Max\\Config\\MaxConfig",
+                  "properties": {
+                    "token": {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    },
+                    "defaultHeaders": {
+                      "php_type": "array",
+                      "array_kind": "list",
+                      "items": []
+                    }
+                  }
+                },
+                "logger": {
+                  "php_type": "object",
+                  "class": "Psr\\Log\\NullLogger"
+                }
+              }
+            }
+          }
+        },
+        "exception": {
+          "class": "Webtolk\\Max\\Exception\\ApiException",
+          "message": "XXXX",
+          "code": "XXXX"
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/arguments/items/1/properties/notification/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/httpClient/properties/config/properties/token/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/exception/message",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/exception/code",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "97579c3c862ead7948338292695311c86000ed23c7fb1d7ed5d8b1ff91f9a4ad"
+      }
+    },
+    {
+      "phase": "live-joomla-http",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Request\\MessageRequest::answerCallback",
+      "declared_method": "Webtolk\\Max\\Request\\MessageRequest::answerCallback",
+      "outcome": "threw",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\CallbackAnswerPayload",
+              "properties": {
+                "message": {
+                  "php_type": "null",
+                  "value": null
+                },
+                "notification": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                }
+              }
+            },
+            {
+              "php_type": "bool",
+              "value": true
+            }
+          ]
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Request\\MessageRequest",
+          "properties": {
+            "httpClient": {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Http\\PsrHttpClient",
+              "properties": {
+                "client": {
+                  "php_type": "object",
+                  "class": "Webtolk\\Max\\Tests\\Live\\RecordingClient"
+                },
+                "requestFactory": {
+                  "php_type": "object",
+                  "class": "Laminas\\Diactoros\\RequestFactory"
+                },
+                "streamFactory": {
+                  "php_type": "object",
+                  "class": "Laminas\\Diactoros\\StreamFactory"
+                },
+                "config": {
+                  "php_type": "object",
+                  "class": "Webtolk\\Max\\Config\\MaxConfig",
+                  "properties": {
+                    "token": {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    },
+                    "defaultHeaders": {
+                      "php_type": "array",
+                      "array_kind": "list",
+                      "items": []
+                    }
+                  }
+                },
+                "logger": {
+                  "php_type": "object",
+                  "class": "Psr\\Log\\NullLogger"
+                }
+              }
+            }
+          }
+        },
+        "exception": {
+          "class": "Webtolk\\Max\\Exception\\ApiException",
+          "message": "XXXX",
+          "code": "XXXX"
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/arguments/items/1/properties/notification/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/httpClient/properties/config/properties/token/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/exception/message",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/exception/code",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "caf2f4480da97582bfdfb2660e6ce874a366917c0c67554c1b177626650bebfd"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Request\\MessageRequest::answerCallback",
+      "declared_method": "Webtolk\\Max\\Request\\MessageRequest::answerCallback",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\CallbackAnswerPayload",
+              "properties": {
+                "message": {
+                  "php_type": "object",
+                  "class": "Webtolk\\Max\\Payload\\NewMessageBody",
+                  "properties": {
+                    "text": {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    },
+                    "attachments": {
+                      "php_type": "array",
+                      "array_kind": "list",
+                      "items": []
+                    },
+                    "notify": {
+                      "php_type": "null",
+                      "value": null
+                    },
+                    "format": {
+                      "php_type": "null",
+                      "value": null
+                    },
+                    "link": {
+                      "php_type": "null",
+                      "value": null
+                    },
+                    "isTextSet": {
+                      "php_type": "bool",
+                      "value": true
+                    },
+                    "isAttachmentsSet": {
+                      "php_type": "bool",
+                      "value": false
+                    },
+                    "isLinkSet": {
+                      "php_type": "bool",
+                      "value": false
+                    },
+                    "isNotifySet": {
+                      "php_type": "bool",
+                      "value": false
+                    },
+                    "isFormatSet": {
+                      "php_type": "bool",
+                      "value": false
+                    }
+                  }
+                },
+                "notification": {
+                  "php_type": "null",
+                  "value": null
+                }
+              }
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Entity\\OperationResult",
+          "properties": {
+            "rawData": {
+              "php_type": "array",
+              "array_kind": "map",
+              "items": {
+                "success": {
+                  "php_type": "bool",
+                  "value": true
+                }
+              }
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Request\\MessageRequest",
+          "properties": {
+            "httpClient": {
+              "php_type": "object",
+              "class": "MockObject_ApiTransportInterface_c800120b"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/arguments/items/1/properties/message/properties/text/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "5ef0563c5ce58cc62977e9aa3205d3d2f708b29f0a492bb97f18769a24a70638"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Request\\MessageRequest::answerCallback",
+      "declared_method": "Webtolk\\Max\\Request\\MessageRequest::answerCallback",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Payload\\CallbackAnswerPayload",
+              "properties": {
+                "message": {
+                  "php_type": "object",
+                  "class": "Webtolk\\Max\\Payload\\NewMessageBody",
+                  "properties": {
+                    "text": {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    },
+                    "attachments": {
+                      "php_type": "array",
+                      "array_kind": "list",
+                      "items": []
+                    },
+                    "notify": {
+                      "php_type": "null",
+                      "value": null
+                    },
+                    "format": {
+                      "php_type": "null",
+                      "value": null
+                    },
+                    "link": {
+                      "php_type": "null",
+                      "value": null
+                    },
+                    "isTextSet": {
+                      "php_type": "bool",
+                      "value": true
+                    },
+                    "isAttachmentsSet": {
+                      "php_type": "bool",
+                      "value": false
+                    },
+                    "isLinkSet": {
+                      "php_type": "bool",
+                      "value": false
+                    },
+                    "isNotifySet": {
+                      "php_type": "bool",
+                      "value": false
+                    },
+                    "isFormatSet": {
+                      "php_type": "bool",
+                      "value": false
+                    }
+                  }
+                },
+                "notification": {
+                  "php_type": "null",
+                  "value": null
+                }
+              }
+            },
+            {
+              "php_type": "bool",
+              "value": false
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Entity\\OperationResult",
+          "properties": {
+            "rawData": {
+              "php_type": "array",
+              "array_kind": "map",
+              "items": {
+                "success": {
+                  "php_type": "bool",
+                  "value": true
+                }
+              }
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Request\\MessageRequest",
+          "properties": {
+            "httpClient": {
+              "php_type": "object",
+              "class": "MockObject_ApiTransportInterface_c800120b"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/arguments/items/1/properties/message/properties/text/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "2b13d621d6c8f15166973dc24a5723933adaf7137e2652da34cd82b2c2c37786"
+      }
+    }
+  ]
+}

@@ -1,0 +1,682 @@
+{
+  "method": "Webtolk\\Max\\Request\\MessageRequest::listComments",
+  "declared_method": "Webtolk\\Max\\Request\\MessageRequest::listComments",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "Webtolk\\Max\\Entity\\CommentMessageList",
+  "parameters": [
+    {
+      "name": "messageId",
+      "type": "string",
+      "required": true,
+      "variadic": false
+    },
+    {
+      "name": "query",
+      "type": "?Webtolk\\Max\\Query\\CommentQuery",
+      "required": false,
+      "variadic": false
+    }
+  ],
+  "implementation_methods": [],
+  "observed_call_count": 3,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "live-guzzle",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Request\\MessageRequest::listComments",
+      "declared_method": "Webtolk\\Max\\Request\\MessageRequest::listComments",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Query\\CommentQuery",
+              "properties": {
+                "commentIds": {
+                  "php_type": "array",
+                  "array_kind": "list",
+                  "items": []
+                },
+                "before": {
+                  "php_type": "null",
+                  "value": null
+                },
+                "after": {
+                  "php_type": "null",
+                  "value": null
+                },
+                "count": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                }
+              }
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Entity\\CommentMessageList",
+          "properties": {
+            "rawData": {
+              "php_type": "array",
+              "array_kind": "map",
+              "items": {
+                "messages": {
+                  "php_type": "array",
+                  "array_kind": "list",
+                  "items": [
+                    {
+                      "php_type": "array",
+                      "array_kind": "map",
+                      "items": {
+                        "recipient": {
+                          "php_type": "array",
+                          "array_kind": "map",
+                          "items": {
+                            "chat_type": {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            },
+                            "chat_id": {
+                              "php_type": "int",
+                              "value": "XXXX"
+                            },
+                            "post_id": {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            }
+                          }
+                        },
+                        "timestamp": {
+                          "php_type": "int",
+                          "value": "XXXX"
+                        },
+                        "body": {
+                          "php_type": "array",
+                          "array_kind": "map",
+                          "items": {
+                            "mid": {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            },
+                            "seq": {
+                              "php_type": "int",
+                              "value": "XXXX"
+                            },
+                            "text": {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            }
+                          }
+                        },
+                        "sender": {
+                          "php_type": "array",
+                          "array_kind": "map",
+                          "items": {
+                            "user_id": {
+                              "php_type": "int",
+                              "value": "XXXX"
+                            },
+                            "first_name": {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            },
+                            "is_bot": {
+                              "php_type": "bool",
+                              "value": true
+                            },
+                            "username": {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            },
+                            "last_activity_time": {
+                              "php_type": "int",
+                              "value": "XXXX"
+                            },
+                            "name": {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Request\\MessageRequest",
+          "properties": {
+            "httpClient": {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Http\\PsrHttpClient",
+              "properties": {
+                "client": {
+                  "php_type": "object",
+                  "class": "Webtolk\\Max\\Tests\\Live\\RecordingClient"
+                },
+                "requestFactory": {
+                  "php_type": "object",
+                  "class": "Laminas\\Diactoros\\RequestFactory"
+                },
+                "streamFactory": {
+                  "php_type": "object",
+                  "class": "Laminas\\Diactoros\\StreamFactory"
+                },
+                "config": {
+                  "php_type": "object",
+                  "class": "Webtolk\\Max\\Config\\MaxConfig",
+                  "properties": {
+                    "token": {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    },
+                    "defaultHeaders": {
+                      "php_type": "array",
+                      "array_kind": "list",
+                      "items": []
+                    }
+                  }
+                },
+                "logger": {
+                  "php_type": "object",
+                  "class": "Psr\\Log\\NullLogger"
+                }
+              }
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/arguments/items/1/properties/count/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/rawData/items/messages/items/0/items/recipient/items/chat_type/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/messages/items/0/items/recipient/items/chat_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/rawData/items/messages/items/0/items/recipient/items/post_id/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/messages/items/0/items/timestamp/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/rawData/items/messages/items/0/items/body/items/mid/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/messages/items/0/items/body/items/seq/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/rawData/items/messages/items/0/items/body/items/text/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/messages/items/0/items/sender/items/user_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/rawData/items/messages/items/0/items/sender/items/first_name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/messages/items/0/items/sender/items/username/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/messages/items/0/items/sender/items/last_activity_time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/rawData/items/messages/items/0/items/sender/items/name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/httpClient/properties/config/properties/token/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "3bd4c005d21ce38e6957bb5b597e826655d02fdd71a5b4eac26b0f01bb60248a"
+      }
+    },
+    {
+      "phase": "live-joomla-http",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Request\\MessageRequest::listComments",
+      "declared_method": "Webtolk\\Max\\Request\\MessageRequest::listComments",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Query\\CommentQuery",
+              "properties": {
+                "commentIds": {
+                  "php_type": "array",
+                  "array_kind": "list",
+                  "items": []
+                },
+                "before": {
+                  "php_type": "null",
+                  "value": null
+                },
+                "after": {
+                  "php_type": "null",
+                  "value": null
+                },
+                "count": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                }
+              }
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Entity\\CommentMessageList",
+          "properties": {
+            "rawData": {
+              "php_type": "array",
+              "array_kind": "map",
+              "items": {
+                "messages": {
+                  "php_type": "array",
+                  "array_kind": "list",
+                  "items": [
+                    {
+                      "php_type": "array",
+                      "array_kind": "map",
+                      "items": {
+                        "recipient": {
+                          "php_type": "array",
+                          "array_kind": "map",
+                          "items": {
+                            "chat_type": {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            },
+                            "chat_id": {
+                              "php_type": "int",
+                              "value": "XXXX"
+                            },
+                            "post_id": {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            }
+                          }
+                        },
+                        "timestamp": {
+                          "php_type": "int",
+                          "value": "XXXX"
+                        },
+                        "body": {
+                          "php_type": "array",
+                          "array_kind": "map",
+                          "items": {
+                            "mid": {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            },
+                            "seq": {
+                              "php_type": "int",
+                              "value": "XXXX"
+                            },
+                            "text": {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            }
+                          }
+                        },
+                        "sender": {
+                          "php_type": "array",
+                          "array_kind": "map",
+                          "items": {
+                            "user_id": {
+                              "php_type": "int",
+                              "value": "XXXX"
+                            },
+                            "first_name": {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            },
+                            "is_bot": {
+                              "php_type": "bool",
+                              "value": true
+                            },
+                            "username": {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            },
+                            "last_activity_time": {
+                              "php_type": "int",
+                              "value": "XXXX"
+                            },
+                            "name": {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Request\\MessageRequest",
+          "properties": {
+            "httpClient": {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Http\\PsrHttpClient",
+              "properties": {
+                "client": {
+                  "php_type": "object",
+                  "class": "Webtolk\\Max\\Tests\\Live\\RecordingClient"
+                },
+                "requestFactory": {
+                  "php_type": "object",
+                  "class": "Laminas\\Diactoros\\RequestFactory"
+                },
+                "streamFactory": {
+                  "php_type": "object",
+                  "class": "Laminas\\Diactoros\\StreamFactory"
+                },
+                "config": {
+                  "php_type": "object",
+                  "class": "Webtolk\\Max\\Config\\MaxConfig",
+                  "properties": {
+                    "token": {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    },
+                    "defaultHeaders": {
+                      "php_type": "array",
+                      "array_kind": "list",
+                      "items": []
+                    }
+                  }
+                },
+                "logger": {
+                  "php_type": "object",
+                  "class": "Psr\\Log\\NullLogger"
+                }
+              }
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/arguments/items/1/properties/count/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/rawData/items/messages/items/0/items/recipient/items/chat_type/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/messages/items/0/items/recipient/items/chat_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/rawData/items/messages/items/0/items/recipient/items/post_id/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/messages/items/0/items/timestamp/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/rawData/items/messages/items/0/items/body/items/mid/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/messages/items/0/items/body/items/seq/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/rawData/items/messages/items/0/items/body/items/text/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/messages/items/0/items/sender/items/user_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/rawData/items/messages/items/0/items/sender/items/first_name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/messages/items/0/items/sender/items/username/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/messages/items/0/items/sender/items/last_activity_time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/rawData/items/messages/items/0/items/sender/items/name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/httpClient/properties/config/properties/token/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "36cdf6e1a9ae83ff83c95eb74fdf521290c31214403633ce4e67e6df5703de30"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Request\\MessageRequest::listComments",
+      "declared_method": "Webtolk\\Max\\Request\\MessageRequest::listComments",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            {
+              "php_type": "object",
+              "class": "Webtolk\\Max\\Query\\CommentQuery",
+              "properties": {
+                "commentIds": {
+                  "php_type": "array",
+                  "array_kind": "list",
+                  "items": []
+                },
+                "before": {
+                  "php_type": "null",
+                  "value": null
+                },
+                "after": {
+                  "php_type": "null",
+                  "value": null
+                },
+                "count": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                }
+              }
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Entity\\CommentMessageList",
+          "properties": {
+            "rawData": {
+              "php_type": "array",
+              "array_kind": "map",
+              "items": {
+                "messages": {
+                  "php_type": "array",
+                  "array_kind": "list",
+                  "items": [
+                    {
+                      "php_type": "array",
+                      "array_kind": "map",
+                      "items": {
+                        "body": {
+                          "php_type": "array",
+                          "array_kind": "map",
+                          "items": {
+                            "text": {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "php_type": "array",
+                      "array_kind": "map",
+                      "items": {
+                        "body": {
+                          "php_type": "array",
+                          "array_kind": "map",
+                          "items": {
+                            "text": {
+                              "php_type": "string",
+                              "value": "XXXX"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                "marker": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                }
+              }
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Request\\MessageRequest",
+          "properties": {
+            "httpClient": {
+              "php_type": "object",
+              "class": "MockObject_ApiTransportInterface_c800120b"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/arguments/items/1/properties/count/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/rawData/items/messages/items/0/items/body/items/text/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/messages/items/1/items/body/items/text/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/rawData/items/marker/value",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "4196143bb75b60d3984a9773ee188de4aa0a65756a5ff9ce9feb208e32bf7805"
+      }
+    }
+  ]
+}

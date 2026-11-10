@@ -1,0 +1,151 @@
+{
+  "method": "Webtolk\\Max\\Query\\MessageQuery::toTimestamp",
+  "declared_method": "Webtolk\\Max\\Query\\MessageQuery::toTimestamp",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "self",
+  "parameters": [
+    {
+      "name": "to",
+      "type": "int",
+      "required": true,
+      "variadic": false
+    }
+  ],
+  "implementation_methods": [],
+  "observed_call_count": 3,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Query\\MessageQuery::toTimestamp",
+      "declared_method": "Webtolk\\Max\\Query\\MessageQuery::toTimestamp",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Query\\MessageQuery",
+          "properties": {
+            "forChatSet": {
+              "php_type": "bool",
+              "value": true
+            },
+            "forMessageIdsSet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "chatId": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "messageIds": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            },
+            "from": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "to": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "count": {
+              "php_type": "null",
+              "value": null
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Query\\MessageQuery",
+          "properties": {
+            "forChatSet": {
+              "php_type": "bool",
+              "value": true
+            },
+            "forMessageIdsSet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "chatId": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "messageIds": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            },
+            "from": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "to": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "count": {
+              "php_type": "null",
+              "value": null
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/chatId/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/from/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/to/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/chatId/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/from/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/to/value",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "fa7a0c7d5b80fe255326e9ed22cccc238b4ff36562a93ec40edf21c913e9c77f"
+      }
+    }
+  ]
+}

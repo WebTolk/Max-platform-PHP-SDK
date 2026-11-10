@@ -74,7 +74,7 @@ HTTP: `PATCH /me/commands`
 
 HTTP: `GET /chats`
 
-Возвращает список чатов с optional pagination. Changelog MAX объявляет `GET /chats` неподдерживаемым с июня 2026, однако dual-transport live-проверка 2026-08-31 получила HTTP 200 и актуальный список. Для новых интеграций всё равно надёжнее сохранять `chat_id` из webhook events.
+Возвращает список чатов с optional pagination. Changelog MAX объявляет `GET /chats` неподдерживаемым с июня 2026. Исторический прогон 2026-08-31 получал HTTP 200, а проверка 2026-11-02 получила `404 method.not.found` через оба клиента. Метод сохранён для совместимости; для новых интеграций сохраняйте `chat_id` из Webhook events.
 
 Long Polling через `updates()->list()` остаётся способом читать поток updates, но официальная документация MAX отдельно указывает, что Long Polling не предназначен для получения списка чатов и каналов бота.
 
@@ -317,9 +317,14 @@ HTTP: `DELETE /chats/{chatId}/pin`
 
 HTTP: `POST /chats/{chatId}/members`
 
-Добавляет одного или нескольких пользователей в групповой чат или канал. Бот должен быть администратором с правом добавления/удаления участников.
+Добавляет пользователей в групповой чат при праве `add_remove_members`.
+Добавление подписчиков в канал этим endpoint не поддерживается. MAX объявил
+ограничение работы метода с 2026-09-09; точные условия доступности проверяйте
+по ответу провайдера. Публичная сигнатура и wire payload SDK сохранены.
 
-Schema entry: `docs/api-schemas/methods/chats.addmembers.schema.json`. Live-вызов помечен safety-guarded, потому что он меняет состав участников.
+Свежая схема: `docs/api-schemas/2026-11-02/methods/chats.addmembers.schema.json`.
+В новом прогоне выполнен отрицательный вызов с несуществующим chat ID 0;
+положительное изменение состава участников этим evidence не подтверждено.
 
 ### `removeMember(int $chatId, int $userId, ?bool $block = null): OperationResult`
 
@@ -512,7 +517,7 @@ HTTP: `GET /messages`
                 [
                   {
                     "type": "link",
-                    "url": "https://web-tolk.ru"
+                    "url": "XXXX"
                   }
                 ]
               ]
@@ -567,19 +572,17 @@ HTTP: `POST /answers?callback_id=...&disable_link_preview=...`
 
 Используется для ответа на callback-кнопку. `disable_link_preview` необязателен и при `null` не отправляется на wire.
 
-Что подтверждено:
-
-- request shape:
+Форма запроса:
 
 ```json
 {
-  "notification": "smoke callback answer"
+  "notification": "XXXX"
 }
 ```
 
 Источник request evidence: `docs/api-schemas/index.json`
 
-- успешный response example:
+Контрактная иллюстрация успешного ответа:
 
 ```json
 {
@@ -587,7 +590,7 @@ HTTP: `POST /answers?callback_id=...&disable_link_preview=...`
 }
 ```
 
-Источник: `docs/api-schemas/index.json`
+Источник иллюстрации: `docs/api-schemas/index.json`. Успешный live-ответ пока не подтверждён. В [сохранённых прогонах](../api-responses/2026-11-10/index.json) обоих транспортов наблюдался только отрицательный сценарий `negative_unissued_callback` с HTTP 400.
 
 ## `UploadModule`
 
@@ -648,6 +651,8 @@ HTTP: `GET /videos/{videoToken}`
 HTTP: binary `POST` на presigned upload URL
 
 Заливает бинарные данные на уже полученный upload endpoint.
+
+MAX ограничивает имя файла 200 символами. SDK формирует короткое multipart-имя upload с расширением по MIME-типу; произвольное пользовательское имя не принимается.
 
 Важно: метод принимает только `UploadUrl`, возвращённый `create()`. SDK валидирует upload URL и не работает с произвольной строкой URL.
 

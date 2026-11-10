@@ -1,0 +1,1034 @@
+{
+  "method": "Webtolk\\Max\\Hydration\\JsonDecoder::decode",
+  "declared_method": "Webtolk\\Max\\Hydration\\JsonDecoder::decode",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "array",
+  "parameters": [
+    {
+      "name": "response",
+      "type": "Psr\\Http\\Message\\ResponseInterface",
+      "required": true,
+      "variadic": false
+    }
+  ],
+  "implementation_methods": [],
+  "observed_call_count": 146,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "after-cleanup",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Hydration\\JsonDecoder::decode",
+      "declared_method": "Webtolk\\Max\\Hydration\\JsonDecoder::decode",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "object",
+              "class": "GuzzleHttp\\Psr7\\Response"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "map",
+          "items": {
+            "user_id": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "first_name": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "is_bot": {
+              "php_type": "bool",
+              "value": true
+            },
+            "username": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "last_activity_time": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "description": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "avatar_url": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "full_avatar_url": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "name": {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/items/user_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/items/first_name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/username/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/last_activity_time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/items/description/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/avatar_url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/full_avatar_url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/name/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "c769ac5d16bed56ac21c7b38549731ced197f5ffc98af8eda0227cb2c814124a"
+      }
+    },
+    {
+      "phase": "after-cleanup",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Hydration\\JsonDecoder::decode",
+      "declared_method": "Webtolk\\Max\\Hydration\\JsonDecoder::decode",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "object",
+              "class": "GuzzleHttp\\Psr7\\Response"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "map",
+          "items": {
+            "chat_id": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "type": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "status": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "last_event_time": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "participants_count": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "is_public": {
+              "php_type": "bool",
+              "value": false
+            },
+            "title": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "icon": {
+              "php_type": "array",
+              "array_kind": "map",
+              "items": {
+                "url": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                }
+              }
+            },
+            "owner_id": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "participants": {
+              "XXXX_1": "array",
+              "XXXX_2": "map",
+              "XXXX_3": {
+                "XXXX_1": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                },
+                "XXXX_2": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                }
+              }
+            },
+            "link": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "description": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "messages_count": {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/items/chat_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/items/type/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/status/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/last_event_time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/items/participants_count/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/items/title/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/icon/items/url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/owner_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/items/participants/XXXX_1",
+          "kind": "object_key",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/participants/XXXX_2",
+          "kind": "object_key",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/participants/XXXX_3",
+          "kind": "object_key",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/participants/XXXX_3/XXXX_1",
+          "kind": "object_key",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/participants/XXXX_3/XXXX_1/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/items/participants/XXXX_3/XXXX_2",
+          "kind": "object_key",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/participants/XXXX_3/XXXX_2/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/items/link/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/description/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/messages_count/value",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "f0c56f8202d8514f6bf8fe9577cb541b52e03706fe89a9a0c8bd73e3538a18c8"
+      }
+    },
+    {
+      "phase": "live-guzzle",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Hydration\\JsonDecoder::decode",
+      "declared_method": "Webtolk\\Max\\Hydration\\JsonDecoder::decode",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "object",
+              "class": "GuzzleHttp\\Psr7\\Response"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "map",
+          "items": {
+            "user_id": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "first_name": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "is_bot": {
+              "php_type": "bool",
+              "value": true
+            },
+            "username": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "last_activity_time": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "description": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "avatar_url": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "full_avatar_url": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "name": {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/items/user_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/items/first_name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/username/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/last_activity_time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/items/description/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/avatar_url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/full_avatar_url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/name/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "b80b32f375aa7ae9e85eba02ec5cd894f3f1aab257c00f7d1fe0b505e4fb28c2"
+      }
+    },
+    {
+      "phase": "live-guzzle",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Hydration\\JsonDecoder::decode",
+      "declared_method": "Webtolk\\Max\\Hydration\\JsonDecoder::decode",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "object",
+              "class": "GuzzleHttp\\Psr7\\Response"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "map",
+          "items": {
+            "chat_id": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "type": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "status": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "last_event_time": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "participants_count": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "is_public": {
+              "php_type": "bool",
+              "value": false
+            },
+            "title": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "icon": {
+              "php_type": "array",
+              "array_kind": "map",
+              "items": {
+                "url": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                }
+              }
+            },
+            "owner_id": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "participants": {
+              "XXXX_1": "array",
+              "XXXX_2": "map",
+              "XXXX_3": {
+                "XXXX_1": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                },
+                "XXXX_2": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                }
+              }
+            },
+            "link": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "description": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "messages_count": {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/items/chat_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/items/type/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/status/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/last_event_time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/items/participants_count/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/items/title/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/icon/items/url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/owner_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/items/participants/XXXX_1",
+          "kind": "object_key",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/participants/XXXX_2",
+          "kind": "object_key",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/participants/XXXX_3",
+          "kind": "object_key",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/participants/XXXX_3/XXXX_1",
+          "kind": "object_key",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/participants/XXXX_3/XXXX_1/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/items/participants/XXXX_3/XXXX_2",
+          "kind": "object_key",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/participants/XXXX_3/XXXX_2/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/items/link/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/description/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/messages_count/value",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "c56ae34d3b396cdc0f8456bc741e8e014a397927ff052ae35850bdc8fa48f5b5"
+      }
+    },
+    {
+      "phase": "live-joomla-http",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Hydration\\JsonDecoder::decode",
+      "declared_method": "Webtolk\\Max\\Hydration\\JsonDecoder::decode",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "object",
+              "class": "Joomla\\Http\\Response"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "map",
+          "items": {
+            "user_id": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "first_name": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "is_bot": {
+              "php_type": "bool",
+              "value": true
+            },
+            "username": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "last_activity_time": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "description": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "avatar_url": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "full_avatar_url": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "name": {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/items/user_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/items/first_name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/username/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/last_activity_time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/items/description/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/avatar_url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/full_avatar_url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/name/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "79e0c0340e274b6231b55b00003e99fb21a91f42f4dd4908947fffc3738e5eed"
+      }
+    },
+    {
+      "phase": "live-joomla-http",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Hydration\\JsonDecoder::decode",
+      "declared_method": "Webtolk\\Max\\Hydration\\JsonDecoder::decode",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "object",
+              "class": "Joomla\\Http\\Response"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "map",
+          "items": {
+            "chat_id": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "type": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "status": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "last_event_time": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "participants_count": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "is_public": {
+              "php_type": "bool",
+              "value": false
+            },
+            "title": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "icon": {
+              "php_type": "array",
+              "array_kind": "map",
+              "items": {
+                "url": {
+                  "php_type": "string",
+                  "value": "XXXX"
+                }
+              }
+            },
+            "owner_id": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "participants": {
+              "XXXX_1": "array",
+              "XXXX_2": "map",
+              "XXXX_3": {
+                "XXXX_1": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                },
+                "XXXX_2": {
+                  "php_type": "int",
+                  "value": "XXXX"
+                }
+              }
+            },
+            "link": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "description": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "messages_count": {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/items/chat_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/items/type/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/status/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/last_event_time/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/items/participants_count/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/items/title/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/icon/items/url/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/owner_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/items/participants/XXXX_1",
+          "kind": "object_key",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/participants/XXXX_2",
+          "kind": "object_key",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/participants/XXXX_3",
+          "kind": "object_key",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/participants/XXXX_3/XXXX_1",
+          "kind": "object_key",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/participants/XXXX_3/XXXX_1/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/items/participants/XXXX_3/XXXX_2",
+          "kind": "object_key",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/participants/XXXX_3/XXXX_2/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/items/link/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/description/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/messages_count/value",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "a06eb7bf068ccc35f27eca387d4b095c55b2fbb461a6f206f4f3c59bb78c830e"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Hydration\\JsonDecoder::decode",
+      "declared_method": "Webtolk\\Max\\Hydration\\JsonDecoder::decode",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "object",
+              "class": "MockObject_ResponseInterface_a070bb95"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "map",
+          "items": {
+            "ok": {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/items/ok/value",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "d2110a244c1c6881de8599c8a6e75fcdb70554b3d3669de6dba298b74cd0de7d"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Hydration\\JsonDecoder::decode",
+      "declared_method": "Webtolk\\Max\\Hydration\\JsonDecoder::decode",
+      "outcome": "threw",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "object",
+              "class": "MockObject_ResponseInterface_a070bb95"
+            }
+          ]
+        },
+        "exception": {
+          "class": "Webtolk\\Max\\Exception\\HydrationException",
+          "message": "XXXX",
+          "code": "XXXX"
+        }
+      },
+      "redactions": [
+        {
+          "path": "/exception/message",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/exception/code",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "33e22d8e5d3df3ed89ee79cdcd69a1461309ba2cca16f0f314ecca7524330140"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Hydration\\JsonDecoder::decode",
+      "declared_method": "Webtolk\\Max\\Hydration\\JsonDecoder::decode",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "object",
+              "class": "MockObject_ResponseInterface_a070bb95"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "map",
+          "items": {
+            "user_id": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "first_name": {
+              "php_type": "string",
+              "value": "XXXX"
+            },
+            "is_bot": {
+              "php_type": "bool",
+              "value": true
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/items/user_id/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/items/first_name/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "b4ca3bfd292443f476bf886056645acf444c0221fd683a38c7e2e02e4a847eb8"
+      }
+    }
+  ]
+}

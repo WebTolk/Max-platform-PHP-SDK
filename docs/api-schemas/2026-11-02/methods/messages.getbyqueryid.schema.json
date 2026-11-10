@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:webtolk:max:0.4.0:methods:messages.getByQueryId",
+  "title": "messages.getByQueryId observed MAX JSON responses",
+  "description": "Only captured shapes are described. Optional or unobserved variants may exist.",
+  "type": "object",
+  "properties": {
+    "messages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "recipient": {
+            "type": "object",
+            "properties": {
+              "chat_type": {
+                "type": "string"
+              },
+              "chat_id": {
+                "type": "integer"
+              }
+            },
+            "additionalProperties": true,
+            "required": [
+              "chat_id",
+              "chat_type"
+            ]
+          },
+          "timestamp": {
+            "type": "integer"
+          },
+          "body": {
+            "type": "object",
+            "properties": {
+              "mid": {
+                "type": "string"
+              },
+              "seq": {
+                "type": "integer"
+              },
+              "text": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true,
+            "required": [
+              "mid",
+              "seq",
+              "text"
+            ]
+          },
+          "sender": {
+            "type": "object",
+            "properties": {
+              "user_id": {
+                "type": "integer"
+              },
+              "first_name": {
+                "type": "string"
+              },
+              "is_bot": {
+                "type": "boolean"
+              },
+              "username": {
+                "type": "string"
+              },
+              "last_activity_time": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true,
+            "required": [
+              "first_name",
+              "is_bot",
+              "last_activity_time",
+              "name",
+              "user_id",
+              "username"
+            ]
+          }
+        },
+        "additionalProperties": true,
+        "required": [
+          "body",
+          "recipient",
+          "sender",
+          "timestamp"
+        ]
+      }
+    }
+  },
+  "additionalProperties": true,
+  "required": [
+    "messages"
+  ],
+  "x-live-observations": [
+    {
+      "transport": "guzzle",
+      "dataset": "main",
+      "case": "messages.getByQueryId",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "621c1d9cea4b9b20e3445b4d11b471b66bd83715cb5cc55d1f01fa4b5017076c"
+    },
+    {
+      "transport": "joomla-http",
+      "dataset": "main",
+      "case": "messages.getByQueryId",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "f8656d59ad8926eff1fb181b0d69c1205efa32784f60657d411fdba3d362526e"
+    }
+  ]
+}

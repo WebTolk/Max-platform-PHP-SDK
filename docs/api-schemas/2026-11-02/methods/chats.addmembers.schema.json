@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:webtolk:max:0.4.0:methods:chats.addMembers",
+  "title": "chats.addMembers observed MAX JSON responses",
+  "description": "Only captured shapes are described. Optional or unobserved variants may exist.",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true,
+  "required": [
+    "code",
+    "message"
+  ],
+  "x-live-observations": [
+    {
+      "transport": "guzzle",
+      "dataset": "main",
+      "case": "chats.addMembers",
+      "scenario": "negative_invalid_chat",
+      "outcome": "api_error",
+      "http_status": 400,
+      "raw_body_sha256": "5a5e35a343057e98eef95120326c160a125fdb0d0df138a9667c432cc4f869cf"
+    },
+    {
+      "transport": "joomla-http",
+      "dataset": "main",
+      "case": "chats.addMembers",
+      "scenario": "negative_invalid_chat",
+      "outcome": "api_error",
+      "http_status": 400,
+      "raw_body_sha256": "5a5e35a343057e98eef95120326c160a125fdb0d0df138a9667c432cc4f869cf"
+    }
+  ]
+}

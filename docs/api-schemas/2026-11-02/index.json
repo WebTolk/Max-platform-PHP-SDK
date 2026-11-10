@@ -1,0 +1,1573 @@
+{
+  "sdk_version": "0.4.0",
+  "release_status": "local_candidate",
+  "capture_date": "2026-11-02",
+  "knowledge_package": "rest-api.documentation 1.1.0",
+  "test_stand": "joomla.local",
+  "transports": [
+    "guzzle",
+    "joomla-http"
+  ],
+  "tls_verification": false,
+  "tls_override": "explicit_operator_instruction",
+  "scope": "Observed JSON response bodies, including intentional error paths; not an exhaustive provider specification.",
+  "privacy": "Schemas contain no response values. Identifier-shaped object keys use patternProperties. Real response bodies remain private.",
+  "methods": {
+    "bots.me": {
+      "schema": "methods/bots.me.schema.json",
+      "positive_observed": true,
+      "observation_count": 2,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "bots.me",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "bef49bbcf1f0440647fbf29ec18cb59a126685e77c3823d2b2496e5fe299f687"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "bots.me",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "c9f77885680792fb3eb2a5aabbe244ce31a1e1265447d7acc3d0e96b69172a83"
+        }
+      ]
+    },
+    "bots.updateCommands": {
+      "schema": "methods/bots.updatecommands.schema.json",
+      "positive_observed": true,
+      "observation_count": 2,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "bots.updateCommands",
+          "scenario": "same_observed_commands",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "bots.updateCommands",
+          "scenario": "same_observed_commands",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+        }
+      ]
+    },
+    "chats.addAdmins": {
+      "schema": "methods/chats.addadmins.schema.json",
+      "positive_observed": false,
+      "observation_count": 2,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "chats.addAdmins",
+          "scenario": "negative_invalid_chat",
+          "outcome": "api_error",
+          "http_status": 400,
+          "raw_body_sha256": "1a1492085aa3eeeab7bf7cd32185d5bee9b2be9141f8c76a74ffe998b1553085"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "chats.addAdmins",
+          "scenario": "negative_invalid_chat",
+          "outcome": "api_error",
+          "http_status": 400,
+          "raw_body_sha256": "1a1492085aa3eeeab7bf7cd32185d5bee9b2be9141f8c76a74ffe998b1553085"
+        }
+      ]
+    },
+    "chats.addMembers": {
+      "schema": "methods/chats.addmembers.schema.json",
+      "positive_observed": false,
+      "observation_count": 2,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "chats.addMembers",
+          "scenario": "negative_invalid_chat",
+          "outcome": "api_error",
+          "http_status": 400,
+          "raw_body_sha256": "5a5e35a343057e98eef95120326c160a125fdb0d0df138a9667c432cc4f869cf"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "chats.addMembers",
+          "scenario": "negative_invalid_chat",
+          "outcome": "api_error",
+          "http_status": 400,
+          "raw_body_sha256": "5a5e35a343057e98eef95120326c160a125fdb0d0df138a9667c432cc4f869cf"
+        }
+      ]
+    },
+    "chats.admins": {
+      "schema": "methods/chats.admins.schema.json",
+      "positive_observed": true,
+      "observation_count": 2,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "chats.admins",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "9878dd08b66d56342b3d2852d7f8079d04c5b88837440d3dc97cf7b732c5c44f"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "chats.admins",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "ce2ce1f1a20fe010ced456bbf485575ffb1a236e00c102e3852be61598ff9987"
+        }
+      ]
+    },
+    "chats.delete": {
+      "schema": "methods/chats.delete.schema.json",
+      "positive_observed": false,
+      "observation_count": 2,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "chats.delete",
+          "scenario": "negative_invalid_chat",
+          "outcome": "operation_rejected",
+          "http_status": 200,
+          "raw_body_sha256": "a6f64fe98d6613e994275472a04fc3b80a18c67b55f3db1639417af000495319"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "chats.delete",
+          "scenario": "negative_invalid_chat",
+          "outcome": "operation_rejected",
+          "http_status": 200,
+          "raw_body_sha256": "a6f64fe98d6613e994275472a04fc3b80a18c67b55f3db1639417af000495319"
+        }
+      ]
+    },
+    "chats.getById": {
+      "schema": "methods/chats.getbyid.schema.json",
+      "positive_observed": true,
+      "observation_count": 8,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "chats.getById",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "60167be44a9aebf2d9ebde82587bf0c473a5426bc141b1803fee73131cafefae"
+        },
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "chats.getById.testChannel",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "275cdc41ffdaa83454142195699e210aa85cebe27be299c7516f0611dcf04fcc"
+        },
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "chats.getById.afterCleanup",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "1d712e53ee8fba63723896574249e340ab64172a67ba4720a997c03f3757c3c0"
+        },
+        {
+          "transport": "guzzle",
+          "dataset": "comments",
+          "case": "chats.getById.testChannel",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "275cdc41ffdaa83454142195699e210aa85cebe27be299c7516f0611dcf04fcc"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "chats.getById",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "1d712e53ee8fba63723896574249e340ab64172a67ba4720a997c03f3757c3c0"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "chats.getById.testChannel",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "275cdc41ffdaa83454142195699e210aa85cebe27be299c7516f0611dcf04fcc"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "chats.getById.afterCleanup",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "45a9571c6ef976b53d6189ae11543b6500f78bc6bb7faace37de1830f4bfd45c"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "comments",
+          "case": "chats.getById.testChannel",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "275cdc41ffdaa83454142195699e210aa85cebe27be299c7516f0611dcf04fcc"
+        }
+      ]
+    },
+    "chats.getByLink": {
+      "schema": "methods/chats.getbylink.schema.json",
+      "positive_observed": false,
+      "observation_count": 2,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "chats.getByLink",
+          "scenario": "legacy_endpoint",
+          "outcome": "api_error",
+          "http_status": 404,
+          "raw_body_sha256": "d5750bd40fc915e3c2ef3b2918056926456f6f550c5edd35aad357f92e349067"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "chats.getByLink",
+          "scenario": "legacy_endpoint",
+          "outcome": "api_error",
+          "http_status": 404,
+          "raw_body_sha256": "d5750bd40fc915e3c2ef3b2918056926456f6f550c5edd35aad357f92e349067"
+        }
+      ]
+    },
+    "chats.getPinnedMessage": {
+      "schema": "methods/chats.getpinnedmessage.schema.json",
+      "positive_observed": true,
+      "observation_count": 2,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "chats.getPinnedMessage",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "chats.getPinnedMessage",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+        }
+      ]
+    },
+    "chats.leave": {
+      "schema": "methods/chats.leave.schema.json",
+      "positive_observed": false,
+      "observation_count": 2,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "chats.leave",
+          "scenario": "negative_invalid_chat",
+          "outcome": "api_error",
+          "http_status": 400,
+          "raw_body_sha256": "1a1492085aa3eeeab7bf7cd32185d5bee9b2be9141f8c76a74ffe998b1553085"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "chats.leave",
+          "scenario": "negative_invalid_chat",
+          "outcome": "api_error",
+          "http_status": 400,
+          "raw_body_sha256": "1a1492085aa3eeeab7bf7cd32185d5bee9b2be9141f8c76a74ffe998b1553085"
+        }
+      ]
+    },
+    "chats.list": {
+      "schema": "methods/chats.list.schema.json",
+      "positive_observed": false,
+      "observation_count": 2,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "chats.list",
+          "scenario": "legacy_endpoint",
+          "outcome": "api_error",
+          "http_status": 404,
+          "raw_body_sha256": "5b514d40dccd66a00eb4c5597413197668eb02f9718943576235435c92715788"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "chats.list",
+          "scenario": "legacy_endpoint",
+          "outcome": "api_error",
+          "http_status": 404,
+          "raw_body_sha256": "5b514d40dccd66a00eb4c5597413197668eb02f9718943576235435c92715788"
+        }
+      ]
+    },
+    "chats.memberMe": {
+      "schema": "methods/chats.memberme.schema.json",
+      "positive_observed": true,
+      "observation_count": 2,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "chats.memberMe",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "5be28f80a438b8b32d61f6e23571eee8870eccef45acd27aaf16e2d7d24a0668"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "chats.memberMe",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "4b81ca648285326dbc48fd8079498559e4a21a43c2f95ebd863db98e1ddf749a"
+        }
+      ]
+    },
+    "chats.members": {
+      "schema": "methods/chats.members.schema.json",
+      "positive_observed": true,
+      "observation_count": 2,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "chats.members",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "9e13c92a49f021bc97a0f55d8820af7d503341d3192fde0c31b8c3896f66b965"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "chats.members",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "2561e0eb4f96d3b3507fa35f14c6c5f24b73497a62bc66adaba47c211c2c2279"
+        }
+      ]
+    },
+    "chats.pin": {
+      "schema": "methods/chats.pin.schema.json",
+      "positive_observed": true,
+      "observation_count": 2,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "chats.pin",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "chats.pin",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+        }
+      ]
+    },
+    "chats.removeAdmin": {
+      "schema": "methods/chats.removeadmin.schema.json",
+      "positive_observed": false,
+      "observation_count": 2,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "chats.removeAdmin",
+          "scenario": "negative_invalid_chat",
+          "outcome": "api_error",
+          "http_status": 404,
+          "raw_body_sha256": "d5750bd40fc915e3c2ef3b2918056926456f6f550c5edd35aad357f92e349067"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "chats.removeAdmin",
+          "scenario": "negative_invalid_chat",
+          "outcome": "api_error",
+          "http_status": 404,
+          "raw_body_sha256": "d5750bd40fc915e3c2ef3b2918056926456f6f550c5edd35aad357f92e349067"
+        }
+      ]
+    },
+    "chats.removeMember": {
+      "schema": "methods/chats.removemember.schema.json",
+      "positive_observed": false,
+      "observation_count": 2,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "chats.removeMember",
+          "scenario": "negative_invalid_chat",
+          "outcome": "api_error",
+          "http_status": 400,
+          "raw_body_sha256": "1a1492085aa3eeeab7bf7cd32185d5bee9b2be9141f8c76a74ffe998b1553085"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "chats.removeMember",
+          "scenario": "negative_invalid_chat",
+          "outcome": "api_error",
+          "http_status": 400,
+          "raw_body_sha256": "1a1492085aa3eeeab7bf7cd32185d5bee9b2be9141f8c76a74ffe998b1553085"
+        }
+      ]
+    },
+    "chats.sendAction": {
+      "schema": "methods/chats.sendaction.schema.json",
+      "positive_observed": true,
+      "observation_count": 2,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "chats.sendAction",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "chats.sendAction",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+        }
+      ]
+    },
+    "chats.unpin": {
+      "schema": "methods/chats.unpin.schema.json",
+      "positive_observed": true,
+      "observation_count": 2,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "chats.unpin",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "chats.unpin",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+        }
+      ]
+    },
+    "chats.update": {
+      "schema": "methods/chats.update.schema.json",
+      "positive_observed": true,
+      "observation_count": 2,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "chats.update",
+          "scenario": "same_observed_settings",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "b2e192237318f2cb52a614bca78a55a98fd91946750db2e8a39b8d04bb0834ab"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "chats.update",
+          "scenario": "same_observed_settings",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "4aa4806c81fb30a019087d399cb89ee7be8e9b09206c0d739b84f13d797e86f0"
+        }
+      ]
+    },
+    "messages.answerCallback": {
+      "schema": "methods/messages.answercallback.schema.json",
+      "positive_observed": false,
+      "observation_count": 2,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "messages.answerCallback",
+          "scenario": "negative_unissued_callback",
+          "outcome": "api_error",
+          "http_status": 400,
+          "raw_body_sha256": "db7fe35ac9997a0fe58a2238b4e63e43b23ff87b3725c61ea28cae036c9a7aaf"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "messages.answerCallback",
+          "scenario": "negative_unissued_callback",
+          "outcome": "api_error",
+          "http_status": 400,
+          "raw_body_sha256": "db7fe35ac9997a0fe58a2238b4e63e43b23ff87b3725c61ea28cae036c9a7aaf"
+        }
+      ]
+    },
+    "messages.delete": {
+      "schema": "methods/messages.delete.schema.json",
+      "positive_observed": true,
+      "observation_count": 10,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "messages.delete",
+          "scenario": "cleanup",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+        },
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "messages.delete.cleanup1",
+          "scenario": "cleanup",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+        },
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "messages.delete.cleanup2",
+          "scenario": "cleanup",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+        },
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "messages.delete.cleanup3",
+          "scenario": "cleanup",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+        },
+        {
+          "transport": "guzzle",
+          "dataset": "comments",
+          "case": "messages.delete.parent",
+          "scenario": "cleanup",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "messages.delete",
+          "scenario": "cleanup",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "messages.delete.cleanup1",
+          "scenario": "cleanup",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "messages.delete.cleanup2",
+          "scenario": "cleanup",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "messages.delete.cleanup3",
+          "scenario": "cleanup",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "comments",
+          "case": "messages.delete.parent",
+          "scenario": "cleanup",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+        }
+      ]
+    },
+    "messages.deleteComment": {
+      "schema": "methods/messages.deletecomment.schema.json",
+      "positive_observed": true,
+      "observation_count": 4,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "messages.deleteComment",
+          "scenario": "negative_unissued_comment",
+          "outcome": "api_error",
+          "http_status": 400,
+          "raw_body_sha256": "6b7ef6bd610d0c355aa4cdd7a74ce3661a4a02a7ea724afe3183770d10afae70"
+        },
+        {
+          "transport": "guzzle",
+          "dataset": "comments",
+          "case": "messages.deleteComment",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "messages.deleteComment",
+          "scenario": "negative_unissued_comment",
+          "outcome": "api_error",
+          "http_status": 400,
+          "raw_body_sha256": "a3863a68e0851a8d244d2708452d9834f167945bddc11bc26a6f3786c6da69dd"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "comments",
+          "case": "messages.deleteComment",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+        }
+      ]
+    },
+    "messages.edit": {
+      "schema": "methods/messages.edit.schema.json",
+      "positive_observed": true,
+      "observation_count": 2,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "messages.edit",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "messages.edit",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+        }
+      ]
+    },
+    "messages.editComment": {
+      "schema": "methods/messages.editcomment.schema.json",
+      "positive_observed": true,
+      "observation_count": 4,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "messages.editComment",
+          "scenario": "negative_unissued_comment",
+          "outcome": "api_error",
+          "http_status": 400,
+          "raw_body_sha256": "6b7ef6bd610d0c355aa4cdd7a74ce3661a4a02a7ea724afe3183770d10afae70"
+        },
+        {
+          "transport": "guzzle",
+          "dataset": "comments",
+          "case": "messages.editComment",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "messages.editComment",
+          "scenario": "negative_unissued_comment",
+          "outcome": "api_error",
+          "http_status": 400,
+          "raw_body_sha256": "a3863a68e0851a8d244d2708452d9834f167945bddc11bc26a6f3786c6da69dd"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "comments",
+          "case": "messages.editComment",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+        }
+      ]
+    },
+    "messages.getById": {
+      "schema": "methods/messages.getbyid.schema.json",
+      "positive_observed": true,
+      "observation_count": 2,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "messages.getById",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "d4317f702a36b9afbbd9a5bd51f9218661c703687acd87bcf599e5842783994e"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "messages.getById",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "c55ed9dd095e5d786a2977eac9947efed92b86218d221534d38f4291b984102d"
+        }
+      ]
+    },
+    "messages.getByQueryId": {
+      "schema": "methods/messages.getbyqueryid.schema.json",
+      "positive_observed": true,
+      "observation_count": 2,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "messages.getByQueryId",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "621c1d9cea4b9b20e3445b4d11b471b66bd83715cb5cc55d1f01fa4b5017076c"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "messages.getByQueryId",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "f8656d59ad8926eff1fb181b0d69c1205efa32784f60657d411fdba3d362526e"
+        }
+      ]
+    },
+    "messages.getComment": {
+      "schema": "methods/messages.getcomment.schema.json",
+      "positive_observed": true,
+      "observation_count": 6,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "messages.getComment",
+          "scenario": "negative_unissued_comment",
+          "outcome": "api_error",
+          "http_status": 400,
+          "raw_body_sha256": "6b7ef6bd610d0c355aa4cdd7a74ce3661a4a02a7ea724afe3183770d10afae70"
+        },
+        {
+          "transport": "guzzle",
+          "dataset": "comments",
+          "case": "messages.getComment",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "9048f2967ff0fb3f21273b795ad80129080044e50de011ea642a7f0f42429403"
+        },
+        {
+          "transport": "guzzle",
+          "dataset": "comments",
+          "case": "messages.getComment.afterEdit",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "3f49d7b2cf7efc512c0a96f710103f7228bd214994116af4004079f1a12bebb6"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "messages.getComment",
+          "scenario": "negative_unissued_comment",
+          "outcome": "api_error",
+          "http_status": 400,
+          "raw_body_sha256": "a3863a68e0851a8d244d2708452d9834f167945bddc11bc26a6f3786c6da69dd"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "comments",
+          "case": "messages.getComment",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "211c34e27760a60adc423fad4c866c496aa0ea947e5c52b9766d607bd779ae17"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "comments",
+          "case": "messages.getComment.afterEdit",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "43030398bee61966e4c71a50fd7cb53cab3bce7b31ebe00891aaf7b342ff95e9"
+        }
+      ]
+    },
+    "messages.list": {
+      "schema": "methods/messages.list.schema.json",
+      "positive_observed": true,
+      "observation_count": 2,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "messages.list",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "f372202ef78b966c8934007cd39d8fa30b948896ac9c2547e16b35d3c98d9fea"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "messages.list",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "84377213dc60fa66dceef1cc7a8487f48354d7aebe529488b058abcb8df5587e"
+        }
+      ]
+    },
+    "messages.listComments": {
+      "schema": "methods/messages.listcomments.schema.json",
+      "positive_observed": true,
+      "observation_count": 6,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "messages.listComments",
+          "scenario": "positive",
+          "outcome": "api_error",
+          "http_status": 404,
+          "raw_body_sha256": "9c09d11e71c89ff6306625842197831965aa2dec6ca3626723db8ce0444e5acf"
+        },
+        {
+          "transport": "guzzle",
+          "dataset": "comments",
+          "case": "messages.listComments",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "33b90bf695c4d4341a704d44a375e082ef77056cf67ebfcac47b09dd8369306b"
+        },
+        {
+          "transport": "guzzle",
+          "dataset": "comments",
+          "case": "messages.listComments.afterDelete",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "5e4ce7b36ba37b78a5d5f9fd08e6b7b54ba6879d651aa46ec9e1d6fa24ebe30a"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "messages.listComments",
+          "scenario": "positive",
+          "outcome": "api_error",
+          "http_status": 404,
+          "raw_body_sha256": "9c09d11e71c89ff6306625842197831965aa2dec6ca3626723db8ce0444e5acf"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "comments",
+          "case": "messages.listComments",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "dfa2e6961bc1c40b3ad3b8783727e7276e55f90da274bbfe7fe1c2f2a3c42014"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "comments",
+          "case": "messages.listComments.afterDelete",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "5e4ce7b36ba37b78a5d5f9fd08e6b7b54ba6879d651aa46ec9e1d6fa24ebe30a"
+        }
+      ]
+    },
+    "messages.sendComment": {
+      "schema": "methods/messages.sendcomment.schema.json",
+      "positive_observed": true,
+      "observation_count": 4,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "messages.sendComment",
+          "scenario": "positive",
+          "outcome": "api_error",
+          "http_status": 404,
+          "raw_body_sha256": "9c09d11e71c89ff6306625842197831965aa2dec6ca3626723db8ce0444e5acf"
+        },
+        {
+          "transport": "guzzle",
+          "dataset": "comments",
+          "case": "messages.sendComment",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "2e31c25b41183312138e958d919dc609c53b3525de6892063fa5b25bc2fbd452"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "messages.sendComment",
+          "scenario": "positive",
+          "outcome": "api_error",
+          "http_status": 404,
+          "raw_body_sha256": "9c09d11e71c89ff6306625842197831965aa2dec6ca3626723db8ce0444e5acf"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "comments",
+          "case": "messages.sendComment",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "cbb7c4127023ef228e1be8d209d12d4f4d00e34bbe91962cdf23c55bc27b717e"
+        }
+      ]
+    },
+    "messages.sendToChat": {
+      "schema": "methods/messages.sendtochat.schema.json",
+      "positive_observed": true,
+      "observation_count": 10,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "messages.sendToChat",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "200bb51f48275abb241623d9861e9f8ea73a3954340267b1d654fd709c539ab2"
+        },
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "messages.sendToChat.keyboard",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "eaa0c3eae775dabec95970ed46d5117d4f0e572da611c7e0ef9b50f38b1045a6"
+        },
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "messages.sendToChat.file",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "5c5640b9eaa39a23bde354efc0121622c96fe018dd1fe3659d93a5dc35c04ea0"
+        },
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "messages.sendToChat.commentParent",
+          "scenario": "positive",
+          "outcome": "api_error",
+          "http_status": 400,
+          "raw_body_sha256": "6f21b082e482ded32f4607e62a9af0aba8319923b0f4441f06fc29125bdcea0b"
+        },
+        {
+          "transport": "guzzle",
+          "dataset": "comments",
+          "case": "messages.sendToChat.commentParent",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "63b3004070b40293d3e625997a01661f426ef71684d427b097b05f48e1d22d41"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "messages.sendToChat",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "69b337382c0b5aad2af07ddce1170d967073f3874022ee6feb555ad478e825ed"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "messages.sendToChat.keyboard",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "2521aadabff507f6fa82681c512850c94f4c7e9d0053fd5998dd2a93fb54d720"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "messages.sendToChat.file",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "66e82ad97ab9cb4126c70b1613438a7531e8db5a4a05f5efa4816f39d1e0f01c"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "messages.sendToChat.commentParent",
+          "scenario": "positive",
+          "outcome": "api_error",
+          "http_status": 400,
+          "raw_body_sha256": "6f21b082e482ded32f4607e62a9af0aba8319923b0f4441f06fc29125bdcea0b"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "comments",
+          "case": "messages.sendToChat.commentParent",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "141dac402c615811419ec5afafdaef4141414022686c02e0cd177774a1c9b9bb"
+        }
+      ]
+    },
+    "messages.sendToUser": {
+      "schema": "methods/messages.sendtouser.schema.json",
+      "positive_observed": true,
+      "observation_count": 2,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "messages.sendToUser",
+          "scenario": "observed_test_chat_owner",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "059bb1a309cf12bbc061c8e065d74c205a1ca04c4dc99f21c9fa3bcb0e1ebddf"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "messages.sendToUser",
+          "scenario": "observed_test_chat_owner",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "f13717eb93d25f696b9c8b4383d83b36ca6146585761b29875f17d997f561147"
+        }
+      ]
+    },
+    "subscriptions.create": {
+      "schema": "methods/subscriptions.create.schema.json",
+      "positive_observed": true,
+      "observation_count": 2,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "subscriptions.create",
+          "scenario": "owned_local_webhook_registration",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "subscriptions.create",
+          "scenario": "owned_local_webhook_registration",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+        }
+      ]
+    },
+    "subscriptions.delete": {
+      "schema": "methods/subscriptions.delete.schema.json",
+      "positive_observed": true,
+      "observation_count": 4,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "subscriptions.delete",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+        },
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "subscriptions.delete.cleanup",
+          "scenario": "cleanup",
+          "outcome": "operation_rejected",
+          "http_status": 200,
+          "raw_body_sha256": "5f52ec096d123d4db6bc8febf717234bc21dadec18502a6692ecc04baf5519d7"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "subscriptions.delete",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "subscriptions.delete.cleanup",
+          "scenario": "cleanup",
+          "outcome": "operation_rejected",
+          "http_status": 200,
+          "raw_body_sha256": "e7d4f73b531ec2a7829b47b81bea086b6f5ddf9a9347ce4b33e83eb4438cf564"
+        }
+      ]
+    },
+    "subscriptions.list": {
+      "schema": "methods/subscriptions.list.schema.json",
+      "positive_observed": true,
+      "observation_count": 6,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "subscriptions.list",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "5895ce2600c871a718b46e3cb66bc4bffe891dd9c2cf10f5c01032c7bb23c684"
+        },
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "subscriptions.list.afterCreate",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "10c0659d7a61c1e155af744491bf3b93ff87745678f9d03f346897eea7f2525d"
+        },
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "subscriptions.list.afterCleanup",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "5895ce2600c871a718b46e3cb66bc4bffe891dd9c2cf10f5c01032c7bb23c684"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "subscriptions.list",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "5895ce2600c871a718b46e3cb66bc4bffe891dd9c2cf10f5c01032c7bb23c684"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "subscriptions.list.afterCreate",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "4812937a0cda4bebd9bd89ec0bb1cc811023cbe22bbce377b49761f2b9f8096b"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "subscriptions.list.afterCleanup",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "5895ce2600c871a718b46e3cb66bc4bffe891dd9c2cf10f5c01032c7bb23c684"
+        }
+      ]
+    },
+    "updates.list": {
+      "schema": "methods/updates.list.schema.json",
+      "positive_observed": true,
+      "observation_count": 2,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "updates.list",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "355624e94ce27ee11bac708f558dd2ec7a488c473e9f4f7c66b5f2403cd4cdd2"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "updates.list",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "bd470b1aab1af81771a28276fe4953172ee63b4df029eb0cdcb864ed27c52957"
+        }
+      ]
+    },
+    "uploads.create": {
+      "schema": "methods/uploads.create.schema.json",
+      "positive_observed": true,
+      "observation_count": 4,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "uploads.create",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "0596fa28f7b17f08a102e7c5b50a0a18672d4e398e8efa1b4a87d2cf9d0fe50e"
+        },
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "uploads.create.video",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "fab8edf6293cd83b883173c42e210d1ebdfb493dad930ab242f3b9d2dbf8a228"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "uploads.create",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "0f3b56313e50637bd23f8b471ec0eb77e08eed63f1e28f248faf881e96ece0a9"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "uploads.create.video",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "5e222485186399c967de74820c8703b4d23dc32bd065a49d8f6f7fe1368c90cc"
+        }
+      ]
+    },
+    "uploads.getVideo": {
+      "schema": "methods/uploads.getvideo.schema.json",
+      "positive_observed": true,
+      "observation_count": 2,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "uploads.getVideo",
+          "scenario": "reserved_video_token",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "e3042886129cc25cd83d237eb11ad9639a158f78161533061fa199036c7c7754"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "uploads.getVideo",
+          "scenario": "reserved_video_token",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "2dccff594dfc46548481896323ceb0cf4e1f6259818a1d399b8679df1c842192"
+        }
+      ]
+    },
+    "uploads.pushBinary": {
+      "schema": "methods/uploads.pushbinary.schema.json",
+      "positive_observed": true,
+      "observation_count": 2,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "uploads.pushBinary",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "5225715768d6b1d357a6afce7c7b31b2317f5c0448a21891e64c679c1ea64e11"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "uploads.pushBinary",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "5260322bdc082e02753ab5c8e7de0974fce184c8eca1399cf95b3d33d70d44a9"
+        }
+      ]
+    },
+    "uploads.upload": {
+      "schema": "methods/uploads.upload.schema.json",
+      "positive_observed": true,
+      "observation_count": 2,
+      "transports": [
+        "guzzle",
+        "joomla-http"
+      ],
+      "observations": [
+        {
+          "transport": "guzzle",
+          "dataset": "main",
+          "case": "uploads.upload",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "a54467b58a5949e7ee43fadb509eb4f8ff4fefec154c60759a223a6ddfe6fc54"
+        },
+        {
+          "transport": "joomla-http",
+          "dataset": "main",
+          "case": "uploads.upload",
+          "scenario": "positive",
+          "outcome": "success",
+          "http_status": 200,
+          "raw_body_sha256": "29acd81e3ac42e375b63ea70bf7f170fa82c9f51636f232ef50ebfcc9205d42f"
+        }
+      ]
+    }
+  }
+}

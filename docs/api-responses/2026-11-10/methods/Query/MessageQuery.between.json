@@ -1,0 +1,166 @@
+{
+  "method": "Webtolk\\Max\\Query\\MessageQuery::between",
+  "declared_method": "Webtolk\\Max\\Query\\MessageQuery::between",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "self",
+  "parameters": [
+    {
+      "name": "from",
+      "type": "int",
+      "required": true,
+      "variadic": false
+    },
+    {
+      "name": "to",
+      "type": "int",
+      "required": true,
+      "variadic": false
+    }
+  ],
+  "implementation_methods": [],
+  "observed_call_count": 1,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Query\\MessageQuery::between",
+      "declared_method": "Webtolk\\Max\\Query\\MessageQuery::between",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Query\\MessageQuery",
+          "properties": {
+            "forChatSet": {
+              "php_type": "bool",
+              "value": true
+            },
+            "forMessageIdsSet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "chatId": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "messageIds": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            },
+            "from": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "to": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "count": {
+              "php_type": "null",
+              "value": null
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Query\\MessageQuery",
+          "properties": {
+            "forChatSet": {
+              "php_type": "bool",
+              "value": true
+            },
+            "forMessageIdsSet": {
+              "php_type": "bool",
+              "value": false
+            },
+            "chatId": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "messageIds": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            },
+            "from": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "to": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "count": {
+              "php_type": "null",
+              "value": null
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/arguments/items/1/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/chatId/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/from/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/to/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/chatId/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/from/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/receiver_after/properties/to/value",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "263d6e3fbed80b9c3741721d07500e5fbb7dba77c70421f67d591d80003d1537"
+      }
+    }
+  ]
+}

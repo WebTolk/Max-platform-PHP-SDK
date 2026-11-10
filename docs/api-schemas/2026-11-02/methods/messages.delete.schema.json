@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:webtolk:max:0.4.0:methods:messages.delete",
+  "title": "messages.delete observed MAX JSON responses",
+  "description": "Only captured shapes are described. Optional or unobserved variants may exist.",
+  "type": "object",
+  "properties": {
+    "success": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": true,
+  "required": [
+    "success"
+  ],
+  "x-live-observations": [
+    {
+      "transport": "guzzle",
+      "dataset": "main",
+      "case": "messages.delete",
+      "scenario": "cleanup",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+    },
+    {
+      "transport": "guzzle",
+      "dataset": "main",
+      "case": "messages.delete.cleanup1",
+      "scenario": "cleanup",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+    },
+    {
+      "transport": "guzzle",
+      "dataset": "main",
+      "case": "messages.delete.cleanup2",
+      "scenario": "cleanup",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+    },
+    {
+      "transport": "guzzle",
+      "dataset": "main",
+      "case": "messages.delete.cleanup3",
+      "scenario": "cleanup",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+    },
+    {
+      "transport": "guzzle",
+      "dataset": "comments",
+      "case": "messages.delete.parent",
+      "scenario": "cleanup",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+    },
+    {
+      "transport": "joomla-http",
+      "dataset": "main",
+      "case": "messages.delete",
+      "scenario": "cleanup",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+    },
+    {
+      "transport": "joomla-http",
+      "dataset": "main",
+      "case": "messages.delete.cleanup1",
+      "scenario": "cleanup",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+    },
+    {
+      "transport": "joomla-http",
+      "dataset": "main",
+      "case": "messages.delete.cleanup2",
+      "scenario": "cleanup",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+    },
+    {
+      "transport": "joomla-http",
+      "dataset": "main",
+      "case": "messages.delete.cleanup3",
+      "scenario": "cleanup",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+    },
+    {
+      "transport": "joomla-http",
+      "dataset": "comments",
+      "case": "messages.delete.parent",
+      "scenario": "cleanup",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+    }
+  ]
+}

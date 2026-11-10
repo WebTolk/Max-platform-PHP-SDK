@@ -1,0 +1,35 @@
+{
+  "replacement": "XXXX",
+  "redactions": [
+    {
+      "path": "/message/recipient/chat_id",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/message/timestamp",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/message/body/mid",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/message/body/seq",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/message/body/text",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/message/stat/views",
+      "kind": "value",
+      "original_type": "integer"
+    }
+  ]
+}

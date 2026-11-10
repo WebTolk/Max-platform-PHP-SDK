@@ -1,0 +1,66 @@
+{
+  "method": "Webtolk\\Max\\Payload\\Attachment\\ImageAttachment::fromToken",
+  "declared_method": "Webtolk\\Max\\Payload\\Attachment\\ImageAttachment::fromToken",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "self",
+  "parameters": [
+    {
+      "name": "token",
+      "type": "string",
+      "required": true,
+      "variadic": false
+    }
+  ],
+  "implementation_methods": [],
+  "observed_call_count": 2,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\Attachment\\ImageAttachment::fromToken",
+      "declared_method": "Webtolk\\Max\\Payload\\Attachment\\ImageAttachment::fromToken",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\Attachment\\ImageAttachment",
+          "properties": {
+            "token": {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/properties/token/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "b7700fd8ef75ff666d9fdb8d26a8ba3fcce1ad229dbbe51efa6b490e601799e0"
+      }
+    }
+  ]
+}

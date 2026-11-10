@@ -103,7 +103,7 @@ $keyboard = InlineKeyboardAttachment::rows([
 }
 ```
 
-Подтверждённый live callback flow теперь есть: успешная callback-кнопка приводит к `message_callback` update и позволяет вызвать `messages.answerCallback()` с `success: true`.
+Обработчик callback-кнопки передаёт `callback_id` из `message_callback` update в `messages.answerCallback()`. Успешный live callback flow пока не подтверждён: в [сохранённых прогонах](../api-responses/2026-11-10/index.json) для обоих транспортов есть только отрицательный сценарий `negative_unissued_callback` с HTTP 400. Ответ с `success: true` приведён в документации как контрактная иллюстрация.
 
 ### `MessageButton`
 
@@ -131,7 +131,7 @@ $keyboard = InlineKeyboardAttachment::rows([
 
 ### `OpenAppButton`
 
-Сериализуется как `type: open_app`. Текущая рендеренная документация MAX от 2026-07-05 не раскрывает дополнительные поля этой кнопки; если интеграции нужны расширенные параметры мини-приложения, передайте raw button array в `InlineKeyboardAttachment`.
+Сериализуется как `type: open_app`. Типизированная фабрика SDK принимает текст кнопки. Дополнительные поля контракта MAX можно передать через raw button array в `InlineKeyboardAttachment`.
 
 ### `ClipboardButton`
 
@@ -194,3 +194,10 @@ $keyboard = InlineKeyboardAttachment::rows([
 
 - Для photo reply flow в публичном репозитории есть только schema-level evidence, без полного raw response artifact.
 - Отдельного успешного `reply_update` sample в текущем наборе артефактов всё ещё нет.
+
+## Контактные вложения
+
+Для raw contact attachment используйте актуальные поля name, contact_id и vcf_info
+из [NewMessageBody](https://dev.max.ru/docs-api/objects/NewMessageBody/).
+Поле vcf_phone в документации 2026-11-10 отсутствует. Отдельного typed contact
+payload в SDK нет; SDK не вводит новый запрет для произвольных raw полей.

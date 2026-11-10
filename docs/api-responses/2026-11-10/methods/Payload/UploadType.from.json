@@ -1,0 +1,136 @@
+{
+  "method": "Webtolk\\Max\\Payload\\UploadType::from",
+  "declared_method": "Webtolk\\Max\\Payload\\UploadType::from",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": true,
+  "return_type": "static",
+  "parameters": [
+    {
+      "name": "value",
+      "type": "string|int",
+      "required": true,
+      "variadic": false
+    }
+  ],
+  "implementation_methods": [],
+  "observed_call_count": 5,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "local-fixtures-v2",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\UploadType::from",
+      "declared_method": "Webtolk\\Max\\Payload\\UploadType::from",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "enum",
+          "class": "Webtolk\\Max\\Payload\\UploadType",
+          "enum_case": "IMAGE",
+          "enum_value": "image"
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "49139a44230e86dd7cd1269c4690517171a43bcdc603710281fd27e1f32ccdde"
+      }
+    },
+    {
+      "phase": "local-fixtures-v2",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\UploadType::from",
+      "declared_method": "Webtolk\\Max\\Payload\\UploadType::from",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "enum",
+          "class": "Webtolk\\Max\\Payload\\UploadType",
+          "enum_case": "VIDEO",
+          "enum_value": "video"
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "dc6d209db6721408fc58adc5e94561b5eb767f72c8ea072b691320cc9a8a36c8"
+      }
+    },
+    {
+      "phase": "local-fixtures-v2",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\UploadType::from",
+      "declared_method": "Webtolk\\Max\\Payload\\UploadType::from",
+      "outcome": "threw",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "string",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "exception": {
+          "class": "ValueError",
+          "message": "XXXX",
+          "code": "XXXX"
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/exception/message",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/exception/code",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "2d54a7c99ea23652752a1cd81dd63d2b3efc0a97d3715ce1515b2e9a2ccf6c27"
+      }
+    }
+  ]
+}

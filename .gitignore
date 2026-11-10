@@ -16,3 +16,14 @@
 /max-api-buttons-dom-*.json
 .DS_Store
 Thumbs.db
+.codex/hooks.json
+.pf/process-forge.local.yaml
+.pf/runtime/
+.pf/private-notes/
+.pf/cache/
+.pf/tmp/
+.secrets/
+*.tmp
+*.bak
+/tests/Compatibility/php81/vendor/
+/tests/Compatibility/php81/composer.lock

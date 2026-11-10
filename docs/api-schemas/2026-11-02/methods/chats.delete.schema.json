@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:webtolk:max:0.4.0:methods:chats.delete",
+  "title": "chats.delete observed MAX JSON responses",
+  "description": "Only captured shapes are described. Optional or unobserved variants may exist.",
+  "type": "object",
+  "properties": {
+    "success": {
+      "type": "boolean"
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true,
+  "required": [
+    "message",
+    "success"
+  ],
+  "x-live-observations": [
+    {
+      "transport": "guzzle",
+      "dataset": "main",
+      "case": "chats.delete",
+      "scenario": "negative_invalid_chat",
+      "outcome": "operation_rejected",
+      "http_status": 200,
+      "raw_body_sha256": "a6f64fe98d6613e994275472a04fc3b80a18c67b55f3db1639417af000495319"
+    },
+    {
+      "transport": "joomla-http",
+      "dataset": "main",
+      "case": "chats.delete",
+      "scenario": "negative_invalid_chat",
+      "outcome": "operation_rejected",
+      "http_status": 200,
+      "raw_body_sha256": "a6f64fe98d6613e994275472a04fc3b80a18c67b55f3db1639417af000495319"
+    }
+  ]
+}

@@ -2,6 +2,22 @@
 
 `webtolk/max` — framework-agnostic PHP SDK для MAX Platform API с архитектурой `facade + modules + request objects + entities`.
 
+## Подготовка 0.4.0
+
+Добавлены `Update::getUserId()`, `getBotId()`, `isAdmin()` и `getPermissions()` для
+`bot_admin_permissions_changed`. Старые публичные сигнатуры сохранены. Новое событие
+MAX пока доставляет только через Webhook.
+
+Версия выбрана по SemVer как добавление публичного API. Подробности, ограничения
+провайдера и результаты двух транспортов — в [руководстве 0.4.0](docs/guides/sdk-0.4.0.md).
+Свежие [JSON Schema реальных ответов](docs/api-schemas/2026-11-02/index.json)
+сохраняют исходные JSON-типы и не содержат значений пользовательских данных.
+
+[Полный набор JSON-снимков от 10 ноября](docs/api-responses/2026-11-10/index.json)
+охватывает 528 публичных методов с учётом наследования и 111 свежих HTTP-тел
+через Guzzle и Joomla HTTP. Локальные fixtures, реальные ответы и отрицательные
+сценарии помечены отдельно; замаскированные числа сопровождаются исходными типами.
+
 ## Что умеет SDK
 
 - работать на PHP `8.1+`
@@ -159,7 +175,7 @@ echo 'Message text: ' . ($message->getBody()?->getText() ?? '') . PHP_EOL;
 - Для старого query-based lookup используйте `messages()->getByQueryId()`.
 - Для channel posts не передавайте `NewMessageBody::withNotify(false)`: live smoke на канале вернул `errors.send-message.channel-notify`; без поля `notify` отправка постов, кнопок и вложений проходит.
 - Для `audio` и `video` после успешной загрузки возможен временный `attachment.not.ready`.
-- Для `messages.answerCallback()` в публичном schema pack уже есть подтверждённый success example.
+- Для `messages.answerCallback()` схема содержит иллюстрацию success shape; сохранённые прогоны 2026-08-31 и 2026-11-02 подтвердили только отрицательный сценарий.
 - События комментариев можно передавать в `GetUpdatesQuery::withTypes()` и `CreateSubscriptionPayload` строками `comment_created`, `comment_edited` и `comment_removed`.
 
 ## Тестирование

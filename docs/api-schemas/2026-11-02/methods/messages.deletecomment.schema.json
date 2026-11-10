@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:webtolk:max:0.4.0:methods:messages.deleteComment",
+  "title": "messages.deleteComment observed MAX JSON responses",
+  "description": "Only captured shapes are described. Optional or unobserved variants may exist.",
+  "anyOf": [
+    {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true,
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true,
+      "required": [
+        "success"
+      ]
+    }
+  ],
+  "x-live-observations": [
+    {
+      "transport": "guzzle",
+      "dataset": "main",
+      "case": "messages.deleteComment",
+      "scenario": "negative_unissued_comment",
+      "outcome": "api_error",
+      "http_status": 400,
+      "raw_body_sha256": "6b7ef6bd610d0c355aa4cdd7a74ce3661a4a02a7ea724afe3183770d10afae70"
+    },
+    {
+      "transport": "guzzle",
+      "dataset": "comments",
+      "case": "messages.deleteComment",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+    },
+    {
+      "transport": "joomla-http",
+      "dataset": "main",
+      "case": "messages.deleteComment",
+      "scenario": "negative_unissued_comment",
+      "outcome": "api_error",
+      "http_status": 400,
+      "raw_body_sha256": "a3863a68e0851a8d244d2708452d9834f167945bddc11bc26a6f3786c6da69dd"
+    },
+    {
+      "transport": "joomla-http",
+      "dataset": "comments",
+      "case": "messages.deleteComment",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "c955e57777ec0d73639dca6748560d00aa5eb8e12f13ebb2ed9656add3908f97"
+    }
+  ]
+}

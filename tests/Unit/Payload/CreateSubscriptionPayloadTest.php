@@ -10,6 +10,16 @@ use Webtolk\Max\Payload\CreateSubscriptionPayload;
 
 final class CreateSubscriptionPayloadTest extends TestCase
 {
+    public function testSubscribesToBotAdminPermissionsChangedWithoutRenaming(): void
+    {
+        $payload = CreateSubscriptionPayload::create('https://example.com/hook', ['bot_admin_permissions_changed']);
+
+        $this->assertSame([
+            'url' => 'https://example.com/hook',
+            'update_types' => ['bot_admin_permissions_changed'],
+        ], $payload->toRequestArray());
+    }
+
     public function testBuildsRequestArrayWithAllFields(): void
     {
         $payload = CreateSubscriptionPayload::create(

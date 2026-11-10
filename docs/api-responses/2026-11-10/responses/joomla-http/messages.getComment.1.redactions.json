@@ -1,0 +1,60 @@
+{
+  "replacement": "XXXX",
+  "redactions": [
+    {
+      "path": "/recipient/chat_id",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/recipient/post_id",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/timestamp",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/body/mid",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/body/seq",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/body/text",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/sender/user_id",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/sender/first_name",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/sender/username",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/sender/last_activity_time",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/sender/name",
+      "kind": "value",
+      "original_type": "string"
+    }
+  ]
+}

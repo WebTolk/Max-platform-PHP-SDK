@@ -1,0 +1,940 @@
+{
+  "replacement": "XXXX",
+  "redactions": [
+    {
+      "path": "/messages/0/recipient/chat_id",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/0/timestamp",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/0/body/mid",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/0/body/seq",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/0/body/text",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/0/sender/user_id",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/0/sender/first_name",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/0/sender/username",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/0/sender/last_activity_time",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/0/sender/name",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/1/recipient/chat_id",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/1/timestamp",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/1/body/mid",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/1/body/seq",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/1/body/text",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/1/body/markup/0/from",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/1/body/markup/0/length",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/1/body/markup/0/type",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/1/body/markup/1/from",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/1/body/markup/1/length",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/1/body/markup/1/type",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/1/body/markup/2/from",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/1/body/markup/2/length",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/1/body/markup/2/type",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/1/body/markup/3/from",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/1/body/markup/3/length",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/1/body/markup/3/type",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/1/body/markup/4/from",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/1/body/markup/4/length",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/1/body/markup/4/type",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/1/body/markup/5/from",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/1/body/markup/5/length",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/1/body/markup/5/type",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/1/sender/user_id",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/1/sender/first_name",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/1/sender/username",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/1/sender/last_activity_time",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/1/sender/name",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/2/recipient/chat_id",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/2/timestamp",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/2/body/mid",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/2/body/seq",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/2/body/text",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/2/body/markup/0/from",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/2/body/markup/0/length",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/2/body/markup/0/type",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/2/body/markup/1/from",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/2/body/markup/1/length",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/2/body/markup/1/type",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/2/body/markup/2/from",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/2/body/markup/2/length",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/2/body/markup/2/type",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/2/body/markup/3/from",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/2/body/markup/3/length",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/2/body/markup/3/type",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/2/body/markup/4/from",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/2/body/markup/4/length",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/2/body/markup/4/type",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/2/body/markup/5/from",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/2/body/markup/5/length",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/2/body/markup/5/type",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/2/sender/user_id",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/2/sender/first_name",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/2/sender/username",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/2/sender/last_activity_time",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/2/sender/name",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/3/recipient/chat_id",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/3/timestamp",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/3/body/mid",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/3/body/seq",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/3/body/text",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/3/body/markup/0/from",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/3/body/markup/0/length",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/3/body/markup/0/type",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/3/sender/user_id",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/3/sender/first_name",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/3/sender/username",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/3/sender/last_activity_time",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/3/sender/name",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/4/recipient/chat_id",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/4/timestamp",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/4/body/mid",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/4/body/seq",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/4/body/text",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/4/body/markup/0/from",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/4/body/markup/0/length",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/4/body/markup/0/type",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/4/sender/user_id",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/4/sender/first_name",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/4/sender/username",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/4/sender/last_activity_time",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/4/sender/name",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/5/recipient/chat_id",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/5/timestamp",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/5/body/mid",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/5/body/seq",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/5/body/text",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/5/body/markup/0/from",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/5/body/markup/0/length",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/5/body/markup/0/type",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/5/sender/user_id",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/5/sender/first_name",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/5/sender/username",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/5/sender/last_activity_time",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/5/sender/name",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/6/recipient/chat_id",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/6/timestamp",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/6/body/mid",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/6/body/seq",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/6/body/text",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/6/body/markup/0/from",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/6/body/markup/0/length",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/6/body/markup/0/type",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/6/body/markup/1/from",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/6/body/markup/1/length",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/6/body/markup/1/type",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/6/body/markup/2/from",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/6/body/markup/2/length",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/6/body/markup/2/type",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/6/body/markup/3/from",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/6/body/markup/3/length",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/6/body/markup/3/type",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/6/body/markup/4/from",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/6/body/markup/4/length",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/6/body/markup/4/type",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/6/sender/user_id",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/6/sender/first_name",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/6/sender/username",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/6/sender/last_activity_time",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/6/sender/name",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/7/recipient/chat_id",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/7/timestamp",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/7/body/mid",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/7/body/seq",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/7/body/text",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/7/body/markup/0/from",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/7/body/markup/0/length",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/7/body/markup/0/type",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/7/body/markup/1/from",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/7/body/markup/1/length",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/7/body/markup/1/type",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/7/body/markup/2/from",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/7/body/markup/2/length",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/7/body/markup/2/type",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/7/body/markup/3/from",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/7/body/markup/3/length",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/7/body/markup/3/type",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/7/body/markup/4/from",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/7/body/markup/4/length",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/7/body/markup/4/type",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/7/sender/user_id",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/7/sender/first_name",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/7/sender/username",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/7/sender/last_activity_time",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/7/sender/name",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/8/recipient/chat_id",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/8/timestamp",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/8/body/mid",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/8/body/seq",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/8/body/text",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/8/body/markup/0/from",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/8/body/markup/0/length",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/8/body/markup/0/type",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/8/sender/user_id",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/8/sender/first_name",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/8/sender/username",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/8/sender/last_activity_time",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/8/sender/name",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/9/recipient/chat_id",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/9/timestamp",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/9/body/mid",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/9/body/seq",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/9/body/text",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/9/body/attachments/0/payload/url",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/9/body/attachments/0/payload/token",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/9/body/attachments/0/title",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/9/body/markup/0/from",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/9/body/markup/0/length",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/9/body/markup/0/type",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/9/body/markup/1/url",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/9/body/markup/1/from",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/9/body/markup/1/length",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/9/sender/user_id",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/9/sender/first_name",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/9/sender/username",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/messages/9/sender/last_activity_time",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/messages/9/sender/name",
+      "kind": "value",
+      "original_type": "string"
+    }
+  ]
+}

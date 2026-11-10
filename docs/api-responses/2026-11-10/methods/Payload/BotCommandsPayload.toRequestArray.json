@@ -1,0 +1,226 @@
+{
+  "method": "Webtolk\\Max\\Payload\\BotCommandsPayload::toRequestArray",
+  "declared_method": "Webtolk\\Max\\Payload\\BotCommandsPayload::toRequestArray",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "array",
+  "parameters": [],
+  "implementation_methods": [],
+  "observed_call_count": 5,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "live-guzzle",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\BotCommandsPayload::toRequestArray",
+      "declared_method": "Webtolk\\Max\\Payload\\BotCommandsPayload::toRequestArray",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "map",
+          "items": {
+            "commands": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\BotCommandsPayload",
+          "properties": {
+            "commands": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            }
+          }
+        }
+      },
+      "redactions": [],
+      "execution_record": {
+        "sha256": "8ad8c9ebc3c6e7a7db1b57d5650c3946e0f7b96bc249f08e5486fd9f8dffa8dd"
+      }
+    },
+    {
+      "phase": "live-joomla-http",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\BotCommandsPayload::toRequestArray",
+      "declared_method": "Webtolk\\Max\\Payload\\BotCommandsPayload::toRequestArray",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "map",
+          "items": {
+            "commands": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\BotCommandsPayload",
+          "properties": {
+            "commands": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            }
+          }
+        }
+      },
+      "redactions": [],
+      "execution_record": {
+        "sha256": "af246d54dc3f65980a40220527b4930915a4ae28baa05c7afbabe21688bf6667"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\BotCommandsPayload::toRequestArray",
+      "declared_method": "Webtolk\\Max\\Payload\\BotCommandsPayload::toRequestArray",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "map",
+          "items": {
+            "commands": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": [
+                {
+                  "php_type": "array",
+                  "array_kind": "map",
+                  "items": {
+                    "name": {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    },
+                    "description": {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\BotCommandsPayload",
+          "properties": {
+            "commands": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": [
+                {
+                  "php_type": "object",
+                  "class": "Webtolk\\Max\\Payload\\BotCommandPayload",
+                  "properties": {
+                    "name": {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    },
+                    "description": {
+                      "php_type": "string",
+                      "value": "XXXX"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/result/items/commands/items/0/items/name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/result/items/commands/items/0/items/description/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/commands/items/0/properties/name/value",
+          "kind": "value",
+          "original_type": "string"
+        },
+        {
+          "path": "/receiver_after/properties/commands/items/0/properties/description/value",
+          "kind": "value",
+          "original_type": "string"
+        }
+      ],
+      "execution_record": {
+        "sha256": "86c6f978462aff38b15c6f98acd18d16991137c1ba7c5a0351f65d2d7e1ed7e0"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\BotCommandsPayload::toRequestArray",
+      "declared_method": "Webtolk\\Max\\Payload\\BotCommandsPayload::toRequestArray",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "map",
+          "items": {
+            "commands": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            }
+          }
+        },
+        "receiver_after": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Payload\\BotCommandsPayload",
+          "properties": {
+            "commands": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            }
+          }
+        }
+      },
+      "redactions": [],
+      "execution_record": {
+        "sha256": "2c9c54e3e508c1f6a9e5f69d29810ece775f08507b473affd931fba4cd4cbaaf"
+      }
+    }
+  ]
+}

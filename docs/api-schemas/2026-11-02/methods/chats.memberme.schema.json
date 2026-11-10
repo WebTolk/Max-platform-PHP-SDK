@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:webtolk:max:0.4.0:methods:chats.memberMe",
+  "title": "chats.memberMe observed MAX JSON responses",
+  "description": "Only captured shapes are described. Optional or unobserved variants may exist.",
+  "type": "object",
+  "properties": {
+    "last_access_time": {
+      "type": "integer"
+    },
+    "is_owner": {
+      "type": "boolean"
+    },
+    "is_admin": {
+      "type": "boolean"
+    },
+    "join_time": {
+      "type": "integer"
+    },
+    "user_id": {
+      "type": "integer"
+    },
+    "first_name": {
+      "type": "string"
+    },
+    "is_bot": {
+      "type": "boolean"
+    },
+    "username": {
+      "type": "string"
+    },
+    "last_activity_time": {
+      "type": "integer"
+    },
+    "description": {
+      "type": "string"
+    },
+    "avatar_url": {
+      "type": "string"
+    },
+    "full_avatar_url": {
+      "type": "string"
+    },
+    "permissions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "name": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true,
+  "required": [
+    "avatar_url",
+    "description",
+    "first_name",
+    "full_avatar_url",
+    "is_admin",
+    "is_bot",
+    "is_owner",
+    "join_time",
+    "last_access_time",
+    "last_activity_time",
+    "name",
+    "permissions",
+    "user_id",
+    "username"
+  ],
+  "x-live-observations": [
+    {
+      "transport": "guzzle",
+      "dataset": "main",
+      "case": "chats.memberMe",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "5be28f80a438b8b32d61f6e23571eee8870eccef45acd27aaf16e2d7d24a0668"
+    },
+    {
+      "transport": "joomla-http",
+      "dataset": "main",
+      "case": "chats.memberMe",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "4b81ca648285326dbc48fd8079498559e4a21a43c2f95ebd863db98e1ddf749a"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "method_files_verified": 528,
+  "declared_methods_covered": 357,
+  "actual_concrete_declarations": 353,
+  "interface_mappings": 4,
+  "selected_execution_records_verified": 1759,
+  "declared_redactions_verified": 59400,
+  "fresh_http_bodies_verified": 111,
+  "fresh_api_operations": 40,
+  "positive_api_operations": 31,
+  "schema_validation_failures": 0,
+  "execution_string_candidates_total": 326,
+  "private_string_candidates_checked": 239,
+  "public_protocol_symbol_collisions_excluded": 87,
+  "privacy_findings": [],
+  "source_product_drift": [],
+  "instrumented_ast_restoration_files_verified": 87,
+  "cleanup_baseline_checks_passed": true
+}

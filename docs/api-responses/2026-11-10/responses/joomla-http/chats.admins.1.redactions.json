@@ -1,0 +1,190 @@
+{
+  "replacement": "XXXX",
+  "redactions": [
+    {
+      "path": "/members/0/last_access_time",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/members/0/join_time",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/members/0/user_id",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/members/0/first_name",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/members/0/last_name",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/members/0/last_activity_time",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/members/0/description",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/members/0/avatar_url",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/members/0/full_avatar_url",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/members/0/permissions/0",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/members/0/permissions/1",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/members/0/permissions/2",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/members/0/permissions/3",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/members/0/permissions/4",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/members/0/permissions/5",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/members/0/permissions/6",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/members/0/permissions/7",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/members/0/permissions/8",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/members/0/permissions/9",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/members/0/permissions/10",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/members/0/name",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/members/1/last_access_time",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/members/1/join_time",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/members/1/user_id",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/members/1/first_name",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/members/1/username",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/members/1/last_activity_time",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/members/1/description",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/members/1/avatar_url",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/members/1/full_avatar_url",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/members/1/permissions/0",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/members/1/permissions/1",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/members/1/permissions/2",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/members/1/permissions/3",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/members/1/permissions/4",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/members/1/permissions/5",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/members/1/name",
+      "kind": "value",
+      "original_type": "string"
+    }
+  ]
+}

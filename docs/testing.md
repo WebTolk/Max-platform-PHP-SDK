@@ -1,5 +1,74 @@
 # Тестирование
 
+## Финальная проверка 0.4.0 — 2026-11-10
+
+Исходники SDK и одна и та же suite прошли на PHP 8.1.34 и PHP 8.3.30:
+157 tests / 428 assertions в каждом запуске. На PHP 8.1 использованы совместимые
+PHPUnit 10.5.66, Guzzle 7.16.1 и Diactoros 3.7.0. Composer проверил требования
+реальной платформы; `--ignore-platform-reqs` не применялся.
+
+Для воспроизведения из исходного checkout используйте PHP 8.1 с требуемыми
+расширениями и профиль `tests/Compatibility/php81/composer.json`.
+Каталог tests предназначен для разработки и не входит в Composer-архив.
+
+```bash
+composer update --working-dir=tests/Compatibility/php81
+php tests/Compatibility/php81/vendor/bin/phpunit --configuration phpunit.xml --bootstrap tests/Compatibility/php81/vendor/autoload.php --do-not-cache-result
+```
+
+Оба executable в этих командах должны использовать PHP 8.1. Отдельный профиль
+нужен потому, что основной dev-набор содержит Joomla HTTP 4.0.2 с минимумом 8.3;
+runtime-зависимости самого SDK — PSR-контракты с поддержкой 8.1. Профиль использует
+те же ограничения runtime-пакетов и те же исходники/тесты без копирования SDK.
+
+При свежей живой проверке Guzzle и Joomla HTTP выполнили по 54 сценария. Все
+40 module operations вызваны; 31 имеет положительное наблюдение, 9 — только
+negative/legacy outcomes. [Полный набор JSON-снимков](./api-responses/2026-11-10/index.json)
+содержит 528 файлов публичных методов с учётом наследования и 111 HTTP-тел.
+Все новые JSON прошли соответствующие API-схемы. Полнота методов не означает
+покрытие всех ветвей или всех комбинаций аргументов.
+
+Значения чувствительных полей замаскированы XXXX, а исходные типы указаны в
+redaction maps. Приватные оригиналы проверяются исходными схемами; строка XXXX
+не является корректным числовым ID для SDK. PHPDoc после записи снимков уточнён
+без изменения исполняемых tokens; исходные hashes внутри снимков сохранены.
+
+## Предыдущая приёмка 0.4.0 — 2026-11-02
+
+На `joomla.local` выполнены два варианта: Guzzle 7.10.0 и Joomla HTTP 4.0.2,
+PHP 8.3.30. В каждом варианте прошли 157 unit/contract tests и 428 assertions.
+PHPStan уровня 8 по src, PHP CS Fixer и Composer validation пройдены.
+
+Xdebug 3.5.0 зафиксировал вызовы 353/353 исполнимых публичных методов на каждый
+вариант: unit/pure contracts и real network scenarios. Четыре interface
+declarations не имеют тела. Это invocation coverage, не покрытие всех ветвей.
+Все 40 module operations вызваны реально каждым клиентом; 31 имеют positive
+responses, 9 — только отрицательные/legacy outcomes. Границы подтверждения
+приведены в [руководстве 0.4.0](./guides/sdk-0.4.0.md).
+
+Новый opt-in runner: `tests/Live/run.php`. Запускать из корня выбранного тестового
+Joomla сайта с разрешёнными данными установленного `system/wtmax` плагина:
+
+```powershell
+php "$sdkRoot/tests/Live/run.php" --allow-live --phase=contract `
+  "--stand-root=$standRoot" "--output=$privateOutput" --transport=guzzle
+```
+
+Второй прогон использует `--transport=joomla-http` и отдельный private output.
+`--fixtures` принимает приватный JSON с подтверждённым `test_channel_id`;
+`--phase=comments` запускает отдельно positive comment CRUD с очисткой parent.
+На одном боте/чате прогоны выполнять последовательно. По явному разрешению
+оператора тестовый `--insecure` отключает certificate verification и записывает
+это в evidence; defaults SDK не меняются.
+
+Свежие [40 JSON Schema](./api-schemas/2026-11-02/index.json) сохраняют реальные
+типы данных. Все 124 response bodies независимо прошли `Test-Json` по этим
+схемам. В новый набор не экспортируются значения, examples/default/const/enum;
+identifier-shaped keys представлены patternProperties. Сами ответы приватны.
+Исторические schema/examples сохранены отдельно.
+
+## Историческая справка до 0.4.0
+
 В публичном репозитории сохраняются unit tests, обезличенные JSON schemas и очищенные тела реальных API-ответов. Полные локальные live/debug evidence-файлы не входят в состав коммита.
 
 ## Что входит в публичную проверку
@@ -26,7 +95,7 @@ vendor/bin/phpstan analyse src tests --level=8 --no-progress --memory-limit=512M
 In the local WebTolk development environment this command uses the shared PHP QA toolchain:
 
 ```powershell
-php E:\.agents\tools\php-qa\vendor\bin\phpstan analyse src tests --level=8 --no-progress --memory-limit=512M
+php <registered-phpstan> analyse src tests --level=8 --no-progress --memory-limit=512M
 ```
 
 If the local PHP runtime points its temp/cache directory to a restricted OSPanel folder, set `TEMP`, `TMP` and `sys_temp_dir` to a writable directory before running PHPStan. This affects only tool cache files, not SDK behavior.

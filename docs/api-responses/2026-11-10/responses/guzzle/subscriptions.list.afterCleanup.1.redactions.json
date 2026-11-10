@@ -1,0 +1,50 @@
+{
+  "replacement": "XXXX",
+  "redactions": [
+    {
+      "path": "/subscriptions/0/url",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/subscriptions/0/time",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/subscriptions/0/update_types/0",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/subscriptions/0/update_types/1",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/subscriptions/1/url",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/subscriptions/1/time",
+      "kind": "value",
+      "original_type": "integer"
+    },
+    {
+      "path": "/subscriptions/1/update_types/0",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/subscriptions/2/url",
+      "kind": "value",
+      "original_type": "string"
+    },
+    {
+      "path": "/subscriptions/2/time",
+      "kind": "value",
+      "original_type": "integer"
+    }
+  ]
+}

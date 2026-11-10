@@ -1,0 +1,138 @@
+{
+  "method": "Webtolk\\Max\\Query\\GetUpdatesQuery::default",
+  "declared_method": "Webtolk\\Max\\Query\\GetUpdatesQuery::default",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "self",
+  "parameters": [],
+  "implementation_methods": [],
+  "observed_call_count": 6,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "live-guzzle",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Query\\GetUpdatesQuery::default",
+      "declared_method": "Webtolk\\Max\\Query\\GetUpdatesQuery::default",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Query\\GetUpdatesQuery",
+          "properties": {
+            "marker": {
+              "php_type": "null",
+              "value": null
+            },
+            "limit": {
+              "php_type": "null",
+              "value": null
+            },
+            "timeout": {
+              "php_type": "null",
+              "value": null
+            },
+            "types": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            }
+          }
+        }
+      },
+      "redactions": [],
+      "execution_record": {
+        "sha256": "073466174ebc7df7564b9caf200e267c25847a3fc48f2af136323b1a10143114"
+      }
+    },
+    {
+      "phase": "live-joomla-http",
+      "origin": "fresh_max_api_execution",
+      "executed_method": "Webtolk\\Max\\Query\\GetUpdatesQuery::default",
+      "declared_method": "Webtolk\\Max\\Query\\GetUpdatesQuery::default",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Query\\GetUpdatesQuery",
+          "properties": {
+            "marker": {
+              "php_type": "null",
+              "value": null
+            },
+            "limit": {
+              "php_type": "null",
+              "value": null
+            },
+            "timeout": {
+              "php_type": "null",
+              "value": null
+            },
+            "types": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            }
+          }
+        }
+      },
+      "redactions": [],
+      "execution_record": {
+        "sha256": "cd7f0d9f80d4e5bb2bb38c23767a34c2fed59472ea85f39783a20cefec7dce51"
+      }
+    },
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Query\\GetUpdatesQuery::default",
+      "declared_method": "Webtolk\\Max\\Query\\GetUpdatesQuery::default",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Query\\GetUpdatesQuery",
+          "properties": {
+            "marker": {
+              "php_type": "null",
+              "value": null
+            },
+            "limit": {
+              "php_type": "null",
+              "value": null
+            },
+            "timeout": {
+              "php_type": "null",
+              "value": null
+            },
+            "types": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            }
+          }
+        }
+      },
+      "redactions": [],
+      "execution_record": {
+        "sha256": "821ceb24abd8271bcaf9311c50b1ee7383ed8fd788039ef1f8f963f6fa0f650c"
+      }
+    }
+  ]
+}

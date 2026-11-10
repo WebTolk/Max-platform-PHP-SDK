@@ -1,0 +1,34 @@
+{
+  "message": {
+    "recipient": {
+      "chat_type": "chat",
+      "chat_id": "XXXX"
+    },
+    "timestamp": "XXXX",
+    "body": {
+      "mid": "XXXX",
+      "seq": "XXXX",
+      "text": "XXXX",
+      "attachments": [
+        {
+          "payload": {
+            "url": "XXXX",
+            "token": "XXXX",
+            "fileId": "XXXX"
+          },
+          "filename": "XXXX",
+          "size": "XXXX",
+          "type": "file"
+        }
+      ]
+    },
+    "sender": {
+      "user_id": "XXXX",
+      "first_name": "XXXX",
+      "is_bot": true,
+      "username": "XXXX",
+      "last_activity_time": "XXXX",
+      "name": "XXXX"
+    }
+  }
+}

@@ -8,6 +8,7 @@ use Webtolk\Max\Exception\ValidationException;
 
 /**
  * Payload-объект SDK `CallbackAnswerPayload` для подготовки данных запроса.
+ * Для вложенного message действуют правила notify объекта NewMessageBody.
  * Нужен, чтобы собирать валидный request payload MAX API в типизированном виде до передачи в request-слой.
  *
  * @since v.0.1.0

@@ -1,0 +1,51 @@
+{
+  "method": "Webtolk\\Max\\Payload\\TextFormat::cases",
+  "declared_method": "Webtolk\\Max\\Payload\\TextFormat::cases",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": true,
+  "return_type": "array",
+  "parameters": [],
+  "implementation_methods": [],
+  "observed_call_count": 1,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "local-fixtures-v2",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Payload\\TextFormat::cases",
+      "declared_method": "Webtolk\\Max\\Payload\\TextFormat::cases",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": []
+        },
+        "result": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "enum",
+              "class": "Webtolk\\Max\\Payload\\TextFormat",
+              "enum_case": "MARKDOWN",
+              "enum_value": "markdown"
+            },
+            {
+              "php_type": "enum",
+              "class": "Webtolk\\Max\\Payload\\TextFormat",
+              "enum_case": "HTML",
+              "enum_value": "html"
+            }
+          ]
+        }
+      },
+      "redactions": [],
+      "execution_record": {
+        "sha256": "29409b574251e611635e0cba5795e3ac98b1b062d44cb4970ee97e3fb84724dd"
+      }
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:webtolk:max:0.4.0:methods:bots.me",
+  "title": "bots.me observed MAX JSON responses",
+  "description": "Only captured shapes are described. Optional or unobserved variants may exist.",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "integer"
+    },
+    "first_name": {
+      "type": "string"
+    },
+    "is_bot": {
+      "type": "boolean"
+    },
+    "username": {
+      "type": "string"
+    },
+    "last_activity_time": {
+      "type": "integer"
+    },
+    "description": {
+      "type": "string"
+    },
+    "avatar_url": {
+      "type": "string"
+    },
+    "full_avatar_url": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true,
+  "required": [
+    "avatar_url",
+    "description",
+    "first_name",
+    "full_avatar_url",
+    "is_bot",
+    "last_activity_time",
+    "name",
+    "user_id",
+    "username"
+  ],
+  "x-live-observations": [
+    {
+      "transport": "guzzle",
+      "dataset": "main",
+      "case": "bots.me",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "bef49bbcf1f0440647fbf29ec18cb59a126685e77c3823d2b2496e5fe299f687"
+    },
+    {
+      "transport": "joomla-http",
+      "dataset": "main",
+      "case": "bots.me",
+      "scenario": "positive",
+      "outcome": "success",
+      "http_status": 200,
+      "raw_body_sha256": "c9f77885680792fb3eb2a5aabbe244ce31a1e1265447d7acc3d0e96b69172a83"
+    }
+  ]
+}

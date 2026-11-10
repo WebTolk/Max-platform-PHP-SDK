@@ -22,7 +22,7 @@ final class CreateSubscriptionPayload
      *
      * @param string $url URL webhook endpoint-а или upload endpoint-а, используемый в текущей операции.
      * @param list<string> $updateTypes Список типов обновлений, которые нужно отправить в подписку после нормализации.
-     * @param ?string $secret Секрет webhook-подписки, который MAX будет использовать для подписи запросов.
+     * @param ?string $secret Секрет, который MAX передаст в заголовке X-Max-Bot-Api-Secret каждого Webhook-запроса.
      * @since v.0.1.0
      * @link https://dev.max.ru/docs-api/methods/POST/subscriptions
      */
@@ -39,7 +39,7 @@ final class CreateSubscriptionPayload
      *
      * @param string $url URL webhook endpoint-а или upload endpoint-а, используемый в текущей операции.
      * @param list<string> $updateTypes Список типов обновлений, которые нужно отправить в подписку после нормализации.
-     * @param ?string $secret Секрет webhook-подписки, который MAX будет использовать для подписи запросов.
+     * @param ?string $secret Секрет, который MAX передаст в заголовке X-Max-Bot-Api-Secret каждого Webhook-запроса.
      * @return self Текущий экземпляр объекта для продолжения fluent-цепочки вызовов.
      * @since v.0.1.0
      * @link https://dev.max.ru/docs-api/methods/POST/subscriptions

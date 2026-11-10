@@ -1,0 +1,79 @@
+{
+  "method": "Webtolk\\Max\\Query\\GetUpdatesQuery::fromMarker",
+  "declared_method": "Webtolk\\Max\\Query\\GetUpdatesQuery::fromMarker",
+  "coverage_kind": "direct_execution",
+  "interface": false,
+  "inherited": false,
+  "native_method": false,
+  "return_type": "self",
+  "parameters": [
+    {
+      "name": "marker",
+      "type": "int",
+      "required": true,
+      "variadic": false
+    }
+  ],
+  "implementation_methods": [],
+  "observed_call_count": 2,
+  "selection": "Up to two distinct sanitized data views per phase/outcome; all observed calls remain in private trace.",
+  "snapshots": [
+    {
+      "phase": "unit",
+      "origin": "synthetic_local_fixture_execution",
+      "executed_method": "Webtolk\\Max\\Query\\GetUpdatesQuery::fromMarker",
+      "declared_method": "Webtolk\\Max\\Query\\GetUpdatesQuery::fromMarker",
+      "outcome": "returned",
+      "data": {
+        "arguments": {
+          "php_type": "array",
+          "array_kind": "list",
+          "items": [
+            {
+              "php_type": "int",
+              "value": "XXXX"
+            }
+          ]
+        },
+        "result": {
+          "php_type": "object",
+          "class": "Webtolk\\Max\\Query\\GetUpdatesQuery",
+          "properties": {
+            "marker": {
+              "php_type": "int",
+              "value": "XXXX"
+            },
+            "limit": {
+              "php_type": "null",
+              "value": null
+            },
+            "timeout": {
+              "php_type": "null",
+              "value": null
+            },
+            "types": {
+              "php_type": "array",
+              "array_kind": "list",
+              "items": []
+            }
+          }
+        }
+      },
+      "redactions": [
+        {
+          "path": "/arguments/items/0/value",
+          "kind": "value",
+          "original_type": "integer"
+        },
+        {
+          "path": "/result/properties/marker/value",
+          "kind": "value",
+          "original_type": "integer"
+        }
+      ],
+      "execution_record": {
+        "sha256": "23aca8214b2dca8cf1298d2e637d91e02644b5e16736afa7ee230984268cf9ab"
+      }
+    }
+  ]
+}

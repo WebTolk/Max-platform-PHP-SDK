@@ -1,208 +1,162 @@
 # MAX PHP SDK
 
-`webtolk/max` — framework-agnostic PHP SDK для MAX Platform API с архитектурой `facade + modules + request objects + entities`.
+[![Версия пакета](https://img.shields.io/packagist/v/webtolk/max)](https://packagist.org/packages/webtolk/max)
+[![PHP](https://img.shields.io/packagist/php-v/webtolk/max?logo=php&logoColor=white)](composer.json)
+[![Дата JSON-снимков](https://img.shields.io/badge/JSON_snapshots-2026--11--10-blue)](docs/api-responses/2026-11-10/index.json)
 
-## Подготовка 0.4.0
+`webtolk/max` — PHP-библиотека для работы с ботами в мессенджере MAX через MAX Platform API. Позволяет отправлять сообщения и вложения, управлять чатами, работать с комментариями и получать события через Webhook или long polling.
 
-Добавлены `Update::getUserId()`, `getBotId()`, `isAdmin()` и `getPermissions()` для
-`bot_admin_permissions_changed`. Старые публичные сигнатуры сохранены. Новое событие
-MAX пока доставляет только через Webhook.
-
-Версия выбрана по SemVer как добавление публичного API. Подробности, ограничения
-провайдера и результаты двух транспортов — в [руководстве 0.4.0](docs/guides/sdk-0.4.0.md).
-Свежие [JSON Schema реальных ответов](docs/api-schemas/2026-11-02/index.json)
-сохраняют исходные JSON-типы и не содержат значений пользовательских данных.
-
-[Полный набор JSON-снимков от 10 ноября](docs/api-responses/2026-11-10/index.json)
-охватывает 528 публичных методов с учётом наследования и 111 свежих HTTP-тел
-через Guzzle и Joomla HTTP. Локальные fixtures, реальные ответы и отрицательные
-сценарии помечены отдельно; замаскированные числа сопровождаются исходными типами.
-
-## Что умеет SDK
-
-- работать на PHP `8.1+`
-- принимать любой PSR-18 HTTP client
-- использовать PSR-17 `RequestFactoryInterface` и `StreamFactoryInterface`
-- отдавать типизированные модули `bots`, `chats`, `messages`, `uploads`, `subscriptions`, `updates`
-- сериализовать payload/query объекты без ручной сборки массивов по всему проекту
-- гидрировать ответы API в entity-объекты вместо сырых массивов
+SDK не привязан к фреймворку. Для HTTP-запросов он использует PSR-18, для создания запросов и потоков — PSR-17. HTTP-клиент выбирает приложение: подойдут Guzzle, Joomla HTTP и другие реализации этих интерфейсов. При необходимости можно подключить PSR-3 логгер.
 
 ## Установка
 
-Минимальная установка самой библиотеки:
+Требования самой библиотеки:
+
+- PHP 8.1 или выше;
+- расширения `json`, `mbstring`, `pcre`;
+- Composer;
+- токен бота MAX.
 
 ```bash
 composer require webtolk/max
 ```
 
-Установка вместе со всеми необходимыми библиотеками. HTTP-клиент может быть любой: Guzzle, Joomla, Symfony и т.д.
+HTTP-клиент и PSR-17 фабрики устанавливаются отдельно. Для примера ниже нужны Guzzle и его реализация PSR-7/PSR-17:
 
 ```bash
-composer require webtolk/max joomla/http laminas/laminas-diactoros
+composer require webtolk/max guzzlehttp/guzzle guzzlehttp/psr7
 ```
 
-Runtime requirements:
+Минимальная версия PHP у выбранного HTTP-клиента и фабрик может отличаться от требований SDK.
 
-- `php >= 8.1`
-- `ext-json`
-- `ext-mbstring`
-- `ext-pcre`
+## Быстрый старт
 
-Важно: SDK не создаёт transport сам. До первого вызова любого модуля нужно передать HTTP client и PSR-17 фабрики через `Max::setTransport()`.
-
-## Quick Start
-
-Пример ниже показывает типичный старт с Joomla HTTP Client.
+Замените `YOUR_BOT_TOKEN` токеном своего бота. Перед первым обращением к модулям подключите транспорт через `setTransport()`:
 
 ```php
 <?php
 
 declare(strict_types=1);
 
-use Joomla\Http\HttpFactory as JoomlaHttpFactory;
-use Laminas\Diactoros\RequestFactory;
-use Laminas\Diactoros\StreamFactory;
+use GuzzleHttp\Client;
+use GuzzleHttp\Psr7\HttpFactory;
 use Webtolk\Max\Config\MaxConfig;
 use Webtolk\Max\Max;
-use Webtolk\Max\Payload\NewMessageBody;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$token = 'YOUR_BOT_TOKEN';
-
-$httpClient = (new JoomlaHttpFactory())->getHttp([
-    'timeout' => 20,
-]);
-
-$max = new Max(new MaxConfig($token));
+$factory = new HttpFactory();
+$max = new Max(new MaxConfig('YOUR_BOT_TOKEN'));
 
 $max->setTransport(
-    $httpClient,
-    new RequestFactory(),
-    new StreamFactory(),
+    new Client([
+        'http_errors' => false,
+        'timeout' => 20,
+        'connect_timeout' => 8,
+    ]),
+    $factory,
+    $factory,
 );
 
 $bot = $max->bots()->me();
 
 echo 'Bot ID: ' . $bot->getId() . PHP_EOL;
 echo 'Username: ' . $bot->getUsername() . PHP_EOL;
+```
+
+Параметр `http_errors => false` позволяет SDK самостоятельно обрабатывать ошибки MAX API и выбрасывать свои исключения.
+
+Для отправки сообщения используйте тот же объект `$max` и идентификатор чата, доступного боту:
+
+```php
+use Webtolk\Max\Payload\NewMessageBody;
 
 $message = $max->messages()->sendToChat(
     123456,
-    NewMessageBody::text('Привет из MAX SDK')
+    NewMessageBody::text('Привет из MAX SDK'),
 );
 
-echo 'Message text: ' . ($message->getBody()?->getText() ?? '') . PHP_EOL;
+echo $message->getBody()?->getText() ?? '';
 ```
 
-## Как это устроено
+Другие варианты подключения: [Guzzle](docs/integrations/guzzle.md) и [Joomla HTTP](docs/integrations/joomla.md). Примеры кнопок, вложений и обработки событий собраны в [типовых сценариях](docs/guides/common-scenarios.md).
 
-1. `MaxConfig` хранит токен и дополнительные HTTP headers.
-2. `Max::setTransport()` создаёт внутренний transport adapter.
-3. Фасад `Max` отдаёт модуль: `bots()`, `chats()`, `messages()`, `uploads()`, `subscriptions()` или `updates()`.
-4. Модуль вызывает соответствующий request object.
-5. Ответ MAX API гидрируется в entity-объект SDK.
+## Возможности
 
-## Основные возможности
+| Модуль | Назначение |
+| --- | --- |
+| `bots()` | Профиль бота и список его команд. |
+| `chats()` | Информация о чатах, участники и администраторы, настройки, закреплённые сообщения и действия бота. |
+| `messages()` | Отправка, чтение, редактирование и удаление сообщений; комментарии к постам; ответы на нажатия кнопок. |
+| `uploads()` | Загрузка изображений, видео, аудио и файлов, получение сведений о видео. |
+| `subscriptions()` | Создание, просмотр и удаление Webhook-подписок. |
+| `updates()` | Получение событий через long polling. |
 
-### Bots
+Параметры запросов задаются объектами `Payload` и `Query`: они проверяют значения и готовят данные для API. Ответы возвращаются объектами `Entity` с методами чтения полей и `toArray()`.
 
-- `bots()->me()` — получить профиль текущего бота
-- `bots()->updateCommands()` — заменить список команд бота (до 32 команд)
+Сигнатуры методов, параметры и возвращаемые типы приведены в [справочнике модулей](docs/reference/facade-and-modules.md).
 
-### Chats
+## Особенности работы с API
 
-- `chats()->list()` — compatibility-метод `GET /chats`: changelog MAX объявляет его неподдерживаемым, но 2026-08-31 live API всё ещё возвращает список; для новых интеграций надёжнее сохранять `chat_id` из webhook events
-- `chats()->getById()` — карточка чата
-- `chats()->getByLink()` — карточка публичного канала по совместимой публичной ссылке канала
-- `chats()->members()` — участники
-- `chats()->memberMe()` — текущий участник
-- `chats()->admins()` — администраторы
-- `chats()->update()` — изменение названия, описания, иконки и pinned message
-- `chats()->delete()` — compatibility-удаление чата; endpoint принял безопасный live-запрос 2026-08-31, но отсутствует в части официальной навигации
-- `chats()->getPinnedMessage()` — чтение закреплённого сообщения
-- `chats()->pin()` — закрепление сообщения
-- `chats()->unpin()` — снятие закрепления
-- `chats()->addMembers()` — добавление участников
-- `chats()->removeMember()` — удаление участника
-- `chats()->leave()` — выход бота из чата
-- `chats()->addAdmins()` — назначение администраторов
-- `chats()->removeAdmin()` — снятие прав администратора
-- `chats()->sendAction()` — отправка typing/photo/video/audio/file/seen action
+- Базовый адрес API — `https://platform-api2.max.ru`.
+- Для long polling тайм-аут HTTP-клиента должен быть больше времени ожидания в `GetUpdatesQuery::withTimeout()`.
+- При отправке постов в канал оставляйте поле `notify` неуказанным: MAX отклоняет `notify=false` для каналов.
+- После загрузки аудио или видео серверу может понадобиться время на обработку. При `AttachmentNotReadyException` повторите отправку позже.
+- Для чтения сообщения по идентификатору используйте `messages()->getById()`. Метод `getByQueryId()` сохранён для запросов через `message_ids`.
+- Некоторые методы сохранены для совместимости с прежними версиями API. Их ограничения указаны в справочнике; доступность операции также зависит от прав бота и ответа сервера.
 
-### Messages
-
-- `messages()->sendToChat()` — отправка в чат
-- `messages()->sendToUser()` — отправка пользователю
-- `messages()->getById()` — чтение через `GET /messages/{messageId}`
-- `messages()->getByQueryId()` — совместимое чтение через `GET /messages?message_ids[]=...`
-- `messages()->list()` — выборка сообщений
-- `messages()->edit()` — редактирование
-- `messages()->delete()` — удаление
-- `messages()->sendComment()` — отправка комментария к посту канала
-- `messages()->listComments()` — список комментариев к посту
-- `messages()->getComment()` — чтение отдельного комментария
-- `messages()->editComment()` — редактирование комментария
-- `messages()->deleteComment()` — удаление комментария
-- `messages()->answerCallback()` — callback answer с optional `disable_link_preview`
-
-### Uploads
-
-- `uploads()->create()` — получить upload URL
-- `uploads()->getVideo()` — получить метаданные видео по токену
-- `uploads()->pushBinary()` — отправить бинарные данные на upload host по `UploadUrl`, полученному из `uploads()->create()`
-- `uploads()->upload()` — пройти весь upload flow одним вызовом
-
-### Subscriptions и Updates
-
-- `subscriptions()->list()`, `create()`, `delete()`
-- `updates()->list()` для long polling
-
-## JSON Schemas
-
-Публичный репозиторий содержит обезличенный schema pack:
-
-- `docs/api-schemas/index.json`
-- `docs/api-schemas/methods/*.schema.json`
-
-Эти файлы нужны как публичный reference layer для формы запросов и ответов. Все чувствительные значения в schema/examples маскируются как `XXXX`.
-
-## Что важно учитывать
-
-- До вызова `setTransport()` модули использовать нельзя.
-- По умолчанию SDK использует `https://platform-api2.max.ru`.
-- `messages()->getById()` использует прямой endpoint `GET /messages/{messageId}`.
-- Для старого query-based lookup используйте `messages()->getByQueryId()`.
-- Для channel posts не передавайте `NewMessageBody::withNotify(false)`: live smoke на канале вернул `errors.send-message.channel-notify`; без поля `notify` отправка постов, кнопок и вложений проходит.
-- Для `audio` и `video` после успешной загрузки возможен временный `attachment.not.ready`.
-- Для `messages.answerCallback()` схема содержит иллюстрацию success shape; сохранённые прогоны 2026-08-31 и 2026-11-02 подтвердили только отрицательный сценарий.
-- События комментариев можно передавать в `GetUpdatesQuery::withTypes()` и `CreateSubscriptionPayload` строками `comment_created`, `comment_edited` и `comment_removed`.
-
-## Тестирование
-
-В публичном репозитории сохранены:
-
-- unit tests в `tests/Unit/**`
-- PHPUnit config в `phpunit.xml`
-- обезличенные API schemas в `docs/api-schemas/**`
-
-Запуск unit tests:
-
-```bash
-vendor/bin/phpunit --configuration phpunit.xml
-```
+Описание исключений и обработки ошибок — в [руководстве по ошибкам](docs/errors.md).
 
 ## Документация
 
-- [Индекс документации](./docs/README.md)
-- [Быстрый старт](./docs/getting-started.md)
-- [Интеграция с Joomla HTTP Client](./docs/integrations/joomla.md)
-- [Типовые сценарии](./docs/guides/common-scenarios.md)
-- [Фасад и методы модулей](./docs/reference/facade-and-modules.md)
-- [Payload-объекты](./docs/reference/payloads.md)
-- [Attachment-объекты](./docs/reference/attachments.md)
-- [Query-объекты](./docs/reference/queries.md)
-- [Сущности](./docs/reference/entities.md)
-- [Ошибки и edge cases](./docs/errors.md)
-- [Тестирование](./docs/testing.md)
-- [Обезличенные ответы MAX API](./docs/api-responses/README.md)
+- [Все разделы](docs/README.md) и [быстрый старт](docs/getting-started.md).
+- [Методы модулей](docs/reference/facade-and-modules.md).
+- [Тела запросов](docs/reference/payloads.md), [вложения и кнопки](docs/reference/attachments.md), [параметры выборки](docs/reference/queries.md).
+- [Сущности ответов](docs/reference/entities.md).
+- [Типовые сценарии](docs/guides/common-scenarios.md).
+- [История изменений](CHANGELOG.md).
+
+### JSON-снимки и схемы
+
+В репозитории сохранены обезличенные ответы MAX API и результаты вызовов публичных методов SDK. Последний набор JSON-снимков записан **10 ноября 2026 года**.
+
+| Ресурс | Содержимое |
+| --- | --- |
+| [Индекс JSON-снимков](docs/api-responses/2026-11-10/index.json) | Происхождение снимков, сценарии, использованные HTTP-клиенты и результаты вызовов. |
+| [Снимки по методам](docs/api-responses/2026-11-10/methods-index.md) | Ссылки на JSON для конкретного класса и метода SDK. |
+| [Ответы MAX API](docs/api-responses/README.md) | Наборы ответов и правила обезличивания. |
+| [JSON Schema](docs/api-schemas/README.md) | Схемы запросов и ответов, индексы и пояснения к примерам. |
+| [Схемы ответов от 2 ноября 2026 года](docs/api-schemas/2026-11-02/index.json) | Типы и структура ответов, полученных при проверке SDK. |
+
+Реальные ответы API и локальные тестовые данные помечены в индексах отдельно. Чувствительные значения заменены на `XXXX`, исходные типы указаны в картах замен. Снимки отражают конкретные вызовы и не охватывают все варианты поведения API; для части операций сохранены только ответы с ошибками.
+
+## Разработка
+
+Основные каталоги репозитория:
+
+| Путь | Назначение |
+| --- | --- |
+| `src/Max.php`, `src/Config/` | Точка входа и конфигурация SDK. |
+| `src/Module/`, `src/Request/` | Публичные операции и построение HTTP-запросов. |
+| `src/Payload/`, `src/Query/` | Проверка и сериализация входных данных. |
+| `src/Entity/` | Объекты ответов API. |
+| `src/Http/`, `src/Hydration/`, `src/Exception/` | HTTP-транспорт, разбор ответов и исключения. |
+| `tests/Unit/` | Тесты библиотеки без обращения к MAX API. |
+| `tests/Compatibility/php81/` | Зависимости для проверки SDK на PHP 8.1. |
+| `docs/` | Руководства, справочники, JSON-схемы и снимки. |
+
+Для работы с исходниками клонируйте репозиторий и установите зависимости. Основной набор зависимостей для разработки требует PHP 8.3 или выше:
+
+```bash
+composer install
+composer test
+composer cs-check
+```
+
+Тесты не входят в Composer-архив. Проверка на PHP 8.1, статический анализ и проверки с реальным API описаны в [документации по тестированию](docs/testing.md).
+
+При изменении SDK сверяйте код со справочником и тестами. Сохраняйте публичные сигнатуры и формат данных; изменения поведения отражайте в документации и `CHANGELOG.md`.
+
+## Лицензия
+
+[MIT](LICENSE).
